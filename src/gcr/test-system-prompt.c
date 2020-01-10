@@ -697,7 +697,6 @@ static void
 test_watch_cancels (Test *test,
                     gconstpointer unused)
 {
-	GDBusConnection *connection;
 	GcrPrompt *prompt;
 	GcrPrompt *prompt2;
 	GError *error = NULL;
@@ -706,9 +705,6 @@ test_watch_cancels (Test *test,
 
 	gcr_mock_prompter_set_delay_msec (3000);
 	gcr_mock_prompter_expect_password_ok ("booo", NULL);
-
-	connection = g_bus_get_sync (G_BUS_TYPE_SYSTEM, NULL, &error);
-	g_assert_no_error (error);
 
 	/* This should happen immediately */
 	prompt = gcr_system_prompt_open_for_prompter (test->prompter_name, 0, NULL, &error);
@@ -723,7 +719,7 @@ test_watch_cancels (Test *test,
 	                                           on_result_pair_two, &pair);
 
 	/* Wait a bit before stopping, so outgoing request is done */
-	egg_test_wait_until (250);
+	egg_test_wait_until (1000);
 
 	/* Kill the mock prompter */
 	gcr_mock_prompter_disconnect ();
@@ -744,7 +740,6 @@ test_watch_cancels (Test *test,
 	g_object_unref (prompt);
 	g_object_unref (pair.result1);
 	g_object_unref (pair.result2);
-	g_object_unref (connection);
 }
 
 int

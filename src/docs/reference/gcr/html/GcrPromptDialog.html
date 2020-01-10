@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GcrPromptDialog: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="prompts.html" title="Part IV. Prompting">
 <link rel="prev" href="GcrPrompt.html" title="GcrPrompt">
 <link rel="next" href="GcrSystemPrompt.html" title="GcrSystemPrompt">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GcrPromptDialog.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -44,22 +44,22 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="GcrPromptDialog.html#GcrPromptDialog--choice-visible" title="The “choice-visible” property">choice-visible</a></td>
 <td class="property_flags">Read</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="GcrPromptDialog.html#GcrPromptDialog--confirm-visible" title="The “confirm-visible” property">confirm-visible</a></td>
 <td class="property_flags">Read</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="GcrPromptDialog.html#GcrPromptDialog--password-visible" title="The “password-visible” property">password-visible</a></td>
 <td class="property_flags">Read</td>
 </tr>
 <tr>
-<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></td>
+<td class="property_type"><span class="type">gboolean</span></td>
 <td class="property_name"><a class="link" href="GcrPromptDialog.html#GcrPromptDialog--warning-visible" title="The “warning-visible” property">warning-visible</a></td>
 <td class="property_flags">Read</td>
 </tr>
@@ -68,7 +68,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrPromptDialog.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -87,8 +87,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrPromptDialog.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
         <span class="lineart">╰──</span> GtkWidget
             <span class="lineart">╰──</span> GtkContainer
                 <span class="lineart">╰──</span> GtkBin
@@ -129,18 +129,14 @@ dialog between prompts, then the dialog will be hidden.</p>
 </pre>
 <p>The class for <a class="link" href="GcrPromptDialog.html" title="GcrPromptDialog"><span class="type">GcrPromptDialog</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.9.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrPromptDialogClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
 <col width="200px" class="struct_members_annotations">
 </colgroup>
-<tbody><tr>
-<td class="struct_member_name"><p><span class="type">GtkDialogClass</span> <em class="structfield"><code><a name="GcrPromptDialogClass.parent-class"></a>parent_class</code></em>;</p></td>
-<td class="struct_member_description"><p>parent class</p></td>
-<td class="struct_member_annotations"> </td>
-</tr></tbody>
+<tbody></tbody>
 </table></div>
 </div>
 </div>
@@ -149,7 +145,7 @@ dialog between prompts, then the dialog will be hidden.</p>
 <a name="GcrPromptDialog.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="GcrPromptDialog--choice-visible"></a><h3>The <code class="literal">“choice-visible”</code> property</h3>
-<pre class="programlisting">  “choice-visible”           <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “choice-visible”           <span class="type">gboolean</span></pre>
 <p>Whether the choice check box is visible or not.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -157,7 +153,7 @@ dialog between prompts, then the dialog will be hidden.</p>
 <hr>
 <div class="refsect2">
 <a name="GcrPromptDialog--confirm-visible"></a><h3>The <code class="literal">“confirm-visible”</code> property</h3>
-<pre class="programlisting">  “confirm-visible”          <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “confirm-visible”          <span class="type">gboolean</span></pre>
 <p>Whether the password confirm entry is visible or not.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -165,7 +161,7 @@ dialog between prompts, then the dialog will be hidden.</p>
 <hr>
 <div class="refsect2">
 <a name="GcrPromptDialog--password-visible"></a><h3>The <code class="literal">“password-visible”</code> property</h3>
-<pre class="programlisting">  “password-visible”         <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “password-visible”         <span class="type">gboolean</span></pre>
 <p>Whether the password entry is visible or not.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -173,7 +169,7 @@ dialog between prompts, then the dialog will be hidden.</p>
 <hr>
 <div class="refsect2">
 <a name="GcrPromptDialog--warning-visible"></a><h3>The <code class="literal">“warning-visible”</code> property</h3>
-<pre class="programlisting">  “warning-visible”          <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a></pre>
+<pre class="programlisting">  “warning-visible”          <span class="type">gboolean</span></pre>
 <p>Whether the warning label is visible or not.</p>
 <p>Flags: Read</p>
 <p>Default value: FALSE</p>
@@ -181,6 +177,6 @@ dialog between prompts, then the dialog will be hidden.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

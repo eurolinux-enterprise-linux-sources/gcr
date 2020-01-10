@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<book xmlns="http://www.devhelp.net/book" title="Gck Library Reference Manual" link="index.html" author="" name="gck" version="2" language="c">
+<book xmlns="http://www.devhelp.net/book" title="Gck Library Reference Manual" link="index.html" author="" name="gck" version="2" language="c" online="http://developer.gnome.org/gck/stable/">
   <chapters>
     <sub name="PKCS#11 GObject Bindings" link="reference.html">
       <sub name="GckModule" link="GckModule.html"/>
@@ -324,21 +324,21 @@
     <keyword type="function" name="gck_modules_objects_for_uri ()" link="gck-GckModule-lists.html#gck-modules-objects-for-uri"/>
     <keyword type="function" name="gck_modules_token_for_uri ()" link="gck-GckModule-lists.html#gck-modules-token-for-uri"/>
     <keyword type="function" name="gck_modules_tokens_for_uri ()" link="gck-GckModule-lists.html#gck-modules-tokens-for-uri"/>
-    <keyword type="macro" name="GCK_ERROR" link="gck-Errors.html#GCK-ERROR:CAPS"/>
     <keyword type="function" name="gck_message_from_rv ()" link="gck-Errors.html#gck-message-from-rv"/>
     <keyword type="macro" name="GCK_VENDOR_CODE" link="gck-Errors.html#GCK-VENDOR-CODE:CAPS"/>
-    <keyword type="macro" name="GCK_URI_FOR_MODULE_WITH_VERSION" link="gck-PKCS11-URIs.html#GCK-URI-FOR-MODULE-WITH-VERSION:CAPS"/>
-    <keyword type="macro" name="GCK_URI_FOR_OBJECT_ON_TOKEN" link="gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT-ON-TOKEN:CAPS"/>
-    <keyword type="macro" name="GCK_URI_FOR_OBJECT_ON_TOKEN_AND_MODULE" link="gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT-ON-TOKEN-AND-MODULE:CAPS"/>
+    <keyword type="macro" name="GCK_ERROR" link="gck-Errors.html#GCK-ERROR:CAPS"/>
     <keyword type="function" name="gck_uri_data_new ()" link="gck-PKCS11-URIs.html#gck-uri-data-new"/>
     <keyword type="function" name="gck_uri_parse ()" link="gck-PKCS11-URIs.html#gck-uri-parse"/>
     <keyword type="function" name="gck_uri_build ()" link="gck-PKCS11-URIs.html#gck-uri-build"/>
     <keyword type="function" name="gck_uri_data_copy ()" link="gck-PKCS11-URIs.html#gck-uri-data-copy"/>
     <keyword type="function" name="gck_uri_data_free ()" link="gck-PKCS11-URIs.html#gck-uri-data-free"/>
-    <keyword type="macro" name="GCK_URI_ERROR" link="gck-PKCS11-URIs.html#GCK-URI-ERROR:CAPS"/>
     <keyword type="struct" name="struct GckUriData" link="gck-PKCS11-URIs.html#GckUriData-struct"/>
     <keyword type="enum" name="enum GckUriError" link="gck-PKCS11-URIs.html#GckUriError"/>
     <keyword type="enum" name="enum GckUriFlags" link="gck-PKCS11-URIs.html#GckUriFlags"/>
+    <keyword type="macro" name="GCK_URI_FOR_MODULE_WITH_VERSION" link="gck-PKCS11-URIs.html#GCK-URI-FOR-MODULE-WITH-VERSION:CAPS"/>
+    <keyword type="macro" name="GCK_URI_FOR_OBJECT_ON_TOKEN" link="gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT-ON-TOKEN:CAPS"/>
+    <keyword type="macro" name="GCK_URI_FOR_OBJECT_ON_TOKEN_AND_MODULE" link="gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT-ON-TOKEN-AND-MODULE:CAPS"/>
+    <keyword type="macro" name="GCK_URI_ERROR" link="gck-PKCS11-URIs.html#GCK-URI-ERROR:CAPS"/>
     <keyword type="macro" name="GCK_CHECK_VERSION()" link="gck-Library-Utilities.html#GCK-CHECK-VERSION:CAPS"/>
     <keyword type="macro" name="GCK_MAJOR_VERSION" link="gck-Library-Utilities.html#GCK-MAJOR-VERSION:CAPS"/>
     <keyword type="macro" name="GCK_MICRO_VERSION" link="gck-Library-Utilities.html#GCK-MICRO-VERSION:CAPS"/>
@@ -349,8 +349,8 @@
     <keyword type="function" name="gck_string_to_chars ()" link="gck-Miscellaneous-Functions.html#gck-string-to-chars"/>
     <keyword type="function" name="gck_value_to_boolean ()" link="gck-Miscellaneous-Functions.html#gck-value-to-boolean"/>
     <keyword type="function" name="gck_value_to_ulong ()" link="gck-Miscellaneous-Functions.html#gck-value-to-ulong"/>
-    <keyword type="macro" name="GCK_INVALID" link="gck-Miscellaneous-Functions.html#GCK-INVALID:CAPS"/>
     <keyword type="enum" name="enum GckError" link="gck-Miscellaneous-Functions.html#GckError"/>
+    <keyword type="macro" name="GCK_INVALID" link="gck-Miscellaneous-Functions.html#GCK-INVALID:CAPS"/>
     <keyword type="constant" name="GCK_SESSION_READ_ONLY" link="GckSlot.html#GCK-SESSION-READ-ONLY:CAPS"/>
     <keyword type="constant" name="GCK_SESSION_READ_WRITE" link="GckSlot.html#GCK-SESSION-READ-WRITE:CAPS"/>
     <keyword type="constant" name="GCK_SESSION_LOGIN_USER" link="GckSlot.html#GCK-SESSION-LOGIN-USER:CAPS"/>
@@ -368,5 +368,61 @@
     <keyword type="constant" name="GCK_URI_WITH_VERSION" link="gck-PKCS11-URIs.html#GCK-URI-WITH-VERSION:CAPS"/>
     <keyword type="constant" name="GCK_URI_FOR_ANY" link="gck-PKCS11-URIs.html#GCK-URI-FOR-ANY:CAPS"/>
     <keyword type="constant" name="GCK_ERROR_MODULE_PROBLEM" link="gck-Miscellaneous-Functions.html#GCK-ERROR-MODULE-PROBLEM:CAPS"/>
+    <keyword type="member" name="GckModuleInfo-struct.pkcs11-version-major" link="GckModule.html#GckModuleInfo-struct.pkcs11-version-major"/>
+    <keyword type="member" name="GckModuleInfo-struct.pkcs11-version-minor" link="GckModule.html#GckModuleInfo-struct.pkcs11-version-minor"/>
+    <keyword type="member" name="GckModuleInfo-struct.manufacturer-id" link="GckModule.html#GckModuleInfo-struct.manufacturer-id"/>
+    <keyword type="member" name="GckModuleInfo-struct.flags" link="GckModule.html#GckModuleInfo-struct.flags"/>
+    <keyword type="member" name="GckModuleInfo-struct.library-description" link="GckModule.html#GckModuleInfo-struct.library-description"/>
+    <keyword type="member" name="GckModuleInfo-struct.library-version-major" link="GckModule.html#GckModuleInfo-struct.library-version-major"/>
+    <keyword type="member" name="GckModuleInfo-struct.library-version-minor" link="GckModule.html#GckModuleInfo-struct.library-version-minor"/>
+    <keyword type="member" name="GckMechanismInfo-struct.min-key-size" link="GckSlot.html#GckMechanismInfo-struct.min-key-size"/>
+    <keyword type="member" name="GckMechanismInfo-struct.max-key-size" link="GckSlot.html#GckMechanismInfo-struct.max-key-size"/>
+    <keyword type="member" name="GckMechanismInfo-struct.flags" link="GckSlot.html#GckMechanismInfo-struct.flags"/>
+    <keyword type="member" name="GckSlotInfo-struct.slot-description" link="GckSlot.html#GckSlotInfo-struct.slot-description"/>
+    <keyword type="member" name="GckSlotInfo-struct.manufacturer-id" link="GckSlot.html#GckSlotInfo-struct.manufacturer-id"/>
+    <keyword type="member" name="GckSlotInfo-struct.flags" link="GckSlot.html#GckSlotInfo-struct.flags"/>
+    <keyword type="member" name="GckSlotInfo-struct.hardware-version-major" link="GckSlot.html#GckSlotInfo-struct.hardware-version-major"/>
+    <keyword type="member" name="GckSlotInfo-struct.hardware-version-minor" link="GckSlot.html#GckSlotInfo-struct.hardware-version-minor"/>
+    <keyword type="member" name="GckSlotInfo-struct.firmware-version-major" link="GckSlot.html#GckSlotInfo-struct.firmware-version-major"/>
+    <keyword type="member" name="GckSlotInfo-struct.firmware-version-minor" link="GckSlot.html#GckSlotInfo-struct.firmware-version-minor"/>
+    <keyword type="member" name="GckTokenInfo-struct.label" link="GckSlot.html#GckTokenInfo-struct.label"/>
+    <keyword type="member" name="GckTokenInfo-struct.manufacturer-id" link="GckSlot.html#GckTokenInfo-struct.manufacturer-id"/>
+    <keyword type="member" name="GckTokenInfo-struct.model" link="GckSlot.html#GckTokenInfo-struct.model"/>
+    <keyword type="member" name="GckTokenInfo-struct.serial-number" link="GckSlot.html#GckTokenInfo-struct.serial-number"/>
+    <keyword type="member" name="GckTokenInfo-struct.flags" link="GckSlot.html#GckTokenInfo-struct.flags"/>
+    <keyword type="member" name="GckTokenInfo-struct.max-session-count" link="GckSlot.html#GckTokenInfo-struct.max-session-count"/>
+    <keyword type="member" name="GckTokenInfo-struct.session-count" link="GckSlot.html#GckTokenInfo-struct.session-count"/>
+    <keyword type="member" name="GckTokenInfo-struct.max-rw-session-count" link="GckSlot.html#GckTokenInfo-struct.max-rw-session-count"/>
+    <keyword type="member" name="GckTokenInfo-struct.rw-session-count" link="GckSlot.html#GckTokenInfo-struct.rw-session-count"/>
+    <keyword type="member" name="GckTokenInfo-struct.max-pin-len" link="GckSlot.html#GckTokenInfo-struct.max-pin-len"/>
+    <keyword type="member" name="GckTokenInfo-struct.min-pin-len" link="GckSlot.html#GckTokenInfo-struct.min-pin-len"/>
+    <keyword type="member" name="GckTokenInfo-struct.total-public-memory" link="GckSlot.html#GckTokenInfo-struct.total-public-memory"/>
+    <keyword type="member" name="GckTokenInfo-struct.free-public-memory" link="GckSlot.html#GckTokenInfo-struct.free-public-memory"/>
+    <keyword type="member" name="GckTokenInfo-struct.total-private-memory" link="GckSlot.html#GckTokenInfo-struct.total-private-memory"/>
+    <keyword type="member" name="GckTokenInfo-struct.free-private-memory" link="GckSlot.html#GckTokenInfo-struct.free-private-memory"/>
+    <keyword type="member" name="GckTokenInfo-struct.hardware-version-major" link="GckSlot.html#GckTokenInfo-struct.hardware-version-major"/>
+    <keyword type="member" name="GckTokenInfo-struct.hardware-version-minor" link="GckSlot.html#GckTokenInfo-struct.hardware-version-minor"/>
+    <keyword type="member" name="GckTokenInfo-struct.firmware-version-major" link="GckSlot.html#GckTokenInfo-struct.firmware-version-major"/>
+    <keyword type="member" name="GckTokenInfo-struct.firmware-version-minor" link="GckSlot.html#GckTokenInfo-struct.firmware-version-minor"/>
+    <keyword type="member" name="GckTokenInfo-struct.utc-time" link="GckSlot.html#GckTokenInfo-struct.utc-time"/>
+    <keyword type="member" name="GckSessionInfo-struct.slot-id" link="GckSession.html#GckSessionInfo-struct.slot-id"/>
+    <keyword type="member" name="GckSessionInfo-struct.state" link="GckSession.html#GckSessionInfo-struct.state"/>
+    <keyword type="member" name="GckSessionInfo-struct.flags" link="GckSession.html#GckSessionInfo-struct.flags"/>
+    <keyword type="member" name="GckSessionInfo-struct.device-error" link="GckSession.html#GckSessionInfo-struct.device-error"/>
+    <keyword type="member" name="GckMechanism.type" link="GckSession.html#GckMechanism.type"/>
+    <keyword type="member" name="GckMechanism.parameter" link="GckSession.html#GckMechanism.parameter"/>
+    <keyword type="member" name="GckMechanism.n-parameter" link="GckSession.html#GckMechanism.n-parameter"/>
+    <keyword type="member" name="GckObjectClass.parent" link="GckObject.html#GckObjectClass.parent"/>
+    <keyword type="member" name="GckAttribute.type" link="gck-GckAttribute.html#GckAttribute.type"/>
+    <keyword type="member" name="GckAttribute.value" link="gck-GckAttribute.html#GckAttribute.value"/>
+    <keyword type="member" name="GckAttribute.length" link="gck-GckAttribute.html#GckAttribute.length"/>
+    <keyword type="member" name="GckObjectCacheIface.interface" link="GckObjectCache.html#GckObjectCacheIface.interface"/>
+    <keyword type="member" name="GckObjectCacheIface.default-types" link="GckObjectCache.html#GckObjectCacheIface.default-types"/>
+    <keyword type="member" name="GckObjectCacheIface.n-default-types" link="GckObjectCache.html#GckObjectCacheIface.n-default-types"/>
+    <keyword type="member" name="GckObjectCacheIface.fill" link="GckObjectCache.html#GckObjectCacheIface.fill"/>
+    <keyword type="member" name="GckUriData-struct.any-unrecognized" link="gck-PKCS11-URIs.html#GckUriData-struct.any-unrecognized"/>
+    <keyword type="member" name="GckUriData-struct.module-info" link="gck-PKCS11-URIs.html#GckUriData-struct.module-info"/>
+    <keyword type="member" name="GckUriData-struct.token-info" link="gck-PKCS11-URIs.html#GckUriData-struct.token-info"/>
+    <keyword type="member" name="GckUriData-struct.attributes" link="gck-PKCS11-URIs.html#GckUriData-struct.attributes"/>
   </functions>
 </book>

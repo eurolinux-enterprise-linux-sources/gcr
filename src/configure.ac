@@ -1,6 +1,6 @@
 
 m4_define([gcr_major], [3])
-m4_define([gcr_minor], [20])
+m4_define([gcr_minor], [28])
 m4_define([gcr_micro], [0])
 
 AC_PREREQ([2.63])
@@ -96,6 +96,7 @@ AC_SUBST(GLIB_LIBS)
 GLIB_GSETTINGS
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
+AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
 GTK_DOC_CHECK(1.9)
 

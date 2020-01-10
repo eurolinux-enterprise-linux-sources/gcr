@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GcrViewer: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrRenderer.html" title="GcrRenderer">
 <link rel="next" href="GcrViewerWidget.html" title="GcrViewerWidget">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GcrViewer.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+<span class="returnvalue">guint</span>
 </td>
 <td class="function_name">
 <a class="link" href="GcrViewer.html#gcr-viewer-count-renderers" title="gcr_viewer_count_renderers ()">gcr_viewer_count_renderers</a> <span class="c_punctuation">()</span>
@@ -102,7 +102,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrViewer.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -121,7 +121,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrViewer.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/dueno/jhbuild/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GcrViewer
 </pre>
 </div>
@@ -149,9 +149,9 @@ gcr_viewer_new (<em class="parameter"><code><span class="type">void</span></code
 <p>Get an implementation of <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> that supports a view
 of multiple renderers.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.2.5"></a><h4>Returns</h4>
-<p> a newly allocated <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a>, which should be
-released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<a name="gcr-viewer-new.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a>, which should be
+released with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -163,8 +163,8 @@ gcr_viewer_new_scrolled (<em class="parameter"><code><span class="type">void</sp
 <p>Get an implementation of <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> that supports a scrolled view
 of multiple renderers.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.3.5"></a><h4>Returns</h4>
-<p> a <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> which is also a <span class="type">GtkWidget</span>. </p>
+<a name="gcr-viewer-new-scrolled.returns"></a><h4>Returns</h4>
+<p>a <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> which is also a <span class="type">GtkWidget</span>. </p>
 <p><span class="annotation">[<acronym title="Alias for transfer none, used for objects with floating refs."><span class="acronym">transfer floating</span></acronym>]</span></p>
 </div>
 </div>
@@ -176,8 +176,8 @@ gcr_viewer_add_renderer (<em class="parameter"><code><a class="link" href="GcrVi
                          <em class="parameter"><code><a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="type">GcrRenderer</span></a> *renderer</code></em>);</pre>
 <p>Add a renderer to this viewer.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-viewer-add-renderer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -207,8 +207,8 @@ gcr_viewer_insert_renderer (<em class="parameter"><code><a class="link" href="Gc
                             <em class="parameter"><code><a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="type">GcrRenderer</span></a> *before</code></em>);</pre>
 <p>Insert a renderer at a specific point in the viewer</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-viewer-insert-renderer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -227,7 +227,7 @@ gcr_viewer_insert_renderer (<em class="parameter"><code><a class="link" href="Gc
 </tr>
 <tr>
 <td class="parameter_name"><p>before</p></td>
-<td class="parameter_description"><p> the renderer to insert before. </p></td>
+<td class="parameter_description"><p>the renderer to insert before. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -242,8 +242,8 @@ gcr_viewer_remove_renderer (<em class="parameter"><code><a class="link" href="Gc
                             <em class="parameter"><code><a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="type">GcrRenderer</span></a> *renderer</code></em>);</pre>
 <p>Remove a renderer from this viewer.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-viewer-remove-renderer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -267,12 +267,12 @@ gcr_viewer_remove_renderer (<em class="parameter"><code><a class="link" href="Gc
 <hr>
 <div class="refsect2">
 <a name="gcr-viewer-count-renderers"></a><h3>gcr_viewer_count_renderers ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
+<pre class="programlisting"><span class="returnvalue">guint</span>
 gcr_viewer_count_renderers (<em class="parameter"><code><a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> *viewer</code></em>);</pre>
 <p>Get the number of renderers present in the viewer.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-viewer-count-renderers.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -286,7 +286,7 @@ gcr_viewer_count_renderers (<em class="parameter"><code><a class="link" href="Gc
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.8.7.6"></a><h4>Returns</h4>
+<a name="gcr-viewer-count-renderers.returns"></a><h4>Returns</h4>
 <p> The number of renderers.</p>
 </div>
 </div>
@@ -295,12 +295,12 @@ gcr_viewer_count_renderers (<em class="parameter"><code><a class="link" href="Gc
 <a name="gcr-viewer-get-renderer"></a><h3>gcr_viewer_get_renderer ()</h3>
 <pre class="programlisting"><a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="returnvalue">GcrRenderer</span></a> *
 gcr_viewer_get_renderer (<em class="parameter"><code><a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a> *viewer</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index_</code></em>);</pre>
+                         <em class="parameter"><code><span class="type">guint</span> index_</code></em>);</pre>
 <p>Get a pointer to the renderer at the given index. It is an error to request
 an index that is out of bounds.</p>
 <div class="refsect3">
-<a name="id-1.4.10.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-viewer-get-renderer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -321,8 +321,8 @@ an index that is out of bounds.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.10.8.8.6"></a><h4>Returns</h4>
-<p> the render, owned by the viewer. </p>
+<a name="gcr-viewer-get-renderer.returns"></a><h4>Returns</h4>
+<p>the render, owned by the viewer. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -358,8 +358,8 @@ an index that is out of bounds.</p>
 </pre>
 <p>The interface for <a class="link" href="GcrViewer.html" title="GcrViewer"><span class="type">GcrViewer</span></a></p>
 <div class="refsect3">
-<a name="id-1.4.10.9.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrViewerIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -367,7 +367,7 @@ an index that is out of bounds.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="GcrViewerIface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GcrViewerIface.parent"></a>parent</code></em>;</p></td>
 <td class="struct_member_description"><p>The parent interface</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -403,6 +403,6 @@ an index that is out of bounds.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GcrCertificateRequest: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="certificates.html" title="Part I. Certificates">
 <link rel="prev" href="GcrCertificateChain.html" title="GcrCertificateChain">
 <link rel="next" href="collections.html" title="Part II. Collections">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gcr-GcrCertificateRequest.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -41,7 +41,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-capable" title="gcr_certificate_request_capable ()">gcr_certificate_request_capable</a> <span class="c_punctuation">()</span>
@@ -57,7 +57,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-capable-finish" title="gcr_certificate_request_capable_finish ()">gcr_certificate_request_capable_finish</a> <span class="c_punctuation">()</span>
@@ -81,7 +81,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="http://developer.gnome.org/gck/stable/GckObject.html"><span class="returnvalue">GckObject</span></a> *
+<span class="returnvalue">GckObject</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-get-private-key" title="gcr_certificate_request_get_private_key ()">gcr_certificate_request_get_private_key</a> <span class="c_punctuation">()</span>
@@ -97,7 +97,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-complete" title="gcr_certificate_request_complete ()">gcr_certificate_request_complete</a> <span class="c_punctuation">()</span>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-complete-finish" title="gcr_certificate_request_complete_finish ()">gcr_certificate_request_complete_finish</a> <span class="c_punctuation">()</span>
@@ -121,7 +121,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guchar"><span class="returnvalue">guchar</span></a> *
+<span class="returnvalue">guchar</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-encode" title="gcr_certificate_request_encode ()">gcr_certificate_request_encode</a> <span class="c_punctuation">()</span>
@@ -132,7 +132,7 @@
 </div>
 <div class="refsect1">
 <a name="gcr-GcrCertificateRequest.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -163,16 +163,16 @@ with <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-reques
 <a name="gcr-GcrCertificateRequest.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="gcr-certificate-request-capable"></a><h3>gcr_certificate_request_capable ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
-gcr_certificate_request_capable (<em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckObject.html"><span class="type">GckObject</span></a> *private_key</code></em>,
-                                 <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gcr_certificate_request_capable (<em class="parameter"><code><span class="type">GckObject</span> *private_key</code></em>,
+                                 <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                 <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Check whether <a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> is capable of creating a request
 for the given <em class="parameter"><code>private_key</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-capable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -198,7 +198,7 @@ for the given <em class="parameter"><code>private_key</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.2.6"></a><h4>Returns</h4>
+<a name="gcr-certificate-request-capable.returns"></a><h4>Returns</h4>
 <p> whether a request can be created</p>
 </div>
 </div>
@@ -206,16 +206,16 @@ for the given <em class="parameter"><code>private_key</code></em>
 <div class="refsect2">
 <a name="gcr-certificate-request-capable-async"></a><h3>gcr_certificate_request_capable_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-gcr_certificate_request_capable_async (<em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckObject.html"><span class="type">GckObject</span></a> *private_key</code></em>,
-                                       <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                       <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
-                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+gcr_certificate_request_capable_async (<em class="parameter"><code><span class="type">GckObject</span> *private_key</code></em>,
+                                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                       <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Asynchronously check whether <a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> is capable of creating
 a request for the given <em class="parameter"><code>private_key</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-capable-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -249,16 +249,16 @@ a request for the given <em class="parameter"><code>private_key</code></em>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-request-capable-finish"></a><h3>gcr_certificate_request_capable_finish ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 gcr_certificate_request_capable_finish
-                               (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                               (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Get the result for asynchronously check whether <a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> is
 capable of creating a request for the given <em class="parameter"><code>private_key</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-capable-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -279,7 +279,7 @@ capable of creating a request for the given <em class="parameter"><code>private_
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.4.6"></a><h4>Returns</h4>
+<a name="gcr-certificate-request-capable-finish.returns"></a><h4>Returns</h4>
 <p> whether a request can be created</p>
 </div>
 </div>
@@ -288,11 +288,11 @@ capable of creating a request for the given <em class="parameter"><code>private_
 <a name="gcr-certificate-request-prepare"></a><h3>gcr_certificate_request_prepare ()</h3>
 <pre class="programlisting"><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="returnvalue">GcrCertificateRequest</span></a> *
 gcr_certificate_request_prepare (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequestFormat" title="enum GcrCertificateRequestFormat"><span class="type">GcrCertificateRequestFormat</span></a> format</code></em>,
-                                 <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckObject.html"><span class="type">GckObject</span></a> *private_key</code></em>);</pre>
+                                 <em class="parameter"><code><span class="type">GckObject</span> *private_key</code></em>);</pre>
 <p>Create a new certificate request, in the given format for the private key.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-prepare.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -313,8 +313,8 @@ gcr_certificate_request_prepare (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.5.6"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> request. </p>
+<a name="gcr-certificate-request-prepare.returns"></a><h4>Returns</h4>
+<p>a new <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> request. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -325,8 +325,8 @@ gcr_certificate_request_prepare (<em class="parameter"><code><a class="link" hre
 gcr_certificate_request_get_format (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>);</pre>
 <p>Get the format of this certificate request.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-get-format.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -340,20 +340,20 @@ gcr_certificate_request_get_format (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.6.6"></a><h4>Returns</h4>
+<a name="gcr-certificate-request-get-format.returns"></a><h4>Returns</h4>
 <p> the format</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-request-get-private-key"></a><h3>gcr_certificate_request_get_private_key ()</h3>
-<pre class="programlisting"><a href="http://developer.gnome.org/gck/stable/GckObject.html"><span class="returnvalue">GckObject</span></a> *
+<pre class="programlisting"><span class="returnvalue">GckObject</span> *
 gcr_certificate_request_get_private_key
                                (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>);</pre>
 <p>Get the private key this certificate request is for.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-get-private-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -367,8 +367,8 @@ gcr_certificate_request_get_private_key
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.7.6"></a><h4>Returns</h4>
-<p> the private key,. </p>
+<a name="gcr-certificate-request-get-private-key.returns"></a><h4>Returns</h4>
+<p>the private key,. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -377,11 +377,11 @@ gcr_certificate_request_get_private_key
 <a name="gcr-certificate-request-set-cn"></a><h3>gcr_certificate_request_set_cn ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_certificate_request_set_cn (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>,
-                                <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *cn</code></em>);</pre>
+                                <em class="parameter"><code>const <span class="type">gchar</span> *cn</code></em>);</pre>
 <p>Set the common name encoded in the certificate request.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-set-cn.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -405,16 +405,16 @@ gcr_certificate_request_set_cn (<em class="parameter"><code><a class="link" href
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-request-complete"></a><h3>gcr_certificate_request_complete ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 gcr_certificate_request_complete (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>,
-                                  <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                  <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                  <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Complete and sign a certificate request, so that it can be encoded
 and sent to a certificate authority.</p>
 <p>This call may block as it signs the request using the private key.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-complete.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -440,7 +440,7 @@ and sent to a certificate authority.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.9.7"></a><h4>Returns</h4>
+<a name="gcr-certificate-request-complete.returns"></a><h4>Returns</h4>
 <p> whether certificate request was successfully completed or not</p>
 </div>
 </div>
@@ -450,15 +450,15 @@ and sent to a certificate authority.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_certificate_request_complete_async
                                (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Asynchronously complete and sign a certificate request, so that it can
 be encoded and sent to a certificate authority.</p>
 <p>This call will return immediately and complete later.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-complete-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -492,16 +492,16 @@ be encoded and sent to a certificate authority.</p>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-request-complete-finish"></a><h3>gcr_certificate_request_complete_finish ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 gcr_certificate_request_complete_finish
                                (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Finish an asynchronous operation to complete and sign a certificate
 request.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-complete-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -527,27 +527,27 @@ request.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.11.6"></a><h4>Returns</h4>
+<a name="gcr-certificate-request-complete-finish.returns"></a><h4>Returns</h4>
 <p> whether certificate request was successfully completed or not</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-request-encode"></a><h3>gcr_certificate_request_encode ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guchar"><span class="returnvalue">guchar</span></a> *
+<pre class="programlisting"><span class="returnvalue">guchar</span> *
 gcr_certificate_request_encode (<em class="parameter"><code><a class="link" href="gcr-GcrCertificateRequest.html#GcrCertificateRequest" title="GcrCertificateRequest"><span class="type">GcrCertificateRequest</span></a> *self</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> textual</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> *length</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">gboolean</span> textual</code></em>,
+                                <em class="parameter"><code><span class="type">gsize</span> *length</code></em>);</pre>
 <p>Encode the certificate request. It must have been completed with
 <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-complete" title="gcr_certificate_request_complete ()"><code class="function">gcr_certificate_request_complete()</code></a> or <a class="link" href="gcr-GcrCertificateRequest.html#gcr-certificate-request-complete-async" title="gcr_certificate_request_complete_async ()"><code class="function">gcr_certificate_request_complete_async()</code></a></p>
 <p>If <em class="parameter"><code>textual</code></em>
- is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, the output is a DER encoded certificate request.</p>
+ is <code class="literal">FALSE</code>, the output is a DER encoded certificate request.</p>
 <p>If <em class="parameter"><code>textual</code></em>
- is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the output is encoded as text. For PKCS#10 requests this
+ is <code class="literal">TRUE</code>, the output is encoded as text. For PKCS#10 requests this
 is done using the OpenSSL style PEM encoding.</p>
 <div class="refsect3">
-<a name="id-1.2.6.6.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-request-encode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -573,8 +573,8 @@ is done using the OpenSSL style PEM encoding.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.6.6.12.8"></a><h4>Returns</h4>
-<p> the encoded certificate request. </p>
+<a name="gcr-certificate-request-encode.returns"></a><h4>Returns</h4>
+<p>the encoded certificate request. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></p>
 </div>
 </div>
@@ -591,8 +591,8 @@ is done using the OpenSSL style PEM encoding.</p>
 <a name="GcrCertificateRequestFormat"></a><h3>enum GcrCertificateRequestFormat</h3>
 <p>The format of a certificate request. Currently only PKCS#10 is supported.</p>
 <div class="refsect3">
-<a name="id-1.2.6.7.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrCertificateRequestFormat.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -611,6 +611,6 @@ is done using the OpenSSL style PEM encoding.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

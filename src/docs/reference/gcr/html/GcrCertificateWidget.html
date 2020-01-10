@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GcrCertificateWidget: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="widgets.html" title="Part III. Widgets">
 <link rel="next" href="GcrKeyWidget.html" title="GcrKeyWidget">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,16 +36,12 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GcrCertificateWidget.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
 </colgroup>
 <tbody>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="GcrCertificateWidget.html#GCR-CERTIFICATE-COLUMNS:CAPS" title="GCR_CERTIFICATE_COLUMNS">GCR_CERTIFICATE_COLUMNS</a></td>
-</tr>
 <tr>
 <td class="function_type">
 <a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="returnvalue">GcrCertificateWidget</span></a> *
@@ -107,7 +103,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrCertificateWidget.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -116,7 +112,7 @@
 <tbody>
 <tr>
 <td class="property_type">
-<a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *</td>
+<span class="type">GckAttributes</span> *</td>
 <td class="property_name"><a class="link" href="GcrCertificateWidget.html#GcrCertificateWidget--attributes" title="The “attributes” property">attributes</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -128,7 +124,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *</td>
+<span class="type">GckAttributes</span> *</td>
 <td class="property_name"><a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer--attributes" title="The “attributes” property">attributes</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -140,7 +136,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
+<span class="type">gchar</span> *</td>
 <td class="property_name"><a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer--label" title="The “label” property">label</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -149,12 +145,16 @@
 </div>
 <a name="GcrCertificateRenderer"></a><div class="refsect1">
 <a name="GcrCertificateWidget.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
 </colgroup>
 <tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GcrCertificateWidget.html#GCR-CERTIFICATE-COLUMNS:CAPS" title="GCR_CERTIFICATE_COLUMNS">GCR_CERTIFICATE_COLUMNS</a></td>
+</tr>
 <tr>
 <td class="datatype_keyword">struct</td>
 <td class="function_name"><a class="link" href="GcrCertificateWidget.html#GcrCertificateWidget-struct" title="struct GcrCertificateWidget">GcrCertificateWidget</a></td>
@@ -176,8 +176,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrCertificateWidget.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+<pre class="screen">    GObject
+    <span class="lineart">├──</span> GInitiallyUnowned
     <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
     <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
     <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkBin
@@ -208,22 +208,13 @@ create the viewer and add renderers to it.</p>
 <div class="refsect1">
 <a name="GcrCertificateWidget.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
-<a name="GCR-CERTIFICATE-COLUMNS:CAPS"></a><h3>GCR_CERTIFICATE_COLUMNS</h3>
-<pre class="programlisting">#define GCR_CERTIFICATE_COLUMNS                 (gcr_certificate_get_columns ())
-</pre>
-<p>The columns that are valid for a certificate. This is to be used with
-the <a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a> or <a class="link" href="GcrCollectionModel.html" title="GcrCollectionModel"><span class="type">GcrCollectionModel</span></a>.</p>
-<p>This is an array of <a class="link" href="gcr-GcrColumn.html#GcrColumn" title="GcrColumn"><span class="type">GcrColumn</span></a>, owned by the gcr library.</p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="gcr-certificate-widget-new"></a><h3>gcr_certificate_widget_new ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="returnvalue">GcrCertificateWidget</span></a> *
 gcr_certificate_widget_new (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>);</pre>
 <p>Create a new certificate widget which displays a given certificate.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-widget-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -231,15 +222,15 @@ gcr_certificate_widget_new (<em class="parameter"><code><a class="link" href="Gc
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>certificate</p></td>
-<td class="parameter_description"><p> certificate to display, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
+<td class="parameter_description"><p>certificate to display, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.10.3.6"></a><h4>Returns</h4>
-<p> a newly allocated <a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="type">GcrCertificateWidget</span></a>, which
-should be freed with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<a name="gcr-certificate-widget-new.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="type">GcrCertificateWidget</span></a>, which
+should be freed with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -251,8 +242,8 @@ gcr_certificate_widget_get_certificate
                                (<em class="parameter"><code><a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="type">GcrCertificateWidget</span></a> *self</code></em>);</pre>
 <p>Get the certificate displayed in the widget.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-widget-get-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -266,8 +257,8 @@ gcr_certificate_widget_get_certificate
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.10.4.6"></a><h4>Returns</h4>
-<p> the certificate. </p>
+<a name="gcr-certificate-widget-get-certificate.returns"></a><h4>Returns</h4>
+<p>the certificate. </p>
 <p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -280,8 +271,8 @@ gcr_certificate_widget_set_certificate
                                 <em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>);</pre>
 <p>Set the certificate displayed in the widget</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-widget-set-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -295,7 +286,7 @@ gcr_certificate_widget_set_certificate
 </tr>
 <tr>
 <td class="parameter_name"><p>certificate</p></td>
-<td class="parameter_description"><p> the certificate to display. </p></td>
+<td class="parameter_description"><p>the certificate to display. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -309,8 +300,8 @@ gcr_certificate_widget_set_certificate
 gcr_certificate_renderer_new (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>);</pre>
 <p>Create a new certificate renderer to display the certificate.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-renderer-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -324,9 +315,9 @@ gcr_certificate_renderer_new (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.10.6.6"></a><h4>Returns</h4>
-<p> a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
-should be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<a name="gcr-certificate-renderer-new.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
+should be released with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -335,14 +326,14 @@ should be released with <a href="https://developer.gnome.org/gobject/unstable/go
 <a name="gcr-certificate-renderer-new-for-attributes"></a><h3>gcr_certificate_renderer_new_for_attributes ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="returnvalue">GcrCertificateRenderer</span></a> *
 gcr_certificate_renderer_new_for_attributes
-                               (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
+                               (<em class="parameter"><code>const <span class="type">gchar</span> *label</code></em>,
                                 <em class="parameter"><code><span class="type">struct _GckAttributes</span> *attrs</code></em>);</pre>
 <p>Create a new certificate renderer to display the label and attributes. One
 of the attributes should be a CKA_VALUE type attribute containing a DER
 encoded certificate.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-renderer-new-for-attributes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -351,7 +342,7 @@ encoded certificate.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> the label to display. </p></td>
+<td class="parameter_description"><p>the label to display. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -363,9 +354,9 @@ encoded certificate.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.10.7.6"></a><h4>Returns</h4>
-<p> a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
-should be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<a name="gcr-certificate-renderer-new-for-attributes.returns"></a><h4>Returns</h4>
+<p>a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
+should be released with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -379,8 +370,8 @@ gcr_certificate_renderer_get_certificate
 explicitly set, then the renderer will return itself since it acts as
 a valid certificate.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-renderer-get-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -394,8 +385,8 @@ a valid certificate.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.2.10.8.6"></a><h4>Returns</h4>
-<p> The certificate, owned by the renderer. </p>
+<a name="gcr-certificate-renderer-get-certificate.returns"></a><h4>Returns</h4>
+<p>The certificate, owned by the renderer. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 </div>
@@ -408,8 +399,8 @@ gcr_certificate_renderer_set_certificate
                                 <em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>);</pre>
 <p>Set a certificate to display in the renderer.</p>
 <div class="refsect3">
-<a name="id-1.4.2.10.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-certificate-renderer-set-certificate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -423,7 +414,7 @@ gcr_certificate_renderer_set_certificate
 </tr>
 <tr>
 <td class="parameter_name"><p>certificate</p></td>
-<td class="parameter_description"><p> the certificate to display. </p></td>
+<td class="parameter_description"><p>the certificate to display. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -433,6 +424,15 @@ gcr_certificate_renderer_set_certificate
 </div>
 <div class="refsect1">
 <a name="GcrCertificateWidget.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GCR-CERTIFICATE-COLUMNS:CAPS"></a><h3>GCR_CERTIFICATE_COLUMNS</h3>
+<pre class="programlisting">#define GCR_CERTIFICATE_COLUMNS                 (gcr_certificate_get_columns ())
+</pre>
+<p>The columns that are valid for a certificate. This is to be used with
+the <a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a> or <a class="link" href="GcrCollectionModel.html" title="GcrCollectionModel"><span class="type">GcrCollectionModel</span></a>.</p>
+<p>This is an array of <a class="link" href="gcr-GcrColumn.html#GcrColumn" title="GcrColumn"><span class="type">GcrColumn</span></a>, owned by the gcr library.</p>
+</div>
+<hr>
 <div class="refsect2">
 <a name="GcrCertificateWidget-struct"></a><h3>struct GcrCertificateWidget</h3>
 <pre class="programlisting">struct GcrCertificateWidget;</pre>
@@ -461,18 +461,14 @@ gcr_certificate_renderer_set_certificate
 </pre>
 <p>The class for <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.2.11.5.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrCertificateRendererClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
 <col width="200px" class="struct_members_annotations">
 </colgroup>
-<tbody><tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="GcrCertificateRendererClass.parent-class"></a>parent_class</code></em>;</p></td>
-<td class="struct_member_description"><p>The parent class.</p></td>
-<td class="struct_member_annotations"> </td>
-</tr></tbody>
+<tbody></tbody>
 </table></div>
 </div>
 </div>
@@ -481,7 +477,7 @@ gcr_certificate_renderer_set_certificate
 <a name="GcrCertificateWidget.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="GcrCertificateWidget--attributes"></a><h3>The <code class="literal">“attributes”</code> property</h3>
-<pre class="programlisting">  “attributes”               <a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *</pre>
+<pre class="programlisting">  “attributes”               <span class="type">GckAttributes</span> *</pre>
 <p>Attributes which contain the certificate.</p>
 <p>Flags: Read / Write</p>
 </div>
@@ -495,7 +491,7 @@ gcr_certificate_renderer_set_certificate
 <hr>
 <div class="refsect2">
 <a name="GcrCertificateRenderer--attributes"></a><h3>The <code class="literal">“attributes”</code> property</h3>
-<pre class="programlisting">  “attributes”               <a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *</pre>
+<pre class="programlisting">  “attributes”               <span class="type">GckAttributes</span> *</pre>
 <p>The certificate attributes to display. One of the attributes must be
 a CKA_VALUE type attribute which contains a DER encoded certificate.</p>
 <p>Flags: Read / Write</p>
@@ -504,13 +500,13 @@ a CKA_VALUE type attribute which contains a DER encoded certificate.</p>
 <div class="refsect2">
 <a name="GcrCertificateRenderer--certificate"></a><h3>The <code class="literal">“certificate”</code> property</h3>
 <pre class="programlisting">  “certificate”              <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *</pre>
-<p>The certificate to display. May be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
+<p>The certificate to display. May be <code class="literal">NULL</code>.</p>
 <p>Flags: Read / Write</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GcrCertificateRenderer--label"></a><h3>The <code class="literal">“label”</code> property</h3>
-<pre class="programlisting">  “label”                    <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<pre class="programlisting">  “label”                    <span class="type">gchar</span> *</pre>
 <p>The label to display.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: ""</p>
@@ -518,6 +514,6 @@ a CKA_VALUE type attribute which contains a DER encoded certificate.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

@@ -3,14 +3,13 @@
 %endif
 
 Name:           gcr
-Version:        3.20.0
+Version:        3.28.0
 Release:        1%{?dist}
 Summary:        A library for bits of crypto UI and parsing
 
-Group:          Development/Libraries
 License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/CryptoGlue
-Source0:        https://download.gnome.org/sources/%{name}/3.20/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.28/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(gio-unix-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
@@ -29,8 +28,6 @@ BuildRequires:  /usr/bin/gpg2
 BuildRequires:  /usr/bin/valac
 BuildRequires:  /usr/bin/xsltproc
 
-Conflicts: gnome-keyring < 3.3.0
-
 %description
 gcr is a library for displaying certificates, and crypto UI, accessing
 key stores. It also provides a viewer for crypto files on the GNOME
@@ -40,7 +37,6 @@ gck is a library for accessing PKCS#11 modules like smart cards.
 
 %package devel
 Summary: Development files for gcr
-Group: Development/Libraries
 Requires: %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
@@ -64,12 +60,16 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/libmock-test-module.*
-desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/gcr-viewer.desktop
 %find_lang %{name}
 
 chrpath --delete $RPM_BUILD_ROOT%{_libdir}/lib*.so.*
 chrpath --delete $RPM_BUILD_ROOT%{_bindir}/gcr-viewer
 chrpath --delete $RPM_BUILD_ROOT%{_libexecdir}/gcr-prompter
+
+
+%check
+desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/gcr-viewer.desktop
+
 
 %post
 /sbin/ldconfig
@@ -109,10 +109,10 @@ fi
 %{_libdir}/libgcr-3.so.*
 %{_libdir}/libgcr-base-3.so.*
 %{_libdir}/libgcr-ui-3.so.*
-%{_datadir}/gcr-3
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/mime/packages/gcr-crypto-types.xml
 %{_libexecdir}/gcr-prompter
+%{_libexecdir}/gcr-ssh-askpass
 %{_datadir}/dbus-1/services/org.gnome.keyring.PrivatePrompter.service
 %{_datadir}/dbus-1/services/org.gnome.keyring.SystemPrompter.service
 %{_datadir}/applications/gcr-prompter.desktop
@@ -137,6 +137,10 @@ fi
 
 
 %changelog
+* Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 3.28.0-1
+- Update to 3.28.0
+- Resolves: #1567199
+
 * Fri Mar 25 2016 Kalev Lember <klember@redhat.com> - 3.20.0-1
 - Update to 3.20.0
 - Resolves: #1386859

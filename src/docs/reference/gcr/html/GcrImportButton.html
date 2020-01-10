@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GcrImportButton: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrComboSelector.html" title="GcrComboSelector">
 <link rel="next" href="GcrListSelector.html" title="GcrListSelector">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GcrImportButton.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -63,7 +63,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrImportButton.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -73,19 +73,19 @@
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GcrImportButton.html#GcrImportButton-imported" title="The “imported” signal">imported</a></td>
-<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+<td class="signal_flags">Run Last</td>
 </tr>
 <tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GcrImportButton.html#GcrImportButton-importing" title="The “importing” signal">importing</a></td>
-<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
+<td class="signal_flags">Run Last</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect1">
 <a name="GcrImportButton.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -104,8 +104,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrImportButton.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
-    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GInitiallyUnowned
         <span class="lineart">╰──</span> GtkWidget
             <span class="lineart">╰──</span> GtkContainer
                 <span class="lineart">╰──</span> GtkBin
@@ -130,11 +130,11 @@ a drop down to select which to import to.</p>
 <div class="refsect2">
 <a name="gcr-import-button-new"></a><h3>gcr_import_button_new ()</h3>
 <pre class="programlisting"><a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="returnvalue">GcrImportButton</span></a> *
-gcr_import_button_new (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>);</pre>
+gcr_import_button_new (<em class="parameter"><code>const <span class="type">gchar</span> *label</code></em>);</pre>
 <p>Create a new <a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.6.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-import-button-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -142,14 +142,14 @@ gcr_import_button_new (<em class="parameter"><code>const <a href="https://develo
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>label</p></td>
-<td class="parameter_description"><p> label to display on the button. </p></td>
+<td class="parameter_description"><p>label to display on the button. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.6.9.2.6"></a><h4>Returns</h4>
-<p> a newly created <a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a>. </p>
+<a name="gcr-import-button-new.returns"></a><h4>Returns</h4>
+<p>a newly created <a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -161,8 +161,8 @@ gcr_import_button_add_parsed (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><a class="link" href="GcrParser.html#GcrParsed" title="GcrParsed"><span class="type">GcrParsed</span></a> *parsed</code></em>);</pre>
 <p>Queue an item to import via the button</p>
 <div class="refsect3">
-<a name="id-1.4.6.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gcr-import-button-add-parsed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -207,19 +207,14 @@ gcr_import_button_add_parsed (<em class="parameter"><code><a class="link" href="
 </pre>
 <p>Class for <a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.4.6.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrImportButtonClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
 <col width="200px" class="struct_members_annotations">
 </colgroup>
 <tbody>
-<tr>
-<td class="struct_member_name"><p><span class="type">GtkButtonClass</span> <em class="structfield"><code><a name="GcrImportButtonClass.parent-class"></a>parent_class</code></em>;</p></td>
-<td class="struct_member_description"><p>The parent class</p></td>
-<td class="struct_member_annotations"> </td>
-</tr>
 <tr>
 <td class="struct_member_name"><p><em class="structfield"><code><a name="GcrImportButtonClass.importing"></a>importing</code></em> ()</p></td>
 <td class="struct_member_description"><p>Emitted when the import begins.</p></td>
@@ -241,13 +236,13 @@ gcr_import_button_add_parsed (<em class="parameter"><code><a class="link" href="
 <a name="GcrImportButton-imported"></a><h3>The <code class="literal">“imported”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a> *self,
-               <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>         *importer,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>          *error,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)</pre>
+               <span class="type">GObject</span>         *importer,
+               <span class="type">GError</span>          *error,
+               <span class="type">gpointer</span>         user_data)</pre>
 <p>Signal emitted when an import completes or fails.</p>
 <div class="refsect3">
-<a name="id-1.4.6.11.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrImportButton-imported.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -266,7 +261,7 @@ user_function (<a class="link" href="GcrImportButton.html" title="GcrImportButto
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>if import was successful <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, or an error</p></td>
+<td class="parameter_description"><p>if import was successful <code class="literal">NULL</code>, or an error</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -277,19 +272,19 @@ user_function (<a class="link" href="GcrImportButton.html" title="GcrImportButto
 </tbody>
 </table></div>
 </div>
-<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p>Flags: Run Last</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GcrImportButton-importing"></a><h3>The <code class="literal">“importing”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="GcrImportButton.html" title="GcrImportButton"><span class="type">GcrImportButton</span></a> *self,
-               <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>         *importer,
-               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)</pre>
+               <span class="type">GObject</span>         *importer,
+               <span class="type">gpointer</span>         user_data)</pre>
 <p>Signal emitted when an import begins.</p>
 <div class="refsect3">
-<a name="id-1.4.6.11.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GcrImportButton-importing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -314,11 +309,11 @@ user_function (<a class="link" href="GcrImportButton.html" title="GcrImportButto
 </tbody>
 </table></div>
 </div>
-<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
+<p>Flags: Run Last</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

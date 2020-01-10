@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GckModule lists: Gck Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gck Library Reference Manual">
 <link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
 <link rel="prev" href="GckEnumerator.html" title="GckEnumerator">
 <link rel="next" href="gck-Errors.html" title="Errors">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="gck-GckModule-lists.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -41,7 +41,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<span class="returnvalue">GList</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gck-GckModule-lists.html#gck-modules-initialize-registered" title="gck_modules_initialize_registered ()">gck_modules_initialize_registered</a> <span class="c_punctuation">()</span>
@@ -57,7 +57,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<span class="returnvalue">GList</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gck-GckModule-lists.html#gck-modules-initialize-registered-finish" title="gck_modules_initialize_registered_finish ()">gck_modules_initialize_registered_finish</a> <span class="c_punctuation">()</span>
@@ -81,7 +81,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<span class="returnvalue">GList</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gck-GckModule-lists.html#gck-modules-get-slots" title="gck_modules_get_slots ()">gck_modules_get_slots</a> <span class="c_punctuation">()</span>
@@ -97,7 +97,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<span class="returnvalue">GList</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gck-GckModule-lists.html#gck-modules-objects-for-uri" title="gck_modules_objects_for_uri ()">gck_modules_objects_for_uri</a> <span class="c_punctuation">()</span>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<span class="returnvalue">GList</span> *
 </td>
 <td class="function_name">
 <a class="link" href="gck-GckModule-lists.html#gck-modules-tokens-for-uri" title="gck_modules_tokens_for_uri ()">gck_modules_tokens_for_uri</a> <span class="c_punctuation">()</span>
@@ -131,13 +131,13 @@ operations on all of them.</p>
 <a name="gck-GckModule-lists.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="gck-modules-initialize-registered"></a><h3>gck_modules_initialize_registered ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
-gck_modules_initialize_registered (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_initialize_registered (<em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Load and initialize all the registered modules.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-initialize-registered.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -146,20 +146,20 @@ gck_modules_initialize_registered (<em class="parameter"><code><a href="https://
 <tbody>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p> optional cancellation object. </p></td>
+<td class="parameter_description"><p>optional cancellation object. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> location to place an error on failure. </p></td>
+<td class="parameter_description"><p>location to place an error on failure. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.2.6"></a><h4>Returns</h4>
-<p> A newly allocated list
+<a name="gck-modules-initialize-registered.returns"></a><h4>Returns</h4>
+<p>A newly allocated list
 of <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> objects, which should be released with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></p>
 </div>
@@ -169,13 +169,13 @@ of <a class="link" href="GckModule.html" title="GckModule"><span class="type">Gc
 <a name="gck-modules-initialize-registered-async"></a><h3>gck_modules_initialize_registered_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gck_modules_initialize_registered_async
-                               (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+                               (<em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Load and initialize all the registered modules asynchronously.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-initialize-registered-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -204,15 +204,15 @@ gck_modules_initialize_registered_async
 <hr>
 <div class="refsect2">
 <a name="gck-modules-initialize-registered-finish"></a><h3>gck_modules_initialize_registered_finish ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
+<pre class="programlisting"><span class="returnvalue">GList</span> *
 gck_modules_initialize_registered_finish
-                               (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                               (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Finishes the asynchronous operation to initialize the registered
 PKCS#11 modules.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-initialize-registered-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -233,8 +233,8 @@ PKCS#11 modules.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.4.6"></a><h4>Returns</h4>
-<p> a list of newly
+<a name="gck-modules-initialize-registered-finish.returns"></a><h4>Returns</h4>
+<p>a list of newly
 initialized <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> objects. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></p>
 </div>
@@ -243,7 +243,7 @@ initialized <a class="link" href="GckModule.html" title="GckModule"><span class=
 <div class="refsect2">
 <a name="gck-modules-enumerate-objects"></a><h3>gck_modules_enumerate_objects ()</h3>
 <pre class="programlisting"><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
-gck_modules_enumerate_objects (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
+gck_modules_enumerate_objects (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
                                <em class="parameter"><code><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *attrs</code></em>,
                                <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>);</pre>
 <p>Setup an enumerator for listing matching objects on the modules.</p>
@@ -251,8 +251,8 @@ gck_modules_enumerate_objects (<em class="parameter"><code><a href="https://deve
 <p>If the <em class="parameter"><code>attrs</code></em>
  <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-enumerate-objects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -261,7 +261,7 @@ gck_modules_enumerate_objects (<em class="parameter"><code><a href="https://deve
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -278,9 +278,9 @@ gck_modules_enumerate_objects (<em class="parameter"><code><a href="https://deve
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.5.8"></a><h4>Returns</h4>
-<p> A new enumerator, which should be released
-with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
+<a name="gck-modules-enumerate-objects.returns"></a><h4>Returns</h4>
+<p>A new enumerator, which should be released
+with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -288,16 +288,16 @@ with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Obje
 <div class="refsect2">
 <a name="gck-modules-enumerate-uri"></a><h3>gck_modules_enumerate_uri ()</h3>
 <pre class="programlisting"><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
-gck_modules_enumerate_uri (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                           <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
+gck_modules_enumerate_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
                            <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
-                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Enumerate objects that match a URI.</p>
 <p>This call will not block. Use the <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> functions in order to
 get at the actual objects that match.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-enumerate-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -306,7 +306,7 @@ get at the actual objects that match.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -328,21 +328,21 @@ get at the actual objects that match.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.6.7"></a><h4>Returns</h4>
-<p> A new <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if an error occurs. </p>
+<a name="gck-modules-enumerate-uri.returns"></a><h4>Returns</h4>
+<p>A new <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a>, or <code class="literal">NULL</code> if an error occurs. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gck-modules-get-slots"></a><h3>gck_modules_get_slots ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
-gck_modules_get_slots (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> token_present</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_get_slots (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                       <em class="parameter"><code><span class="type">gboolean</span> token_present</code></em>);</pre>
 <p>Get a list of slots for across all of the modules.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-get-slots.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -351,7 +351,7 @@ gck_modules_get_slots (<em class="parameter"><code><a href="https://developer.gn
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -363,8 +363,8 @@ gck_modules_get_slots (<em class="parameter"><code><a href="https://developer.gn
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.7.6"></a><h4>Returns</h4>
-<p> A list of <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a>
+<a name="gck-modules-get-slots.returns"></a><h4>Returns</h4>
+<p>A list of <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a>
 objects, which should be freed with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Slot]</span></p>
 </div>
@@ -373,16 +373,16 @@ objects, which should be freed with <a class="link" href="gck-Miscellaneous-Func
 <div class="refsect2">
 <a name="gck-modules-object-for-uri"></a><h3>gck_modules_object_for_uri ()</h3>
 <pre class="programlisting"><a class="link" href="GckObject.html" title="GckObject"><span class="returnvalue">GckObject</span></a> *
-gck_modules_object_for_uri (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                            <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
+gck_modules_object_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                            <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
                             <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
-                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Find an object that matches a URI.</p>
 <p>This call can block. Use <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()"><code class="function">gck_modules_enumerate_uri()</code></a> for a non-blocking
 version.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-object-for-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -391,7 +391,7 @@ version.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -413,26 +413,26 @@ version.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.8.7"></a><h4>Returns</h4>
-<p> A new <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which should be released with
-<a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no matching object was found. </p>
+<a name="gck-modules-object-for-uri.returns"></a><h4>Returns</h4>
+<p>A new <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which should be released with
+<code class="function">g_object_unref()</code>, or <code class="literal">NULL</code> if no matching object was found. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gck-modules-objects-for-uri"></a><h3>gck_modules_objects_for_uri ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
-gck_modules_objects_for_uri (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                             <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_objects_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                             <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
                              <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
-                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Find objects that match a URI.</p>
 <p>This call can block. Use <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()"><code class="function">gck_modules_enumerate_uri()</code></a> for a non-blocking
 version.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-objects-for-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -441,7 +441,7 @@ version.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -463,9 +463,9 @@ version.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.9.7"></a><h4>Returns</h4>
-<p> A list of <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which
-should be released with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no matching object
+<a name="gck-modules-objects-for-uri.returns"></a><h4>Returns</h4>
+<p>A list of <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which
+should be released with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>, or <code class="literal">NULL</code> if no matching object
 was found. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Object]</span></p>
 </div>
@@ -474,13 +474,13 @@ was found. </p>
 <div class="refsect2">
 <a name="gck-modules-token-for-uri"></a><h3>gck_modules_token_for_uri ()</h3>
 <pre class="programlisting"><a class="link" href="GckSlot.html" title="GckSlot"><span class="returnvalue">GckSlot</span></a> *
-gck_modules_token_for_uri (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                           <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
-                           <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+gck_modules_token_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Lookup a token that matches the URI.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-token-for-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -489,7 +489,7 @@ gck_modules_token_for_uri (<em class="parameter"><code><a href="https://develope
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -506,8 +506,8 @@ gck_modules_token_for_uri (<em class="parameter"><code><a href="https://develope
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.10.6"></a><h4>Returns</h4>
-<p> A newly allocated <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such
+<a name="gck-modules-token-for-uri.returns"></a><h4>Returns</h4>
+<p>A newly allocated <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a> or <code class="literal">NULL</code> if no such
 token was found. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -515,14 +515,14 @@ token was found. </p>
 <hr>
 <div class="refsect2">
 <a name="gck-modules-tokens-for-uri"></a><h3>gck_modules_tokens_for_uri ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
-gck_modules_tokens_for_uri (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *modules</code></em>,
-                            <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *uri</code></em>,
-                            <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_tokens_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                            <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Lookup a token that matches the URI.</p>
 <div class="refsect3">
-<a name="id-1.2.10.5.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-modules-tokens-for-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -531,7 +531,7 @@ gck_modules_tokens_for_uri (<em class="parameter"><code><a href="https://develop
 <tbody>
 <tr>
 <td class="parameter_name"><p>modules</p></td>
-<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_description"><p>The modules. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
 </tr>
 <tr>
@@ -548,8 +548,8 @@ gck_modules_tokens_for_uri (<em class="parameter"><code><a href="https://develop
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.10.5.11.6"></a><h4>Returns</h4>
-<p> A list of newly allocated
+<a name="gck-modules-tokens-for-uri.returns"></a><h4>Returns</h4>
+<p>A list of newly allocated
 <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a> objects. Use <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a> to release the list once you're
 done with it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Slot]</span></p>
@@ -561,6 +561,6 @@ done with it. </p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<book xmlns="http://www.devhelp.net/book" title="Gcr Library Reference Manual" link="index.html" author="" name="gcr" version="2" language="c">
+<book xmlns="http://www.devhelp.net/book" title="Gcr Library Reference Manual" link="index.html" author="" name="gcr" version="2" language="c" online="http://developer.gnome.org/gcr/stable/">
   <chapters>
     <sub name="Certificates" link="certificates.html">
       <sub name="GcrCertificate" link="GcrCertificate.html"/>
@@ -32,6 +32,7 @@
       <sub name="GcrPromptDialog" link="GcrPromptDialog.html"/>
       <sub name="GcrSystemPrompt" link="GcrSystemPrompt.html"/>
       <sub name="GcrSystemPrompter" link="GcrSystemPrompter.html"/>
+      <sub name="GcrSshAskpass" link="gcr-GcrSshAskpass.html"/>
     </sub>
     <sub name="Storage" link="storage.html">
       <sub name="Trust Storage and Lookups" link="gcr-Trust-Storage-and-Lookups.html"/>
@@ -108,12 +109,12 @@
     <keyword type="function" name="gcr_certificate_chain_build ()" link="GcrCertificateChain.html#gcr-certificate-chain-build"/>
     <keyword type="function" name="gcr_certificate_chain_build_async ()" link="GcrCertificateChain.html#gcr-certificate-chain-build-async"/>
     <keyword type="function" name="gcr_certificate_chain_build_finish ()" link="GcrCertificateChain.html#gcr-certificate-chain-build-finish"/>
-    <keyword type="macro" name="GCR_TYPE_CERTIFICATE_CHAIN_FLAGS" link="GcrCertificateChain.html#GCR-TYPE-CERTIFICATE-CHAIN-FLAGS:CAPS"/>
-    <keyword type="macro" name="GCR_TYPE_CERTIFICATE_CHAIN_STATUS" link="GcrCertificateChain.html#GCR-TYPE-CERTIFICATE-CHAIN-STATUS:CAPS"/>
     <keyword type="struct" name="struct GcrCertificateChain" link="GcrCertificateChain.html#GcrCertificateChain-struct"/>
     <keyword type="struct" name="struct GcrCertificateChainClass" link="GcrCertificateChain.html#GcrCertificateChainClass"/>
     <keyword type="enum" name="enum GcrCertificateChainStatus" link="GcrCertificateChain.html#GcrCertificateChainStatus"/>
     <keyword type="enum" name="enum GcrCertificateChainFlags" link="GcrCertificateChain.html#GcrCertificateChainFlags"/>
+    <keyword type="macro" name="GCR_TYPE_CERTIFICATE_CHAIN_FLAGS" link="GcrCertificateChain.html#GCR-TYPE-CERTIFICATE-CHAIN-FLAGS:CAPS"/>
+    <keyword type="macro" name="GCR_TYPE_CERTIFICATE_CHAIN_STATUS" link="GcrCertificateChain.html#GCR-TYPE-CERTIFICATE-CHAIN-STATUS:CAPS"/>
     <keyword type="property" name="The “length” property" link="GcrCertificateChain.html#GcrCertificateChain--length"/>
     <keyword type="property" name="The “status” property" link="GcrCertificateChain.html#GcrCertificateChain--status"/>
     <keyword type="function" name="gcr_certificate_request_capable ()" link="gcr-GcrCertificateRequest.html#gcr-certificate-request-capable"/>
@@ -165,7 +166,6 @@
     <keyword type="property" name="The “collection” property" link="GcrCollectionModel.html#GcrCollectionModel--collection"/>
     <keyword type="property" name="The “columns” property" link="GcrCollectionModel.html#GcrCollectionModel--columns"/>
     <keyword type="property" name="The “mode” property" link="GcrCollectionModel.html#GcrCollectionModel--mode"/>
-    <keyword type="macro" name="GCR_CERTIFICATE_COLUMNS" link="GcrCertificateWidget.html#GCR-CERTIFICATE-COLUMNS:CAPS"/>
     <keyword type="function" name="gcr_certificate_widget_new ()" link="GcrCertificateWidget.html#gcr-certificate-widget-new"/>
     <keyword type="function" name="gcr_certificate_widget_get_certificate ()" link="GcrCertificateWidget.html#gcr-certificate-widget-get-certificate"/>
     <keyword type="function" name="gcr_certificate_widget_set_certificate ()" link="GcrCertificateWidget.html#gcr-certificate-widget-set-certificate"/>
@@ -173,6 +173,7 @@
     <keyword type="function" name="gcr_certificate_renderer_new_for_attributes ()" link="GcrCertificateWidget.html#gcr-certificate-renderer-new-for-attributes"/>
     <keyword type="function" name="gcr_certificate_renderer_get_certificate ()" link="GcrCertificateWidget.html#gcr-certificate-renderer-get-certificate"/>
     <keyword type="function" name="gcr_certificate_renderer_set_certificate ()" link="GcrCertificateWidget.html#gcr-certificate-renderer-set-certificate"/>
+    <keyword type="macro" name="GCR_CERTIFICATE_COLUMNS" link="GcrCertificateWidget.html#GCR-CERTIFICATE-COLUMNS:CAPS"/>
     <keyword type="struct" name="struct GcrCertificateWidget" link="GcrCertificateWidget.html#GcrCertificateWidget-struct"/>
     <keyword type="struct" name="struct GcrCertificateWidgetClass" link="GcrCertificateWidget.html#GcrCertificateWidgetClass"/>
     <keyword type="struct" name="struct GcrCertificateRenderer" link="GcrCertificateWidget.html#GcrCertificateRenderer-struct"/>
@@ -313,7 +314,6 @@
     <keyword type="property" name="The “confirm-visible” property" link="GcrPromptDialog.html#GcrPromptDialog--confirm-visible"/>
     <keyword type="property" name="The “password-visible” property" link="GcrPromptDialog.html#GcrPromptDialog--password-visible"/>
     <keyword type="property" name="The “warning-visible” property" link="GcrPromptDialog.html#GcrPromptDialog--warning-visible"/>
-    <keyword type="macro" name="GCR_SYSTEM_PROMPT_ERROR" link="GcrSystemPrompt.html#GCR-SYSTEM-PROMPT-ERROR:CAPS"/>
     <keyword type="function" name="gcr_system_prompt_open ()" link="GcrSystemPrompt.html#gcr-system-prompt-open"/>
     <keyword type="function" name="gcr_system_prompt_open_async ()" link="GcrSystemPrompt.html#gcr-system-prompt-open-async"/>
     <keyword type="function" name="gcr_system_prompt_open_finish ()" link="GcrSystemPrompt.html#gcr-system-prompt-open-finish"/>
@@ -325,6 +325,7 @@
     <keyword type="function" name="gcr_system_prompt_close_finish ()" link="GcrSystemPrompt.html#gcr-system-prompt-close-finish"/>
     <keyword type="struct" name="struct GcrSystemPrompt" link="GcrSystemPrompt.html#GcrSystemPrompt-struct"/>
     <keyword type="struct" name="struct GcrSystemPromptClass" link="GcrSystemPrompt.html#GcrSystemPromptClass"/>
+    <keyword type="macro" name="GCR_SYSTEM_PROMPT_ERROR" link="GcrSystemPrompt.html#GCR-SYSTEM-PROMPT-ERROR:CAPS"/>
     <keyword type="enum" name="enum GcrSystemPromptError" link="GcrSystemPrompt.html#GcrSystemPromptError"/>
     <keyword type="property" name="The “bus-name” property" link="GcrSystemPrompt.html#GcrSystemPrompt--bus-name"/>
     <keyword type="property" name="The “secret-exchange” property" link="GcrSystemPrompt.html#GcrSystemPrompt--secret-exchange"/>
@@ -342,6 +343,10 @@
     <keyword type="property" name="The “prompt-type” property" link="GcrSystemPrompter.html#GcrSystemPrompter--prompt-type"/>
     <keyword type="property" name="The “prompting” property" link="GcrSystemPrompter.html#GcrSystemPrompter--prompting"/>
     <keyword type="signal" name="The “new-prompt” signal" link="GcrSystemPrompter.html#GcrSystemPrompter-new-prompt"/>
+    <keyword type="function" name="gcr_ssh_askpass_new ()" link="gcr-GcrSshAskpass.html#gcr-ssh-askpass-new"/>
+    <keyword type="function" name="gcr_ssh_askpass_get_interaction ()" link="gcr-GcrSshAskpass.html#gcr-ssh-askpass-get-interaction"/>
+    <keyword type="function" name="gcr_ssh_askpass_child_setup ()" link="gcr-GcrSshAskpass.html#gcr-ssh-askpass-child-setup"/>
+    <keyword type="struct" name="GcrSshAskpass" link="gcr-GcrSshAskpass.html#GcrSshAskpass"/>
     <keyword type="function" name="gcr_trust_is_certificate_anchored ()" link="gcr-Trust-Storage-and-Lookups.html#gcr-trust-is-certificate-anchored"/>
     <keyword type="function" name="gcr_trust_is_certificate_anchored_async ()" link="gcr-Trust-Storage-and-Lookups.html#gcr-trust-is-certificate-anchored-async"/>
     <keyword type="function" name="gcr_trust_is_certificate_anchored_finish ()" link="gcr-Trust-Storage-and-Lookups.html#gcr-trust-is-certificate-anchored-finish"/>
@@ -380,7 +385,6 @@
     <keyword type="function" name="gcr_import_interaction_supplement_finish ()" link="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-finish"/>
     <keyword type="struct" name="GcrImportInteraction" link="gcr-GcrImportInteraction.html#GcrImportInteraction"/>
     <keyword type="struct" name="struct GcrImportInteractionIface" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface"/>
-    <keyword type="macro" name="GCR_DATA_ERROR" link="GcrParser.html#GCR-DATA-ERROR:CAPS"/>
     <keyword type="function" name="gcr_parser_new ()" link="GcrParser.html#gcr-parser-new"/>
     <keyword type="function" name="gcr_parser_parse_bytes ()" link="GcrParser.html#gcr-parser-parse-bytes"/>
     <keyword type="function" name="gcr_parser_parse_data ()" link="GcrParser.html#gcr-parser-parse-data"/>
@@ -409,6 +413,7 @@
     <keyword type="function" name="gcr_parsed_get_label ()" link="GcrParser.html#gcr-parsed-get-label"/>
     <keyword type="function" name="gcr_parser_get_parsed ()" link="GcrParser.html#gcr-parser-get-parsed"/>
     <keyword type="function" name="gcr_parsed_get_filename ()" link="GcrParser.html#gcr-parsed-get-filename"/>
+    <keyword type="macro" name="GCR_DATA_ERROR" link="GcrParser.html#GCR-DATA-ERROR:CAPS"/>
     <keyword type="enum" name="enum GcrDataError" link="GcrParser.html#GcrDataError"/>
     <keyword type="enum" name="enum GcrDataFormat" link="GcrParser.html#GcrDataFormat"/>
     <keyword type="struct" name="struct GcrParser" link="GcrParser.html#GcrParser-struct"/>
@@ -513,5 +518,48 @@
     <keyword type="constant" name="GCR_FORMAT_PEM_PKCS10" link="GcrParser.html#GCR-FORMAT-PEM-PKCS10:CAPS"/>
     <keyword type="constant" name="GCR_FORMAT_PEM_PRIVATE_KEY_EC" link="GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-EC:CAPS"/>
     <keyword type="constant" name="GCR_FORMAT_PEM_PUBLIC_KEY" link="GcrParser.html#GCR-FORMAT-PEM-PUBLIC-KEY:CAPS"/>
+    <keyword type="member" name="GcrCertificateIface.parent" link="GcrCertificate.html#GcrCertificateIface.parent"/>
+    <keyword type="member" name="GcrCertificateIface.get-der-data" link="GcrCertificate.html#GcrCertificateIface.get-der-data"/>
+    <keyword type="member" name="GcrComparableIface.parent" link="GcrComparable.html#GcrComparableIface.parent"/>
+    <keyword type="member" name="GcrComparableIface.compare" link="GcrComparable.html#GcrComparableIface.compare"/>
+    <keyword type="member" name="GcrColumn.property-name" link="gcr-GcrColumn.html#GcrColumn.property-name"/>
+    <keyword type="member" name="GcrColumn.property-type" link="gcr-GcrColumn.html#GcrColumn.property-type"/>
+    <keyword type="member" name="GcrColumn.column-type" link="gcr-GcrColumn.html#GcrColumn.column-type"/>
+    <keyword type="member" name="GcrColumn.label" link="gcr-GcrColumn.html#GcrColumn.label"/>
+    <keyword type="member" name="GcrColumn.flags" link="gcr-GcrColumn.html#GcrColumn.flags"/>
+    <keyword type="member" name="GcrColumn.transformer" link="gcr-GcrColumn.html#GcrColumn.transformer"/>
+    <keyword type="member" name="GcrColumn.user-data" link="gcr-GcrColumn.html#GcrColumn.user-data"/>
+    <keyword type="member" name="GcrImportButtonClass.importing" link="GcrImportButton.html#GcrImportButtonClass.importing"/>
+    <keyword type="member" name="GcrImportButtonClass.imported" link="GcrImportButton.html#GcrImportButtonClass.imported"/>
+    <keyword type="member" name="GcrRendererIface.parent" link="GcrRenderer.html#GcrRendererIface.parent"/>
+    <keyword type="member" name="GcrRendererIface.data-changed" link="GcrRenderer.html#GcrRendererIface.data-changed"/>
+    <keyword type="member" name="GcrRendererIface.render-view" link="GcrRenderer.html#GcrRendererIface.render-view"/>
+    <keyword type="member" name="GcrRendererIface.populate-popup" link="GcrRenderer.html#GcrRendererIface.populate-popup"/>
+    <keyword type="member" name="GcrViewerIface.parent" link="GcrViewer.html#GcrViewerIface.parent"/>
+    <keyword type="member" name="GcrViewerIface.add-renderer" link="GcrViewer.html#GcrViewerIface.add-renderer"/>
+    <keyword type="member" name="GcrViewerIface.insert-renderer" link="GcrViewer.html#GcrViewerIface.insert-renderer"/>
+    <keyword type="member" name="GcrViewerIface.remove-renderer" link="GcrViewer.html#GcrViewerIface.remove-renderer"/>
+    <keyword type="member" name="GcrViewerIface.count-renderers" link="GcrViewer.html#GcrViewerIface.count-renderers"/>
+    <keyword type="member" name="GcrViewerIface.get-renderer" link="GcrViewer.html#GcrViewerIface.get-renderer"/>
+    <keyword type="member" name="GcrPromptIface.parent-iface" link="GcrPrompt.html#GcrPromptIface.parent-iface"/>
+    <keyword type="member" name="GcrPromptIface.prompt-password-async" link="GcrPrompt.html#GcrPromptIface.prompt-password-async"/>
+    <keyword type="member" name="GcrPromptIface.prompt-password-finish" link="GcrPrompt.html#GcrPromptIface.prompt-password-finish"/>
+    <keyword type="member" name="GcrPromptIface.prompt-confirm-async" link="GcrPrompt.html#GcrPromptIface.prompt-confirm-async"/>
+    <keyword type="member" name="GcrPromptIface.prompt-confirm-finish" link="GcrPrompt.html#GcrPromptIface.prompt-confirm-finish"/>
+    <keyword type="member" name="GcrPromptIface.prompt-close" link="GcrPrompt.html#GcrPromptIface.prompt-close"/>
+    <keyword type="member" name="GcrSystemPrompterClass.new-prompt" link="GcrSystemPrompter.html#GcrSystemPrompterClass.new-prompt"/>
+    <keyword type="member" name="GcrImporterIface.parent" link="GcrImporter.html#GcrImporterIface.parent"/>
+    <keyword type="member" name="GcrImporterIface.create-for-parsed" link="GcrImporter.html#GcrImporterIface.create-for-parsed"/>
+    <keyword type="member" name="GcrImporterIface.queue-for-parsed" link="GcrImporter.html#GcrImporterIface.queue-for-parsed"/>
+    <keyword type="member" name="GcrImporterIface.import-sync" link="GcrImporter.html#GcrImporterIface.import-sync"/>
+    <keyword type="member" name="GcrImporterIface.import-async" link="GcrImporter.html#GcrImporterIface.import-async"/>
+    <keyword type="member" name="GcrImporterIface.import-finish" link="GcrImporter.html#GcrImporterIface.import-finish"/>
+    <keyword type="member" name="GcrImportInteractionIface.parent" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface.parent"/>
+    <keyword type="member" name="GcrImportInteractionIface.supplement-prep" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface.supplement-prep"/>
+    <keyword type="member" name="GcrImportInteractionIface.supplement" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface.supplement"/>
+    <keyword type="member" name="GcrImportInteractionIface.supplement-async" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface.supplement-async"/>
+    <keyword type="member" name="GcrImportInteractionIface.supplement-finish" link="gcr-GcrImportInteraction.html#GcrImportInteractionIface.supplement-finish"/>
+    <keyword type="member" name="GcrParserClass.authenticate" link="GcrParser.html#GcrParserClass.authenticate"/>
+    <keyword type="member" name="GcrParserClass.parsed" link="GcrParser.html#GcrParserClass.parsed"/>
   </functions>
 </book>

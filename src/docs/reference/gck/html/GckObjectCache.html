@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GckObjectCache: Gck Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Gck Library Reference Manual">
 <link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
 <link rel="prev" href="GckAttributes.html" title="GckAttributes">
 <link rel="next" href="GckEnumerator.html" title="GckEnumerator">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="GckObjectCache.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -92,7 +92,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="GckObjectCache.html#gck-object-cache-update" title="gck_object_cache_update ()">gck_object_cache_update</a> <span class="c_punctuation">()</span>
@@ -108,7 +108,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="GckObjectCache.html#gck-object-cache-update-finish" title="gck_object_cache_update_finish ()">gck_object_cache_update_finish</a> <span class="c_punctuation">()</span>
@@ -119,7 +119,7 @@
 </div>
 <div class="refsect1">
 <a name="GckObjectCache.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -135,7 +135,7 @@
 </div>
 <div class="refsect1">
 <a name="GckObjectCache.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -154,7 +154,7 @@
 </div>
 <div class="refsect1">
 <a name="GckObjectCache.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/dueno/jhbuild/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> GckObjectCache
 </pre>
 </div>
@@ -177,8 +177,6 @@ the <a class="link" href="GckObjectCache.html#GckObjectCache--attributes" title=
 <a name="gck-object-cache-get-attributes"></a><h3>gck_object_cache_get_attributes ()</h3>
 <pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
 gck_object_cache_get_attributes (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>);</pre>
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -190,8 +188,8 @@ gck_object_cache_set_attributes (<em class="parameter"><code><a class="link" hre
 <p>If the <em class="parameter"><code>attrs</code></em>
  <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-set-attributes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -205,7 +203,7 @@ gck_object_cache_set_attributes (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>attrs</p></td>
-<td class="parameter_description"><p> the attributes to set. </p></td>
+<td class="parameter_description"><p>the attributes to set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -224,8 +222,8 @@ already present in the cache it will be overridden by this value.</p>
 <p>If the <em class="parameter"><code>attrs</code></em>
  <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-fill.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -251,10 +249,10 @@ already present in the cache it will be overridden by this value.</p>
 <a name="gck-object-cache-lookup"></a><h3>gck_object_cache_lookup ()</h3>
 <pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
 gck_object_cache_lookup (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
-                         <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> *attr_types</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_attr_types</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                         <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Lookup attributes in the cache, or retrieve them from the object if necessary.</p>
 <p>If <em class="parameter"><code>object</code></em>
  is a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> then this will lookup the attributes there
@@ -265,8 +263,8 @@ the cache.</p>
 read from the object.</p>
 <p>This may block, use the asynchronous version when this is not desirable</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.5.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-lookup.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -280,7 +278,7 @@ read from the object.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attr_types</p></td>
-<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_description"><p>the types of attributes to update. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
 </tr>
 <tr>
@@ -302,8 +300,8 @@ read from the object.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.8.9.5.9"></a><h4>Returns</h4>
-<p> the attributes retrieved or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. </p>
+<a name="gck-object-cache-lookup.returns"></a><h4>Returns</h4>
+<p>the attributes retrieved or <code class="literal">NULL</code> on failure. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -312,11 +310,11 @@ read from the object.</p>
 <a name="gck-object-cache-lookup-async"></a><h3>gck_object_cache_lookup_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gck_object_cache_lookup_async (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
-                               <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> *attr_types</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_attr_types</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+                               <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                               <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Lookup attributes in the cache, or retrieve them from the object if necessary.</p>
 <p>If <em class="parameter"><code>object</code></em>
  is a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> then this will lookup the attributes there
@@ -327,8 +325,8 @@ the cache.</p>
 read from the object.</p>
 <p>This will return immediately and complete asynchronously</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.6.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-lookup-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -342,7 +340,7 @@ read from the object.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attr_types</p></td>
-<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_description"><p>the types of attributes to update. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
 </tr>
 <tr>
@@ -374,13 +372,13 @@ read from the object.</p>
 <a name="gck-object-cache-lookup-finish"></a><h3>gck_object_cache_lookup_finish ()</h3>
 <pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
 gck_object_cache_lookup_finish (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Complete an operation to lookup attributes in the cache or retrieve them
 from the object if necessary.</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-lookup-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -406,26 +404,26 @@ from the object if necessary.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.8.9.7.6"></a><h4>Returns</h4>
-<p> the attributes retrieved or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on failure. </p>
+<a name="gck-object-cache-lookup-finish.returns"></a><h4>Returns</h4>
+<p>the attributes retrieved or <code class="literal">NULL</code> on failure. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gck-object-cache-update"></a><h3>gck_object_cache_update ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 gck_object_cache_update (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
-                         <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> *attr_types</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_attr_types</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                         <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Update the object cache with given attributes. If an attribute already
 exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 <p>This may block, use the asynchronous version when this is not desirable</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -439,7 +437,7 @@ exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attr_types</p></td>
-<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_description"><p>the types of attributes to update. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
 </tr>
 <tr>
@@ -461,7 +459,7 @@ exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.8.9.8.7"></a><h4>Returns</h4>
+<a name="gck-object-cache-update.returns"></a><h4>Returns</h4>
 <p> whether the cache update was successful</p>
 </div>
 </div>
@@ -470,17 +468,17 @@ exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 <a name="gck-object-cache-update-async"></a><h3>gck_object_cache_update_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gck_object_cache_update_async (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
-                               <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> *attr_types</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_attr_types</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
-                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+                               <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                               <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Update the object cache with given attributes. If an attribute already
 exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 <p>This call will return immediately and complete asynchronously.</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-update-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -494,7 +492,7 @@ exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>attr_types</p></td>
-<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_description"><p>the types of attributes to update. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
 </tr>
 <tr>
@@ -524,15 +522,15 @@ exists in the cache, it will be updated, and if it doesn't it will be added.</p>
 <hr>
 <div class="refsect2">
 <a name="gck-object-cache-update-finish"></a><h3>gck_object_cache_update_finish ()</h3>
-<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 gck_object_cache_update_finish (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
-                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
 <p>Complete an asynchronous operation to update the object cache with given
 attributes.</p>
 <div class="refsect3">
-<a name="id-1.2.8.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="gck-object-cache-update-finish.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -558,7 +556,7 @@ attributes.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.2.8.9.10.6"></a><h4>Returns</h4>
+<a name="gck-object-cache-update-finish.returns"></a><h4>Returns</h4>
 <p> whether the cache update was successful</p>
 </div>
 </div>
@@ -591,8 +589,8 @@ a implementing class, then the a <a class="link" href="GckEnumerator.html" title
  should add the attributes to the
 cache. It must be thread safe.</p>
 <div class="refsect3">
-<a name="id-1.2.8.10.3.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="GckObjectCacheIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -600,18 +598,18 @@ cache. It must be thread safe.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="GckObjectCacheIface.interface"></a>interface</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GckObjectCacheIface.interface"></a>interface</code></em>;</p></td>
 <td class="struct_member_description"><p>parent interface</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gulong"><span class="type">gulong</span></a> *<em class="structfield"><code><a name="GckObjectCacheIface.default-types"></a>default_types</code></em>;</p></td>
-<td class="struct_member_description"><p> attribute types that an
+<td class="struct_member_name"><p>const <span class="type">gulong</span> *<em class="structfield"><code><a name="GckObjectCacheIface.default-types"></a>default_types</code></em>;</p></td>
+<td class="struct_member_description"><p>attribute types that an
 enumerator should retrieve. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_default_types]</span></td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> <em class="structfield"><code><a name="GckObjectCacheIface.n-default-types"></a>n_default_types</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="GckObjectCacheIface.n-default-types"></a>n_default_types</code></em>;</p></td>
 <td class="struct_member_description"><p>number of attribute types to be retrieved</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -636,6 +634,6 @@ enumerator should retrieve. </p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.27.1</div>
 </body>
 </html>

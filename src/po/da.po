@@ -1,20 +1,21 @@
 # Danish translation of gnome-keyring.
-# Copyright (C) 2004-14 Free Software Foundation, Inc.
+# Copyright (C) 2004-14, 2018 Free Software Foundation, Inc.
 # Ole Laursen <olau@hardworking.dk>, 2004.
 # Peter Bach <bach.peter@gmail.com>, 2007.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008, 2012.
 # Per Kongstad <p_kongstad@op.pl>, 2009.
 # Kris Thomsen <lakristho@gmail.com>, 2011.
 # Joe Hansen <joedalton2@yahoo.dk>, 2011.
-# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 2008, 10, 13, 14.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 2008, 10, 13, 14, 2018.
 #
 # signatur -> underskrift
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-keyring\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 23:11+0100\n"
-"PO-Revision-Date: 2016-02-04 19:11+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"keyring&keywords=I18N+L10N&component=gcr\n"
+"POT-Creation-Date: 2018-03-02 13:46+0000\n"
+"PO-Revision-Date: 2018-03-02 18:34+0100\n"
 "Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -201,12 +202,12 @@ msgstr "Fejl ved indlæsning af PKCS#11-modul: %s"
 
 #: ../gck/gck-module.c:358
 #, c-format
-msgid "Couldn't initialize PKCS#11 module: %s"
+msgid "Couldn’t initialize PKCS#11 module: %s"
 msgstr "Kunne ikke initialisere PKCS#11-modul: %s"
 
 #: ../gck/gck-modules.c:62
 #, c-format
-msgid "Couldn't initialize registered PKCS#11 modules: %s"
+msgid "Couldn’t initialize registered PKCS#11 modules: %s"
 msgstr "Kunne ikke initialisere registrerede PKCS#11-moduler: %s"
 
 #: ../gck/gck-uri.c:224
@@ -215,8 +216,8 @@ msgid "The URI has invalid encoding."
 msgstr "URI'en har en ugyldig kodning."
 
 #: ../gck/gck-uri.c:228
-msgid "The URI does not have the 'pkcs11' scheme."
-msgstr "URI'en har ikke skemaet \"pkcs11\"."
+msgid "The URI does not have the “pkcs11” scheme."
+msgstr "URI'en har ikke skemaet “pkcs11”."
 
 #: ../gck/gck-uri.c:232
 msgid "The URI has bad syntax."
@@ -250,7 +251,7 @@ msgctxt "column"
 msgid "Expires"
 msgstr "Udløber"
 
-#: ../gcr/gcr-certificate.c:1192 ../gcr/gcr-parser.c:325
+#: ../gcr/gcr-certificate.c:1192 ../gcr/gcr-parser.c:344
 #: ../ui/gcr-certificate-renderer.c:102 ../ui/gcr-certificate-exporter.c:464
 msgid "Certificate"
 msgstr "Certifikat"
@@ -319,7 +320,7 @@ msgstr "GnuPG-nøglering"
 msgid "GnuPG Keyring: %s"
 msgstr "GnuPG-nøglering: %s"
 
-#: ../gcr/gcr-gnupg-key.c:143 ../gcr/gcr-parser.c:331
+#: ../gcr/gcr-gnupg-key.c:143 ../gcr/gcr-parser.c:350
 #: ../ui/gcr-gnupg-renderer.c:87
 msgid "PGP Key"
 msgstr "PGP-nøgle"
@@ -339,33 +340,33 @@ msgstr "Gnupg-proces afsluttedes med kode: %d"
 msgid "Gnupg process was terminated with signal: %d"
 msgstr "Gnupg-proces blev afsluttet med signal: %d"
 
-#: ../gcr/gcr-gnupg-process.c:925 ../gcr/gcr-parser.c:2554
-#: ../gcr/gcr-parser.c:3160 ../gcr/gcr-system-prompt.c:931
+#: ../gcr/gcr-gnupg-process.c:925 ../gcr/gcr-parser.c:2592
+#: ../gcr/gcr-parser.c:3198 ../gcr/gcr-system-prompt.c:931
 msgid "The operation was cancelled"
 msgstr "Operationen blev annulleret"
 
-#: ../gcr/gcr-parser.c:322 ../ui/gcr-key-renderer.c:361
+#: ../gcr/gcr-parser.c:341 ../ui/gcr-key-renderer.c:361
 msgid "Private Key"
 msgstr "Privat nøgle"
 
-#: ../gcr/gcr-parser.c:328 ../ui/gcr-certificate-renderer.c:881
+#: ../gcr/gcr-parser.c:347 ../ui/gcr-certificate-renderer.c:881
 #: ../ui/gcr-gnupg-renderer.c:736 ../ui/gcr-key-renderer.c:370
 msgid "Public Key"
 msgstr "Offentlig nøgle"
 
-#: ../gcr/gcr-parser.c:334
+#: ../gcr/gcr-parser.c:353
 msgid "Certificate Request"
 msgstr "Certifikatforespørgsel"
 
-#: ../gcr/gcr-parser.c:2557
+#: ../gcr/gcr-parser.c:2595
 msgid "Unrecognized or unsupported data."
 msgstr "Ukendt eller ikke understøttetede data."
 
-#: ../gcr/gcr-parser.c:2560
+#: ../gcr/gcr-parser.c:2598
 msgid "Could not parse invalid or corrupted data."
 msgstr "Kunne ikke fortolke ugyldige eller ødelagte data."
 
-#: ../gcr/gcr-parser.c:2563
+#: ../gcr/gcr-parser.c:2601
 msgid "The data is locked"
 msgstr "Dataene er låst"
 
@@ -377,12 +378,16 @@ msgstr "Fortsæt"
 msgid "Cancel"
 msgstr "Annuller"
 
+#: ../gcr/gcr-ssh-askpass.c:198
+msgid "Enter your OpenSSH passphrase"
+msgstr "Indtast din adgangsfrase til OpenSSH"
+
 #: ../gcr/gcr-subject-public-key.c:405
 msgid "Unrecognized or unavailable attributes for key"
 msgstr "Ukendt eller utilgængelig attribut for nøgle"
 
 #: ../gcr/gcr-subject-public-key.c:491 ../gcr/gcr-subject-public-key.c:577
-msgid "Couldn't build public key"
+msgid "Couldn’t build public key"
 msgstr "Kunne ikke bygge offentlig nøgle"
 
 #: ../gcr/gcr-system-prompt.c:911
@@ -394,7 +399,7 @@ msgstr "En anden prompt er allerede i gang"
 #. communication with a certain peer.
 #: ../gcr/gcr-trust.c:364
 #, c-format
-msgid "Couldn't find a place to store the pinned certificate"
+msgid "Couldn’t find a place to store the pinned certificate"
 msgstr "Kunne ikke finde et sted at gemme det fastsatte certifikat"
 
 #: ../ui/gcr-certificate-renderer.c:117
@@ -488,7 +493,7 @@ msgid "Value"
 msgstr "Værdi"
 
 #: ../ui/gcr-certificate-renderer.c:287
-msgid "Couldn't export the certificate."
+msgid "Couldn’t export the certificate."
 msgstr "Kunne ikke eksportere certifikatet."
 
 #: ../ui/gcr-certificate-renderer.c:521
@@ -554,7 +559,7 @@ msgstr "Underskrift"
 
 #: ../ui/gcr-certificate-renderer.c:616
 msgid "Export Certificate…"
-msgstr "Eksportér certifikat…"
+msgstr "Eksportér certifikat …"
 
 #: ../ui/gcr-certificate-renderer.c:855
 msgid "Key Algorithm"
@@ -614,8 +619,8 @@ msgstr "_Detaljer"
 
 #: ../ui/gcr-failure-renderer.c:159
 #, c-format
-msgid "Could not display '%s'"
-msgstr "Kunne ikke vise \"%s\""
+msgid "Could not display “%s”"
+msgstr "Kunne ikke vise “%s”"
 
 #: ../ui/gcr-failure-renderer.c:161
 msgid "Could not display file"
@@ -872,11 +877,11 @@ msgstr "Hemmelig undernøgle"
 
 #: ../ui/gcr-import-button.c:116
 msgid "Initializing…"
-msgstr "Klargør…"
+msgstr "Klargør …"
 
 #: ../ui/gcr-import-button.c:124
 msgid "Import is in progress…"
-msgstr "Import er i gang…"
+msgstr "Import er i gang …"
 
 #: ../ui/gcr-import-button.c:131
 #, c-format
@@ -1046,7 +1051,7 @@ msgid "PEM files"
 msgstr "PEM-filer"
 
 #: ../ui/gcr-unlock-options-widget.ui.h:1
-msgid "Automatically unlock this keyring whenever I'm logged in"
+msgid "Automatically unlock this keyring whenever I’m logged in"
 msgstr "Lås automatisk denne nøglering op når jeg logger ind"
 
 #: ../ui/gcr-unlock-options-widget.ui.h:2
@@ -1061,7 +1066,7 @@ msgstr "Lås denne nøglering efter"
 msgid "Lock this keyring if idle for"
 msgstr "Lås denne nøglering hvis inaktiv i"
 
-#. Translators: The 'minutes' from 'Lock this keyring if idle for x minutes'.
+#. Translators: The
 #: ../ui/gcr-unlock-options-widget.ui.h:6
 msgid "minutes"
 msgstr "minutter"
@@ -1078,10 +1083,10 @@ msgstr "Adgangskode"
 #: ../ui/gcr-unlock-renderer.c:274
 #, c-format
 msgid ""
-"The contents of '%s' are locked. In order to view the contents, enter the "
+"The contents of “%s” are locked. In order to view the contents, enter the "
 "correct password."
 msgstr ""
-"Indholdet af \"%s\" er låst. For at se indholdet så indtast den korrekte "
+"Indholdet af “%s” er låst. For at se indholdet så indtast den korrekte "
 "adgangskode."
 
 #: ../ui/gcr-unlock-renderer.c:277
@@ -1101,7 +1106,7 @@ msgstr "Vis programmets version"
 
 #: ../ui/gcr-viewer-tool.c:49
 msgid "[file...]"
-msgstr "[fil...]"
+msgstr "[fil …]"
 
 #: ../ui/gcr-viewer-tool.c:100
 msgid "- View certificate and key files"
