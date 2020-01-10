@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrSystemPrompt</title>
+<title>GcrSystemPrompt: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="prompts.html" title="Part IV. Prompting">
 <link rel="prev" href="GcrPromptDialog.html" title="GcrPromptDialog">
 <link rel="next" href="GcrSystemPrompter.html" title="GcrSystemPrompter">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -96,7 +96,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GcrSystemPrompt.html#gcr-system-prompt-close" title="gcr_system_prompt_close ()">gcr_system_prompt_close</a> <span class="c_punctuation">()</span>
@@ -112,7 +112,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GcrSystemPrompt.html#gcr-system-prompt-close-finish" title="gcr_system_prompt_close_finish ()">gcr_system_prompt_close_finish</a> <span class="c_punctuation">()</span>
@@ -132,7 +132,7 @@
 <tbody>
 <tr>
 <td class="property_type">
-<span class="type">gchar</span> *</td>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="GcrSystemPrompt.html#GcrSystemPrompt--bus-name" title="The “bus-name” property">bus-name</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
@@ -143,7 +143,7 @@
 <td class="property_flags">Read / Write</td>
 </tr>
 <tr>
-<td class="property_type"><span class="type">gint</span></td>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></td>
 <td class="property_name"><a class="link" href="GcrSystemPrompt.html#GcrSystemPrompt--timeout-seconds" title="The “timeout-seconds” property">timeout-seconds</a></td>
 <td class="property_flags">Write / Construct Only</td>
 </tr>
@@ -175,7 +175,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrSystemPrompt.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GcrSystemPrompt
 </pre>
 </div>
@@ -183,7 +183,7 @@
 <a name="GcrSystemPrompt.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GcrSystemPrompt implements
- <a class="link" href="GcrPrompt.html" title="GcrPrompt">GcrPrompt</a>,  GInitable and  GAsyncInitable.</p>
+ <a class="link" href="GcrPrompt.html" title="GcrPrompt">GcrPrompt</a>,  <a href="https://developer.gnome.org/gio/unstable/GInitable.html">GInitable</a> and  <a href="https://developer.gnome.org/gio/unstable/GAsyncInitable.html">GAsyncInitable</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GcrSystemPrompt.description"></a><h2>Description</h2>
@@ -209,9 +209,9 @@ may no longer need to prompt.</p>
 <div class="refsect2">
 <a name="gcr-system-prompt-open"></a><h3>gcr_system_prompt_open ()</h3>
 <pre class="programlisting"><a class="link" href="GcrPrompt.html" title="GcrPrompt"><span class="returnvalue">GcrPrompt</span></a> *
-gcr_system_prompt_open (<em class="parameter"><code><span class="type">gint</span> timeout_seconds</code></em>,
-                        <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                        <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+gcr_system_prompt_open (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout_seconds</code></em>,
+                        <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                        <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Opens a system prompt with the default prompter.</p>
 <p>Most system prompters only allow showing one prompt at a time, and if
 another prompt is shown then this method will block for up to
@@ -251,7 +251,7 @@ error.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.5.4.9.3.7"></a><h4>Returns</h4>
-<p> the prompt, or <code class="literal">NULL</code> if
+<p> the prompt, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 prompt could not be opened. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gcr.SystemPrompt]</span></p>
 </div>
@@ -260,10 +260,10 @@ prompt could not be opened. </p>
 <div class="refsect2">
 <a name="gcr-system-prompt-open-async"></a><h3>gcr_system_prompt_open_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-gcr_system_prompt_open_async (<em class="parameter"><code><span class="type">gint</span> timeout_seconds</code></em>,
-                              <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                              <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                              <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+gcr_system_prompt_open_async (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout_seconds</code></em>,
+                              <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                              <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                              <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Asynchronously open a system prompt with the default system prompter.</p>
 <p>Most system prompters only allow showing one prompt at a time, and if
 another prompt is shown then this method will block for up to
@@ -311,8 +311,8 @@ error.</p>
 <div class="refsect2">
 <a name="gcr-system-prompt-open-finish"></a><h3>gcr_system_prompt_open_finish ()</h3>
 <pre class="programlisting"><a class="link" href="GcrPrompt.html" title="GcrPrompt"><span class="returnvalue">GcrPrompt</span></a> *
-gcr_system_prompt_open_finish (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
-                               <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+gcr_system_prompt_open_finish (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Complete an operation to asynchronously open a system prompt.</p>
 <div class="refsect3">
 <a name="id-1.5.4.9.5.5"></a><h4>Parameters</h4>
@@ -338,7 +338,7 @@ gcr_system_prompt_open_finish (<em class="parameter"><code><span class="type">GA
 </div>
 <div class="refsect3">
 <a name="id-1.5.4.9.5.6"></a><h4>Returns</h4>
-<p> the prompt, or <code class="literal">NULL</code> if
+<p> the prompt, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 prompt could not be opened. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gcr.SystemPrompt]</span></p>
 </div>
@@ -347,11 +347,11 @@ prompt could not be opened. </p>
 <div class="refsect2">
 <a name="gcr-system-prompt-open-for-prompter"></a><h3>gcr_system_prompt_open_for_prompter ()</h3>
 <pre class="programlisting"><a class="link" href="GcrPrompt.html" title="GcrPrompt"><span class="returnvalue">GcrPrompt</span></a> *
-gcr_system_prompt_open_for_prompter (<em class="parameter"><code>const <span class="type">gchar</span> *prompter_name</code></em>,
-                                     <em class="parameter"><code><span class="type">gint</span> timeout_seconds</code></em>,
-                                     <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
-<p>Opens a system prompt. If prompter_name is <code class="literal">NULL</code>, then the default
+gcr_system_prompt_open_for_prompter (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *prompter_name</code></em>,
+                                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout_seconds</code></em>,
+                                     <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                     <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>Opens a system prompt. If prompter_name is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the default
 system prompter is used.</p>
 <p>Most system prompters only allow showing one prompt at a time, and if
 another prompt is shown then this method will block for up to
@@ -396,7 +396,7 @@ error.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.5.4.9.6.7"></a><h4>Returns</h4>
-<p> the prompt, or <code class="literal">NULL</code> if
+<p> the prompt, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if
 prompt could not be opened. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gcr.SystemPrompt]</span></p>
 </div>
@@ -406,12 +406,12 @@ prompt could not be opened. </p>
 <a name="gcr-system-prompt-open-for-prompter-async"></a><h3>gcr_system_prompt_open_for_prompter_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_system_prompt_open_for_prompter_async
-                               (<em class="parameter"><code>const <span class="type">gchar</span> *prompter_name</code></em>,
-                                <em class="parameter"><code><span class="type">gint</span> timeout_seconds</code></em>,
-                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
-<p>Opens a system prompt asynchronously. If prompter_name is <code class="literal">NULL</code>, then the
+                               (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *prompter_name</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> timeout_seconds</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
+<p>Opens a system prompt asynchronously. If prompter_name is <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the
 default system prompter is used.</p>
 <p>Most system prompters only allow showing one prompt at a time, and if
 another prompt is shown then this method will block for up to
@@ -490,16 +490,16 @@ gcr_system_prompt_get_secret_exchange (<em class="parameter"><code><a class="lin
 <hr>
 <div class="refsect2">
 <a name="gcr-system-prompt-close"></a><h3>gcr_system_prompt_close ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 gcr_system_prompt_close (<em class="parameter"><code><a class="link" href="GcrSystemPrompt.html" title="GcrSystemPrompt"><span class="type">GcrSystemPrompt</span></a> *self</code></em>,
-                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                         <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                         <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Close this prompt. After calling this function, no further prompts will
 succeed on this object. The prompt object is not unreferenced by this
 function, and you must unreference it once done.</p>
 <p>This call may block, use the <a class="link" href="GcrSystemPrompt.html#gcr-system-prompt-close-async" title="gcr_system_prompt_close_async ()"><code class="function">gcr_system_prompt_close_async()</code></a> to perform
 this action indefinitely.</p>
-<p>Whether or not this function returns <code class="literal">TRUE</code>, the system prompt object is
+<p>Whether or not this function returns <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the system prompt object is
 still closed and may not be further used.</p>
 <div class="refsect3">
 <a name="id-1.5.4.9.9.7"></a><h4>Parameters</h4>
@@ -531,7 +531,6 @@ still closed and may not be further used.</p>
 <div class="refsect3">
 <a name="id-1.5.4.9.9.8"></a><h4>Returns</h4>
 <p> whether close was cleanly completed</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -539,9 +538,9 @@ still closed and may not be further used.</p>
 <a name="gcr-system-prompt-close-async"></a><h3>gcr_system_prompt_close_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_system_prompt_close_async (<em class="parameter"><code><a class="link" href="GcrSystemPrompt.html" title="GcrSystemPrompt"><span class="type">GcrSystemPrompt</span></a> *self</code></em>,
-                               <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                               <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                               <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                               <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Close this prompt asynchronously. After calling this function, no further
 methods may be called on this object. The prompt object is not unreferenced
 by this function, and you must unreference it once done.</p>
@@ -582,12 +581,12 @@ by this function, and you must unreference it once done.</p>
 <hr>
 <div class="refsect2">
 <a name="gcr-system-prompt-close-finish"></a><h3>gcr_system_prompt_close_finish ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 gcr_system_prompt_close_finish (<em class="parameter"><code><a class="link" href="GcrSystemPrompt.html" title="GcrSystemPrompt"><span class="type">GcrSystemPrompt</span></a> *self</code></em>,
-                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
-                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Complete operation to close this prompt.</p>
-<p>Whether or not this function returns <code class="literal">TRUE</code>, the system prompt object is
+<p>Whether or not this function returns <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, the system prompt object is
 still closed and may not be further used.</p>
 <div class="refsect3">
 <a name="id-1.5.4.9.11.6"></a><h4>Parameters</h4>
@@ -619,7 +618,6 @@ still closed and may not be further used.</p>
 <div class="refsect3">
 <a name="id-1.5.4.9.11.7"></a><h4>Returns</h4>
 <p> whether close was cleanly completed</p>
-<p></p>
 </div>
 </div>
 </div>
@@ -648,7 +646,7 @@ dialog.</p>
 <col width="200px" class="struct_members_annotations">
 </colgroup>
 <tbody><tr>
-<td class="struct_member_name"><p><span class="type">GObjectClass</span> <em class="structfield"><code><a name="GcrSystemPromptClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="GcrSystemPromptClass.parent-class"></a>parent_class</code></em>;</p></td>
 <td class="struct_member_description"><p>parent class</p></td>
 <td class="struct_member_annotations"> </td>
 </tr></tbody>
@@ -686,8 +684,8 @@ prompt expires, then <a class="link" href="GcrSystemPrompt.html#GCR-SYSTEM-PROMP
 <a name="GcrSystemPrompt.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="GcrSystemPrompt--bus-name"></a><h3>The <code class="literal">“bus-name”</code> property</h3>
-<pre class="programlisting">  “bus-name”                 <span class="type">gchar</span> *</pre>
-<p>The DBus bus name of the prompter to use for prompting, or <code class="literal">NULL</code>
+<pre class="programlisting">  “bus-name”                 <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
+<p>The DBus bus name of the prompter to use for prompting, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
 for the default prompter.</p>
 <p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
@@ -703,7 +701,7 @@ secret exchange will be used if this is not set.</p>
 <hr>
 <div class="refsect2">
 <a name="GcrSystemPrompt--timeout-seconds"></a><h3>The <code class="literal">“timeout-seconds”</code> property</h3>
-<pre class="programlisting">  “timeout-seconds”          <span class="type">gint</span></pre>
+<pre class="programlisting">  “timeout-seconds”          <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a></pre>
 <p>The timeout in seconds to wait when opening the prompt.</p>
 <p>Flags: Write / Construct Only</p>
 <p>Allowed values: &gt;= -1</p>
@@ -712,7 +710,6 @@ secret exchange will be used if this is not set.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

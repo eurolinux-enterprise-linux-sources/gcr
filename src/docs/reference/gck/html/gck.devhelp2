@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="Gck Library Reference Manual" link="index.html" author="" name="gck" version="2" language="c">
   <chapters>
     <sub name="PKCS#11 GObject Bindings" link="reference.html">
@@ -352,5 +351,22 @@
     <keyword type="function" name="gck_value_to_ulong ()" link="gck-Miscellaneous-Functions.html#gck-value-to-ulong"/>
     <keyword type="macro" name="GCK_INVALID" link="gck-Miscellaneous-Functions.html#GCK-INVALID:CAPS"/>
     <keyword type="enum" name="enum GckError" link="gck-Miscellaneous-Functions.html#GckError"/>
+    <keyword type="constant" name="GCK_SESSION_READ_ONLY" link="GckSlot.html#GCK-SESSION-READ-ONLY:CAPS"/>
+    <keyword type="constant" name="GCK_SESSION_READ_WRITE" link="GckSlot.html#GCK-SESSION-READ-WRITE:CAPS"/>
+    <keyword type="constant" name="GCK_SESSION_LOGIN_USER" link="GckSlot.html#GCK-SESSION-LOGIN-USER:CAPS"/>
+    <keyword type="constant" name="GCK_SESSION_AUTHENTICATE" link="GckSlot.html#GCK-SESSION-AUTHENTICATE:CAPS"/>
+    <keyword type="constant" name="GCK_BUILDER_NONE" link="GckAttributes.html#GCK-BUILDER-NONE:CAPS"/>
+    <keyword type="constant" name="GCK_BUILDER_SECURE_MEMORY" link="GckAttributes.html#GCK-BUILDER-SECURE-MEMORY:CAPS"/>
+    <keyword type="constant" name="GCK_URI_BAD_SCHEME" link="gck-PKCS11-URIs.html#GCK-URI-BAD-SCHEME:CAPS"/>
+    <keyword type="constant" name="GCK_URI_BAD_ENCODING" link="gck-PKCS11-URIs.html#GCK-URI-BAD-ENCODING:CAPS"/>
+    <keyword type="constant" name="GCK_URI_BAD_SYNTAX" link="gck-PKCS11-URIs.html#GCK-URI-BAD-SYNTAX:CAPS"/>
+    <keyword type="constant" name="GCK_URI_BAD_VERSION" link="gck-PKCS11-URIs.html#GCK-URI-BAD-VERSION:CAPS"/>
+    <keyword type="constant" name="GCK_URI_NOT_FOUND" link="gck-PKCS11-URIs.html#GCK-URI-NOT-FOUND:CAPS"/>
+    <keyword type="constant" name="GCK_URI_FOR_OBJECT" link="gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT:CAPS"/>
+    <keyword type="constant" name="GCK_URI_FOR_TOKEN" link="gck-PKCS11-URIs.html#GCK-URI-FOR-TOKEN:CAPS"/>
+    <keyword type="constant" name="GCK_URI_FOR_MODULE" link="gck-PKCS11-URIs.html#GCK-URI-FOR-MODULE:CAPS"/>
+    <keyword type="constant" name="GCK_URI_WITH_VERSION" link="gck-PKCS11-URIs.html#GCK-URI-WITH-VERSION:CAPS"/>
+    <keyword type="constant" name="GCK_URI_FOR_ANY" link="gck-PKCS11-URIs.html#GCK-URI-FOR-ANY:CAPS"/>
+    <keyword type="constant" name="GCK_ERROR_MODULE_PROBLEM" link="gck-Miscellaneous-Functions.html#GCK-ERROR-MODULE-PROBLEM:CAPS"/>
   </functions>
 </book>

@@ -3,33 +3,31 @@
 %endif
 
 Name:           gcr
-Version:        3.14.0
+Version:        3.20.0
 Release:        1%{?dist}
 Summary:        A library for bits of crypto UI and parsing
 
 Group:          Development/Libraries
 License:        LGPLv2+
-URL:            http://live.gnome.org/CryptoGlue/
-Source0:        http://download.gnome.org/sources/gcr/3.14/gcr-%{version}.tar.xz
+URL:            https://wiki.gnome.org/Projects/CryptoGlue
+Source0:        https://download.gnome.org/sources/%{name}/3.20/%{name}-%{version}.tar.xz
 
+BuildRequires:  pkgconfig(gio-unix-2.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(p11-kit-1)
+BuildRequires:  chrpath
+BuildRequires:  docbook-style-xsl
+BuildRequires:  libgcrypt-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
-BuildRequires:  glib2-devel
-BuildRequires:  gobject-introspection-devel
-BuildRequires:  gtk3-devel
-BuildRequires:  p11-kit-devel
-BuildRequires:  gnupg
-BuildRequires:  libgcrypt-devel
-BuildRequires:  libtasn1-tools
-BuildRequires:  libtasn1-devel
-BuildRequires:  chrpath
-BuildRequires:  vala-devel
-BuildRequires:  vala-tools
-BuildRequires:  libxslt
-BuildRequires:  docbook-style-xsl
+BuildRequires:  vala
 %if 0%{?has_valgrind}
 BuildRequires:  valgrind-devel
 %endif
+BuildRequires:  /usr/bin/gpg2
+BuildRequires:  /usr/bin/valac
+BuildRequires:  /usr/bin/xsltproc
 
 Conflicts: gnome-keyring < 3.3.0
 
@@ -63,7 +61,7 @@ make %{?_smp_mflags}
 
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/libmock-test-module.*
 desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/gcr-viewer.desktop
@@ -97,7 +95,8 @@ fi
 
 
 %files -f %{name}.lang
-%doc COPYING
+%doc README NEWS
+%license COPYING
 %{_bindir}/gcr-viewer
 %{_datadir}/applications/gcr-viewer.desktop
 %dir %{_datadir}/GConf
@@ -138,6 +137,10 @@ fi
 
 
 %changelog
+* Fri Mar 25 2016 Kalev Lember <klember@redhat.com> - 3.20.0-1
+- Update to 3.20.0
+- Resolves: #1386859
+
 * Tue May 19 2015 David King <dking@redhat.com> - 3.14.0-1
 - Update to 3.14.0 (#1222974)
 

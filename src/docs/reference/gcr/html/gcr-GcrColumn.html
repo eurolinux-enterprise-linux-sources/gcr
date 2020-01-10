@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrColumn</title>
+<title>GcrColumn: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrKeyWidget.html" title="GcrKeyWidget">
 <link rel="next" href="GcrComboSelector.html" title="GcrComboSelector">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -57,6 +57,7 @@ the columns to display.</p>
 </div>
 <div class="refsect1">
 <a name="gcr-GcrColumn.functions_details"></a><h2>Functions</h2>
+<p></p>
 </div>
 <div class="refsect1">
 <a name="gcr-GcrColumn.other_details"></a><h2>Types and Values</h2>
@@ -83,7 +84,7 @@ the columns to display.</p>
     <tbody>
       <tr>
         <td class="listing_lines" align="right"><pre>1</pre></td>
-        <td class="listing_code"><pre class="programlisting"><span class="function">NC_</span><span class="symbol">(</span><span class="string">"column"</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"My Column Name"</span><span class="symbol">)</span></pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function"><a href="https://developer.gnome.org/glib/unstable/glib-I18N.html#NC-:CAPS">NC_</a></span><span class="symbol">(</span><span class="string">"column"</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"My Column Name"</span><span class="symbol">)</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -99,22 +100,22 @@ the columns to display.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p>const <span class="type">gchar</span> *<em class="structfield"><code><a name="GcrColumn.property-name"></a>property_name</code></em>;</p></td>
+<td class="struct_member_name"><p>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GcrColumn.property-name"></a>property_name</code></em>;</p></td>
 <td class="struct_member_description"><p>The name of the property this column will display</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GType</span> <em class="structfield"><code><a name="GcrColumn.property-type"></a>property_type</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <em class="structfield"><code><a name="GcrColumn.property-type"></a>property_type</code></em>;</p></td>
 <td class="struct_member_description"><p>The type of the property</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GType</span> <em class="structfield"><code><a name="GcrColumn.column-type"></a>column_type</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> <em class="structfield"><code><a name="GcrColumn.column-type"></a>column_type</code></em>;</p></td>
 <td class="struct_member_description"><p>The eventual type of the column</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p>const <span class="type">gchar</span> *<em class="structfield"><code><a name="GcrColumn.label"></a>label</code></em>;</p></td>
+<td class="struct_member_name"><p>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *<em class="structfield"><code><a name="GcrColumn.label"></a>label</code></em>;</p></td>
 <td class="struct_member_description"><p>The display label for the column</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -124,14 +125,14 @@ the columns to display.</p>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">GValueTransform</span> <em class="structfield"><code><a name="GcrColumn.transformer"></a>transformer</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Generic-values.html#GValueTransform"><span class="type">GValueTransform</span></a> <em class="structfield"><code><a name="GcrColumn.transformer"></a>transformer</code></em>;</p></td>
 <td class="struct_member_description"><p>A transformer function used to convert the value from
-the property type to the column type. Can be <code class="literal">NULL</code> if the types
+the property type to the column type. Can be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the types
 are the same.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><span class="type">gpointer</span> <em class="structfield"><code><a name="GcrColumn.user-data"></a>user_data</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> <em class="structfield"><code><a name="GcrColumn.user-data"></a>user_data</code></em>;</p></td>
 <td class="struct_member_description"><p>User data associated with the column</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -180,7 +181,6 @@ are the same.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

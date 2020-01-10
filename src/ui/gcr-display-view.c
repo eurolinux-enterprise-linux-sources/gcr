@@ -254,7 +254,10 @@ style_display_item (GtkWidget *widget, GcrDisplayItem *item)
 	gtk_style_context_save (style);
 
 	gtk_style_context_add_class (style, GTK_STYLE_CLASS_VIEW);
-	gtk_style_context_get_background_color (style, GTK_STATE_FLAG_NORMAL, &color);
+	gtk_style_context_set_state (style, GTK_STATE_FLAG_NORMAL);
+	gtk_style_context_get_background_color (style,
+						gtk_style_context_get_state (style),
+						&color);
 
 	gtk_style_context_restore (style);
 
@@ -494,9 +497,12 @@ paint_item_border (GcrDisplayView *self,
 
 	ensure_text_height (self);
 
+	gtk_style_context_save (context);
+	gtk_style_context_set_state (context, GTK_STATE_FLAG_SELECTED | GTK_STATE_FLAG_FOCUSED);
 	gtk_style_context_get_background_color (context,
-	                                        GTK_STATE_FLAG_SELECTED | GTK_STATE_FLAG_FOCUSED,
+	                                        gtk_style_context_get_state (context),
 	                                        &color);
+	gtk_style_context_restore (context);
 
 	gtk_text_view_get_iter_location (view, &iter, &location);
 
@@ -1168,8 +1174,13 @@ _gcr_display_view_append_message (GcrDisplayView *self,
 
 	if (name != NULL) {
 		image = gtk_image_new_from_icon_name (name, GTK_ICON_SIZE_MENU);
+#if GTK_CHECK_VERSION (3, 12, 0)
 		gtk_widget_set_margin_start (image, MESSAGE_PADDING);
 		gtk_widget_set_margin_end (image, MESSAGE_PADDING);
+#else
+		gtk_widget_set_margin_left (image, MESSAGE_PADDING);
+		gtk_widget_set_margin_right (image, MESSAGE_PADDING);
+#endif
 		gtk_widget_show (image);
 
 		anchor = gtk_text_buffer_create_child_anchor (self->pv->buffer, &iter);

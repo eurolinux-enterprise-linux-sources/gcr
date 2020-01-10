@@ -1,3 +1,31 @@
+gcr 3.20.0:
+- Build fixes [#763488 #766301
+- Updated translations
+
+gcr 3.19.4:
+- Build fixes [#756235 #755873]
+- Updated translations
+
+gcr 3.18.0:
+- Updated translations
+
+gcr 3.17.4:
+- Bump up the GTK+ deps
+- Build fixes
+- Updated translations
+
+gcr 3.16.0:
+- No changes from 3.15.92
+
+gcr 3.15.92:
+ - Updated translations
+ - Build fixes [#745629]
+
+gcr 3.15.90:
+ - Fix memory leaks [#738508 #739239]
+ - Updated translations
+ - Build fixes [#743201 #739449 #737622]
+
 gcr 3.14.0:
  - Updated translations
 

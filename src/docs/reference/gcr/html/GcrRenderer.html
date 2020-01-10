@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrRenderer</title>
+<title>GcrRenderer: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrTreeSelector.html" title="GcrTreeSelector">
 <link rel="next" href="GcrViewer.html" title="GcrViewer">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -128,7 +128,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">gchar</span> *</td>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="GcrRenderer.html#GcrRenderer--label" title="The “label” property">label</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -146,7 +146,7 @@
 <tbody><tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="GcrRenderer.html#GcrRenderer-data-changed" title="The “data-changed” signal">data-changed</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -179,7 +179,7 @@
 <a name="GcrRenderer.prerequisites"></a><h2>Prerequisites</h2>
 <p>
 GcrRenderer requires
- GObject.</p>
+ <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>.</p>
 </div>
 <div class="refsect1">
 <a name="GcrRenderer.implementations"></a><h2>Known Implementations</h2>
@@ -202,7 +202,7 @@ the data in those attributes.</p>
 <div class="refsect2">
 <a name="gcr-renderer-create"></a><h3>gcr_renderer_create ()</h3>
 <pre class="programlisting"><a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="returnvalue">GcrRenderer</span></a> *
-gcr_renderer_create (<em class="parameter"><code>const <span class="type">gchar</span> *label</code></em>,
+gcr_renderer_create (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
                      <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *attrs</code></em>);</pre>
 <p>Create and initialize a renderer for the given attributes and label. These
 renderers should have been preregistered via <a class="link" href="GcrRenderer.html#gcr-renderer-register" title="gcr_renderer_register ()"><code class="function">gcr_renderer_register()</code></a>.</p>
@@ -230,8 +230,8 @@ renderers should have been preregistered via <a class="link" href="GcrRenderer.h
 </div>
 <div class="refsect3">
 <a name="id-1.4.9.11.2.6"></a><h4>Returns</h4>
-<p> a new renderer, or <code class="literal">NULL</code> if no renderer
-matched the attributes; the render should be released with <code class="function">g_object_unref()</code>. </p>
+<p> a new renderer, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no renderer
+matched the attributes; the render should be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
 </div>
 </div>
@@ -239,7 +239,7 @@ matched the attributes; the render should be released with <code class="function
 <div class="refsect2">
 <a name="gcr-renderer-register"></a><h3>gcr_renderer_register ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-gcr_renderer_register (<em class="parameter"><code><span class="type">GType</span> renderer_type</code></em>,
+gcr_renderer_register (<em class="parameter"><code><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> renderer_type</code></em>,
                        <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *attrs</code></em>);</pre>
 <p>Register a renderer to be created when matching attributes are passed to
 <a class="link" href="GcrRenderer.html#gcr-renderer-create" title="gcr_renderer_create ()"><code class="function">gcr_renderer_create()</code></a>.</p>
@@ -455,7 +455,7 @@ Gcr library.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GcrRendererIface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="GcrRendererIface.parent"></a>parent</code></em>;</p></td>
 <td class="struct_member_description"><p>the parent interface type</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -491,7 +491,7 @@ renderer options</p></td>
 <hr>
 <div class="refsect2">
 <a name="GcrRenderer--label"></a><h3>The <code class="literal">“label”</code> property</h3>
-<pre class="programlisting">  “label”                    <span class="type">gchar</span> *</pre>
+<pre class="programlisting">  “label”                    <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The label to display.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: ""</p>
@@ -503,7 +503,7 @@ renderer options</p></td>
 <a name="GcrRenderer-data-changed"></a><h3>The <code class="literal">“data-changed”</code> signal</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 user_function (<a class="link" href="GcrRenderer.html" title="GcrRenderer"><span class="type">GcrRenderer</span></a> *arg0,
-               <span class="type">gpointer</span>     user_data)</pre>
+               <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>     user_data)</pre>
 <p>A signal that is emitted by the renderer when it's data
 changed and should be rerendered.</p>
 <div class="refsect3">
@@ -521,12 +521,11 @@ changed and should be rerendered.</p>
 </tr></tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="https://developer.gnome.org/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

@@ -70,6 +70,10 @@
 <ANCHOR id="GckSlot.other_details" href="gck/GckSlot.html#GckSlot.other_details">
 <ANCHOR id="GckMechanismInfo-struct" href="gck/GckSlot.html#GckMechanismInfo-struct">
 <ANCHOR id="GckSessionOptions" href="gck/GckSlot.html#GckSessionOptions">
+<ANCHOR id="GCK-SESSION-READ-ONLY:CAPS" href="gck/GckSlot.html#GCK-SESSION-READ-ONLY:CAPS">
+<ANCHOR id="GCK-SESSION-READ-WRITE:CAPS" href="gck/GckSlot.html#GCK-SESSION-READ-WRITE:CAPS">
+<ANCHOR id="GCK-SESSION-LOGIN-USER:CAPS" href="gck/GckSlot.html#GCK-SESSION-LOGIN-USER:CAPS">
+<ANCHOR id="GCK-SESSION-AUTHENTICATE:CAPS" href="gck/GckSlot.html#GCK-SESSION-AUTHENTICATE:CAPS">
 <ANCHOR id="GckSlot-struct" href="gck/GckSlot.html#GckSlot-struct">
 <ANCHOR id="GckSlotInfo-struct" href="gck/GckSlot.html#GckSlotInfo-struct">
 <ANCHOR id="GckTokenInfo-struct" href="gck/GckSlot.html#GckTokenInfo-struct">
@@ -326,6 +330,8 @@
 <ANCHOR id="GckAttributes-struct" href="gck/GckAttributes.html#GckAttributes-struct">
 <ANCHOR id="GckBuilder-struct" href="gck/GckAttributes.html#GckBuilder-struct">
 <ANCHOR id="GckBuilderFlags" href="gck/GckAttributes.html#GckBuilderFlags">
+<ANCHOR id="GCK-BUILDER-NONE:CAPS" href="gck/GckAttributes.html#GCK-BUILDER-NONE:CAPS">
+<ANCHOR id="GCK-BUILDER-SECURE-MEMORY:CAPS" href="gck/GckAttributes.html#GCK-BUILDER-SECURE-MEMORY:CAPS">
 <ANCHOR id="GCK-BUILDER-INIT:CAPS" href="gck/GckAttributes.html#GCK-BUILDER-INIT:CAPS">
 <ANCHOR id="GckObjectCache" href="gck/GckObjectCache.html">
 <ANCHOR id="GckObjectCache.functions" href="gck/GckObjectCache.html#GckObjectCache.functions">
@@ -416,7 +422,17 @@
 <ANCHOR id="gck-PKCS11-URIs.other_details" href="gck/gck-PKCS11-URIs.html#gck-PKCS11-URIs.other_details">
 <ANCHOR id="GckUriData-struct" href="gck/gck-PKCS11-URIs.html#GckUriData-struct">
 <ANCHOR id="GckUriError" href="gck/gck-PKCS11-URIs.html#GckUriError">
+<ANCHOR id="GCK-URI-BAD-SCHEME:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-BAD-SCHEME:CAPS">
+<ANCHOR id="GCK-URI-BAD-ENCODING:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-BAD-ENCODING:CAPS">
+<ANCHOR id="GCK-URI-BAD-SYNTAX:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-BAD-SYNTAX:CAPS">
+<ANCHOR id="GCK-URI-BAD-VERSION:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-BAD-VERSION:CAPS">
+<ANCHOR id="GCK-URI-NOT-FOUND:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-NOT-FOUND:CAPS">
 <ANCHOR id="GckUriFlags" href="gck/gck-PKCS11-URIs.html#GckUriFlags">
+<ANCHOR id="GCK-URI-FOR-OBJECT:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-FOR-OBJECT:CAPS">
+<ANCHOR id="GCK-URI-FOR-TOKEN:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-FOR-TOKEN:CAPS">
+<ANCHOR id="GCK-URI-FOR-MODULE:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-FOR-MODULE:CAPS">
+<ANCHOR id="GCK-URI-WITH-VERSION:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-WITH-VERSION:CAPS">
+<ANCHOR id="GCK-URI-FOR-ANY:CAPS" href="gck/gck-PKCS11-URIs.html#GCK-URI-FOR-ANY:CAPS">
 <ANCHOR id="gck-Library-Utilities" href="gck/gck-Library-Utilities.html">
 <ANCHOR id="gck-Library-Utilities.functions" href="gck/gck-Library-Utilities.html#gck-Library-Utilities.functions">
 <ANCHOR id="gck-Library-Utilities.description" href="gck/gck-Library-Utilities.html#gck-Library-Utilities.description">
@@ -440,6 +456,7 @@
 <ANCHOR id="GCK-INVALID:CAPS" href="gck/gck-Miscellaneous-Functions.html#GCK-INVALID:CAPS">
 <ANCHOR id="gck-Miscellaneous-Functions.other_details" href="gck/gck-Miscellaneous-Functions.html#gck-Miscellaneous-Functions.other_details">
 <ANCHOR id="GckError" href="gck/gck-Miscellaneous-Functions.html#GckError">
+<ANCHOR id="GCK-ERROR-MODULE-PROBLEM:CAPS" href="gck/gck-Miscellaneous-Functions.html#GCK-ERROR-MODULE-PROBLEM:CAPS">
 <ANCHOR id="CK-NOTIFY:CAPS" href="gck/pkcs11-links.html#CK-NOTIFY:CAPS">
 <ANCHOR id="CK-SLOT-ID:CAPS" href="gck/pkcs11-links.html#CK-SLOT-ID:CAPS">
 <ANCHOR id="CK-FUNCTION-LIST-PTR:CAPS" href="gck/pkcs11-links.html#CK-FUNCTION-LIST-PTR:CAPS">
@@ -453,6 +470,7 @@
 <ANCHOR id="annotation-glossterm-array" href="gck/annotation-glossary.html#annotation-glossterm-array">
 <ANCHOR id="annotation-glossterm-element-type" href="gck/annotation-glossary.html#annotation-glossterm-element-type">
 <ANCHOR id="annotation-glossterm-out" href="gck/annotation-glossary.html#annotation-glossterm-out">
+<ANCHOR id="annotation-glossterm-rename-to" href="gck/annotation-glossary.html#annotation-glossterm-rename-to">
 <ANCHOR id="annotation-glossterm-skip" href="gck/annotation-glossary.html#annotation-glossterm-skip">
 <ANCHOR id="annotation-glossterm-transfer full" href="gck/annotation-glossary.html#annotation-glossterm-transfer full">
 <ANCHOR id="annotation-glossterm-transfer none" href="gck/annotation-glossary.html#annotation-glossterm-transfer none">

@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrPkcs11Certificate</title>
+<title>GcrPkcs11Certificate: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="certificates.html" title="Part I. Certificates">
 <link rel="prev" href="GcrSimpleCertificate.html" title="GcrSimpleCertificate">
 <link rel="next" href="GcrCertificateChain.html" title="GcrCertificateChain">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -114,7 +114,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrPkcs11Certificate.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> <a href="http://developer.gnome.org/gck/stable/GckObject.html">GckObject</a>
         <span class="lineart">╰──</span> GcrPkcs11Certificate
 </pre>
@@ -140,15 +140,15 @@ are available via <a class="link" href="GcrPkcs11Certificate.html#gcr-pkcs11-cer
 <a name="gcr-pkcs11-certificate-lookup-issuer"></a><h3>gcr_pkcs11_certificate_lookup_issuer ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="returnvalue">GcrCertificate</span></a> *
 gcr_pkcs11_certificate_lookup_issuer (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>,
-                                      <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                      <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                      <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Lookup a the issuer of a <em class="parameter"><code>certificate</code></em>
  in the PKCS#11 storage. The
 lookup is done using the issuer DN of the certificate. No certificate chain
 verification is done. Use a crypto library to make trust decisions.</p>
 <p>This call may block, see <a class="link" href="GcrPkcs11Certificate.html#gcr-pkcs11-certificate-lookup-issuer" title="gcr_pkcs11_certificate_lookup_issuer ()"><code class="function">gcr_pkcs11_certificate_lookup_issuer()</code></a> for the
 non-blocking version.</p>
-<p>Will return <code class="literal">NULL</code> if no issuer certificate is found. Use <em class="parameter"><code>error</code></em>
+<p>Will return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no issuer certificate is found. Use <em class="parameter"><code>error</code></em>
  to determine
 if an error occurred.</p>
 <div class="refsect3">
@@ -167,12 +167,12 @@ if an error occurred.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>a <span class="type">GCancellable</span></p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>a <span class="type">GError</span>, or NULL</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or NULL</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -180,7 +180,7 @@ if an error occurred.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.9.2.8"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate"><span class="type">GcrPkcs11Certificate</span></a>, or <code class="literal">NULL</code>. </p>
+<p> a new <a class="link" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate"><span class="type">GcrPkcs11Certificate</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -190,9 +190,9 @@ if an error occurred.</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_pkcs11_certificate_lookup_issuer_async
                                (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *certificate</code></em>,
-                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Lookup a the issuer of a <em class="parameter"><code>certificate</code></em>
  in the PKCS#11 storage. The
 lookup is done using the issuer DN of the certificate. No certificate chain
@@ -216,12 +216,12 @@ operation.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>a <span class="type">GCancellable</span></p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p>a <span class="type">GAsyncReadyCallback</span> to call when the operation completes</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> to call when the operation completes</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -238,11 +238,11 @@ operation.</p>
 <a name="gcr-pkcs11-certificate-lookup-issuer-finish"></a><h3>gcr_pkcs11_certificate_lookup_issuer_finish ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="returnvalue">GcrCertificate</span></a> *
 gcr_pkcs11_certificate_lookup_issuer_finish
-                               (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
-                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                               (<em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Finishes an asynchronous operation started by
 <a class="link" href="GcrPkcs11Certificate.html#gcr-pkcs11-certificate-lookup-issuer-async" title="gcr_pkcs11_certificate_lookup_issuer_async ()"><code class="function">gcr_pkcs11_certificate_lookup_issuer_async()</code></a>.</p>
-<p>Will return <code class="literal">NULL</code> if no issuer certificate is found. Use <em class="parameter"><code>error</code></em>
+<p>Will return <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no issuer certificate is found. Use <em class="parameter"><code>error</code></em>
  to determine
 if an error occurred.</p>
 <div class="refsect3">
@@ -256,12 +256,12 @@ if an error occurred.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>result</p></td>
-<td class="parameter_description"><p>the <span class="type">GAsyncResult</span> passed to the callback</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> passed to the callback</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>a <span class="type">GError</span>, or NULL</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or NULL</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -269,7 +269,7 @@ if an error occurred.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.2.4.9.4.7"></a><h4>Returns</h4>
-<p> a new <a class="link" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate"><span class="type">GcrPkcs11Certificate</span></a>, or <code class="literal">NULL</code>. </p>
+<p> a new <a class="link" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate"><span class="type">GcrPkcs11Certificate</span></a>, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -328,7 +328,6 @@ gcr_pkcs11_certificate_get_attributes (<em class="parameter"><code><a class="lin
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

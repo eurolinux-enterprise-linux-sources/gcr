@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrCertificateWidget</title>
+<title>GcrCertificateWidget: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="widgets.html" title="Part III. Widgets">
 <link rel="next" href="GcrKeyWidget.html" title="GcrKeyWidget">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -140,7 +140,7 @@
 </tr>
 <tr>
 <td class="property_type">
-<span class="type">gchar</span> *</td>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer--label" title="The “label” property">label</a></td>
 <td class="property_flags">Read / Write</td>
 </tr>
@@ -176,8 +176,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrCertificateWidget.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
-    <span class="lineart">├──</span> GInitiallyUnowned
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
     <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
     <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
     <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkBin
@@ -189,7 +189,7 @@
 <a name="GcrCertificateWidget.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GcrCertificateWidget implements
- <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a> and  GtkBuildable.</p>
+ AtkImplementorIface and  GtkBuildable.</p>
 <p>
 GcrCertificateRenderer implements
  <a class="link" href="GcrRenderer.html" title="GcrRenderer">GcrRenderer</a>,  <a class="link" href="GcrComparable.html" title="GcrComparable">GcrComparable</a> and  <a class="link" href="GcrCertificate.html" title="GcrCertificate">GcrCertificate</a>.</p>
@@ -231,7 +231,7 @@ gcr_certificate_widget_new (<em class="parameter"><code><a class="link" href="Gc
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>certificate</p></td>
-<td class="parameter_description"><p> certificate to display, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> certificate to display, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -239,7 +239,7 @@ gcr_certificate_widget_new (<em class="parameter"><code><a class="link" href="Gc
 <div class="refsect3">
 <a name="id-1.4.2.10.3.6"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="GcrCertificateWidget.html" title="GcrCertificateWidget"><span class="type">GcrCertificateWidget</span></a>, which
-should be freed with <code class="function">g_object_unref()</code>. </p>
+should be freed with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -326,7 +326,7 @@ gcr_certificate_renderer_new (<em class="parameter"><code><a class="link" href="
 <div class="refsect3">
 <a name="id-1.4.2.10.6.6"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
-should be released with <code class="function">g_object_unref()</code>. </p>
+should be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -335,7 +335,7 @@ should be released with <code class="function">g_object_unref()</code>. </p>
 <a name="gcr-certificate-renderer-new-for-attributes"></a><h3>gcr_certificate_renderer_new_for_attributes ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="returnvalue">GcrCertificateRenderer</span></a> *
 gcr_certificate_renderer_new_for_attributes
-                               (<em class="parameter"><code>const <span class="type">gchar</span> *label</code></em>,
+                               (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
                                 <em class="parameter"><code><span class="type">struct _GckAttributes</span> *attrs</code></em>);</pre>
 <p>Create a new certificate renderer to display the label and attributes. One
 of the attributes should be a CKA_VALUE type attribute containing a DER
@@ -365,7 +365,7 @@ encoded certificate.</p>
 <div class="refsect3">
 <a name="id-1.4.2.10.7.6"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer"><span class="type">GcrCertificateRenderer</span></a>, which
-should be released with <code class="function">g_object_unref()</code>. </p>
+should be released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -469,7 +469,7 @@ gcr_certificate_renderer_set_certificate
 <col width="200px" class="struct_members_annotations">
 </colgroup>
 <tbody><tr>
-<td class="struct_member_name"><p><span class="type">GObjectClass</span> <em class="structfield"><code><a name="GcrCertificateRendererClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="GcrCertificateRendererClass.parent-class"></a>parent_class</code></em>;</p></td>
 <td class="struct_member_description"><p>The parent class.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr></tbody>
@@ -504,13 +504,13 @@ a CKA_VALUE type attribute which contains a DER encoded certificate.</p>
 <div class="refsect2">
 <a name="GcrCertificateRenderer--certificate"></a><h3>The <code class="literal">“certificate”</code> property</h3>
 <pre class="programlisting">  “certificate”              <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *</pre>
-<p>The certificate to display. May be <code class="literal">NULL</code>.</p>
+<p>The certificate to display. May be <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>Flags: Read / Write</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GcrCertificateRenderer--label"></a><h3>The <code class="literal">“label”</code> property</h3>
-<pre class="programlisting">  “label”                    <span class="type">gchar</span> *</pre>
+<pre class="programlisting">  “label”                    <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The label to display.</p>
 <p>Flags: Read / Write</p>
 <p>Default value: ""</p>
@@ -518,7 +518,6 @@ a CKA_VALUE type attribute which contains a DER encoded certificate.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

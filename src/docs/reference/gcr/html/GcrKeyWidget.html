@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrKeyWidget</title>
+<title>GcrKeyWidget: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrCertificateWidget.html" title="GcrCertificateWidget">
 <link rel="next" href="gcr-GcrColumn.html" title="GcrColumn">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -146,8 +146,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrKeyWidget.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
-    <span class="lineart">├──</span> GInitiallyUnowned
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">├──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
     <span class="lineart">│</span>   <span class="lineart">╰──</span> GtkWidget
     <span class="lineart">│</span>       <span class="lineart">╰──</span> GtkContainer
     <span class="lineart">│</span>           <span class="lineart">╰──</span> GtkBin
@@ -159,7 +159,7 @@
 <a name="GcrKeyWidget.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GcrKeyWidget implements
- <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a> and  GtkBuildable.</p>
+ AtkImplementorIface and  GtkBuildable.</p>
 <p>
 GcrKeyRenderer implements
  <a class="link" href="GcrRenderer.html" title="GcrRenderer">GcrRenderer</a>.</p>
@@ -192,7 +192,7 @@ gcr_key_widget_new (<em class="parameter"><code><a href="http://developer.gnome.
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>attrs</p></td>
-<td class="parameter_description"><p> key to display, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> key to display, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
@@ -200,8 +200,7 @@ gcr_key_widget_new (<em class="parameter"><code><a href="http://developer.gnome.
 <div class="refsect3">
 <a name="id-1.4.3.10.2.6"></a><h4>Returns</h4>
 <p> A newly allocated <a class="link" href="GcrKeyWidget.html" title="GcrKeyWidget"><span class="type">GcrKeyWidget</span></a>, which should be freed
-with <code class="function">g_object_unref()</code>.</p>
-<p></p>
+with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.</p>
 </div>
 </div>
 <hr>
@@ -266,7 +265,7 @@ either an RSA, DSA or EC key in PKCS#11 style.</p>
 <div class="refsect2">
 <a name="gcr-key-renderer-new"></a><h3>gcr_key_renderer_new ()</h3>
 <pre class="programlisting"><a class="link" href="GcrKeyWidget.html#GcrKeyRenderer"><span class="returnvalue">GcrKeyRenderer</span></a> *
-gcr_key_renderer_new (<em class="parameter"><code>const <span class="type">gchar</span> *label</code></em>,
+gcr_key_renderer_new (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *label</code></em>,
                       <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html"><span class="type">GckAttributes</span></a> *attrs</code></em>);</pre>
 <p>Create a new key renderer which renders a given key in the attributes.</p>
 <div class="refsect3">
@@ -285,7 +284,7 @@ gcr_key_renderer_new (<em class="parameter"><code>const <span class="type">gchar
 </tr>
 <tr>
 <td class="parameter_name"><p>attrs</p></td>
-<td class="parameter_description"><p> key to display, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> key to display, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -294,7 +293,7 @@ gcr_key_renderer_new (<em class="parameter"><code>const <span class="type">gchar
 <div class="refsect3">
 <a name="id-1.4.3.10.5.6"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="GcrKeyWidget.html#GcrKeyRenderer"><span class="type">GcrKeyRenderer</span></a>, which should be
-freed with <code class="function">g_object_unref()</code>. </p>
+freed with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -393,7 +392,7 @@ either an RSA, DSA, or EC key in PKCS#11 style.</p>
 <col width="200px" class="struct_members_annotations">
 </colgroup>
 <tbody><tr>
-<td class="struct_member_name"><p><span class="type">GObjectClass</span> <em class="structfield"><code><a name="GcrKeyRendererClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="GcrKeyRendererClass.parent-class"></a>parent_class</code></em>;</p></td>
 <td class="struct_member_description"><p>The parent class.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr></tbody>
@@ -419,7 +418,6 @@ either an RSA, DSA, or EC key in PKCS#11 style.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

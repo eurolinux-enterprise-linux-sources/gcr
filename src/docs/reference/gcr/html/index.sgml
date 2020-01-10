@@ -99,7 +99,15 @@
 <ANCHOR id="GcrCertificateChain-struct" href="gcr/GcrCertificateChain.html#GcrCertificateChain-struct">
 <ANCHOR id="GcrCertificateChainClass" href="gcr/GcrCertificateChain.html#GcrCertificateChainClass">
 <ANCHOR id="GcrCertificateChainStatus" href="gcr/GcrCertificateChain.html#GcrCertificateChainStatus">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-UNKNOWN:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-UNKNOWN:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-INCOMPLETE:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-INCOMPLETE:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-DISTRUSTED:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-DISTRUSTED:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-SELFSIGNED:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-SELFSIGNED:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-PINNED:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-PINNED:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-ANCHORED:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-ANCHORED:CAPS">
 <ANCHOR id="GcrCertificateChainFlags" href="gcr/GcrCertificateChain.html#GcrCertificateChainFlags">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-NONE:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NONE:CAPS">
+<ANCHOR id="GCR-CERTIFICATE-CHAIN-NO-LOOKUPS:CAPS" href="gcr/GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NO-LOOKUPS:CAPS">
 <ANCHOR id="GcrCertificateChain.property-details" href="gcr/GcrCertificateChain.html#GcrCertificateChain.property-details">
 <ANCHOR id="GcrCertificateChain--length" href="gcr/GcrCertificateChain.html#GcrCertificateChain--length">
 <ANCHOR id="GcrCertificateChain--status" href="gcr/GcrCertificateChain.html#GcrCertificateChain--status">
@@ -122,6 +130,7 @@
 <ANCHOR id="gcr-GcrCertificateRequest.other_details" href="gcr/gcr-GcrCertificateRequest.html#gcr-GcrCertificateRequest.other_details">
 <ANCHOR id="GcrCertificateRequest" href="gcr/gcr-GcrCertificateRequest.html#GcrCertificateRequest">
 <ANCHOR id="GcrCertificateRequestFormat" href="gcr/gcr-GcrCertificateRequest.html#GcrCertificateRequestFormat">
+<ANCHOR id="GCR-CERTIFICATE-REQUEST-PKCS10:CAPS" href="gcr/gcr-GcrCertificateRequest.html#GCR-CERTIFICATE-REQUEST-PKCS10:CAPS">
 <ANCHOR id="GcrCollection" href="gcr/GcrCollection.html">
 <ANCHOR id="GcrCollection.functions" href="gcr/GcrCollection.html#GcrCollection.functions">
 <ANCHOR id="GcrCollection.signals" href="gcr/GcrCollection.html#GcrCollection.signals">
@@ -193,6 +202,8 @@
 <ANCHOR id="GcrCollectionModel-struct" href="gcr/GcrCollectionModel.html#GcrCollectionModel-struct">
 <ANCHOR id="GcrCollectionModelClass" href="gcr/GcrCollectionModel.html#GcrCollectionModelClass">
 <ANCHOR id="GcrCollectionModelMode" href="gcr/GcrCollectionModel.html#GcrCollectionModelMode">
+<ANCHOR id="GCR-COLLECTION-MODEL-LIST:CAPS" href="gcr/GcrCollectionModel.html#GCR-COLLECTION-MODEL-LIST:CAPS">
+<ANCHOR id="GCR-COLLECTION-MODEL-TREE:CAPS" href="gcr/GcrCollectionModel.html#GCR-COLLECTION-MODEL-TREE:CAPS">
 <ANCHOR id="GcrCollectionModel.property-details" href="gcr/GcrCollectionModel.html#GcrCollectionModel.property-details">
 <ANCHOR id="GcrCollectionModel--collection" href="gcr/GcrCollectionModel.html#GcrCollectionModel--collection">
 <ANCHOR id="GcrCollectionModel--columns" href="gcr/GcrCollectionModel.html#GcrCollectionModel--columns">
@@ -255,6 +266,9 @@
 <ANCHOR id="gcr-GcrColumn.other_details" href="gcr/gcr-GcrColumn.html#gcr-GcrColumn.other_details">
 <ANCHOR id="GcrColumn" href="gcr/gcr-GcrColumn.html#GcrColumn">
 <ANCHOR id="GcrColumnFlags" href="gcr/gcr-GcrColumn.html#GcrColumnFlags">
+<ANCHOR id="GCR-COLUMN-NONE:CAPS" href="gcr/gcr-GcrColumn.html#GCR-COLUMN-NONE:CAPS">
+<ANCHOR id="GCR-COLUMN-HIDDEN:CAPS" href="gcr/gcr-GcrColumn.html#GCR-COLUMN-HIDDEN:CAPS">
+<ANCHOR id="GCR-COLUMN-SORTABLE:CAPS" href="gcr/gcr-GcrColumn.html#GCR-COLUMN-SORTABLE:CAPS">
 <ANCHOR id="GcrComboSelector" href="gcr/GcrComboSelector.html">
 <ANCHOR id="GcrComboSelector.functions" href="gcr/GcrComboSelector.html#GcrComboSelector.functions">
 <ANCHOR id="GcrComboSelector.properties" href="gcr/GcrComboSelector.html#GcrComboSelector.properties">
@@ -438,6 +452,8 @@
 <ANCHOR id="GcrPrompt-struct" href="gcr/GcrPrompt.html#GcrPrompt-struct">
 <ANCHOR id="GcrPromptIface" href="gcr/GcrPrompt.html#GcrPromptIface">
 <ANCHOR id="GcrPromptReply" href="gcr/GcrPrompt.html#GcrPromptReply">
+<ANCHOR id="GCR-PROMPT-REPLY-CANCEL:CAPS" href="gcr/GcrPrompt.html#GCR-PROMPT-REPLY-CANCEL:CAPS">
+<ANCHOR id="GCR-PROMPT-REPLY-CONTINUE:CAPS" href="gcr/GcrPrompt.html#GCR-PROMPT-REPLY-CONTINUE:CAPS">
 <ANCHOR id="GcrPrompt.property-details" href="gcr/GcrPrompt.html#GcrPrompt.property-details">
 <ANCHOR id="GcrPrompt--caller-window" href="gcr/GcrPrompt.html#GcrPrompt--caller-window">
 <ANCHOR id="GcrPrompt--cancel-label" href="gcr/GcrPrompt.html#GcrPrompt--cancel-label">
@@ -489,6 +505,7 @@
 <ANCHOR id="GcrSystemPrompt-struct" href="gcr/GcrSystemPrompt.html#GcrSystemPrompt-struct">
 <ANCHOR id="GcrSystemPromptClass" href="gcr/GcrSystemPrompt.html#GcrSystemPromptClass">
 <ANCHOR id="GcrSystemPromptError" href="gcr/GcrSystemPrompt.html#GcrSystemPromptError">
+<ANCHOR id="GCR-SYSTEM-PROMPT-IN-PROGRESS:CAPS" href="gcr/GcrSystemPrompt.html#GCR-SYSTEM-PROMPT-IN-PROGRESS:CAPS">
 <ANCHOR id="GcrSystemPrompt.property-details" href="gcr/GcrSystemPrompt.html#GcrSystemPrompt.property-details">
 <ANCHOR id="GcrSystemPrompt--bus-name" href="gcr/GcrSystemPrompt.html#GcrSystemPrompt--bus-name">
 <ANCHOR id="GcrSystemPrompt--secret-exchange" href="gcr/GcrSystemPrompt.html#GcrSystemPrompt--secret-exchange">
@@ -511,6 +528,8 @@
 <ANCHOR id="GcrSystemPrompter-struct" href="gcr/GcrSystemPrompter.html#GcrSystemPrompter-struct">
 <ANCHOR id="GcrSystemPrompterClass" href="gcr/GcrSystemPrompter.html#GcrSystemPrompterClass">
 <ANCHOR id="GcrSystemPrompterMode" href="gcr/GcrSystemPrompter.html#GcrSystemPrompterMode">
+<ANCHOR id="GCR-SYSTEM-PROMPTER-SINGLE:CAPS" href="gcr/GcrSystemPrompter.html#GCR-SYSTEM-PROMPTER-SINGLE:CAPS">
+<ANCHOR id="GCR-SYSTEM-PROMPTER-MULTIPLE:CAPS" href="gcr/GcrSystemPrompter.html#GCR-SYSTEM-PROMPTER-MULTIPLE:CAPS">
 <ANCHOR id="GcrSystemPrompter.property-details" href="gcr/GcrSystemPrompter.html#GcrSystemPrompter.property-details">
 <ANCHOR id="GcrSystemPrompter--mode" href="gcr/GcrSystemPrompter.html#GcrSystemPrompter--mode">
 <ANCHOR id="GcrSystemPrompter--prompt-type" href="gcr/GcrSystemPrompter.html#GcrSystemPrompter--prompt-type">
@@ -616,7 +635,42 @@
 <ANCHOR id="gcr-parsed-get-filename" href="gcr/GcrParser.html#gcr-parsed-get-filename">
 <ANCHOR id="GcrParser.other_details" href="gcr/GcrParser.html#GcrParser.other_details">
 <ANCHOR id="GcrDataError" href="gcr/GcrParser.html#GcrDataError">
+<ANCHOR id="GCR-ERROR-FAILURE:CAPS" href="gcr/GcrParser.html#GCR-ERROR-FAILURE:CAPS">
+<ANCHOR id="GCR-ERROR-UNRECOGNIZED:CAPS" href="gcr/GcrParser.html#GCR-ERROR-UNRECOGNIZED:CAPS">
+<ANCHOR id="GCR-ERROR-CANCELLED:CAPS" href="gcr/GcrParser.html#GCR-ERROR-CANCELLED:CAPS">
+<ANCHOR id="GCR-ERROR-LOCKED:CAPS" href="gcr/GcrParser.html#GCR-ERROR-LOCKED:CAPS">
 <ANCHOR id="GcrDataFormat" href="gcr/GcrParser.html#GcrDataFormat">
+<ANCHOR id="GCR-FORMAT-ALL:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-ALL:CAPS">
+<ANCHOR id="GCR-FORMAT-INVALID:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-INVALID:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PRIVATE-KEY:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PRIVATE-KEY-RSA:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-RSA:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PRIVATE-KEY-DSA:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-DSA:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PRIVATE-KEY-EC:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-EC:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-SUBJECT-PUBLIC-KEY:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-SUBJECT-PUBLIC-KEY:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-CERTIFICATE-X509:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-CERTIFICATE-X509:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS7:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS7:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS8:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS8:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS8-PLAIN:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS8-PLAIN:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS8-ENCRYPTED:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS8-ENCRYPTED:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS10:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS10:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-SPKAC:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-SPKAC:CAPS">
+<ANCHOR id="GCR-FORMAT-BASE64-SPKAC:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-BASE64-SPKAC:CAPS">
+<ANCHOR id="GCR-FORMAT-DER-PKCS12:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-DER-PKCS12:CAPS">
+<ANCHOR id="GCR-FORMAT-OPENSSH-PUBLIC:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-OPENSSH-PUBLIC:CAPS">
+<ANCHOR id="GCR-FORMAT-OPENPGP-PACKET:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-OPENPGP-PACKET:CAPS">
+<ANCHOR id="GCR-FORMAT-OPENPGP-ARMOR:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-OPENPGP-ARMOR:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PRIVATE-KEY-RSA:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-RSA:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PRIVATE-KEY-DSA:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-DSA:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-CERTIFICATE-X509:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-CERTIFICATE-X509:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PKCS7:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PKCS7:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PKCS8-PLAIN:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PKCS8-PLAIN:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PKCS8-ENCRYPTED:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PKCS8-ENCRYPTED:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PKCS12:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PKCS12:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PRIVATE-KEY:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PKCS10:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PKCS10:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PRIVATE-KEY-EC:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-EC:CAPS">
+<ANCHOR id="GCR-FORMAT-PEM-PUBLIC-KEY:CAPS" href="gcr/GcrParser.html#GCR-FORMAT-PEM-PUBLIC-KEY:CAPS">
 <ANCHOR id="GcrParser-struct" href="gcr/GcrParser.html#GcrParser-struct">
 <ANCHOR id="GcrParserClass" href="gcr/GcrParser.html#GcrParserClass">
 <ANCHOR id="GcrParsed" href="gcr/GcrParser.html#GcrParsed">
@@ -705,6 +759,7 @@
 <ANCHOR id="annotation-glossterm-array" href="gcr/annotation-glossary.html#annotation-glossterm-array">
 <ANCHOR id="annotation-glossterm-element-type" href="gcr/annotation-glossary.html#annotation-glossterm-element-type">
 <ANCHOR id="annotation-glossterm-out" href="gcr/annotation-glossary.html#annotation-glossterm-out">
+<ANCHOR id="annotation-glossterm-skip" href="gcr/annotation-glossary.html#annotation-glossterm-skip">
 <ANCHOR id="annotation-glossterm-transfer container" href="gcr/annotation-glossary.html#annotation-glossterm-transfer container">
 <ANCHOR id="annotation-glossterm-transfer floating" href="gcr/annotation-glossary.html#annotation-glossterm-transfer floating">
 <ANCHOR id="annotation-glossterm-transfer full" href="gcr/annotation-glossary.html#annotation-glossterm-transfer full">

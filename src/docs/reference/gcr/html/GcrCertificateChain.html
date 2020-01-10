@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrCertificateChain</title>
+<title>GcrCertificateChain: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="certificates.html" title="Part I. Certificates">
 <link rel="prev" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate">
 <link rel="next" href="gcr-GcrCertificateRequest.html" title="GcrCertificateRequest">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -91,7 +91,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">guint</span>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GcrCertificateChain.html#gcr-certificate-chain-get-length" title="gcr_certificate_chain_get_length ()">gcr_certificate_chain_get_length</a> <span class="c_punctuation">()</span>
@@ -99,7 +99,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GcrCertificateChain.html#gcr-certificate-chain-build" title="gcr_certificate_chain_build ()">gcr_certificate_chain_build</a> <span class="c_punctuation">()</span>
@@ -115,7 +115,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">gboolean</span>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="GcrCertificateChain.html#gcr-certificate-chain-build-finish" title="gcr_certificate_chain_build_finish ()">gcr_certificate_chain_build_finish</a> <span class="c_punctuation">()</span>
@@ -142,7 +142,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="property_type"><span class="type">guint</span></td>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
 <td class="property_name"><a class="link" href="GcrCertificateChain.html#GcrCertificateChain--length" title="The “length” property">length</a></td>
 <td class="property_flags">Read</td>
 </tr>
@@ -183,7 +183,7 @@
 </div>
 <div class="refsect1">
 <a name="GcrCertificateChain.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
     <span class="lineart">╰──</span> GcrCertificateChain
 </pre>
 </div>
@@ -268,7 +268,7 @@ to <a class="link" href="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-UNKNOWN:
 <a name="gcr-certificate-chain-get-certificate"></a><h3>gcr_certificate_chain_get_certificate ()</h3>
 <pre class="programlisting"><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="returnvalue">GcrCertificate</span></a> *
 gcr_certificate_chain_get_certificate (<em class="parameter"><code><a class="link" href="GcrCertificateChain.html" title="GcrCertificateChain"><span class="type">GcrCertificateChain</span></a> *self</code></em>,
-                                       <em class="parameter"><code><span class="type">guint</span> index</code></em>);</pre>
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> index</code></em>);</pre>
 <p>Get a certificate in the chain. It is an error to call this function
 with an invalid index.</p>
 <div class="refsect3">
@@ -327,7 +327,6 @@ found.</p>
 <div class="refsect3">
 <a name="id-1.2.5.8.5.7"></a><h4>Returns</h4>
 <p> the status of the certificate chain.</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -387,7 +386,7 @@ certificate in the chain. The endpoint certificate cannot be anchored.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.2.5.8.7.6"></a><h4>Returns</h4>
-<p> the endpoint certificate, or <code class="literal">NULL</code> if the chain
+<p> the endpoint certificate, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the chain
 is empty. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -395,7 +394,7 @@ is empty. </p>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-chain-get-length"></a><h3>gcr_certificate_chain_get_length ()</h3>
-<pre class="programlisting"><span class="returnvalue">guint</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
 gcr_certificate_chain_get_length (<em class="parameter"><code><a class="link" href="GcrCertificateChain.html" title="GcrCertificateChain"><span class="type">GcrCertificateChain</span></a> *self</code></em>);</pre>
 <p>Get the length of the certificate chain.</p>
 <div class="refsect3">
@@ -416,19 +415,18 @@ gcr_certificate_chain_get_length (<em class="parameter"><code><a class="link" hr
 <div class="refsect3">
 <a name="id-1.2.5.8.8.6"></a><h4>Returns</h4>
 <p> the length of the certificate chain</p>
-<p></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-chain-build"></a><h3>gcr_certificate_chain_build ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 gcr_certificate_chain_build (<em class="parameter"><code><a class="link" href="GcrCertificateChain.html" title="GcrCertificateChain"><span class="type">GcrCertificateChain</span></a> *self</code></em>,
-                             <em class="parameter"><code>const <span class="type">gchar</span> *purpose</code></em>,
-                             <em class="parameter"><code>const <span class="type">gchar</span> *peer</code></em>,
-                             <em class="parameter"><code><span class="type">guint</span> flags</code></em>,
-                             <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                             <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *purpose</code></em>,
+                             <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *peer</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> flags</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                             <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Complete a certificate chain. Once a certificate chain has been built
 its status can be examined.</p>
 <p>This operation will lookup missing certificates in PKCS#11
@@ -446,7 +444,7 @@ for this purpose. This argument is required.</p>
 <p>The <em class="parameter"><code>peer</code></em>
  is usually the host name of the peer whith which this certificate
 chain is being used. It is used to look up pinned certificates that have
-been stored for this peer. If <code class="literal">NULL</code> then no pinned certificates will
+been stored for this peer. If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then no pinned certificates will
 be considered.</p>
 <p>If the <a class="link" href="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NO-LOOKUPS:CAPS"><code class="literal">GCR_CERTIFICATE_CHAIN_NO_LOOKUPS</code></a> flag is specified then no
 lookups for anchors or pinned certificates are done, and the resulting chain
@@ -475,7 +473,7 @@ asynchronous version.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>peer</p></td>
-<td class="parameter_description"><p> the peer the certificate chain will be used with, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> the peer the certificate chain will be used with, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -485,12 +483,12 @@ asynchronous version.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>a <span class="type">GCancellable</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>a <span class="type">GError</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -499,7 +497,6 @@ asynchronous version.</p>
 <div class="refsect3">
 <a name="id-1.2.5.8.9.12"></a><h4>Returns</h4>
 <p> whether the operation completed successfully</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -507,12 +504,12 @@ asynchronous version.</p>
 <a name="gcr-certificate-chain-build-async"></a><h3>gcr_certificate_chain_build_async ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_certificate_chain_build_async (<em class="parameter"><code><a class="link" href="GcrCertificateChain.html" title="GcrCertificateChain"><span class="type">GcrCertificateChain</span></a> *self</code></em>,
-                                   <em class="parameter"><code>const <span class="type">gchar</span> *purpose</code></em>,
-                                   <em class="parameter"><code>const <span class="type">gchar</span> *peer</code></em>,
-                                   <em class="parameter"><code><span class="type">guint</span> flags</code></em>,
-                                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                   <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                                   <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                                   <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *purpose</code></em>,
+                                   <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *peer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> flags</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Complete a certificate chain. Once a certificate chain has been built
 its status can be examined.</p>
 <p>This will lookup missing certificates in PKCS#11
@@ -530,7 +527,7 @@ for this purpose. This argument is required.</p>
 <p>The <em class="parameter"><code>peer</code></em>
  is usually the host name of the peer whith which this certificate
 chain is being used. It is used to look up pinned certificates that have
-been stored for this peer. If <code class="literal">NULL</code> then no pinned certificates will
+been stored for this peer. If <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then no pinned certificates will
 be considered.</p>
 <p>If the <a class="link" href="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NO-LOOKUPS:CAPS"><code class="literal">GCR_CERTIFICATE_CHAIN_NO_LOOKUPS</code></a> flag is specified then no
 lookups for anchors or pinned certificates are done, and the resulting chain
@@ -560,7 +557,7 @@ authorities are looked up in PKCS#11</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>peer</p></td>
-<td class="parameter_description"><p> the peer the certificate chain will be used with, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p> the peer the certificate chain will be used with, or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -570,7 +567,7 @@ authorities are looked up in PKCS#11</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>cancellable</p></td>
-<td class="parameter_description"><p>a <span class="type">GCancellable</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> or <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -590,10 +587,10 @@ authorities are looked up in PKCS#11</p>
 <hr>
 <div class="refsect2">
 <a name="gcr-certificate-chain-build-finish"></a><h3>gcr_certificate_chain_build_finish ()</h3>
-<pre class="programlisting"><span class="returnvalue">gboolean</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 gcr_certificate_chain_build_finish (<em class="parameter"><code><a class="link" href="GcrCertificateChain.html" title="GcrCertificateChain"><span class="type">GcrCertificateChain</span></a> *self</code></em>,
-                                    <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
-                                    <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Finishes an asynchronous operation started by
 <a class="link" href="GcrCertificateChain.html#gcr-certificate-chain-build-async" title="gcr_certificate_chain_build_async ()"><code class="function">gcr_certificate_chain_build_async()</code></a>.</p>
 <div class="refsect3">
@@ -612,12 +609,12 @@ gcr_certificate_chain_build_finish (<em class="parameter"><code><a class="link" 
 </tr>
 <tr>
 <td class="parameter_name"><p>result</p></td>
-<td class="parameter_description"><p>the <span class="type">GAsyncResult</span> passed to the callback</p></td>
+<td class="parameter_description"><p>the <a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> passed to the callback</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p>a <span class="type">GError</span>, or NULL</p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>, or NULL</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -626,7 +623,6 @@ gcr_certificate_chain_build_finish (<em class="parameter"><code><a class="link" 
 <div class="refsect3">
 <a name="id-1.2.5.8.11.6"></a><h4>Returns</h4>
 <p> whether the operation succeeded</p>
-<p></p>
 </div>
 </div>
 <hr>
@@ -634,14 +630,14 @@ gcr_certificate_chain_build_finish (<em class="parameter"><code><a class="link" 
 <a name="GCR-TYPE-CERTIFICATE-CHAIN-FLAGS:CAPS"></a><h3>GCR_TYPE_CERTIFICATE_CHAIN_FLAGS</h3>
 <pre class="programlisting">#define GCR_TYPE_CERTIFICATE_CHAIN_FLAGS (gcr_certificate_chain_flags_get_type ())
 </pre>
-<p>The flags <span class="type">GType</span> for <a class="link" href="GcrCertificateChain.html#GcrCertificateChainFlags" title="enum GcrCertificateChainFlags"><span class="type">GcrCertificateChainFlags</span></a>.</p>
+<p>The flags <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> for <a class="link" href="GcrCertificateChain.html#GcrCertificateChainFlags" title="enum GcrCertificateChainFlags"><span class="type">GcrCertificateChainFlags</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="GCR-TYPE-CERTIFICATE-CHAIN-STATUS:CAPS"></a><h3>GCR_TYPE_CERTIFICATE_CHAIN_STATUS</h3>
 <pre class="programlisting">#define GCR_TYPE_CERTIFICATE_CHAIN_STATUS (gcr_certificate_chain_status_get_type ())
 </pre>
-<p>The enum <span class="type">GType</span> for <a class="link" href="GcrCertificateChain.html#GcrCertificateChainStatus" title="enum GcrCertificateChainStatus"><span class="type">GcrCertificateChainStatus</span></a>.</p>
+<p>The enum <a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> for <a class="link" href="GcrCertificateChain.html#GcrCertificateChainStatus" title="enum GcrCertificateChainStatus"><span class="type">GcrCertificateChainStatus</span></a>.</p>
 </div>
 </div>
 <div class="refsect1">
@@ -668,7 +664,7 @@ gcr_certificate_chain_build_finish (<em class="parameter"><code><a class="link" 
 <col width="200px" class="struct_members_annotations">
 </colgroup>
 <tbody><tr>
-<td class="struct_member_name"><p><span class="type">GObjectClass</span> <em class="structfield"><code><a name="GcrCertificateChainClass.parent-class"></a>parent_class</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObjectClass"><span class="type">GObjectClass</span></a> <em class="structfield"><code><a name="GcrCertificateChainClass.parent-class"></a>parent_class</code></em>;</p></td>
 <td class="struct_member_description"><p>The parent class</p></td>
 <td class="struct_member_annotations"> </td>
 </tr></tbody>
@@ -785,7 +781,7 @@ authorities are looked up in PKCS#11.</p>
 <a name="GcrCertificateChain.property-details"></a><h2>Property Details</h2>
 <div class="refsect2">
 <a name="GcrCertificateChain--length"></a><h3>The <code class="literal">“length”</code> property</h3>
-<pre class="programlisting">  “length”                   <span class="type">guint</span></pre>
+<pre class="programlisting">  “length”                   <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
 <p>The length of the certificate chain.</p>
 <p>Flags: Read</p>
 <p>Default value: 0</p>
@@ -801,7 +797,6 @@ authorities are looked up in PKCS#11.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

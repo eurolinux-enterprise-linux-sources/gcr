@@ -105,6 +105,7 @@ gcr_importer_data_free (gpointer data)
 
 	g_clear_object (&state->cancellable);
 	g_clear_object (&state->importer);
+	gck_builder_unref (state->supplement);
 	g_free (state);
 }
 
@@ -587,6 +588,7 @@ _gcr_pkcs11_importer_finalize (GObject *obj)
 {
 	GcrPkcs11Importer *self = GCR_PKCS11_IMPORTER (obj);
 
+	g_queue_free (self->queue);
 	g_clear_object (&self->slot);
 
 	G_OBJECT_CLASS (_gcr_pkcs11_importer_parent_class)->finalize (obj);

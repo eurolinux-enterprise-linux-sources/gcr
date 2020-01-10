@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrImportInteraction</title>
+<title>GcrImportInteraction: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="storage.html" title="Part V. Storage">
 <link rel="prev" href="GcrImporter.html" title="GcrImporter">
 <link rel="next" href="GcrParser.html" title="GcrParser">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GTlsInteractionResult</span>
+<a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#GTlsInteractionResult"><span class="returnvalue">GTlsInteractionResult</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement" title="gcr_import_interaction_supplement ()">gcr_import_interaction_supplement</a> <span class="c_punctuation">()</span>
@@ -65,7 +65,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GTlsInteractionResult</span>
+<a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#GTlsInteractionResult"><span class="returnvalue">GTlsInteractionResult</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-finish" title="gcr_import_interaction_supplement_finish ()">gcr_import_interaction_supplement_finish</a> <span class="c_punctuation">()</span>
@@ -97,7 +97,7 @@
 <a name="gcr-GcrImportInteraction.description"></a><h2>Description</h2>
 <p>This is an interface implemented by a caller performing an import. It allows
 the importer to ask the caller for further information about the import.</p>
-<p>It must be implemented on a derived class of <span class="type">GTlsInteraction</span></p>
+<p>It must be implemented on a derived class of <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html"><span class="type">GTlsInteraction</span></a></p>
 </div>
 <div class="refsect1">
 <a name="gcr-GcrImportInteraction.functions_details"></a><h2>Functions</h2>
@@ -139,16 +139,16 @@ interaction that these are the attributes that are needed.</p>
 <hr>
 <div class="refsect2">
 <a name="gcr-import-interaction-supplement"></a><h3>gcr_import_interaction_supplement ()</h3>
-<pre class="programlisting"><span class="returnvalue">GTlsInteractionResult</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#GTlsInteractionResult"><span class="returnvalue">GTlsInteractionResult</span></a>
 gcr_import_interaction_supplement (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
                                    <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html#GckBuilder"><span class="type">GckBuilder</span></a> *builder</code></em>,
-                                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Supplement attributes before import. This means prompting the user for
 things like labels and the like. The needed attributes will have been passed
 to <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-prep" title="gcr_import_interaction_supplement_prep ()"><code class="function">gcr_import_interaction_supplement_prep()</code></a>.</p>
 <p>This method prompts the user and fills in the attributes. If the user or
-cancellable cancels the operation the error should be set with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
+cancellable cancels the operation the error should be set with <a href="https://developer.gnome.org/gio/unstable/gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.4.6.3.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -183,8 +183,7 @@ cancellable cancels the operation the error should be set with <code class="lite
 </div>
 <div class="refsect3">
 <a name="id-1.6.4.6.3.7"></a><h4>Returns</h4>
-<p> <code class="literal">G_TLS_INTERACTION_HANDLED</code> if successful or <code class="literal">G_TLS_INTERACTION_FAILED</code></p>
-<p></p>
+<p> <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#G-TLS-INTERACTION-HANDLED:CAPS"><code class="literal">G_TLS_INTERACTION_HANDLED</code></a> if successful or <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#G-TLS-INTERACTION-FAILED:CAPS"><code class="literal">G_TLS_INTERACTION_FAILED</code></a></p>
 </div>
 </div>
 <hr>
@@ -194,9 +193,9 @@ cancellable cancels the operation the error should be set with <code class="lite
 gcr_import_interaction_supplement_async
                                (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
                                 <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html#GckBuilder"><span class="type">GckBuilder</span></a> *builder</code></em>,
-                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
-                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
-                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GCancellable.html"><span class="type">GCancellable</span></a> *cancellable</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html#GAsyncReadyCallback"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Asynchronously supplement attributes before import. This means prompting the
 user for things like labels and the like. The needed attributes will have
 been passed to <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-prep" title="gcr_import_interaction_supplement_prep ()"><code class="function">gcr_import_interaction_supplement_prep()</code></a>.</p>
@@ -242,14 +241,14 @@ been passed to <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-in
 <hr>
 <div class="refsect2">
 <a name="gcr-import-interaction-supplement-finish"></a><h3>gcr_import_interaction_supplement_finish ()</h3>
-<pre class="programlisting"><span class="returnvalue">GTlsInteractionResult</span>
+<pre class="programlisting"><a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#GTlsInteractionResult"><span class="returnvalue">GTlsInteractionResult</span></a>
 gcr_import_interaction_supplement_finish
                                (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
-                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
-                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/gio/unstable/GAsyncResult.html"><span class="type">GAsyncResult</span></a> *result</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>Complete operation to asynchronously supplement attributes before import.</p>
 <p>If the user or cancellable cancels the operation the error should be set
-with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
+with <a href="https://developer.gnome.org/gio/unstable/gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a>.</p>
 <div class="refsect3">
 <a name="id-1.6.4.6.5.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
@@ -279,8 +278,7 @@ with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
 </div>
 <div class="refsect3">
 <a name="id-1.6.4.6.5.7"></a><h4>Returns</h4>
-<p> <code class="literal">G_TLS_INTERACTION_HANDLED</code> if successful or <code class="literal">G_TLS_INTERACTION_FAILED</code></p>
-<p></p>
+<p> <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#G-TLS-INTERACTION-HANDLED:CAPS"><code class="literal">G_TLS_INTERACTION_HANDLED</code></a> if successful or <a href="https://developer.gnome.org/gio/unstable/GTlsInteraction.html#G-TLS-INTERACTION-FAILED:CAPS"><code class="literal">G_TLS_INTERACTION_FAILED</code></a></p>
 </div>
 </div>
 </div>
@@ -327,7 +325,7 @@ with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GcrImportInteractionIface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_name"><p><a href="https://developer.gnome.org/gobject/unstable/gobject-Type-Information.html#GTypeInterface"><span class="type">GTypeInterface</span></a> <em class="structfield"><code><a name="GcrImportInteractionIface.parent"></a>parent</code></em>;</p></td>
 <td class="struct_member_description"><p>parent interface</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
@@ -359,7 +357,6 @@ with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

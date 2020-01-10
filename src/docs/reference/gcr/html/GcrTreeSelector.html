@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: GcrTreeSelector</title>
+<title>GcrTreeSelector: Gcr Library Reference Manual</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="widgets.html" title="Part III. Widgets">
 <link rel="prev" href="GcrListSelector.html" title="GcrListSelector">
 <link rel="next" href="GcrRenderer.html" title="GcrRenderer">
-<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -67,7 +67,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">GList</span> *
+<a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="GcrTreeSelector.html#gcr-tree-selector-get-selected" title="gcr_tree_selector_get_selected ()">gcr_tree_selector_get_selected</a> <span class="c_punctuation">()</span>
@@ -100,7 +100,7 @@
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
-<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_type"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></td>
 <td class="property_name"><a class="link" href="GcrTreeSelector.html#GcrTreeSelector--columns" title="The “columns” property">columns</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
 </tr>
@@ -128,8 +128,8 @@
 </div>
 <div class="refsect1">
 <a name="GcrTreeSelector.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
-    <span class="lineart">╰──</span> GInitiallyUnowned
+<pre class="screen">    <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">╰──</span> <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#GInitiallyUnowned">GInitiallyUnowned</a>
         <span class="lineart">╰──</span> GtkWidget
             <span class="lineart">╰──</span> GtkContainer
                 <span class="lineart">╰──</span> GtkTreeView
@@ -140,7 +140,7 @@
 <a name="GcrTreeSelector.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 GcrTreeSelector implements
- <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkImplementorIface">AtkImplementorIface</a>,  GtkBuildable and  GtkScrollable.</p>
+ AtkImplementorIface,  GtkBuildable and  GtkScrollable.</p>
 </div>
 <div class="refsect1">
 <a name="GcrTreeSelector.description"></a><h2>Description</h2>
@@ -181,8 +181,9 @@ gcr_tree_selector_get_collection (<em class="parameter"><code><a class="link" hr
 <pre class="programlisting">const <a class="link" href="gcr-GcrColumn.html#GcrColumn" title="GcrColumn"><span class="returnvalue">GcrColumn</span></a> *
 gcr_tree_selector_get_columns (<em class="parameter"><code><a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a> *self</code></em>);</pre>
 <p>Get the columns displayed in a selector in multiple mode.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.8.9.3.5"></a><h4>Parameters</h4>
+<a name="id-1.4.8.9.3.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -197,7 +198,7 @@ gcr_tree_selector_get_columns (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.8.9.3.6"></a><h4>Returns</h4>
+<a name="id-1.4.8.9.3.7"></a><h4>Returns</h4>
 <p> The columns, owned by the selector. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -209,8 +210,9 @@ gcr_tree_selector_get_columns (<em class="parameter"><code><a class="link" href=
 gcr_tree_selector_new (<em class="parameter"><code><a class="link" href="GcrCollection.html" title="GcrCollection"><span class="type">GcrCollection</span></a> *collection</code></em>,
                        <em class="parameter"><code>const <a class="link" href="gcr-GcrColumn.html#GcrColumn" title="GcrColumn"><span class="type">GcrColumn</span></a> *columns</code></em>);</pre>
 <p>Create a new <a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a>.</p>
+<p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.4.8.9.4.5"></a><h4>Parameters</h4>
+<a name="id-1.4.8.9.4.6"></a><h4>Parameters</h4>
 <div class="informaltable"><table width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
@@ -232,16 +234,16 @@ gcr_tree_selector_new (<em class="parameter"><code><a class="link" href="GcrColl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.4.8.9.4.6"></a><h4>Returns</h4>
+<a name="id-1.4.8.9.4.7"></a><h4>Returns</h4>
 <p> a newly allocated selector, which should be
-released with <code class="function">g_object_unref()</code>. </p>
+released with <a href="https://developer.gnome.org/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="gcr-tree-selector-get-selected"></a><h3>gcr_tree_selector_get_selected ()</h3>
-<pre class="programlisting"><span class="returnvalue">GList</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *
 gcr_tree_selector_get_selected (<em class="parameter"><code><a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a> *self</code></em>);</pre>
 <p>Get a list of selected objects.</p>
 <div class="refsect3">
@@ -262,7 +264,7 @@ gcr_tree_selector_get_selected (<em class="parameter"><code><a class="link" href
 <div class="refsect3">
 <a name="id-1.4.8.9.5.6"></a><h4>Returns</h4>
 <p> the list of selected
-objects, to be released with <code class="function">g_list_free()</code>. </p>
+objects, to be released with <a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a>. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.Object]</span></p>
 </div>
 </div>
@@ -271,7 +273,7 @@ objects, to be released with <code class="function">g_list_free()</code>. </p>
 <a name="gcr-tree-selector-set-selected"></a><h3>gcr_tree_selector_set_selected ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 gcr_tree_selector_set_selected (<em class="parameter"><code><a class="link" href="GcrTreeSelector.html" title="GcrTreeSelector"><span class="type">GcrTreeSelector</span></a> *self</code></em>,
-                                <em class="parameter"><code><span class="type">GList</span> *selected</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> *selected</code></em>);</pre>
 <p>Select certain objects in the selector.</p>
 <div class="refsect3">
 <a name="id-1.4.8.9.6.5"></a><h4>Parameters</h4>
@@ -324,14 +326,13 @@ gcr_tree_selector_set_selected (<em class="parameter"><code><a class="link" href
 <hr>
 <div class="refsect2">
 <a name="GcrTreeSelector--columns"></a><h3>The <code class="literal">“columns”</code> property</h3>
-<pre class="programlisting">  “columns”                  <span class="type">gpointer</span></pre>
+<pre class="programlisting">  “columns”                  <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a></pre>
 <p>The columns to use to display the objects.</p>
 <p>Flags: Read / Write / Construct Only</p>
 </div>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.21</div>
+<hr>Generated by GTK-Doc V1.24</div>
 </body>
 </html>

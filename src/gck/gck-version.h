@@ -29,7 +29,7 @@
 /* compile time version
  */
 #define GCK_MAJOR_VERSION (3)
-#define GCK_MINOR_VERSION (14)
+#define GCK_MINOR_VERSION (20)
 #define GCK_MICRO_VERSION (0)
 
 /* check whether a Gcr version equal to or greater than

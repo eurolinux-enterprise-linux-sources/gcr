@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="Gcr Library Reference Manual" link="index.html" author="" name="gcr" version="2" language="c">
   <chapters>
     <sub name="Certificates" link="certificates.html">
@@ -460,5 +459,59 @@
     <keyword type="function" name="gcr_secure_entry_buffer_new ()" link="GcrSecureEntryBuffer.html#gcr-secure-entry-buffer-new"/>
     <keyword type="struct" name="struct GcrSecureEntryBuffer" link="GcrSecureEntryBuffer.html#GcrSecureEntryBuffer-struct"/>
     <keyword type="struct" name="struct GcrSecureEntryBufferClass" link="GcrSecureEntryBuffer.html#GcrSecureEntryBufferClass"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_UNKNOWN" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-UNKNOWN:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_INCOMPLETE" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-INCOMPLETE:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_DISTRUSTED" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-DISTRUSTED:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_SELFSIGNED" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-SELFSIGNED:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_PINNED" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-PINNED:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_ANCHORED" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-ANCHORED:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_NONE" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NONE:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_CHAIN_NO_LOOKUPS" link="GcrCertificateChain.html#GCR-CERTIFICATE-CHAIN-NO-LOOKUPS:CAPS"/>
+    <keyword type="constant" name="GCR_CERTIFICATE_REQUEST_PKCS10" link="gcr-GcrCertificateRequest.html#GCR-CERTIFICATE-REQUEST-PKCS10:CAPS"/>
+    <keyword type="constant" name="GCR_COLLECTION_MODEL_LIST" link="GcrCollectionModel.html#GCR-COLLECTION-MODEL-LIST:CAPS"/>
+    <keyword type="constant" name="GCR_COLLECTION_MODEL_TREE" link="GcrCollectionModel.html#GCR-COLLECTION-MODEL-TREE:CAPS"/>
+    <keyword type="constant" name="GCR_COLUMN_NONE" link="gcr-GcrColumn.html#GCR-COLUMN-NONE:CAPS"/>
+    <keyword type="constant" name="GCR_COLUMN_HIDDEN" link="gcr-GcrColumn.html#GCR-COLUMN-HIDDEN:CAPS"/>
+    <keyword type="constant" name="GCR_COLUMN_SORTABLE" link="gcr-GcrColumn.html#GCR-COLUMN-SORTABLE:CAPS"/>
+    <keyword type="constant" name="GCR_PROMPT_REPLY_CANCEL" link="GcrPrompt.html#GCR-PROMPT-REPLY-CANCEL:CAPS"/>
+    <keyword type="constant" name="GCR_PROMPT_REPLY_CONTINUE" link="GcrPrompt.html#GCR-PROMPT-REPLY-CONTINUE:CAPS"/>
+    <keyword type="constant" name="GCR_SYSTEM_PROMPT_IN_PROGRESS" link="GcrSystemPrompt.html#GCR-SYSTEM-PROMPT-IN-PROGRESS:CAPS"/>
+    <keyword type="constant" name="GCR_SYSTEM_PROMPTER_SINGLE" link="GcrSystemPrompter.html#GCR-SYSTEM-PROMPTER-SINGLE:CAPS"/>
+    <keyword type="constant" name="GCR_SYSTEM_PROMPTER_MULTIPLE" link="GcrSystemPrompter.html#GCR-SYSTEM-PROMPTER-MULTIPLE:CAPS"/>
+    <keyword type="constant" name="GCR_ERROR_FAILURE" link="GcrParser.html#GCR-ERROR-FAILURE:CAPS"/>
+    <keyword type="constant" name="GCR_ERROR_UNRECOGNIZED" link="GcrParser.html#GCR-ERROR-UNRECOGNIZED:CAPS"/>
+    <keyword type="constant" name="GCR_ERROR_CANCELLED" link="GcrParser.html#GCR-ERROR-CANCELLED:CAPS"/>
+    <keyword type="constant" name="GCR_ERROR_LOCKED" link="GcrParser.html#GCR-ERROR-LOCKED:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_ALL" link="GcrParser.html#GCR-FORMAT-ALL:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_INVALID" link="GcrParser.html#GCR-FORMAT-INVALID:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PRIVATE_KEY" link="GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PRIVATE_KEY_RSA" link="GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-RSA:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PRIVATE_KEY_DSA" link="GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-DSA:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PRIVATE_KEY_EC" link="GcrParser.html#GCR-FORMAT-DER-PRIVATE-KEY-EC:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_SUBJECT_PUBLIC_KEY" link="GcrParser.html#GCR-FORMAT-DER-SUBJECT-PUBLIC-KEY:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_CERTIFICATE_X509" link="GcrParser.html#GCR-FORMAT-DER-CERTIFICATE-X509:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS7" link="GcrParser.html#GCR-FORMAT-DER-PKCS7:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS8" link="GcrParser.html#GCR-FORMAT-DER-PKCS8:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS8_PLAIN" link="GcrParser.html#GCR-FORMAT-DER-PKCS8-PLAIN:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS8_ENCRYPTED" link="GcrParser.html#GCR-FORMAT-DER-PKCS8-ENCRYPTED:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS10" link="GcrParser.html#GCR-FORMAT-DER-PKCS10:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_SPKAC" link="GcrParser.html#GCR-FORMAT-DER-SPKAC:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_BASE64_SPKAC" link="GcrParser.html#GCR-FORMAT-BASE64-SPKAC:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_DER_PKCS12" link="GcrParser.html#GCR-FORMAT-DER-PKCS12:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_OPENSSH_PUBLIC" link="GcrParser.html#GCR-FORMAT-OPENSSH-PUBLIC:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_OPENPGP_PACKET" link="GcrParser.html#GCR-FORMAT-OPENPGP-PACKET:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_OPENPGP_ARMOR" link="GcrParser.html#GCR-FORMAT-OPENPGP-ARMOR:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM" link="GcrParser.html#GCR-FORMAT-PEM:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PRIVATE_KEY_RSA" link="GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-RSA:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PRIVATE_KEY_DSA" link="GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-DSA:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_CERTIFICATE_X509" link="GcrParser.html#GCR-FORMAT-PEM-CERTIFICATE-X509:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PKCS7" link="GcrParser.html#GCR-FORMAT-PEM-PKCS7:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PKCS8_PLAIN" link="GcrParser.html#GCR-FORMAT-PEM-PKCS8-PLAIN:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PKCS8_ENCRYPTED" link="GcrParser.html#GCR-FORMAT-PEM-PKCS8-ENCRYPTED:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PKCS12" link="GcrParser.html#GCR-FORMAT-PEM-PKCS12:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PRIVATE_KEY" link="GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PKCS10" link="GcrParser.html#GCR-FORMAT-PEM-PKCS10:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PRIVATE_KEY_EC" link="GcrParser.html#GCR-FORMAT-PEM-PRIVATE-KEY-EC:CAPS"/>
+    <keyword type="constant" name="GCR_FORMAT_PEM_PUBLIC_KEY" link="GcrParser.html#GCR-FORMAT-PEM-PUBLIC-KEY:CAPS"/>
   </functions>
 </book>

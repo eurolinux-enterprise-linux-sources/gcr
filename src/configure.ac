@@ -1,6 +1,6 @@
 
 m4_define([gcr_major], [3])
-m4_define([gcr_minor], [14])
+m4_define([gcr_minor], [20])
 m4_define([gcr_micro], [0])
 
 AC_PREREQ([2.63])
@@ -16,6 +16,8 @@ GLIB_MIN=GLIB_VERSION_2_38
 GLIB_MAX=GLIB_VERSION_2_38
 
 GCRYPT_VERSION=1.4.5
+
+GTK_REQ=3.12
 
 dnl ****************************************************************************
 dnl Library package and libtool versioning
@@ -50,7 +52,7 @@ dnl ****************************************************************************
 
 AC_CONFIG_MACRO_DIR([build/m4])
 AC_CONFIG_AUX_DIR([build])
-AM_INIT_AUTOMAKE([1.11 tar-ustar foreign -Wno-portability subdir-objects])
+AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar foreign -Wno-portability subdir-objects])
 AM_SANITY_CHECK
 AC_CONFIG_HEADERS(config.h)
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -114,7 +116,7 @@ AC_ARG_WITH(gtk, [
 AM_CONDITIONAL(WITH_GTK, test "$with_gtk" != "no")
 
 if test "x$with_gtk" != "xno"; then
-	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.0)
+	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQ gtk+-x11-3.0 >= $GTK_REQ)
 	AC_SUBST(GTK_CFLAGS)
 	AC_SUBST(GTK_LIBS)
 fi
