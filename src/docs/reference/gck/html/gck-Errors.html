@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: Errors</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="gck-GckModule-lists.html" title="GckModule lists">
+<link rel="next" href="gck-PKCS11-URIs.html" title="PKCS11 URIs">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gck-Errors.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gck-GckModule-lists.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gck-PKCS11-URIs.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gck-Errors"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gck-Errors.top_of_page"></a>Errors</span></h2>
+<p>Errors — Gck Errors and error codes.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gck-Errors.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gck-Errors.html#GCK-ERROR:CAPS" title="GCK_ERROR">GCK_ERROR</a></td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-Errors.html#gck-message-from-rv" title="gck_message_from_rv ()">gck_message_from_rv</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gck-Errors.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gck-Errors.html#GCK-VENDOR-CODE:CAPS" title="GCK_VENDOR_CODE">GCK_VENDOR_CODE</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gck-Errors.description"></a><h2>Description</h2>
+<p>Errors are returned as GError structures. The code member of GError
+contains the raw PKCS11 CK_RV result value.</p>
+</div>
+<div class="refsect1">
+<a name="gck-Errors.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="GCK-ERROR:CAPS"></a><h3>GCK_ERROR</h3>
+<pre class="programlisting">#define             GCK_ERROR                               (gck_error_get_quark ())
+</pre>
+<p>The error domain for gck library errors.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-message-from-rv"></a><h3>gck_message_from_rv ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+gck_message_from_rv (<em class="parameter"><code><span class="type">gulong</span> rv</code></em>);</pre>
+<p>Get a message for a PKCS#11 return value or error code. Do not
+pass CKR_OK or other such non errors to this function.</p>
+<div class="refsect3">
+<a name="id-1.2.11.6.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>rv</p></td>
+<td class="parameter_description"><p>The PKCS#11 return value to get a message for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.11.6.3.6"></a><h4>Returns</h4>
+<p> The user readable message.</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gck-Errors.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GCK-VENDOR-CODE:CAPS"></a><h3>GCK_VENDOR_CODE</h3>
+<pre class="programlisting">#define             GCK_VENDOR_CODE                         0x47434B00 /* GCK */
+</pre>
+<p>Custom PKCS11 errors that originate from the gck library, are
+based at this error code.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gcr Library Reference Manual: GcrImportInteraction</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gcr Library Reference Manual">
+<link rel="up" href="storage.html" title="Part V. Storage">
+<link rel="prev" href="GcrImporter.html" title="GcrImporter">
+<link rel="next" href="GcrParser.html" title="GcrParser">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gcr-GcrImportInteraction.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="storage.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GcrImporter.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GcrParser.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gcr-GcrImportInteraction"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gcr-GcrImportInteraction.top_of_page"></a>GcrImportInteraction</span></h2>
+<p>GcrImportInteraction — User interaction during importing</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gcr-GcrImportInteraction.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-prep" title="gcr_import_interaction_supplement_prep ()">gcr_import_interaction_supplement_prep</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GTlsInteractionResult</span>
+</td>
+<td class="function_name">
+<a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement" title="gcr_import_interaction_supplement ()">gcr_import_interaction_supplement</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-async" title="gcr_import_interaction_supplement_async ()">gcr_import_interaction_supplement_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GTlsInteractionResult</span>
+</td>
+<td class="function_name">
+<a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-finish" title="gcr_import_interaction_supplement_finish ()">gcr_import_interaction_supplement_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gcr-GcrImportInteraction.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction">GcrImportInteraction</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteractionIface" title="struct GcrImportInteractionIface">GcrImportInteractionIface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gcr-GcrImportInteraction.description"></a><h2>Description</h2>
+<p>This is an interface implemented by a caller performing an import. It allows
+the importer to ask the caller for further information about the import.</p>
+<p>It must be implemented on a derived class of <span class="type">GTlsInteraction</span></p>
+</div>
+<div class="refsect1">
+<a name="gcr-GcrImportInteraction.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gcr-import-interaction-supplement-prep"></a><h3>gcr_import_interaction_supplement_prep ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_import_interaction_supplement_prep
+                               (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
+                                <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html#GckBuilder"><span class="type">GckBuilder</span></a> *builder</code></em>);</pre>
+<p>Prepare for supplementing the given attributes before import. This means
+prompting the user for things like labels and the like. The attributes
+will contain attributes for values that the importer needs, either empty
+or prefilled with suggested values.</p>
+<p>This method does not prompt the user, but rather just prepares the
+interaction that these are the attributes that are needed.</p>
+<div class="refsect3">
+<a name="id-1.6.4.6.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>interaction</p></td>
+<td class="parameter_description"><p>the interaction</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>attributes to supplement</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-import-interaction-supplement"></a><h3>gcr_import_interaction_supplement ()</h3>
+<pre class="programlisting"><span class="returnvalue">GTlsInteractionResult</span>
+gcr_import_interaction_supplement (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
+                                   <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html#GckBuilder"><span class="type">GckBuilder</span></a> *builder</code></em>,
+                                   <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Supplement attributes before import. This means prompting the user for
+things like labels and the like. The needed attributes will have been passed
+to <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-prep" title="gcr_import_interaction_supplement_prep ()"><code class="function">gcr_import_interaction_supplement_prep()</code></a>.</p>
+<p>This method prompts the user and fills in the attributes. If the user or
+cancellable cancels the operation the error should be set with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
+<div class="refsect3">
+<a name="id-1.6.4.6.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>interaction</p></td>
+<td class="parameter_description"><p>the interaction</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>supplemented attributes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellable object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to store error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.6.4.6.3.7"></a><h4>Returns</h4>
+<p> <code class="literal">G_TLS_INTERACTION_HANDLED</code> if successful or <code class="literal">G_TLS_INTERACTION_FAILED</code></p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-import-interaction-supplement-async"></a><h3>gcr_import_interaction_supplement_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_import_interaction_supplement_async
+                               (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
+                                <em class="parameter"><code><a href="http://developer.gnome.org/gck/stable/GckAttributes.html#GckBuilder"><span class="type">GckBuilder</span></a> *builder</code></em>,
+                                <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronously supplement attributes before import. This means prompting the
+user for things like labels and the like. The needed attributes will have
+been passed to <a class="link" href="gcr-GcrImportInteraction.html#gcr-import-interaction-supplement-prep" title="gcr_import_interaction_supplement_prep ()"><code class="function">gcr_import_interaction_supplement_prep()</code></a>.</p>
+<p>This method prompts the user and fills in the attributes.</p>
+<div class="refsect3">
+<a name="id-1.6.4.6.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>interaction</p></td>
+<td class="parameter_description"><p>the interaction</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>builder</p></td>
+<td class="parameter_description"><p>supplemented attributes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellable object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>called when the operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to be passed to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-import-interaction-supplement-finish"></a><h3>gcr_import_interaction_supplement_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">GTlsInteractionResult</span>
+gcr_import_interaction_supplement_finish
+                               (<em class="parameter"><code><a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a> *interaction</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Complete operation to asynchronously supplement attributes before import.</p>
+<p>If the user or cancellable cancels the operation the error should be set
+with <code class="literal">G_IO_ERROR_CANCELLED</code>.</p>
+<div class="refsect3">
+<a name="id-1.6.4.6.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>interaction</p></td>
+<td class="parameter_description"><p>the interaction</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the asynchronous result</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.6.4.6.5.7"></a><h4>Returns</h4>
+<p> <code class="literal">G_TLS_INTERACTION_HANDLED</code> if successful or <code class="literal">G_TLS_INTERACTION_FAILED</code></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gcr-GcrImportInteraction.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GcrImportInteraction"></a><h3>GcrImportInteraction</h3>
+<pre class="programlisting">typedef struct _GcrImportInteraction GcrImportInteraction;</pre>
+<p>Interface implemented by the caller performing an import.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrImportInteractionIface"></a><h3>struct GcrImportInteractionIface</h3>
+<pre class="programlisting">struct GcrImportInteractionIface {
+	GTypeInterface parent;
+
+	void                    (*supplement_prep)   (GcrImportInteraction *interaction,
+	                                              GckBuilder *builder);
+
+	GTlsInteractionResult   (*supplement)        (GcrImportInteraction *interaction,
+	                                              GckBuilder *builder,
+	                                              GCancellable *cancellable,
+	                                              GError **error);
+
+	void                    (*supplement_async)  (GcrImportInteraction *interaction,
+	                                              GckBuilder *builder,
+	                                              GCancellable *cancellable,
+	                                              GAsyncReadyCallback callback,
+	                                              gpointer user_data);
+
+	GTlsInteractionResult   (*supplement_finish) (GcrImportInteraction *interaction,
+	                                              GAsyncResult *result,
+	                                              GError **error);
+};
+</pre>
+<p>Interface implemented by implementations of <a class="link" href="gcr-GcrImportInteraction.html#GcrImportInteraction" title="GcrImportInteraction"><span class="type">GcrImportInteraction</span></a>.</p>
+<div class="refsect3">
+<a name="id-1.6.4.7.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GcrImportInteractionIface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_description"><p>parent interface</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GcrImportInteractionIface.supplement-prep"></a>supplement_prep</code></em> ()</p></td>
+<td class="struct_member_description"><p>method which prepares for supplementing the given attributes before import</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GcrImportInteractionIface.supplement"></a>supplement</code></em> ()</p></td>
+<td class="struct_member_description"><p>method which synchronously supplements attributes before import</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GcrImportInteractionIface.supplement-async"></a>supplement_async</code></em> ()</p></td>
+<td class="struct_member_description"><p>method which asynchronously supplements attributes before import</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GcrImportInteractionIface.supplement-finish"></a>supplement_finish</code></em> ()</p></td>
+<td class="struct_member_description"><p>method which completes <em class="parameter"><code>supplement_async</code></em>
+</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

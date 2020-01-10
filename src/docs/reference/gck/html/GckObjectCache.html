@@ -1,0 +1,663 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: GckObjectCache</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="GckAttributes.html" title="GckAttributes">
+<link rel="next" href="GckEnumerator.html" title="GckEnumerator">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GckObjectCache.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GckObjectCache.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GckObjectCache.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GckObjectCache.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GckAttributes.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GckEnumerator.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GckObjectCache"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GckObjectCache.top_of_page"></a>GckObjectCache</span></h2>
+<p>GckObjectCache — An interface which holds attributes for a PKCS#11 object</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GckObjectCache.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-get-attributes" title="gck_object_cache_get_attributes ()">gck_object_cache_get_attributes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-set-attributes" title="gck_object_cache_set_attributes ()">gck_object_cache_set_attributes</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-fill" title="gck_object_cache_fill ()">gck_object_cache_fill</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-lookup" title="gck_object_cache_lookup ()">gck_object_cache_lookup</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-lookup-async" title="gck_object_cache_lookup_async ()">gck_object_cache_lookup_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-lookup-finish" title="gck_object_cache_lookup_finish ()">gck_object_cache_lookup_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-update" title="gck_object_cache_update ()">gck_object_cache_update</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-update-async" title="gck_object_cache_update_async ()">gck_object_cache_update_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckObjectCache.html#gck-object-cache-update-finish" title="gck_object_cache_update_finish ()">gck_object_cache_update_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody><tr>
+<td class="property_type">
+<a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *</td>
+<td class="property_name"><a class="link" href="GckObjectCache.html#GckObjectCache--attributes" title="The “attributes” property">attributes</a></td>
+<td class="property_flags">Read / Write</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GckObjectCache.html#GckObjectCache-struct" title="GckObjectCache">GckObjectCache</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GckObjectCache.html#GckObjectCacheIface" title="struct GckObjectCacheIface">GckObjectCacheIface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GInterface
+    <span class="lineart">╰──</span> GckObjectCache
+</pre>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GckObjectCache requires
+ <a class="link" href="GckObject.html" title="GckObject">GckObject</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.description"></a><h2>Description</h2>
+<p><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> is an interface implemented by derived classes of
+<a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> to indicate which attributes they'd like an enumerator to retrieve.
+These attributes are then cached on the object and can be retrieved through
+the <a class="link" href="GckObjectCache.html#GckObjectCache--attributes" title="The “attributes” property"><span class="type">“attributes”</span></a> property.</p>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gck-object-cache-get-attributes"></a><h3>gck_object_cache_get_attributes ()</h3>
+<pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+gck_object_cache_get_attributes (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>);</pre>
+<p>Gets the attributes cached on this object.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>an object with an attribute cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.8.9.2.6"></a><h4>Returns</h4>
+<p> the attributes. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-set-attributes"></a><h3>gck_object_cache_set_attributes ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_object_cache_set_attributes (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
+                                 <em class="parameter"><code><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *attrs</code></em>);</pre>
+<p>Sets the attributes cached on this object.</p>
+<p>If the <em class="parameter"><code>attrs</code></em>
+ <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>an object with an attribute cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attrs</p></td>
+<td class="parameter_description"><p> the attributes to set. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-fill"></a><h3>gck_object_cache_fill ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_object_cache_fill (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
+                       <em class="parameter"><code><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *attrs</code></em>);</pre>
+<p>Adds the attributes to the set cached on this object. If an attribute is
+already present in the cache it will be overridden by this value.</p>
+<p>This will be done in a thread-safe manner.</p>
+<p>If the <em class="parameter"><code>attrs</code></em>
+ <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.4.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>an object with the cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attrs</p></td>
+<td class="parameter_description"><p>the attributes to cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-lookup"></a><h3>gck_object_cache_lookup ()</h3>
+<pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+gck_object_cache_lookup (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
+                         <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Lookup attributes in the cache, or retrieve them from the object if necessary.</p>
+<p>If <em class="parameter"><code>object</code></em>
+ is a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> then this will lookup the attributes there
+first if available, otherwise will read them from the object and update
+the cache.</p>
+<p>If <em class="parameter"><code>object</code></em>
+ is not a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a>, then the attributes will simply be
+read from the object.</p>
+<p>This may block, use the asynchronous version when this is not desirable</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.5.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_types</p></td>
+<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_attr_types</p></td>
+<td class="parameter_description"><p>the number of attribute types</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellation object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.8.9.5.9"></a><h4>Returns</h4>
+<p> the attributes retrieved or <code class="literal">NULL</code> on failure. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-lookup-async"></a><h3>gck_object_cache_lookup_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_object_cache_lookup_async (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
+                               <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                               <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Lookup attributes in the cache, or retrieve them from the object if necessary.</p>
+<p>If <em class="parameter"><code>object</code></em>
+ is a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> then this will lookup the attributes there
+first if available, otherwise will read them from the object and update
+the cache.</p>
+<p>If <em class="parameter"><code>object</code></em>
+ is not a <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a>, then the attributes will simply be
+read from the object.</p>
+<p>This will return immediately and complete asynchronously</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.6.8"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_types</p></td>
+<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_attr_types</p></td>
+<td class="parameter_description"><p>the number of attribute types</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellation object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>called when the operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to pass to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-lookup-finish"></a><h3>gck_object_cache_lookup_finish ()</h3>
+<pre class="programlisting"><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="returnvalue">GckAttributes</span></a> *
+gck_object_cache_lookup_finish (<em class="parameter"><code><a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Complete an operation to lookup attributes in the cache or retrieve them
+from the object if necessary.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the asynchrounous result passed to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.8.9.7.6"></a><h4>Returns</h4>
+<p> the attributes retrieved or <code class="literal">NULL</code> on failure. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-update"></a><h3>gck_object_cache_update ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_object_cache_update (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
+                         <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                         <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                         <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Update the object cache with given attributes. If an attribute already
+exists in the cache, it will be updated, and if it doesn't it will be added.</p>
+<p>This may block, use the asynchronous version when this is not desirable</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object with the cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_types</p></td>
+<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_attr_types</p></td>
+<td class="parameter_description"><p>the number of attribute types</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellation object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.8.9.8.7"></a><h4>Returns</h4>
+<p> whether the cache update was successful</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-update-async"></a><h3>gck_object_cache_update_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_object_cache_update_async (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
+                               <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">gint</span> n_attr_types</code></em>,
+                               <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                               <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                               <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Update the object cache with given attributes. If an attribute already
+exists in the cache, it will be updated, and if it doesn't it will be added.</p>
+<p>This call will return immediately and complete asynchronously.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object with the cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_types</p></td>
+<td class="parameter_description"><p> the types of attributes to update. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_attr_types]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_attr_types</p></td>
+<td class="parameter_description"><p>the number of attribute types</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellation object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>called when the operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to be passed to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-object-cache-update-finish"></a><h3>gck_object_cache_update_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_object_cache_update_finish (<em class="parameter"><code><a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> *object</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Complete an asynchronous operation to update the object cache with given
+attributes.</p>
+<div class="refsect3">
+<a name="id-1.2.8.9.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>the object with the cache</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the asynchronous result passed to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.8.9.10.6"></a><h4>Returns</h4>
+<p> whether the cache update was successful</p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GckObjectCache-struct"></a><h3>GckObjectCache</h3>
+<pre class="programlisting">typedef struct _GckObjectCache GckObjectCache;</pre>
+<p>An interface implemented on an <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which contains a cache of attributes.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckObjectCacheIface"></a><h3>struct GckObjectCacheIface</h3>
+<pre class="programlisting">struct GckObjectCacheIface {
+	GTypeInterface interface;
+
+	const gulong *  default_types;
+	gint            n_default_types;
+
+	void         (* fill)                              (GckObjectCache *object,
+	                                                    GckAttributes *attrs);
+};
+</pre>
+<p>Interface for <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a>. If the <em class="parameter"><code>default_types</code></em>
+ field is set by
+a implementing class, then the a <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> which has been setup using
+<a class="link" href="GckEnumerator.html#gck-enumerator-set-object-type" title="gck_enumerator_set_object_type ()"><code class="function">gck_enumerator_set_object_type()</code></a></p>
+<p>The implementation for <em class="parameter"><code>populate</code></em>
+ should add the attributes to the
+cache. It must be thread safe.</p>
+<div class="refsect3">
+<a name="id-1.2.8.10.3.6"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GckObjectCacheIface.interface"></a>interface</code></em>;</p></td>
+<td class="struct_member_description"><p>parent interface</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p>const <span class="type">gulong</span> *<em class="structfield"><code><a name="GckObjectCacheIface.default-types"></a>default_types</code></em>;</p></td>
+<td class="struct_member_description"><p> attribute types that an
+enumerator should retrieve. </p></td>
+<td class="struct_member_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_default_types]</span></td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="GckObjectCacheIface.n-default-types"></a>n_default_types</code></em>;</p></td>
+<td class="struct_member_description"><p>number of attribute types to be retrieved</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GckObjectCacheIface.fill"></a>fill</code></em> ()</p></td>
+<td class="struct_member_description"><p>virtual method to add attributes to the cache</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckObjectCache.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GckObjectCache--attributes"></a><h3>The <code class="literal">“attributes”</code> property</h3>
+<pre class="programlisting">  “attributes”               <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *</pre>
+<p>The attributes cached on this object.</p>
+<p>Flags: Read / Write</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: GckModule lists</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="GckEnumerator.html" title="GckEnumerator">
+<link rel="next" href="gck-Errors.html" title="Errors">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gck-GckModule-lists.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GckEnumerator.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gck-Errors.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gck-GckModule-lists"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gck-GckModule-lists.top_of_page"></a>GckModule lists</span></h2>
+<p>GckModule lists — Dealing with lists of PKCS#11 modules.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gck-GckModule-lists.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-initialize-registered" title="gck_modules_initialize_registered ()">gck_modules_initialize_registered</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-initialize-registered-async" title="gck_modules_initialize_registered_async ()">gck_modules_initialize_registered_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-initialize-registered-finish" title="gck_modules_initialize_registered_finish ()">gck_modules_initialize_registered_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-objects" title="gck_modules_enumerate_objects ()">gck_modules_enumerate_objects</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()">gck_modules_enumerate_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-get-slots" title="gck_modules_get_slots ()">gck_modules_get_slots</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckObject.html" title="GckObject"><span class="returnvalue">GckObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-object-for-uri" title="gck_modules_object_for_uri ()">gck_modules_object_for_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-objects-for-uri" title="gck_modules_objects_for_uri ()">gck_modules_objects_for_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckSlot.html" title="GckSlot"><span class="returnvalue">GckSlot</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-token-for-uri" title="gck_modules_token_for_uri ()">gck_modules_token_for_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-GckModule-lists.html#gck-modules-tokens-for-uri" title="gck_modules_tokens_for_uri ()">gck_modules_tokens_for_uri</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gck-GckModule-lists.description"></a><h2>Description</h2>
+<p>These functions are useful for dealing with lists of modules, and performing
+operations on all of them.</p>
+</div>
+<div class="refsect1">
+<a name="gck-GckModule-lists.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gck-modules-initialize-registered"></a><h3>gck_modules_initialize_registered ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_initialize_registered (<em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                   <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Load and initialize all the registered modules.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> optional cancellation object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p> location to place an error on failure. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.2.6"></a><h4>Returns</h4>
+<p> A newly allocated list
+of <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> objects, which should be released with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-initialize-registered-async"></a><h3>gck_modules_initialize_registered_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_modules_initialize_registered_async
+                               (<em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                                <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                                <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Load and initialize all the registered modules asynchronously.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>optional cancellation object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a callback which will be called when the operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to pass to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-initialize-registered-finish"></a><h3>gck_modules_initialize_registered_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_initialize_registered_finish
+                               (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                                <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finishes the asynchronous operation to initialize the registered
+PKCS#11 modules.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the asynchronous result</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.4.6"></a><h4>Returns</h4>
+<p> a list of newly
+initialized <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> objects. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-enumerate-objects"></a><h3>gck_modules_enumerate_objects ()</h3>
+<pre class="programlisting"><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+gck_modules_enumerate_objects (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                               <em class="parameter"><code><a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> *attrs</code></em>,
+                               <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>);</pre>
+<p>Setup an enumerator for listing matching objects on the modules.</p>
+<p>This call will not block but will return an enumerator immediately.</p>
+<p>If the <em class="parameter"><code>attrs</code></em>
+ <a class="link" href="GckAttributes.html" title="GckAttributes"><span class="type">GckAttributes</span></a> is floating, it is consumed.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.5.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attrs</p></td>
+<td class="parameter_description"><p>attributes that the objects must have, or empty for all objects</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>session_options</p></td>
+<td class="parameter_description"><p>Options from GckSessionOptions</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.5.8"></a><h4>Returns</h4>
+<p> A new enumerator, which should be released
+with <code class="function">g_object_unref()</code>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-enumerate-uri"></a><h3>gck_modules_enumerate_uri ()</h3>
+<pre class="programlisting"><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+gck_modules_enumerate_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                           <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Enumerate objects that match a URI.</p>
+<p>This call will not block. Use the <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> functions in order to
+get at the actual objects that match.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.6.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI that the enumerator will match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>session_options</p></td>
+<td class="parameter_description"><p>Options from GckSessionOptions</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.6.7"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a>, or <code class="literal">NULL</code> if an error occurs. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-get-slots"></a><h3>gck_modules_get_slots ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_get_slots (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                       <em class="parameter"><code><span class="type">gboolean</span> token_present</code></em>);</pre>
+<p>Get a list of slots for across all of the modules.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>token_present</p></td>
+<td class="parameter_description"><p>Whether to only list slots with token present</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.7.6"></a><h4>Returns</h4>
+<p> A list of <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a>
+objects, which should be freed with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Slot]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-object-for-uri"></a><h3>gck_modules_object_for_uri ()</h3>
+<pre class="programlisting"><a class="link" href="GckObject.html" title="GckObject"><span class="returnvalue">GckObject</span></a> *
+gck_modules_object_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                            <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                            <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Find an object that matches a URI.</p>
+<p>This call can block. Use <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()"><code class="function">gck_modules_enumerate_uri()</code></a> for a non-blocking
+version.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.8.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI the objects must match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>session_options</p></td>
+<td class="parameter_description"><p>Options from GckSessionOptions</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.8.7"></a><h4>Returns</h4>
+<p> A new <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which should be released with
+<code class="function">g_object_unref()</code>, or <code class="literal">NULL</code> if no matching object was found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-objects-for-uri"></a><h3>gck_modules_objects_for_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_objects_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                             <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                             <em class="parameter"><code><a class="link" href="GckSlot.html#GckSessionOptions" title="enum GckSessionOptions"><span class="type">GckSessionOptions</span></a> session_options</code></em>,
+                             <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Find objects that match a URI.</p>
+<p>This call can block. Use <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()"><code class="function">gck_modules_enumerate_uri()</code></a> for a non-blocking
+version.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI the objects must match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>session_options</p></td>
+<td class="parameter_description"><p>Options from GckSessionOptions</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.9.7"></a><h4>Returns</h4>
+<p> A list of <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> which
+should be released with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>, or <code class="literal">NULL</code> if no matching object
+was found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Object]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-token-for-uri"></a><h3>gck_modules_token_for_uri ()</h3>
+<pre class="programlisting"><a class="link" href="GckSlot.html" title="GckSlot"><span class="returnvalue">GckSlot</span></a> *
+gck_modules_token_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                           <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                           <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Lookup a token that matches the URI.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI that the token must match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.10.6"></a><h4>Returns</h4>
+<p> A newly allocated <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a> or <code class="literal">NULL</code> if no such
+token was found. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-modules-tokens-for-uri"></a><h3>gck_modules_tokens_for_uri ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_modules_tokens_for_uri (<em class="parameter"><code><span class="type">GList</span> *modules</code></em>,
+                            <em class="parameter"><code>const <span class="type">gchar</span> *uri</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Lookup a token that matches the URI.</p>
+<div class="refsect3">
+<a name="id-1.2.10.5.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>modules</p></td>
+<td class="parameter_description"><p> The modules. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>The URI that the token must match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.10.5.11.6"></a><h4>Returns</h4>
+<p> A list of newly allocated
+<a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a> objects. Use <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a> to release the list once you're
+done with it. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Slot]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="gck-GckModule-lists.other_details"></a><h2>Types and Values</h2>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

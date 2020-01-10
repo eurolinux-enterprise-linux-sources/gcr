@@ -1,0 +1,1483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gcr Library Reference Manual: GcrCertificate</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gcr Library Reference Manual">
+<link rel="up" href="certificates.html" title="Part I. Certificates">
+<link rel="prev" href="certificates.html" title="Part I. Certificates">
+<link rel="next" href="GcrSimpleCertificate.html" title="GcrSimpleCertificate">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GcrCertificate.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GcrCertificate.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_prerequisites">  <span class="dim">|</span> 
+                  <a href="#GcrCertificate.prerequisites" class="shortcut">Prerequisites</a></span><span id="nav_implementations">  <span class="dim">|</span> 
+                  <a href="#GcrCertificate.implementations" class="shortcut">Known Implementations</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GcrCertificate.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="certificates.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="certificates.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GcrSimpleCertificate.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GcrCertificate"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GcrCertificate.top_of_page"></a>GcrCertificate</span></h2>
+<p>GcrCertificate — Represents an X.509 certificate</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GcrCertificate.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">const <span class="returnvalue">guint8</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-der-data" title="gcr_certificate_get_der_data ()">gcr_certificate_get_der_data</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issuer-cn" title="gcr_certificate_get_issuer_cn ()">gcr_certificate_get_issuer_cn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issuer-dn" title="gcr_certificate_get_issuer_dn ()">gcr_certificate_get_issuer_dn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issuer-name" title="gcr_certificate_get_issuer_name ()">gcr_certificate_get_issuer_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issuer-part" title="gcr_certificate_get_issuer_part ()">gcr_certificate_get_issuer_part</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issuer-raw" title="gcr_certificate_get_issuer_raw ()">gcr_certificate_get_issuer_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-is-issuer" title="gcr_certificate_is_issuer ()">gcr_certificate_is_issuer</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-subject-cn" title="gcr_certificate_get_subject_cn ()">gcr_certificate_get_subject_cn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-subject-dn" title="gcr_certificate_get_subject_dn ()">gcr_certificate_get_subject_dn</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-subject-name" title="gcr_certificate_get_subject_name ()">gcr_certificate_get_subject_name</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-subject-part" title="gcr_certificate_get_subject_part ()">gcr_certificate_get_subject_part</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-subject-raw" title="gcr_certificate_get_subject_raw ()">gcr_certificate_get_subject_raw</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GDate</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-issued-date" title="gcr_certificate_get_issued_date ()">gcr_certificate_get_issued_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GDate</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-expiry-date" title="gcr_certificate_get_expiry_date ()">gcr_certificate_get_expiry_date</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-serial-number" title="gcr_certificate_get_serial_number ()">gcr_certificate_get_serial_number</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-serial-number-hex" title="gcr_certificate_get_serial_number_hex ()">gcr_certificate_get_serial_number_hex</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-key-size" title="gcr_certificate_get_key_size ()">gcr_certificate_get_key_size</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-fingerprint" title="gcr_certificate_get_fingerprint ()">gcr_certificate_get_fingerprint</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-fingerprint-hex" title="gcr_certificate_get_fingerprint_hex ()">gcr_certificate_get_fingerprint_hex</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-basic-constraints" title="gcr_certificate_get_basic_constraints ()">gcr_certificate_get_basic_constraints</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-mixin-class-init" title="gcr_certificate_mixin_class_init ()">gcr_certificate_mixin_class_init</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-mixin-emit-notify" title="gcr_certificate_mixin_emit_notify ()">gcr_certificate_mixin_emit_notify</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-mixin-get-property" title="gcr_certificate_mixin_get_property ()">gcr_certificate_mixin_get_property</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="GcrCertificate.html#GCR-CERTIFICATE-MIXIN-IMPLEMENT-COMPARABLE:CAPS" title="GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE">GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE</a></td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-mixin-comparable-init" title="gcr_certificate_mixin_comparable_init ()">gcr_certificate_mixin_comparable_init</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-compare" title="gcr_certificate_compare ()">gcr_certificate_compare</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GIcon</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-icon" title="gcr_certificate_get_icon ()">gcr_certificate_get_icon</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GcrCertificate.html#gcr-certificate-get-markup-text" title="gcr_certificate_get_markup_text ()">gcr_certificate_get_markup_text</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--description" title="The “description” property">description</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GDate</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--expiry" title="The “expiry” property">expiry</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GIcon</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--icon" title="The “icon” property">icon</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--issuer" title="The “issuer” property">issuer</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--label" title="The “label” property">label</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--markup" title="The “markup” property">markup</a></td>
+<td class="property_flags">Read</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GcrCertificate.html#GcrCertificate--subject" title="The “subject” property">subject</a></td>
+<td class="property_flags">Read</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="GcrCertificate.html#GcrCertificate-struct" title="GcrCertificate">GcrCertificate</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GcrCertificate.html#GcrCertificateIface" title="struct GcrCertificateIface">GcrCertificateIface</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GInterface
+    <span class="lineart">╰──</span> GcrCertificate
+</pre>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.prerequisites"></a><h2>Prerequisites</h2>
+<p>
+GcrCertificate requires
+ <a class="link" href="GcrComparable.html" title="GcrComparable">GcrComparable</a> and  GObject.</p>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.implementations"></a><h2>Known Implementations</h2>
+<p>
+GcrCertificate is implemented by
+ <a class="link" href="GcrCertificateWidget.html#GcrCertificateRenderer">GcrCertificateRenderer</a>,  <a class="link" href="GcrPkcs11Certificate.html" title="GcrPkcs11Certificate">GcrPkcs11Certificate</a> and  <a class="link" href="GcrSimpleCertificate.html" title="GcrSimpleCertificate">GcrSimpleCertificate</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.description"></a><h2>Description</h2>
+<p>This is an interface that represents an X.509 certificate. Objects can
+implement this interface to make a certificate usable with the GCR
+library.</p>
+<p>Various methods are available to parse out relevant bits of the certificate.
+However no verification of the validity of a certificate is done here. Use
+your favorite crypto library to do this.</p>
+<p>You can use <a class="link" href="GcrSimpleCertificate.html" title="GcrSimpleCertificate"><span class="type">GcrSimpleCertificate</span></a> to simply load a certificate for which
+you already have the raw certificate data.</p>
+<p>The <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> interface has several properties that must be implemented.
+You can use a mixin to implement these properties if desired. See the
+<a class="link" href="GcrCertificate.html#gcr-certificate-mixin-class-init" title="gcr_certificate_mixin_class_init ()"><code class="function">gcr_certificate_mixin_class_init()</code></a> and <a class="link" href="GcrCertificate.html#gcr-certificate-mixin-get-property" title="gcr_certificate_mixin_get_property ()"><code class="function">gcr_certificate_mixin_get_property()</code></a>
+functions.</p>
+<p>All certificates are comparable. If implementing a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a>, you can
+use <a class="link" href="GcrCertificate.html#GCR-CERTIFICATE-MIXIN-IMPLEMENT-COMPARABLE:CAPS" title="GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE"><code class="function">GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE()</code></a> to implement the <a class="link" href="GcrComparable.html" title="GcrComparable"><span class="type">GcrComparable</span></a>
+interface.</p>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gcr-certificate-get-der-data"></a><h3>gcr_certificate_get_der_data ()</h3>
+<pre class="programlisting">const <span class="returnvalue">guint8</span> *
+gcr_certificate_get_der_data (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                              <em class="parameter"><code><span class="type">gsize</span> *n_data</code></em>);</pre>
+<p>Gets the raw DER data for an X.509 certificate.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_data</p></td>
+<td class="parameter_description"><p>a pointer to a location to store the size of the resulting DER data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.2.6"></a><h4>Returns</h4>
+<p> raw DER data of the X.509 certificate. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_data]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issuer-cn"></a><h3>gcr_certificate_get_issuer_cn ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_issuer_cn (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the common name of the issuer of this certificate.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.3.7"></a><h4>Returns</h4>
+<p> The allocated issuer CN, or NULL if no issuer CN present.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issuer-dn"></a><h3>gcr_certificate_get_issuer_dn ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_issuer_dn (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the full issuer DN of the certificate as a (mostly)
+readable string.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.7"></a><h4>Returns</h4>
+<p> The allocated issuer DN of the certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issuer-name"></a><h3>gcr_certificate_get_issuer_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_issuer_name (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get a name to represent the issuer of this certificate.</p>
+<p>This will try to lookup the common name, orianizational unit,
+organization in that order.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.7"></a><h4>Returns</h4>
+<p> the allocated issuer name, or NULL if no issuer name</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issuer-part"></a><h3>gcr_certificate_get_issuer_part ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_issuer_part (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                 <em class="parameter"><code>const <span class="type">gchar</span> *part</code></em>);</pre>
+<p>Get a part of the DN of the issuer of this certificate.</p>
+<p>Examples of a <em class="parameter"><code>part</code></em>
+ might be the 'OU' (organizational unit)
+or the 'CN' (common name). Only the value of that part
+of the DN is returned.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>part</p></td>
+<td class="parameter_description"><p>a DN type string or OID.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.8"></a><h4>Returns</h4>
+<p> the allocated part of the issuer DN, or <code class="literal">NULL</code> if no
+such part is present. </p>
+<p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issuer-raw"></a><h3>gcr_certificate_get_issuer_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">guchar</span> *
+gcr_certificate_get_issuer_raw (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">gsize</span> *n_data</code></em>);</pre>
+<p>Get the raw DER data for the issuer DN of the certificate.</p>
+<p>The data should be freed by using <code class="function">g_free()</code> when no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_data</p></td>
+<td class="parameter_description"><p>The length of the returned data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.7.7"></a><h4>Returns</h4>
+<p> allocated memory containing
+the raw issuer. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_data]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-is-issuer"></a><h3>gcr_certificate_is_issuer ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gcr_certificate_is_issuer (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                           <em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *issuer</code></em>);</pre>
+<p>Check if <em class="parameter"><code>issuer</code></em>
+ could be the issuer of this certificate. This is done by
+comparing the relevant subject and issuer fields. No signature check is
+done. Proper verification of certificates must be done via a crypto
+library.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>issuer</p></td>
+<td class="parameter_description"><p>a possible issuer <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.8.6"></a><h4>Returns</h4>
+<p> whether <em class="parameter"><code>issuer</code></em>
+could be the issuer of the certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-subject-cn"></a><h3>gcr_certificate_get_subject_cn ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_subject_cn (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the common name of the subject of this certificate.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.7"></a><h4>Returns</h4>
+<p> The allocated subject CN, or NULL if no subject CN present.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-subject-dn"></a><h3>gcr_certificate_get_subject_dn ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_subject_dn (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the full subject DN of the certificate as a (mostly)
+readable string.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.7"></a><h4>Returns</h4>
+<p> The allocated subject DN of the certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-subject-name"></a><h3>gcr_certificate_get_subject_name ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_subject_name (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get a name to represent the subject of this certificate.</p>
+<p>This will try to lookup the common name, orianizational unit,
+organization in that order.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.7"></a><h4>Returns</h4>
+<p> the allocated subject name, or NULL if no subject name</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-subject-part"></a><h3>gcr_certificate_get_subject_part ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_subject_part (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                  <em class="parameter"><code>const <span class="type">gchar</span> *part</code></em>);</pre>
+<p>Get a part of the DN of the subject of this certificate.</p>
+<p>Examples of a <em class="parameter"><code>part</code></em>
+ might be the 'OU' (organizational unit)
+or the 'CN' (common name). Only the value of that part
+of the DN is returned.</p>
+<p>The string returned should be freed by the caller when no longer
+required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>part</p></td>
+<td class="parameter_description"><p>a DN type string or OID.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.8"></a><h4>Returns</h4>
+<p> the allocated part of the subject DN, or <code class="literal">NULL</code> if no
+such part is present. </p>
+<p><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-subject-raw"></a><h3>gcr_certificate_get_subject_raw ()</h3>
+<pre class="programlisting"><span class="returnvalue">guchar</span> *
+gcr_certificate_get_subject_raw (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                 <em class="parameter"><code><span class="type">gsize</span> *n_data</code></em>);</pre>
+<p>Get the raw DER data for the subject DN of the certificate.</p>
+<p>The data should be freed by using <code class="function">g_free()</code> when no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_data</p></td>
+<td class="parameter_description"><p>The length of the returned data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.7"></a><h4>Returns</h4>
+<p> allocated memory containing
+the raw subject. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_data]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-issued-date"></a><h3>gcr_certificate_get_issued_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">GDate</span> *
+gcr_certificate_get_issued_date (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the issued date of this certificate.</p>
+<p>The <span class="type">GDate</span> returned should be freed by the caller using
+<code class="function">g_date_free()</code> when no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.14.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.14.7"></a><h4>Returns</h4>
+<p> An allocated issued date of this certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-expiry-date"></a><h3>gcr_certificate_get_expiry_date ()</h3>
+<pre class="programlisting"><span class="returnvalue">GDate</span> *
+gcr_certificate_get_expiry_date (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the expiry date of this certificate.</p>
+<p>The <span class="type">GDate</span> returned should be freed by the caller using
+<code class="function">g_date_free()</code> when no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.15.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.15.7"></a><h4>Returns</h4>
+<p> An allocated expiry date of this certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-serial-number"></a><h3>gcr_certificate_get_serial_number ()</h3>
+<pre class="programlisting"><span class="returnvalue">guchar</span> *
+gcr_certificate_get_serial_number (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                   <em class="parameter"><code><span class="type">gsize</span> *n_length</code></em>);</pre>
+<p>Get the raw binary serial number of the certificate.</p>
+<p>The caller should free the returned data using <code class="function">g_free()</code> when
+it is no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.16.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_length</p></td>
+<td class="parameter_description"><p>the length of the returned data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.16.7"></a><h4>Returns</h4>
+<p> the raw binary serial number. </p>
+<p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_length]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-serial-number-hex"></a><h3>gcr_certificate_get_serial_number_hex ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_serial_number_hex (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the serial number of the certificate as a hex string.</p>
+<p>The caller should free the returned data using <code class="function">g_free()</code> when
+it is no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.17.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.17.7"></a><h4>Returns</h4>
+<p> an allocated string containing the serial number as hex.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-key-size"></a><h3>gcr_certificate_get_key_size ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gcr_certificate_get_key_size (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the key size in bits of the public key represented
+by this certificate.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.18.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.18.6"></a><h4>Returns</h4>
+<p> The key size of the certificate.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-fingerprint"></a><h3>gcr_certificate_get_fingerprint ()</h3>
+<pre class="programlisting"><span class="returnvalue">guchar</span> *
+gcr_certificate_get_fingerprint (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                 <em class="parameter"><code><span class="type">GChecksumType</span> type</code></em>,
+                                 <em class="parameter"><code><span class="type">gsize</span> *n_length</code></em>);</pre>
+<p>Calculate the fingerprint for this certificate.</p>
+<p>You can pass G_CHECKSUM_SHA1 or G_CHECKSUM_MD5 as the <em class="parameter"><code>type</code></em>
+
+parameter.</p>
+<p>The caller should free the returned data using <code class="function">g_free()</code> when
+it is no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.19.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of algorithm for the fingerprint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>n_length</p></td>
+<td class="parameter_description"><p>The length of the resulting fingerprint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.19.8"></a><h4>Returns</h4>
+<p> the raw binary fingerprint. </p>
+<p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_length]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-fingerprint-hex"></a><h3>gcr_certificate_get_fingerprint_hex ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_fingerprint_hex (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                     <em class="parameter"><code><span class="type">GChecksumType</span> type</code></em>);</pre>
+<p>Calculate the fingerprint for this certificate, and return it
+as a hex string.</p>
+<p>You can pass G_CHECKSUM_SHA1 or G_CHECKSUM_MD5 as the <em class="parameter"><code>type</code></em>
+
+parameter.</p>
+<p>The caller should free the returned data using <code class="function">g_free()</code> when
+it is no longer required.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.20.7"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>type</p></td>
+<td class="parameter_description"><p>the type of algorithm for the fingerprint.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.20.8"></a><h4>Returns</h4>
+<p> an allocated hex string which contains the fingerprint.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-basic-constraints"></a><h3>gcr_certificate_get_basic_constraints ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gcr_certificate_get_basic_constraints (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>,
+                                       <em class="parameter"><code><span class="type">gboolean</span> *is_ca</code></em>,
+                                       <em class="parameter"><code><span class="type">gint</span> *path_len</code></em>);</pre>
+<p>Get the basic constraints for the certificate if present. If <code class="literal">FALSE</code> is
+returned then no basic constraints are present and the <em class="parameter"><code>is_ca</code></em>
+ and
+<em class="parameter"><code>path_len</code></em>
+ arguments are not changed.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.21.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the certificate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>is_ca</p></td>
+<td class="parameter_description"><p> location to place a <code class="literal">TRUE</code> if is an authority. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path_len</p></td>
+<td class="parameter_description"><p> location to place the max path length. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.21.6"></a><h4>Returns</h4>
+<p> whether basic constraints are present or not</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-mixin-class-init"></a><h3>gcr_certificate_mixin_class_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_certificate_mixin_class_init (<em class="parameter"><code><span class="type">GObjectClass</span> *object_class</code></em>);</pre>
+<p>Initialize the certificate mixin for the class. This mixin implements the
+various required properties for the certificate.</p>
+<p>Call this function near the end of your derived class_init function. The
+derived class must implement the <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> interface.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.22.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>object_class</p></td>
+<td class="parameter_description"><p>The GObjectClass for this class</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-mixin-emit-notify"></a><h3>gcr_certificate_mixin_emit_notify ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_certificate_mixin_emit_notify (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Implementers of the <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> mixin should call this function to notify
+when the certificate has changed to emit notifications on the various
+properties.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.23.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-mixin-get-property"></a><h3>gcr_certificate_mixin_get_property ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_certificate_mixin_get_property (<em class="parameter"><code><span class="type">GObject</span> *obj</code></em>,
+                                    <em class="parameter"><code><span class="type">guint</span> prop_id</code></em>,
+                                    <em class="parameter"><code><span class="type">GValue</span> *value</code></em>,
+                                    <em class="parameter"><code><span class="type">GParamSpec</span> *pspec</code></em>);</pre>
+<p>Implementation to get various required certificate properties. This should
+be called from your derived class get_property function, or used as a
+get_property virtual function.</p>
+<p>Example of use as called from derived class get_property function:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">my_get_property</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">GObject</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">guint</span><span class="normal"> prop_id</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">GValue</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">value</span><span class="symbol">,</span><span class="normal"> </span><span class="usertype">GParamSpec</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pspec</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">switch</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">prop_id</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+
+<span class="normal">    </span><span class="symbol">...</span>
+
+<span class="label">    default:</span>
+<span class="normal">        </span><span class="function"><a href="GcrCertificate.html#gcr-certificate-mixin-get-property">gcr_certificate_mixin_get_property</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">obj</span><span class="symbol">,</span><span class="normal"> prop_id</span><span class="symbol">,</span><span class="normal"> value</span><span class="symbol">,</span><span class="normal"> pspec</span><span class="symbol">);</span>
+<span class="normal">        </span><span class="keyword">break</span><span class="symbol">;</span>
+<span class="normal">    </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Example of use as get_property function:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span>
+<span class="function">my_class_init</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">MyClass</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">klass</span><span class="symbol">)</span>
+<span class="cbracket">{</span>
+<span class="normal">    </span><span class="usertype">GObjectClass</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">gobject_class </span><span class="symbol">=</span><span class="normal"> </span><span class="function">G_OBJECT_CLASS</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">klass</span><span class="symbol">);</span>
+<span class="normal">    gobject_class</span><span class="symbol">-&gt;</span><span class="normal">get_property </span><span class="symbol">=</span><span class="normal"> <a href="GcrCertificate.html#gcr-certificate-mixin-get-property">gcr_certificate_mixin_get_property</a></span><span class="symbol">;</span>
+
+<span class="normal">    </span><span class="symbol">...</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="refsect3">
+<a name="id-1.2.2.10.24.9"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>obj</p></td>
+<td class="parameter_description"><p>The object</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>prop_id</p></td>
+<td class="parameter_description"><p>The property id</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p>The value to fill in.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>pspec</p></td>
+<td class="parameter_description"><p>The param specification.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GCR-CERTIFICATE-MIXIN-IMPLEMENT-COMPARABLE:CAPS"></a><h3>GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE</h3>
+<pre class="programlisting">#define             GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE()</pre>
+<p>Implement the GcrComparable interface. Use this macro like this:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="function">G_DEFINE_TYPE_WITH_CODE</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">MyCertificate</span><span class="symbol">,</span><span class="normal"> my_certificate</span><span class="symbol">,</span><span class="normal"> G_TYPE_OBJECT</span><span class="symbol">,</span>
+<span class="function"><a href="GcrCertificate.html#GCR-CERTIFICATE-MIXIN-IMPLEMENT-COMPARABLE:CAPS">GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE</a></span><span class="normal"> </span><span class="symbol">();</span>
+<span class="function">G_IMPLEMENT_INTERFACE</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">GCR_TYPE_CERTIFICATE</span><span class="symbol">,</span><span class="normal"> my_certificate_iface_init</span><span class="symbol">);</span>
+<span class="symbol">);</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-mixin-comparable-init"></a><h3>gcr_certificate_mixin_comparable_init ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gcr_certificate_mixin_comparable_init (<em class="parameter"><code><a class="link" href="GcrComparable.html#GcrComparableIface" title="struct GcrComparableIface"><span class="type">GcrComparableIface</span></a> *iface</code></em>);</pre>
+<p>Initialize a <a class="link" href="GcrComparable.html#GcrComparableIface" title="struct GcrComparableIface"><span class="type">GcrComparableIface</span></a> to compare the current certificate.
+In general it's easier to use the <a class="link" href="GcrCertificate.html#GCR-CERTIFICATE-MIXIN-IMPLEMENT-COMPARABLE:CAPS" title="GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE"><code class="function">GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE()</code></a>
+macro instead of this function.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.26.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>iface</p></td>
+<td class="parameter_description"><p>The interface</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-compare"></a><h3>gcr_certificate_compare ()</h3>
+<pre class="programlisting"><span class="returnvalue">gint</span>
+gcr_certificate_compare (<em class="parameter"><code><a class="link" href="GcrComparable.html" title="GcrComparable"><span class="type">GcrComparable</span></a> *first</code></em>,
+                         <em class="parameter"><code><a class="link" href="GcrComparable.html" title="GcrComparable"><span class="type">GcrComparable</span></a> *other</code></em>);</pre>
+<p>Compare one certificate against another. If the certificates are equal
+then zero is returned. If one certificate is <code class="literal">NULL</code> or not a certificate,
+then a non-zero value is returned.</p>
+<p>The return value is useful in a stable sort, but has no user logical
+meaning.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.27.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>first</p></td>
+<td class="parameter_description"><p> the certificate to compare. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>other</p></td>
+<td class="parameter_description"><p> the certificate to compare against. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.27.7"></a><h4>Returns</h4>
+<p> zero if the certificates match, non-zero otherwise.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-icon"></a><h3>gcr_certificate_get_icon ()</h3>
+<pre class="programlisting"><span class="returnvalue">GIcon</span> *
+gcr_certificate_get_icon (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Get the icon for a certificate.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.28.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The certificate</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.28.6"></a><h4>Returns</h4>
+<p> the icon for this certificate, which should be
+released with <code class="function">g_object_unref()</code>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gcr-certificate-get-markup-text"></a><h3>gcr_certificate_get_markup_text ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gcr_certificate_get_markup_text (<em class="parameter"><code><a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> *self</code></em>);</pre>
+<p>Calculate a GMarkup string for displaying this certificate.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.29.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>a certificate</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.29.6"></a><h4>Returns</h4>
+<p> the markup string. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GcrCertificate-struct"></a><h3>GcrCertificate</h3>
+<pre class="programlisting">typedef struct _GcrCertificate GcrCertificate;</pre>
+<p>An object which holds a certificate.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificateIface"></a><h3>struct GcrCertificateIface</h3>
+<pre class="programlisting">struct GcrCertificateIface {
+	GTypeInterface parent;
+
+
+	/*
+	 * g-ir-scanner cannot comprehend this yet ...
+	 * See: https://bugzilla.gnome.org/show_bug.cgi?id=725501
+	 *
+	 * GcrCertificate.get_der_data:
+	 * @self: a #GcrCertificate
+	 * @n_data: a pointer to a location to store the size of the resulting DER data.
+	 *
+	 * Implemented to return the raw DER data for an X.509 certificate. The data
+	 * should be owned by the #GcrCertificate object.
+	 *
+	 * Returns: (array length=n_data): raw DER data of the X.509 certificate
+	 */
+	const guint8 * (* get_der_data) (GcrCertificate *self,
+	                                 gsize *n_data);
+};
+</pre>
+<p>The interface that implementors of <a class="link" href="GcrCertificate.html" title="GcrCertificate"><span class="type">GcrCertificate</span></a> must implement.</p>
+<div class="refsect3">
+<a name="id-1.2.2.11.3.5"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">GTypeInterface</span> <em class="structfield"><code><a name="GcrCertificateIface.parent"></a>parent</code></em>;</p></td>
+<td class="struct_member_description"><p>the parent interface type</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><em class="structfield"><code><a name="GcrCertificateIface.get-der-data"></a>get_der_data</code></em> ()</p></td>
+<td class="struct_member_description"><p>a method which returns the RAW der data of the certificate</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GcrCertificate.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GcrCertificate--description"></a><h3>The <code class="literal">“description”</code> property</h3>
+<pre class="programlisting">  “description”              <span class="type">gchar</span> *</pre>
+<p>A readable description for this certificate</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--expiry"></a><h3>The <code class="literal">“expiry”</code> property</h3>
+<pre class="programlisting">  “expiry”                   <span class="type">GDate</span> *</pre>
+<p>The expiry date of the certificate</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--icon"></a><h3>The <code class="literal">“icon”</code> property</h3>
+<pre class="programlisting">  “icon”                     <span class="type">GIcon</span> *</pre>
+<p>An icon representing the certificate</p>
+<p>Flags: Read</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--issuer"></a><h3>The <code class="literal">“issuer”</code> property</h3>
+<pre class="programlisting">  “issuer”                   <span class="type">gchar</span> *</pre>
+<p>Common name part of the certificate issuer</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--label"></a><h3>The <code class="literal">“label”</code> property</h3>
+<pre class="programlisting">  “label”                    <span class="type">gchar</span> *</pre>
+<p>A readable label for this certificate.</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--markup"></a><h3>The <code class="literal">“markup”</code> property</h3>
+<pre class="programlisting">  “markup”                   <span class="type">gchar</span> *</pre>
+<p>GLib markup to describe the certificate</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GcrCertificate--subject"></a><h3>The <code class="literal">“subject”</code> property</h3>
+<pre class="programlisting">  “subject”                  <span class="type">gchar</span> *</pre>
+<p>Common name part of the certificate subject</p>
+<p>Flags: Read</p>
+<p>Default value: ""</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

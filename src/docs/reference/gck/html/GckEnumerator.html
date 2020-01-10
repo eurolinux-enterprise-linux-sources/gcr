@@ -1,0 +1,657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: GckEnumerator</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="GckObjectCache.html" title="GckObjectCache">
+<link rel="next" href="gck-GckModule-lists.html" title="GckModule lists">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GckEnumerator.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GckEnumerator.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GckEnumerator.properties" class="shortcut">Properties</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GckObjectCache.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gck-GckModule-lists.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GckEnumerator"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GckEnumerator.top_of_page"></a>GckEnumerator</span></h2>
+<p>GckEnumerator — Enumerates through PKCS#11 objects.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GckEnumerator.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GckObject.html" title="GckObject"><span class="returnvalue">GckObject</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-next" title="gck_enumerator_next ()">gck_enumerator_next</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-next-async" title="gck_enumerator_next_async ()">gck_enumerator_next_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-next-finish" title="gck_enumerator_next_finish ()">gck_enumerator_next_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-next-n" title="gck_enumerator_next_n ()">gck_enumerator_next_n</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GTlsInteraction</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-get-interaction" title="gck_enumerator_get_interaction ()">gck_enumerator_get_interaction</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-set-interaction" title="gck_enumerator_set_interaction ()">gck_enumerator_set_interaction</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GType</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-get-object-type" title="gck_enumerator_get_object_type ()">gck_enumerator_get_object_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-set-object-type" title="gck_enumerator_set_object_type ()">gck_enumerator_set_object_type</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-set-object-type-full" title="gck_enumerator_set_object_type_full ()">gck_enumerator_set_object_type_full</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-get-chained" title="gck_enumerator_get_chained ()">gck_enumerator_get_chained</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckEnumerator.html#gck-enumerator-set-chained" title="gck_enumerator_set_chained ()">gck_enumerator_set_chained</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type">
+<a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *</td>
+<td class="property_name"><a class="link" href="GckEnumerator.html#GckEnumerator--chained" title="The “chained” property">chained</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GTlsInteraction</span> *</td>
+<td class="property_name"><a class="link" href="GckEnumerator.html#GckEnumerator--interaction" title="The “interaction” property">interaction</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">GType</span> *</td>
+<td class="property_name"><a class="link" href="GckEnumerator.html#GckEnumerator--object-type" title="The “object-type” property">object-type</a></td>
+<td class="property_flags">Read / Write</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GckEnumerator.html#GckEnumerator-struct" title="struct GckEnumerator">GckEnumerator</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GObject
+    <span class="lineart">╰──</span> GckEnumerator
+</pre>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.description"></a><h2>Description</h2>
+<p>A GckEnumerator can be used to enumerate through PKCS#11 objects. It will
+automatically create sessions as necessary.</p>
+<p>Use <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-objects" title="gck_modules_enumerate_objects ()"><code class="function">gck_modules_enumerate_objects()</code></a> or <a class="link" href="gck-GckModule-lists.html#gck-modules-enumerate-uri" title="gck_modules_enumerate_uri ()"><code class="function">gck_modules_enumerate_uri()</code></a> to create
+an enumerator. To get the objects use <a class="link" href="GckEnumerator.html#gck-enumerator-next" title="gck_enumerator_next ()"><code class="function">gck_enumerator_next()</code></a> or
+<a class="link" href="GckEnumerator.html#gck-enumerator-next-async" title="gck_enumerator_next_async ()"><code class="function">gck_enumerator_next_async()</code></a> functions.</p>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gck-enumerator-next"></a><h3>gck_enumerator_next ()</h3>
+<pre class="programlisting"><a class="link" href="GckObject.html" title="GckObject"><span class="returnvalue">GckObject</span></a> *
+gck_enumerator_next (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                     <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                     <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Get the next object in the enumerator, or <code class="literal">NULL</code> if there are no more objects.</p>
+<p><code class="literal">NULL</code> is also returned if the function fails. Use the <em class="parameter"><code>error</code></em>
+ to determine
+whether a failure occurred or not.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <span class="type">GCancellable</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to store an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.2.7"></a><h4>Returns</h4>
+<p> The next object, which must be released
+using g_object_unref, or <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-next-async"></a><h3>gck_enumerator_next_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_enumerator_next_async (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                           <em class="parameter"><code><span class="type">gint</span> max_objects</code></em>,
+                           <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                           <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                           <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Get the next set of objects from the enumerator. This operation completes
+asynchronously.The maximum number of objects can be specified with
+<em class="parameter"><code>max_objects</code></em>
+. If -1 is specified, then all the remaining objects will be
+enumerated.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>An enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max_objects</p></td>
+<td class="parameter_description"><p>The maximum number of objects to get</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <span class="type">GCancellable</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>Called when the result is ready</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>Data to pass to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-next-finish"></a><h3>gck_enumerator_next_finish ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_enumerator_next_finish (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                            <em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                            <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Complete an operation to enumerate next objects.</p>
+<p><code class="literal">NULL</code> is also returned if the function fails. Use the <em class="parameter"><code>error</code></em>
+ to determine
+whether a failure occurred or not.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>An enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>The result passed to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to raise an error on failure.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.4.7"></a><h4>Returns</h4>
+<p> The list of objects, which
+should be freed with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Module][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-next-n"></a><h3>gck_enumerator_next_n ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_enumerator_next_n (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                       <em class="parameter"><code><span class="type">gint</span> max_objects</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Get the next set of objects from the enumerator. The maximum number of
+objects can be specified with <em class="parameter"><code>max_objects</code></em>
+. If -1 is specified, then all
+the remaining objects will be returned.</p>
+<p><code class="literal">NULL</code> is also returned if the function fails. Use the <em class="parameter"><code>error</code></em>
+ to determine
+whether a failure occurred or not.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>An enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max_objects</p></td>
+<td class="parameter_description"><p>The maximum amount of objects to enumerate</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p>A <span class="type">GCancellable</span> or <code class="literal">NULL</code></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to store an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.5.7"></a><h4>Returns</h4>
+<p> A list of objects, which
+should be freed using <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Object]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-get-interaction"></a><h3>gck_enumerator_get_interaction ()</h3>
+<pre class="programlisting"><span class="returnvalue">GTlsInteraction</span> *
+gck_enumerator_get_interaction (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>);</pre>
+<p>Get the interaction used when a pin is needed</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.6.6"></a><h4>Returns</h4>
+<p> the interaction or <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-set-interaction"></a><h3>gck_enumerator_set_interaction ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_enumerator_set_interaction (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">GTlsInteraction</span> *interaction</code></em>);</pre>
+<p>Set the interaction used when a pin is needed</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>interaction</p></td>
+<td class="parameter_description"><p> the interaction or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-get-object-type"></a><h3>gck_enumerator_get_object_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">GType</span>
+gck_enumerator_get_object_type (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>);</pre>
+<p>Get the type of objects created by this enumerator. The type will always
+either be <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> or derived from it.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>an enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.8.6"></a><h4>Returns</h4>
+<p> the type of objects created. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-set-object-type"></a><h3>gck_enumerator_set_object_type ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_enumerator_set_object_type (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                                <em class="parameter"><code><span class="type">GType</span> object_type</code></em>);</pre>
+<p>Set the type of objects to be created by this enumerator. The type must
+always be either <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> or derived from it.</p>
+<p>If the <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> interface is implemented on the derived class
+and the default_types class field is set, then the enumerator will retrieve
+attributes for each object.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.9.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>an enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_type</p></td>
+<td class="parameter_description"><p>the type of objects to create</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-set-object-type-full"></a><h3>gck_enumerator_set_object_type_full ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_enumerator_set_object_type_full (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                                     <em class="parameter"><code><span class="type">GType</span> object_type</code></em>,
+                                     <em class="parameter"><code>const <span class="type">gulong</span> *attr_types</code></em>,
+                                     <em class="parameter"><code><span class="type">gint</span> attr_count</code></em>);</pre>
+<p>Set the type of objects to be created by this enumerator. The type must
+always be either <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> or derived from it.</p>
+<p>If <em class="parameter"><code>attr_types</code></em>
+ and <em class="parameter"><code>attr_count</code></em>
+ are non-NULL and non-zero respectively,
+then the <a class="link" href="GckObjectCache.html" title="GckObjectCache"><span class="type">GckObjectCache</span></a> interface is expected to be implemented on the
+derived class, then the enumerator will retrieve attributes for each object.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.10.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>an enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object_type</p></td>
+<td class="parameter_description"><p>the type of objects to create</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_types</p></td>
+<td class="parameter_description"><p> types of attributes to retrieve for objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=attr_count]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>attr_count</p></td>
+<td class="parameter_description"><p>the number of attributes to retrieve</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-get-chained"></a><h3>gck_enumerator_get_chained ()</h3>
+<pre class="programlisting"><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="returnvalue">GckEnumerator</span></a> *
+gck_enumerator_get_chained (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>);</pre>
+<p>Get the enumerator that will be run after all objects from this one
+are seen.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.9.8.11.6"></a><h4>Returns</h4>
+<p> the chained enumerator or <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-enumerator-set-chained"></a><h3>gck_enumerator_set_chained ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_enumerator_set_chained (<em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *self</code></em>,
+                            <em class="parameter"><code><a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *chained</code></em>);</pre>
+<p>Set a chained enumerator that will be run after all objects from this one
+are seen.</p>
+<div class="refsect3">
+<a name="id-1.2.9.8.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the enumerator</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>chained</p></td>
+<td class="parameter_description"><p> the chained enumerator or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GckEnumerator-struct"></a><h3>struct GckEnumerator</h3>
+<pre class="programlisting">struct GckEnumerator;</pre>
+<p>An object that allows enumerating of objects across modules, tokens.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckEnumerator.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GckEnumerator--chained"></a><h3>The <code class="literal">“chained”</code> property</h3>
+<pre class="programlisting">  “chained”                  <a class="link" href="GckEnumerator.html" title="GckEnumerator"><span class="type">GckEnumerator</span></a> *</pre>
+<p>Chained enumerator, which will be enumerated when this enumerator
+has enumerated all its objects.</p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckEnumerator--interaction"></a><h3>The <code class="literal">“interaction”</code> property</h3>
+<pre class="programlisting">  “interaction”              <span class="type">GTlsInteraction</span> *</pre>
+<p>Interaction object used to ask the user for pins when opening
+sessions. Used if the session_options of the enumerator have
+<a class="link" href="GckSlot.html#GCK-SESSION-LOGIN-USER:CAPS"><code class="literal">GCK_SESSION_LOGIN_USER</code></a></p>
+<p>Flags: Read / Write</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckEnumerator--object-type"></a><h3>The <code class="literal">“object-type”</code> property</h3>
+<pre class="programlisting">  “object-type”              <span class="type">GType</span> *</pre>
+<p>The type of objects that are created by the enumerator. Must be
+GckObject or derived from it.</p>
+<p>Flags: Read / Write</p>
+<p>Allowed values: GckObject</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: GckModule</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="next" href="GckSlot.html" title="GckSlot">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#GckModule.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#GckModule.object-hierarchy" class="shortcut">Object Hierarchy</a></span><span id="nav_properties">  <span class="dim">|</span> 
+                  <a href="#GckModule.properties" class="shortcut">Properties</a></span><span id="nav_signals">  <span class="dim">|</span> 
+                  <a href="#GckModule.signals" class="shortcut">Signals</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="reference.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GckSlot.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="GckModule"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GckModule.top_of_page"></a>GckModule</span></h2>
+<p>GckModule — A loaded and initialized PKCS#11 module.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="GckModule.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-initialize" title="gck_module_initialize ()">gck_module_initialize</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-initialize-async" title="gck_module_initialize_async ()">gck_module_initialize_async</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-initialize-finish" title="gck_module_initialize_finish ()">gck_module_initialize_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-new" title="gck_module_new ()">gck_module_new</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-equal" title="gck_module_equal ()">gck_module_equal</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-hash" title="gck_module_hash ()">gck_module_hash</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-match" title="gck_module_match ()">gck_module_match</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">const <span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-get-path" title="gck_module_get_path ()">gck_module_get_path</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="pkcs11-links.html#CK-FUNCTION-LIST-PTR:CAPS"><span class="returnvalue">CK_FUNCTION_LIST_PTR</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-get-functions" title="gck_module_get_functions ()">gck_module_get_functions</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckModule.html#GckModuleInfo"><span class="returnvalue">GckModuleInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-get-info" title="gck_module_get_info ()">gck_module_get_info</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-get-slots" title="gck_module_get_slots ()">gck_module_get_slots</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a class="link" href="GckModule.html#GckModuleInfo"><span class="returnvalue">GckModuleInfo</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-info-copy" title="gck_module_info_copy ()">gck_module_info_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="GckModule.html#gck-module-info-free" title="gck_module_info_free ()">gck_module_info_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckModule.properties"></a><h2>Properties</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="properties_type">
+<col width="300px" class="properties_name">
+<col width="200px" class="properties_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="property_type"><span class="type">gpointer</span></td>
+<td class="property_name"><a class="link" href="GckModule.html#GckModule--functions" title="The “functions” property">functions</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+<tr>
+<td class="property_type">
+<span class="type">gchar</span> *</td>
+<td class="property_name"><a class="link" href="GckModule.html#GckModule--path" title="The “path” property">path</a></td>
+<td class="property_flags">Read / Write / Construct Only</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckModule.signals"></a><h2>Signals</h2>
+<div class="informaltable"><table border="0">
+<colgroup>
+<col width="150px" class="signals_return">
+<col width="300px" class="signals_name">
+<col width="200px" class="signals_flags">
+</colgroup>
+<tbody>
+<tr>
+<td class="signal_type"><span class="returnvalue">gboolean</span></td>
+<td class="signal_name"><a class="link" href="GckModule.html#GckModule-authenticate-object" title="The “authenticate-object” signal">authenticate-object</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+<tr>
+<td class="signal_type"><span class="returnvalue">gboolean</span></td>
+<td class="signal_name"><a class="link" href="GckModule.html#GckModule-authenticate-slot" title="The “authenticate-slot” signal">authenticate-slot</a></td>
+<td class="signal_flags">Run Last</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<a name="GckModuleInfo"></a><div class="refsect1">
+<a name="GckModule.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GckModule.html#GckModule-struct" title="struct GckModule">GckModule</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword">struct</td>
+<td class="function_name"><a class="link" href="GckModule.html#GckModuleInfo-struct" title="struct GckModuleInfo">GckModuleInfo</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="GckModule.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    GBoxed
+    <span class="lineart">╰──</span> GckModuleInfo
+    GObject
+    <span class="lineart">╰──</span> GckModule
+</pre>
+</div>
+<div class="refsect1">
+<a name="GckModule.description"></a><h2>Description</h2>
+<p>A GckModule object holds a loaded PKCS#11 module. A PKCS#11 module is a shared library.</p>
+<p>You can load and initialize a PKCS#11 module with the <a class="link" href="GckModule.html#gck-module-initialize" title="gck_module_initialize ()"><code class="function">gck_module_initialize()</code></a> call. If you already
+have a loaded and initialized module that you'd like to use with the various gck functions, then
+you can use <a class="link" href="GckModule.html#gck-module-new" title="gck_module_new ()"><code class="function">gck_module_new()</code></a>.</p>
+</div>
+<div class="refsect1">
+<a name="GckModule.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gck-module-initialize"></a><h3>gck_module_initialize ()</h3>
+<pre class="programlisting"><a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+gck_module_initialize (<em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
+                       <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                       <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Load and initialize a PKCS#11 module represented by a GckModule object.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>The file system path to the PKCS#11 module to load.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> optional cancellation object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>A location to store an error resulting from a failed load.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.2.6"></a><h4>Returns</h4>
+<p> The loaded PKCS#11 module or <code class="literal">NULL</code> if failed. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-initialize-async"></a><h3>gck_module_initialize_async ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_module_initialize_async (<em class="parameter"><code>const <span class="type">gchar</span> *path</code></em>,
+                             <em class="parameter"><code><span class="type">GCancellable</span> *cancellable</code></em>,
+                             <em class="parameter"><code><span class="type">GAsyncReadyCallback</span> callback</code></em>,
+                             <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+<p>Asynchronously load and initialize a PKCS#11 module represented by a
+<a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> object.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>the file system path to the PKCS#11 module to load</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>cancellable</p></td>
+<td class="parameter_description"><p> optional cancellation object. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>callback</p></td>
+<td class="parameter_description"><p>a callback which will be called when the operation completes</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>data to pass to the callback</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-initialize-finish"></a><h3>gck_module_initialize_finish ()</h3>
+<pre class="programlisting"><a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+gck_module_initialize_finish (<em class="parameter"><code><span class="type">GAsyncResult</span> *result</code></em>,
+                              <em class="parameter"><code><span class="type">GError</span> **error</code></em>);</pre>
+<p>Finishes the asynchronous initialize operation.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>the asynchronous result</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>error</p></td>
+<td class="parameter_description"><p>location to place an error on failure</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.4.6"></a><h4>Returns</h4>
+<p> The initialized module, or NULL. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-new"></a><h3>gck_module_new ()</h3>
+<pre class="programlisting"><a class="link" href="GckModule.html" title="GckModule"><span class="returnvalue">GckModule</span></a> *
+gck_module_new (<em class="parameter"><code><a class="link" href="pkcs11-links.html#CK-FUNCTION-LIST-PTR:CAPS"><span class="type">CK_FUNCTION_LIST_PTR</span></a> funcs</code></em>);</pre>
+<p>Create a GckModule representing a PKCS#11 module. It is assumed that
+this the module is already initialized. In addition it will not be
+finalized when complete.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>funcs</p></td>
+<td class="parameter_description"><p>Initialized PKCS#11 function list pointer</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.5.6"></a><h4>Returns</h4>
+<p> The new PKCS#11 module.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-equal"></a><h3>gck_module_equal ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_module_equal (<em class="parameter"><code><span class="type">gconstpointer</span> module1</code></em>,
+                  <em class="parameter"><code><span class="type">gconstpointer</span> module2</code></em>);</pre>
+<p>Checks equality of two modules. Two GckModule objects can point to the same
+underlying PKCS#11 module.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>module1</p></td>
+<td class="parameter_description"><p> a pointer to the first <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gck.Module]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>module2</p></td>
+<td class="parameter_description"><p> a pointer to the second <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gck.Module]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.6.6"></a><h4>Returns</h4>
+<p> TRUE if module1 and module2 are equal. FALSE if either is not a GckModule.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-hash"></a><h3>gck_module_hash ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gck_module_hash (<em class="parameter"><code><span class="type">gconstpointer</span> module</code></em>);</pre>
+<p>Create a hash value for the GckModule.</p>
+<p>This function is intended for easily hashing a GckModule to add to
+a GHashTable or similar data structure.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.7.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>module</p></td>
+<td class="parameter_description"><p> a pointer to a <a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a>. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Gck.Module]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.7.7"></a><h4>Returns</h4>
+<p> An integer that can be used as a hash value, or 0 if invalid.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-match"></a><h3>gck_module_match ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_module_match (<em class="parameter"><code><a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *self</code></em>,
+                  <em class="parameter"><code><a class="link" href="gck-PKCS11-URIs.html#GckUriData"><span class="type">GckUriData</span></a> *uri</code></em>);</pre>
+<p>Check whether the PKCS#11 URI matches the module</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.8.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>the module to match</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>uri</p></td>
+<td class="parameter_description"><p>the uri to match against the module</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.8.6"></a><h4>Returns</h4>
+<p> whether the URI matches or not</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-get-path"></a><h3>gck_module_get_path ()</h3>
+<pre class="programlisting">const <span class="returnvalue">gchar</span> *
+gck_module_get_path (<em class="parameter"><code><a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *self</code></em>);</pre>
+<p>Get the file path of this module. This may not be an absolute path, and
+usually reflects the path passed to <a class="link" href="GckModule.html#gck-module-initialize" title="gck_module_initialize ()"><code class="function">gck_module_initialize()</code></a>.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The module for which to get the path.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.9.6"></a><h4>Returns</h4>
+<p> The path, do not modify or free this value.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-get-functions"></a><h3>gck_module_get_functions ()</h3>
+<pre class="programlisting"><a class="link" href="pkcs11-links.html#CK-FUNCTION-LIST-PTR:CAPS"><span class="returnvalue">CK_FUNCTION_LIST_PTR</span></a>
+gck_module_get_functions (<em class="parameter"><code><a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *self</code></em>);</pre>
+<p>Get the PKCS#11 function list for the module.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The module for which to get the function list.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.10.6"></a><h4>Returns</h4>
+<p> The function list, do not modify this structure.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-get-info"></a><h3>gck_module_get_info ()</h3>
+<pre class="programlisting"><a class="link" href="GckModule.html#GckModuleInfo"><span class="returnvalue">GckModuleInfo</span></a> *
+gck_module_get_info (<em class="parameter"><code><a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *self</code></em>);</pre>
+<p>Get the info about a PKCS#11 module.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The module to get info for.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.11.6"></a><h4>Returns</h4>
+<p> the module info; release this with <a class="link" href="GckModule.html#gck-module-info-free" title="gck_module_info_free ()"><code class="function">gck_module_info_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-get-slots"></a><h3>gck_module_get_slots ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_module_get_slots (<em class="parameter"><code><a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *self</code></em>,
+                      <em class="parameter"><code><span class="type">gboolean</span> token_present</code></em>);</pre>
+<p>Get the GckSlot objects for a given module.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>self</p></td>
+<td class="parameter_description"><p>The module for which to get the slots.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>token_present</p></td>
+<td class="parameter_description"><p>Whether to limit only to slots with a token present.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.12.6"></a><h4>Returns</h4>
+<p> The possibly empty
+list of slots. Release this with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Gck.Slot][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-info-copy"></a><h3>gck_module_info_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GckModule.html#GckModuleInfo"><span class="returnvalue">GckModuleInfo</span></a> *
+gck_module_info_copy (<em class="parameter"><code><a class="link" href="GckModule.html#GckModuleInfo"><span class="type">GckModuleInfo</span></a> *module_info</code></em>);</pre>
+<p>Make a copy of the module info.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>module_info</p></td>
+<td class="parameter_description"><p>a module info</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.10.13.6"></a><h4>Returns</h4>
+<p> a newly allocated copy module info. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-module-info-free"></a><h3>gck_module_info_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_module_info_free (<em class="parameter"><code><a class="link" href="GckModule.html#GckModuleInfo"><span class="type">GckModuleInfo</span></a> *module_info</code></em>);</pre>
+<p>Free a GckModuleInfo structure.</p>
+<div class="refsect3">
+<a name="id-1.2.2.10.14.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>module_info</p></td>
+<td class="parameter_description"><p>The module info to free, or NULL.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckModule.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GckModule-struct"></a><h3>struct GckModule</h3>
+<pre class="programlisting">struct GckModule;</pre>
+<p>Holds a loaded and initialized PKCS#11 module.</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckModuleInfo-struct"></a><h3>struct GckModuleInfo</h3>
+<pre class="programlisting">struct GckModuleInfo {
+	guint8 pkcs11_version_major;
+	guint8 pkcs11_version_minor;
+
+	gchar *manufacturer_id;
+	gulong flags;
+
+	gchar *library_description;
+	guint8 library_version_major;
+	guint8 library_version_minor;
+};
+</pre>
+<p>Holds information about the PKCS#11 module.</p>
+<p>This structure corresponds to CK_MODULE_INFO in the PKCS#11 standard. The
+strings are NULL terminated for easier use.</p>
+<p>Use <a class="link" href="GckModule.html#gck-module-info-free" title="gck_module_info_free ()"><code class="function">gck_module_info_free()</code></a> to release this structure when done with it.</p>
+<div class="refsect3">
+<a name="id-1.2.2.11.3.7"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="GckModuleInfo-struct.pkcs11-version-major"></a>pkcs11_version_major</code></em>;</p></td>
+<td class="struct_member_description"><p>The major version of the module.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="GckModuleInfo-struct.pkcs11-version-minor"></a>pkcs11_version_minor</code></em>;</p></td>
+<td class="struct_member_description"><p>The minor version of the module.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="GckModuleInfo-struct.manufacturer-id"></a>manufacturer_id</code></em>;</p></td>
+<td class="struct_member_description"><p>The module manufacturer.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gulong</span> <em class="structfield"><code><a name="GckModuleInfo-struct.flags"></a>flags</code></em>;</p></td>
+<td class="struct_member_description"><p>The module PKCS#11 flags.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">gchar</span> *<em class="structfield"><code><a name="GckModuleInfo-struct.library-description"></a>library_description</code></em>;</p></td>
+<td class="struct_member_description"><p>The module description.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="GckModuleInfo-struct.library-version-major"></a>library_version_major</code></em>;</p></td>
+<td class="struct_member_description"><p>The major version of the library.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><span class="type">guint8</span> <em class="structfield"><code><a name="GckModuleInfo-struct.library-version-minor"></a>library_version_minor</code></em>;</p></td>
+<td class="struct_member_description"><p>The minor version of the library.</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckModule.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GckModule--functions"></a><h3>The <code class="literal">“functions”</code> property</h3>
+<pre class="programlisting">  “functions”                <span class="type">gpointer</span></pre>
+<p>The raw PKCS#11 function list for the module.</p>
+<p>This points to a CK_FUNCTION_LIST structure.</p>
+<p>Flags: Read / Write / Construct Only</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckModule--path"></a><h3>The <code class="literal">“path”</code> property</h3>
+<pre class="programlisting">  “path”                     <span class="type">gchar</span> *</pre>
+<p>The PKCS#11 module file path.</p>
+<p>This may be set to NULL if this object was created from an already
+initialized module via the <a class="link" href="GckModule.html#gck-module-new" title="gck_module_new ()"><code class="function">gck_module_new()</code></a> function.</p>
+<p>Flags: Read / Write / Construct Only</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="GckModule.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2">
+<a name="GckModule-authenticate-object"></a><h3>The <code class="literal">“authenticate-object”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+user_function (<a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *module,
+               <a class="link" href="GckObject.html" title="GckObject"><span class="type">GckObject</span></a> *object,
+               <span class="type">gchar</span>     *label,
+               <span class="type">gpointer</span>   password,
+               <span class="type">gpointer</span>   user_data)</pre>
+<p>Use <a class="link" href="GckSession.html#gck-session-set-interaction" title="gck_session_set_interaction ()"><code class="function">gck_session_set_interaction()</code></a> instead of connecting to this signal.</p>
+<div class="warning">
+<p><code class="literal">GckModule::authenticate-object</code> is deprecated and should not be used in newly-written code.</p>
+<p>Since 3.4</p>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.13.2.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>module</p></td>
+<td class="parameter_description"><p>The module.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>object</p></td>
+<td class="parameter_description"><p>The object to be authenticated.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>label</p></td>
+<td class="parameter_description"><p>A displayable label which describes the object.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>password</p></td>
+<td class="parameter_description"><p>A gchar** where a password should be returned.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GckModule-authenticate-slot"></a><h3>The <code class="literal">“authenticate-slot”</code> signal</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+user_function (<a class="link" href="GckModule.html" title="GckModule"><span class="type">GckModule</span></a> *module,
+               <a class="link" href="GckSlot.html" title="GckSlot"><span class="type">GckSlot</span></a>   *slot,
+               <span class="type">gchar</span>     *string,
+               <span class="type">gpointer</span>   password,
+               <span class="type">gpointer</span>   user_data)</pre>
+<p>Use <a class="link" href="GckSession.html#gck-session-set-interaction" title="gck_session_set_interaction ()"><code class="function">gck_session_set_interaction()</code></a> instead of connecting to this signal.</p>
+<div class="warning">
+<p><code class="literal">GckModule::authenticate-slot</code> is deprecated and should not be used in newly-written code.</p>
+<p>Since 3.4</p>
+</div>
+<div class="refsect3">
+<a name="id-1.2.2.13.3.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>module</p></td>
+<td class="parameter_description"><p>The module</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>slot</p></td>
+<td class="parameter_description"><p>The slot to be authenticated.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>A displayable label which describes the object.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>password</p></td>
+<td class="parameter_description"><p>A gchar** where a password should be returned.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>user_data</p></td>
+<td class="parameter_description"><p>user data set when the signal handler was connected.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Flags: Run Last</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>

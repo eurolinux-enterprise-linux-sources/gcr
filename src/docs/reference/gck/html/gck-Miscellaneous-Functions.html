@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gck Library Reference Manual: Miscellaneous Functions</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="Gck Library Reference Manual">
+<link rel="up" href="reference.html" title="PKCS#11 GObject Bindings">
+<link rel="prev" href="gck-Library-Utilities.html" title="Library Utilities">
+<link rel="next" href="pkcs11-links.html" title="About PKCS#11">
+<meta name="generator" content="GTK-Doc V1.21 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gck-Miscellaneous-Functions.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="reference.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gck-Library-Utilities.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="pkcs11-links.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="gck-Miscellaneous-Functions"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gck-Miscellaneous-Functions.top_of_page"></a>Miscellaneous Functions</span></h2>
+<p>Miscellaneous Functions — Other miscellaneous functions.</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gck-Miscellaneous-Functions.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody>
+<tr>
+<td class="function_type">
+<span class="returnvalue">GList</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-list-ref-copy" title="gck_list_ref_copy ()">gck_list_ref_copy</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()">gck_list_unref_free</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gchar</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-string-from-chars" title="gck_string_from_chars ()">gck_string_from_chars</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-string-to-chars" title="gck_string_to_chars ()">gck_string_to_chars</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-value-to-boolean" title="gck_value_to_boolean ()">gck_value_to_boolean</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gck-Miscellaneous-Functions.html#gck-value-to-ulong" title="gck_value_to_ulong ()">gck_value_to_ulong</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="gck-Miscellaneous-Functions.html#GCK-INVALID:CAPS" title="GCK_INVALID">GCK_INVALID</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gck-Miscellaneous-Functions.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gck-Miscellaneous-Functions.html#GckError" title="enum GckError">GckError</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="gck-Miscellaneous-Functions.description"></a><h2>Description</h2>
+<p>A few supporting functions that come in handy when dealing with the gck
+library or PKCS11 in general.</p>
+</div>
+<div class="refsect1">
+<a name="gck-Miscellaneous-Functions.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gck-list-ref-copy"></a><h3>gck_list_ref_copy ()</h3>
+<pre class="programlisting"><span class="returnvalue">GList</span> *
+gck_list_ref_copy (<em class="parameter"><code><span class="type">GList</span> *reflist</code></em>);</pre>
+<p>Copy a list of GObject based pointers. All objects
+in the list will be reffed and the list will be copied.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.2.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>reflist</p></td>
+<td class="parameter_description"><p> list of GObject reference counted
+objects. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.Object]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.14.6.2.6"></a><h4>Returns</h4>
+<p> the copied and
+reffed list, when done, free it with <a class="link" href="gck-Miscellaneous-Functions.html#gck-list-unref-free" title="gck_list_unref_free ()"><code class="function">gck_list_unref_free()</code></a>. </p>
+<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.Object]</span></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-list-unref-free"></a><h3>gck_list_unref_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gck_list_unref_free (<em class="parameter"><code><span class="type">GList</span> *reflist</code></em>);</pre>
+<p>Free a list of GObject based pointers. All objects in the list
+will be unreffed and then the list itself will be freed.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.3.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>reflist</p></td>
+<td class="parameter_description"><p> list of Gobject reference counted pointers. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.Object]</span></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-string-from-chars"></a><h3>gck_string_from_chars ()</h3>
+<pre class="programlisting"><span class="returnvalue">gchar</span> *
+gck_string_from_chars (<em class="parameter"><code>const <span class="type">guchar</span> *data</code></em>,
+                       <em class="parameter"><code><span class="type">gsize</span> max</code></em>);</pre>
+<p>Create a string from a set of PKCS#11 characters. This is
+similar to g_strndup, except for that it also strips trailing
+spaces. These space padded strings are often used in PKCS#11
+structures.</p>
+<p>If the space padded string is filled with null characters then
+this function will return <code class="literal">NULL</code>.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.4.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>The character data to turn into a null terminated string.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max</p></td>
+<td class="parameter_description"><p>The maximum length of the charater data.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.14.6.4.7"></a><h4>Returns</h4>
+<p> The null terminated string.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-string-to-chars"></a><h3>gck_string_to_chars ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_string_to_chars (<em class="parameter"><code><span class="type">guchar</span> *data</code></em>,
+                     <em class="parameter"><code><span class="type">gsize</span> max</code></em>,
+                     <em class="parameter"><code>const <span class="type">gchar</span> *string</code></em>);</pre>
+<p>Create a space padded PKCS#11 string from a null terminated string.
+The string must be shorter than the buffer or <code class="literal">FALSE</code> will be
+returned.</p>
+<p>If a <code class="literal">NULL</code> string is passed, then the space padded string will be
+set to zero characters.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.5.6"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>data</p></td>
+<td class="parameter_description"><p>The character buffer to place string into.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>max</p></td>
+<td class="parameter_description"><p>The maximum length of the charater buffer.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>string</p></td>
+<td class="parameter_description"><p>The string to place in the buffer.</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.14.6.5.7"></a><h4>Returns</h4>
+<p> The null terminated string.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-value-to-boolean"></a><h3>gck_value_to_boolean ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_value_to_boolean (<em class="parameter"><code>const <span class="type">guchar</span> *value</code></em>,
+                      <em class="parameter"><code><span class="type">gsize</span> length</code></em>,
+                      <em class="parameter"><code><span class="type">gboolean</span> *result</code></em>);</pre>
+<p>Convert CK_BBOOL type memory to a boolean.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.6.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p> memory to convert. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>length of memory</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A location to store the result</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.14.6.6.6"></a><h4>Returns</h4>
+<p> Whether the conversion was successful.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="gck-value-to-ulong"></a><h3>gck_value_to_ulong ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gck_value_to_ulong (<em class="parameter"><code>const <span class="type">guchar</span> *value</code></em>,
+                    <em class="parameter"><code><span class="type">gsize</span> length</code></em>,
+                    <em class="parameter"><code><span class="type">gulong</span> *result</code></em>);</pre>
+<p>Convert CK_ULONG type memory to a boolean.</p>
+<div class="refsect3">
+<a name="id-1.2.14.6.7.5"></a><h4>Parameters</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>value</p></td>
+<td class="parameter_description"><p> memory to convert. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>length</p></td>
+<td class="parameter_description"><p>length of memory</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>result</p></td>
+<td class="parameter_description"><p>A location to store the result</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="id-1.2.14.6.7.6"></a><h4>Returns</h4>
+<p> Whether the conversion was successful.</p>
+<p></p>
+</div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GCK-INVALID:CAPS"></a><h3>GCK_INVALID</h3>
+<pre class="programlisting">#define GCK_INVALID ((gulong)-1)
+</pre>
+<p>Used as a terminator at the end of variable argument lists.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="gck-Miscellaneous-Functions.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GckError"></a><h3>enum GckError</h3>
+<p>Various error codes. All the CKR_XXX error codes from PKCS#11 are also
+relevant error codes.</p>
+<div class="refsect3">
+<a name="id-1.2.14.7.2.4"></a><h4>Members</h4>
+<div class="informaltable"><table width="100%" border="0">
+<colgroup>
+<col width="300px" class="enum_members_name">
+<col class="enum_members_description">
+<col width="200px" class="enum_members_annotations">
+</colgroup>
+<tbody><tr>
+<td class="enum_member_name"><p><a name="GCK-ERROR-MODULE-PROBLEM:CAPS"></a>GCK_ERROR_MODULE_PROBLEM</p></td>
+<td class="enum_member_description">
+<p>a result code that signifies there was a problem
+                           loading a PKCS#11 module, usually a shared library</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.21</div>
+</body>
+</html>
