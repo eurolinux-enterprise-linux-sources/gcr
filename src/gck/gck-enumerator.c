@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <nielsen@memberwebs.com>
 */
@@ -23,6 +24,8 @@
 #include "config.h"
 
 #include "gck.h"
+#define DEBUG_FLAG GCK_DEBUG_ENUMERATOR
+#include "gck-debug.h"
 #include "gck-private.h"
 
 #include <string.h>
@@ -83,8 +86,7 @@ struct _GckEnumeratorState {
 	/* The type of objects to create */
 	GType object_type;
 	gpointer object_class;
-	const gulong *attr_types;
-	gint attr_count;
+	GckObjectCacheIface *object_iface;
 
 	/* state_slots */
 	GList *slots;
@@ -110,8 +112,6 @@ struct _GckEnumeratorPrivate {
 	GTlsInteraction *interaction;
 	GType object_type;
 	GckObjectClass *object_class;
-	gulong *attr_types;
-	gint attr_count;
 	GckEnumerator *chained;
 };
 
@@ -221,7 +221,7 @@ state_modules (GckEnumeratorState *args, gboolean forward)
 
 		/* There are no more modules? */
 		if (!args->modules) {
-			g_debug ("no more modules, stopping enumerator");
+			_gck_debug ("no more modules, stopping enumerator");
 			return NULL;
 		}
 
@@ -232,9 +232,11 @@ state_modules (GckEnumeratorState *args, gboolean forward)
 
 		args->slots = gck_module_get_slots (module, TRUE);
 
-		GckModuleInfo *info = gck_module_get_info (module);
-		g_debug ("enumerating into module: %s", info->library_description);
-		gck_module_info_free (info);
+		if (_gck_debugging) {
+			GckModuleInfo *info = gck_module_get_info (module);
+			_gck_debug ("enumerating into module: %s", info->library_description);
+			gck_module_info_free (info);
+		}
 
 		g_object_unref (module);
 		return state_slots;
@@ -259,7 +261,7 @@ state_slots (GckEnumeratorState *args, gboolean forward)
 
 		/* If there are no more slots go back to start state */
 		if (!args->slots) {
-			g_debug ("no more slots, want next module");
+			_gck_debug ("no more slots, want next module");
 			return rewind_state (args, state_modules);
 		}
 
@@ -278,7 +280,7 @@ state_slots (GckEnumeratorState *args, gboolean forward)
 
 		/* Do we have unrecognized matches? */
 		if (args->match->any_unrecognized) {
-			g_debug ("token uri had unrecognized, not matching any tokens");
+			_gck_debug ("token uri had unrecognized, not matching any tokens");
 			matched = FALSE;
 
 		/* Are we trying to match the slot? */
@@ -286,11 +288,11 @@ state_slots (GckEnumeratorState *args, gboolean forward)
 			/* No match? Go to next slot */
 			matched = _gck_token_info_match (args->match->token_info, token_info);
 
-			g_debug ("%s token: %s", matched ? "matched" : "did not match",
-			         token_info->label);
+			_gck_debug ("%s token: %s", matched ? "matched" : "did not match",
+			            token_info->label);
 
 		} else {
-			g_debug ("matching all tokens: %s", token_info->label);
+			_gck_debug ("matching all tokens: %s", token_info->label);
 			matched = TRUE;
 		}
 
@@ -345,7 +347,7 @@ state_slot (GckEnumeratorState *args, gboolean forward)
 			return rewind_state (args, state_slots);
 		}
 
-		g_debug ("opened %s session", flags & CKF_RW_SESSION ? "read-write" : "read-only");
+		_gck_debug ("opened %s session", flags & CKF_RW_SESSION ? "read-write" : "read-only");
 		args->session = gck_session_from_handle (args->slot, session, args->session_options);
 		return state_session;
 
@@ -377,7 +379,7 @@ state_session (GckEnumeratorState *args, gboolean forward)
 
 		/* Don't want to authenticate? */
 		if ((args->session_options & GCK_SESSION_LOGIN_USER) == 0) {
-			g_debug ("no authentication necessary, skipping");
+			_gck_debug ("no authentication necessary, skipping");
 			return state_find;
 		}
 
@@ -433,13 +435,15 @@ state_find (GckEnumeratorState *args,
 
 	if (args->match->attributes) {
 		attrs = _gck_attributes_commit_out (args->match->attributes, &n_attrs);
-		gchar *string = gck_attributes_to_string (args->match->attributes);
-		g_debug ("finding objects matching: %s", string);
-		g_free (string);
+		if (_gck_debugging) {
+			gchar *string = gck_attributes_to_string (args->match->attributes);
+			_gck_debug ("finding objects matching: %s", string);
+			g_free (string);
+		}
 	} else {
 		attrs = NULL;
 		n_attrs = 0;
-		g_debug ("finding all objects");
+		_gck_debug ("finding all objects");
 	}
 
 	session = gck_session_get_handle (args->session);
@@ -454,7 +458,7 @@ state_find (GckEnumeratorState *args,
 			if (rv != CKR_OK || count == 0)
 				break;
 
-			g_debug ("matched %lu objects", count);
+			_gck_debug ("matched %lu objects", count);
 
 			for (i = 0; i < count; i++) {
 				result = g_slice_new0 (GckEnumeratorResult);
@@ -467,7 +471,7 @@ state_find (GckEnumeratorState *args,
 		(args->funcs->C_FindObjectsFinal) (session);
 	}
 
-	g_debug ("finding objects completed with: %s", _gck_stringize_rv (rv));
+	_gck_debug ("finding objects completed with: %s", _gck_stringize_rv (rv));
 	return state_results;
 }
 
@@ -503,21 +507,21 @@ state_results (GckEnumeratorState *args,
 	for (count = 0; count < args->want_objects; count++) {
 		result = g_queue_pop_head (args->found);
 		if (result == NULL) {
-			g_debug ("wanted %d objects, have %d, looking for more",
-			         args->want_objects, g_queue_get_length (args->results));
+			_gck_debug ("wanted %d objects, have %d, looking for more",
+			            args->want_objects, g_queue_get_length (args->results));
 			return rewind_state (args, state_slots);
 		}
 
 		/* If no request for attributes, just go forward */
-		if (args->attr_count == 0) {
+		if (args->object_iface == NULL || args->object_iface->n_default_types == 0) {
 			g_queue_push_tail (args->results, result);
 			continue;
 		}
 
 		gck_builder_init (&builder);
 
-		for (i = 0; i < args->attr_count; ++i)
-			gck_builder_add_empty (&builder, args->attr_types[i]);
+		for (i = 0; i < args->object_iface->n_default_types; ++i)
+			gck_builder_add_empty (&builder, args->object_iface->default_types[i]);
 
 		/* Ask for attribute sizes */
 		template = _gck_builder_prepare_in (&builder, &n_template);
@@ -535,10 +539,12 @@ state_results (GckEnumeratorState *args,
 		attrs = gck_attributes_ref_sink (gck_builder_end (&builder));
 
 		if (GCK_IS_GET_ATTRIBUTE_RV_OK (rv)) {
-			gchar *string = gck_attributes_to_string (attrs);
-			g_debug ("retrieved attributes for object %lu: %s",
-			         result->handle, string);
-			g_free (string);
+			if (_gck_debugging) {
+				gchar *string = gck_attributes_to_string (attrs);
+				_gck_debug ("retrieved attributes for object %lu: %s",
+				            result->handle, string);
+				g_free (string);
+			}
 			result->attrs = attrs;
 			g_queue_push_tail (args->results, result);
 
@@ -550,8 +556,8 @@ state_results (GckEnumeratorState *args,
 		}
 	}
 
-	g_debug ("wanted %d objects, returned %d objects",
-	         args->want_objects, g_queue_get_length (args->results));
+	_gck_debug ("wanted %d objects, returned %d objects",
+	            args->want_objects, g_queue_get_length (args->results));
 
 	/* We got all the results we wanted */
 	return NULL;
@@ -642,7 +648,6 @@ gck_enumerator_finalize (GObject *obj)
 	g_mutex_clear (self->pv->mutex);
 	g_free (self->pv->mutex);
 	g_type_class_unref (self->pv->object_class);
-	g_free (self->pv->attr_types);
 
 	G_OBJECT_CLASS (gck_enumerator_parent_class)->finalize (obj);
 }
@@ -671,7 +676,7 @@ gck_enumerator_class_init (GckEnumeratorClass *klass)
 		                     G_TYPE_TLS_INTERACTION, G_PARAM_READWRITE));
 
 	/**
-	 * GckEnumerator:object-type: (skip)
+	 * GckEnumerator:object-type:
 	 *
 	 * The type of objects that are created by the enumerator. Must be
 	 * GckObject or derived from it.
@@ -695,12 +700,14 @@ static void
 created_enumerator (GckUriData *uri_data,
                     const gchar *type)
 {
-	gchar *attrs, *uri;
-	attrs = uri_data->attributes ? gck_attributes_to_string (uri_data->attributes) : NULL;
-	uri = uri_data ? gck_uri_build (uri_data, GCK_URI_FOR_TOKEN | GCK_URI_FOR_MODULE) : NULL;
-	g_debug ("for = %s, tokens = %s, objects = %s", type, uri, attrs);
-	g_free (attrs);
-	g_free (uri);
+	if (_gck_debugging) {
+		gchar *attrs, *uri;
+		attrs = uri_data->attributes ? gck_attributes_to_string (uri_data->attributes) : NULL;
+		uri = uri_data ? gck_uri_build (uri_data, GCK_URI_FOR_TOKEN | GCK_URI_FOR_MODULE) : NULL;
+		_gck_debug ("for = %s, tokens = %s, objects = %s", type, uri, attrs);
+		g_free (attrs);
+		g_free (uri);
+	}
 }
 
 GckEnumerator *
@@ -825,7 +832,7 @@ free_enumerate_next (EnumerateNext *args)
  * Get the type of objects created by this enumerator. The type will always
  * either be #GckObject or derived from it.
  *
- * Returns: the type of objects created
+ * Returns: (transfer none): the type of objects created
  */
 GType
 gck_enumerator_get_object_type (GckEnumerator *self)
@@ -844,7 +851,7 @@ gck_enumerator_get_object_type (GckEnumerator *self)
 }
 
 /**
- * gck_enumerator_set_object_type: (skip)
+ * gck_enumerator_set_object_type:
  * @self: an enumerator
  * @object_type: the type of objects to create
  *
@@ -852,35 +859,12 @@ gck_enumerator_get_object_type (GckEnumerator *self)
  * always be either #GckObject or derived from it.
  *
  * If the #GckObjectCache interface is implemented on the derived class
- * and the default_types class field is set, then the enumerator will retrieve
+ * and the attribute_types field is set, then the enumerator will retrieve
  * attributes for each object.
  */
 void
 gck_enumerator_set_object_type (GckEnumerator *self,
                                 GType object_type)
-{
-	gck_enumerator_set_object_type_full (self, object_type, NULL, 0);
-}
-
-/**
- * gck_enumerator_set_object_type_full: (rename-to gck_enumerator_set_object_type)
- * @self: an enumerator
- * @object_type: the type of objects to create
- * @attr_types: (array length=attr_count): types of attributes to retrieve for objects
- * @attr_count: the number of attributes to retrieve
- *
- * Set the type of objects to be created by this enumerator. The type must
- * always be either #GckObject or derived from it.
- *
- * If @attr_types and @attr_count are non-NULL and non-zero respectively,
- * then the #GckObjectCache interface is expected to be implemented on the
- * derived class, then the enumerator will retrieve attributes for each object.
- */
-void
-gck_enumerator_set_object_type_full (GckEnumerator *self,
-                                     GType object_type,
-                                     const gulong *attr_types,
-                                     gint attr_count)
 {
 	gpointer klass;
 
@@ -900,15 +884,6 @@ gck_enumerator_set_object_type_full (GckEnumerator *self,
 			g_type_class_unref (self->pv->object_class);
 		self->pv->object_type = object_type;
 		self->pv->object_class = klass;
-
-		g_free (self->pv->attr_types);
-		self->pv->attr_types = NULL;
-		self->pv->attr_count = 0;
-
-		if (attr_types) {
-			self->pv->attr_types = g_memdup (attr_types, sizeof (gulong) * attr_count);
-			self->pv->attr_count = attr_count;
-		}
 
 	g_mutex_unlock (self->pv->mutex);
 }
@@ -1034,7 +1009,6 @@ check_out_enumerator_state (GckEnumerator *self)
 	GTlsInteraction *old_interaction = NULL;
 	gpointer old_object_class = NULL;
 	GckEnumeratorState *chained_state = NULL;
-	GckObjectCacheIface *object_iface;
 	GckEnumerator *chained;
 
 	chained = gck_enumerator_get_chained (self);
@@ -1065,18 +1039,8 @@ check_out_enumerator_state (GckEnumerator *self)
 			state->object_type = self->pv->object_type;
 			state->object_class = g_type_class_peek (state->object_type);
 			g_assert (state->object_class == self->pv->object_class);
-
-			object_iface = g_type_interface_peek (state->object_class,
-			                                      GCK_TYPE_OBJECT_CACHE);
-
-			if (self->pv->attr_types) {
-				state->attr_types = self->pv->attr_types;
-				state->attr_count = self->pv->attr_count;
-			} else if (object_iface && object_iface->default_types) {
-				state->attr_types = object_iface->default_types;
-				state->attr_count = object_iface->n_default_types;
-			}
-
+			state->object_iface = g_type_interface_peek (state->object_class,
+			                                             GCK_TYPE_OBJECT_CACHE);
 			g_type_class_ref (state->object_type);
 		}
 
@@ -1325,7 +1289,7 @@ gck_enumerator_next_async (GckEnumerator *self, gint max_objects, GCancellable *
  * %NULL is also returned if the function fails. Use the @error to determine
  * whether a failure occurred or not.
  *
- * Returns: (element-type Gck.Object) (transfer full): The list of objects, which
+ * Returns: (element-type Gck.Module) (transfer full): The list of objects, which
  * should be freed with gck_list_unref_free()
  */
 GList*

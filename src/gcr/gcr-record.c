@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -22,6 +24,8 @@
 #include "config.h"
 
 #include "gcr-record.h"
+#define DEBUG_FLAG GCR_DEBUG_PARSE
+#include "gcr-debug.h"
 
 #include "egg/egg-timegm.h"
 
@@ -183,12 +187,12 @@ take_and_parse_internal (GcrRecordBlock *block,
 	result->block = block;
 	result->delimiter = delimiter;
 
-	g_debug ("parsing line %s", block->value);
+	_gcr_debug ("parsing line %s", block->value);
 
 	at = block->value;
 	for (;;) {
 		if (result->n_columns >= MAX_COLUMNS) {
-			g_debug ("too many record (%d) in gnupg line", MAX_COLUMNS);
+			_gcr_debug ("too many record (%d) in gnupg line", MAX_COLUMNS);
 			_gcr_record_free (result);
 			return NULL;
 		}
@@ -510,12 +514,12 @@ _gcr_record_get_uint (GcrRecord *record, guint column, guint *value)
 
 	result = g_ascii_strtoll (raw, &end, 10);
 	if (!end || end[0]) {
-		g_debug ("invalid unsigned integer value: %s", raw);
+		_gcr_debug ("invalid unsigned integer value: %s", raw);
 		return FALSE;
 	}
 
 	if (result < 0 || result > G_MAXUINT32) {
-		g_debug ("unsigned integer value is out of range: %s", raw);
+		_gcr_debug ("unsigned integer value is out of range: %s", raw);
 		return FALSE;
 	}
 
@@ -556,12 +560,12 @@ _gcr_record_get_ulong (GcrRecord *record,
 
 	result = g_ascii_strtoull (raw, &end, 10);
 	if (!end || end[0]) {
-		g_debug ("invalid unsigned long value: %s", raw);
+		_gcr_debug ("invalid unsigned long value: %s", raw);
 		return FALSE;
 	}
 
 	if (result < 0 || result > G_MAXULONG) {
-		g_debug ("unsigned long value is out of range: %s", raw);
+		_gcr_debug ("unsigned long value is out of range: %s", raw);
 		return FALSE;
 	}
 
@@ -614,7 +618,7 @@ _gcr_record_get_date (GcrRecord *record,
 	memset (&tm, 0, sizeof (tm));
 	end = strptime (raw, "%Y-%m-%d", &tm);
 	if (!end || end[0]) {
-		g_debug ("invalid date value: %s", raw);
+		_gcr_debug ("invalid date value: %s", raw);
 		return NULL;
 	}
 
@@ -681,8 +685,8 @@ _gcr_record_get_raw (GcrRecord *record, guint column)
 	g_return_val_if_fail (record, NULL);
 
 	if (column >= record->n_columns) {
-		g_debug ("only %d columns exist, tried to access %d",
-		         record->n_columns, column);
+		_gcr_debug ("only %d columns exist, tried to access %d",
+		            record->n_columns, column);
 		return NULL;
 	}
 

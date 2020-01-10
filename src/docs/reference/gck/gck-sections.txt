@@ -1,13 +1,4 @@
 <SECTION>
-<TITLE>Library Utilities</TITLE>
-<FILE>gck-library</FILE>
-GCK_CHECK_VERSION
-GCK_MAJOR_VERSION
-GCK_MICRO_VERSION
-GCK_MINOR_VERSION
-</SECTION>
-
-<SECTION>
 <FILE>gck-attribute</FILE>
 GckAttribute
 gck_attribute_is_invalid
@@ -15,7 +6,6 @@ gck_attribute_get_boolean
 gck_attribute_get_ulong
 gck_attribute_get_string
 gck_attribute_get_date
-gck_attribute_get_data
 gck_attribute_dump
 gck_attribute_equal
 gck_attribute_hash
@@ -424,7 +414,6 @@ gck_enumerator_get_interaction
 gck_enumerator_set_interaction
 gck_enumerator_get_object_type
 gck_enumerator_set_object_type
-gck_enumerator_set_object_type_full
 gck_enumerator_get_chained
 gck_enumerator_set_chained
 <SUBSECTION Standard>

@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -90,7 +92,8 @@ gcr_viewer_new (void)
  * Get an implementation of #GcrViewer that supports a scrolled view
  * of multiple renderers.
  *
- * Returns: (transfer floating): a #GcrViewer which is also a #GtkWidget
+ * Returns: (transfer full): a newly allocated #GcrViewer, which should be
+ *          released with g_object_unref()
  */
 GcrViewer*
 gcr_viewer_new_scrolled (void)

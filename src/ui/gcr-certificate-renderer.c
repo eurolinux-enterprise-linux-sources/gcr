@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -27,7 +29,6 @@
 #include "gcr-certificate-exporter.h"
 #include "gcr-certificate-renderer.h"
 #include "gcr-certificate-renderer-private.h"
-#include "gcr-deprecated.h"
 #include "gcr-display-view.h"
 #include "gcr-renderer.h"
 
@@ -209,7 +210,7 @@ append_extension_key_usage (GcrRenderer *renderer,
 		if (key_usage & usage_descriptions[i].usage) {
 			if (text->len > 0)
 				g_string_append_unichar (text, GCR_DISPLAY_VIEW_LINE_BREAK);
-			g_string_append (text, _(usage_descriptions[i].description));
+			g_string_append (text, gettext (usage_descriptions[i].description));
 		}
 	}
 
@@ -271,6 +272,13 @@ append_extension_hex (GcrRenderer *renderer,
 	return TRUE;
 }
 
+static gboolean
+on_delete_unref_dialog (GtkWidget *widget, GdkEvent *event, gpointer data)
+{
+	g_object_unref (widget);
+	return FALSE;
+}
+
 static void
 on_export_completed (GObject *source, GAsyncResult *result, gpointer user_data)
 {
@@ -284,12 +292,11 @@ on_export_completed (GObject *source, GAsyncResult *result, gpointer user_data)
 			dialog = gtk_message_dialog_new_with_markup (parent,
 				  GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR,
 				  GTK_BUTTONS_OK, "<big>%s</big>\n\n%s",
-				  _("Couldn’t export the certificate."),
+				  _("Couldn't export the certificate."),
 				  error->message);
 			gtk_widget_show (dialog);
 			g_signal_connect (dialog, "delete-event",
-					  G_CALLBACK (gtk_widget_destroy), dialog);
-			g_signal_connect_swapped(dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+					  G_CALLBACK (on_delete_unref_dialog), NULL);
 		}
 	}
 
@@ -377,17 +384,7 @@ gcr_certificate_renderer_set_property (GObject *obj, guint prop_id, const GValue
 		gcr_renderer_emit_data_changed (GCR_RENDERER (self));
 		break;
 	case PROP_ATTRIBUTES:
-		gck_attributes_unref (self->pv->opt_attrs);
-		self->pv->opt_attrs = g_value_get_boxed (value);
-		if (self->pv->opt_attrs)
-			gck_attributes_ref (self->pv->opt_attrs);
-		if (self->pv->opt_cert) {
-			g_object_unref (self->pv->opt_cert);
-			g_object_notify (G_OBJECT (self), "certificate");
-			self->pv->opt_cert = NULL;
-		}
-		gcr_renderer_emit_data_changed (GCR_RENDERER (self));
-		g_object_notify (G_OBJECT (self), "attributes");
+		gcr_certificate_renderer_set_attributes (self, g_value_get_boxed (value));
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (obj, prop_id, pspec);
@@ -613,7 +610,7 @@ gcr_certificate_renderer_populate_popup (GcrRenderer *self, GcrViewer *viewer,
 	gtk_widget_show (item);
 	gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), item);
 
-	item = gtk_menu_item_new_with_label (_("Export Certificate\xE2\x80\xA6"));
+	item = gtk_menu_item_new_with_label ("Export Certificate...");
 	gtk_widget_show (item);
 	g_signal_connect_data (item, "activate", G_CALLBACK (on_certificate_export),
 	                       g_object_ref (self), (GClosureNotify)g_object_unref, 0);
@@ -745,14 +742,12 @@ gcr_certificate_renderer_set_certificate (GcrCertificateRenderer *self, GcrCerti
  * Get the PKCS\#11 attributes, if any, set for this renderer to display.
  *
  * Returns: (allow-none) (transfer none): the attributes, owned by the renderer
- *
- * Deprecated: 3.6: Use gcr_renderer_get_attributes() instead
  */
 GckAttributes *
 gcr_certificate_renderer_get_attributes (GcrCertificateRenderer *self)
 {
 	g_return_val_if_fail (GCR_IS_CERTIFICATE_RENDERER (self), NULL);
-	return gcr_renderer_get_attributes (GCR_RENDERER (self));
+	return self->pv->opt_attrs;
 }
 
 /**
@@ -762,14 +757,27 @@ gcr_certificate_renderer_get_attributes (GcrCertificateRenderer *self)
  *
  * Set the PKCS\#11 attributes for this renderer to display. One of the attributes
  * should be a CKA_VALUE type attribute containing a DER encoded certificate.
- *
- * Deprecated: 3.6: Use gcr_renderer_set_attributes() instead
  */
 void
 gcr_certificate_renderer_set_attributes (GcrCertificateRenderer *self, GckAttributes *attrs)
 {
 	g_return_if_fail (GCR_IS_CERTIFICATE_RENDERER (self));
-	gcr_renderer_set_attributes (GCR_RENDERER (self), attrs);
+
+	gck_attributes_unref (self->pv->opt_attrs);
+	self->pv->opt_attrs = attrs;
+
+	if (self->pv->opt_attrs)
+		gck_attributes_ref (self->pv->opt_attrs);
+
+	if (self->pv->opt_cert) {
+		g_object_unref (self->pv->opt_cert);
+		g_object_notify (G_OBJECT (self), "certificate");
+		self->pv->opt_cert = NULL;
+	}
+
+	gcr_renderer_emit_data_changed (GCR_RENDERER (self));
+	g_object_notify (G_OBJECT (self), "attributes");
+
 }
 
 typedef struct {

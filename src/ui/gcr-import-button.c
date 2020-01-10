@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -25,9 +27,7 @@
 #include "gcr/gcr-library.h"
 #include "gcr/gcr-marshal.h"
 #include "gcr/gcr-parser.h"
-#include "gcr/gcr-version.h"
 
-#include "eggimagemenuitem.h"
 #include "gcr-import-button.h"
 #include "gcr-pkcs11-import-interaction.h"
 
@@ -87,10 +87,6 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 static GQuark QUARK_IMPORTER = 0;
 
-#if GCR_CHECK_VERSION(4,0,0)
-#error Port this class to derive from GtkMenuButton during 4.x ABI bump
-#endif
-
 G_DEFINE_TYPE (GcrImportButton, gcr_import_button, GTK_TYPE_BUTTON);
 
 static void
@@ -113,7 +109,7 @@ update_import_button (GcrImportButton *self)
 		gtk_spinner_start (GTK_SPINNER (self->pv->spinner));
 		gtk_widget_hide (self->pv->arrow);
 		gtk_widget_set_sensitive (GTK_WIDGET (self), FALSE);
-		gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Initializing\xE2\x80\xA6"));
+		gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Initializing..."));
 
 	/* Importing, set a spinner */
 	} else if (self->pv->importing) {
@@ -121,7 +117,7 @@ update_import_button (GcrImportButton *self)
 		gtk_spinner_start (GTK_SPINNER (self->pv->spinner));
 		gtk_widget_hide (self->pv->arrow);
 		gtk_widget_set_sensitive (GTK_WIDGET (self), FALSE);
-		gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Import is in progress\xE2\x80\xA6"));
+		gtk_widget_set_tooltip_text (GTK_WIDGET (self), _("Import is in progress..."));
 
 	} else if (self->pv->imported) {
 		gtk_widget_hide (self->pv->spinner);
@@ -202,7 +198,7 @@ gcr_import_button_constructed (GObject *obj)
 	G_OBJECT_CLASS (gcr_import_button_parent_class)->constructed (obj);
 
 	self->pv->spinner = gtk_spinner_new ();
-	self->pv->arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
+	self->pv->arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_NONE);
 	grid = gtk_grid_new ();
 
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (grid), GTK_ORIENTATION_HORIZONTAL);
@@ -376,12 +372,12 @@ update_importer_menu (GcrImportButton *self)
 
 	for (l = self->pv->importers; l != NULL; l = g_list_next (l)) {
 		g_object_get (l->data, "label", &label, "icon", &icon, NULL);
-		menu_item = egg_image_menu_item_new_with_label (label);
+		menu_item = gtk_image_menu_item_new_with_label (label);
 		g_signal_connect (menu_item, "activate", G_CALLBACK (on_importer_menu_activated), self);
 		g_object_set_qdata (G_OBJECT (menu_item), QUARK_IMPORTER, l->data);
 		image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_MENU);
-		egg_image_menu_item_set_image (EGG_IMAGE_MENU_ITEM (menu_item), image);
-		egg_image_menu_item_set_always_show_image (EGG_IMAGE_MENU_ITEM (menu_item), TRUE);
+		gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
+		gtk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (menu_item), TRUE);
 		gtk_widget_show (image);
 		gtk_widget_show (menu_item);
 		gtk_container_add (GTK_CONTAINER (self->pv->menu), menu_item);

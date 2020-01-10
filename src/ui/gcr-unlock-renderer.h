@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -46,12 +48,12 @@ typedef struct _GcrUnlockRendererPrivate GcrUnlockRendererPrivate;
 
 struct _GcrUnlockRenderer {
 	/*< private >*/
-	GtkBin parent;
+	GtkAlignment parent;
 	GcrUnlockRendererPrivate *pv;
 };
 
 struct _GcrUnlockRendererClass {
-	GtkBinClass parent_class;
+	GtkAlignmentClass parent_class;
 
 	/* signals */
 	void       (*unlock_clicked)        (GcrUnlockRenderer *unlock);
@@ -60,7 +62,8 @@ struct _GcrUnlockRendererClass {
 GType                  _gcr_unlock_renderer_get_type          (void);
 
 GcrUnlockRenderer *    _gcr_unlock_renderer_new               (const gchar *label,
-                                                               GBytes *locked_data);
+                                                               gconstpointer locked_data,
+                                                               gsize n_locked_data);
 
 GcrUnlockRenderer *    _gcr_unlock_renderer_new_for_parsed    (GcrParser *parser);
 
@@ -74,7 +77,8 @@ void                   _gcr_unlock_renderer_focus_password    (GcrUnlockRenderer
 void                   _gcr_unlock_renderer_show_warning      (GcrUnlockRenderer *self,
                                                                const gchar *message);
 
-GBytes *               _gcr_unlock_renderer_get_locked_data   (GcrUnlockRenderer *self);
+gconstpointer          _gcr_unlock_renderer_get_locked_data   (GcrUnlockRenderer *self,
+                                                               gsize *n_data);
 
 G_END_DECLS
 

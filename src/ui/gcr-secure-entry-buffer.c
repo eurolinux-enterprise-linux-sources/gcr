@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stef@memberwebs.com>
 */
@@ -132,7 +133,7 @@ gcr_secure_entry_buffer_real_insert_text (GtkEntryBuffer *buffer,
 
 	/* Actual text insertion */
 	at = g_utf8_offset_to_pointer (pv->text, position) - pv->text;
-	memmove (pv->text + at + n_bytes, pv->text + at, pv->text_bytes - at);
+	g_memmove (pv->text + at + n_bytes, pv->text + at, pv->text_bytes - at);
 	memcpy (pv->text + at, chars, n_bytes);
 
 	/* Book keeping */
@@ -162,7 +163,7 @@ gcr_secure_entry_buffer_real_delete_text (GtkEntryBuffer *buffer,
 		start = g_utf8_offset_to_pointer (pv->text, position) - pv->text;
 		end = g_utf8_offset_to_pointer (pv->text, position + n_chars) - pv->text;
 
-		memmove (pv->text + start, pv->text + end, pv->text_bytes + 1 - end);
+		g_memmove (pv->text + start, pv->text + end, pv->text_bytes + 1 - end);
 		pv->text_chars -= n_chars;
 		pv->text_bytes -= (end - start);
 

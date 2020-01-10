@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stef@memberwebs.com>
 */
@@ -2213,13 +2214,13 @@ anode_read_time (GNode *node,
 		return anode_failure (node, "invalid time content");
 
 	/* In order to work with 32 bit time_t. */
-	if (sizeof (time_t) <= 4 && when->tm_year >= 138) {
+	if (sizeof (time_t) <= 4 && when->tm_year >= 2038) {
 		*value = (time_t)2145914603;  /* 2037-12-31 23:23:23 */
 
 	/* Convert to seconds since epoch */
 	} else {
 		*value = timegm (when);
-		g_return_val_if_fail (*value >= 0, FALSE);
+		g_return_val_if_fail (*time >= 0, FALSE);
 		*value += offset;
 	}
 
@@ -2765,7 +2766,7 @@ egg_asn1x_set_null (GNode *node)
 
 	/* Encode zero characters */
 	anode_clr_value (node);
-	anode_take_value (node, g_bytes_new_static ("", 0));
+	anode_set_value (node, g_bytes_new_static ("", 0));
 }
 
 GQuark
@@ -2828,7 +2829,7 @@ egg_asn1x_set_enumerated (GNode *node,
 	anode_write_integer_ulong (val, data, &n_data);
 
 	anode_clr_value (node);
-	anode_take_value (node, g_bytes_new_take (data, n_data));
+	anode_set_value (node, g_bytes_new_take (data, n_data));
 }
 
 gboolean
@@ -2909,47 +2910,6 @@ egg_asn1x_get_integer_as_raw (GNode *node)
 	return raw;
 }
 
-typedef struct {
-	EggAllocator allocator;
-	gpointer data;
-} AllocatedData;
-
-static void
-allocator_free (gpointer data)
-{
-	AllocatedData *alloc = data;
-	(alloc->allocator) (alloc->data, 0);
-	g_free (data);
-}
-
-GBytes *
-egg_asn1x_get_string_as_usg (GNode *node,
-                             EggAllocator allocator)
-{
-	AllocatedData *alloc;
-	guchar *raw;
-	const guchar *p;
-	gsize len;
-
-	g_return_val_if_fail (node != NULL, FALSE);
-
-	p = raw = egg_asn1x_get_string_as_raw (node, allocator, &len);
-	if (raw == NULL)
-		return NULL;
-
-	/* Strip off the extra zero bytes */
-	while (p[0] == 0 && len > 1) {
-		p++;
-		len--;
-	}
-
-	alloc = g_new0 (AllocatedData, 1);
-	alloc->allocator = allocator ? allocator : g_realloc;
-	alloc->data = raw;
-
-	return g_bytes_new_with_free_func (p, len, allocator_free, alloc);
-}
-
 GBytes *
 egg_asn1x_get_integer_as_usg (GNode *node)
 {
@@ -2975,9 +2935,12 @@ egg_asn1x_get_integer_as_usg (GNode *node)
 		}
 
 		/* Strip off the extra zero byte that was preventing it from being negative */
-		while (p[0] == 0 && len > 1) {
-			p++;
-			len--;
+		if (p[0] == 0 && len > 1) {
+			sign = !!(p[1] & 0x80);
+			if (sign) {
+				p++;
+				len--;
+			}
 		}
 	}
 
@@ -3017,7 +2980,7 @@ egg_asn1x_take_integer_as_raw (GNode *node,
 	}
 
 	anode_clr_value (node);
-	anode_take_value (node, value);
+	anode_set_value (node, value);
 
 	an = node->data;
 	an->guarantee_unsigned = 0;
@@ -3041,7 +3004,7 @@ egg_asn1x_take_integer_as_usg (GNode *node,
 	g_return_if_fail (value != NULL);
 	g_return_if_fail (anode_def_type (node) == EGG_ASN1X_INTEGER);
 
-	anode_take_value (node, value);
+	anode_set_value (node, value);
 	an = node->data;
 	an->guarantee_unsigned = 1;
 }
@@ -3189,7 +3152,6 @@ egg_asn1x_set_any_raw (GNode *node,
 
 	/* A failure, set the message manually so it doesn't get a prefix */
 	} else {
-		atlv_free (tlv);
 		an = node->data;
 		g_free (an->failure);
 		an->failure = g_strdup (msg);
@@ -3321,8 +3283,8 @@ egg_asn1x_set_string_as_raw (GNode *node,
 	                  type == EGG_ASN1X_UTF8_STRING ||
 	                  type == EGG_ASN1X_VISIBLE_STRING);
 
-	anode_take_value (node, g_bytes_new_with_free_func (data, n_data,
-	                                                    destroy, data));
+	anode_set_value (node, g_bytes_new_with_free_func (data, n_data,
+	                                                   destroy, data));
 }
 
 void
@@ -3346,7 +3308,7 @@ egg_asn1x_set_string_as_bytes (GNode *node,
 	                  type == EGG_ASN1X_UTF8_STRING ||
 	                  type == EGG_ASN1X_VISIBLE_STRING);
 
-	anode_set_value (node, bytes);
+	anode_set_value (node, g_bytes_ref (bytes));
 }
 
 GBytes *
@@ -4547,13 +4509,12 @@ traverse_and_dump (GNode *node, gpointer unused)
 	guint i, depth;
 	GString *output;
 	gchar *string;
-	const gchar *suff;
 	Anode *an;
 	GList *l;
 
 	depth = g_node_depth (node);
 	for (i = 0; i < depth - 1; ++i)
-		g_print ("    ");
+		g_printerr ("    ");
 
 	an = node->data;
 	output = g_string_new ("");
@@ -4561,19 +4522,14 @@ traverse_and_dump (GNode *node, gpointer unused)
 	dump_append_flags (output, anode_def_flags (node));
 	string = g_utf8_casefold (output->str, output->len - 1);
 	g_string_free (output, TRUE);
-	suff = "";
-	if (an->value)
-		suff = " *";
-	else if (an->parsed)
-		suff = " .";
-	g_print ("+ %s: %s [%s]%s\n", anode_def_name (node), anode_def_value (node),
-	         string, suff);
+	g_printerr ("+ %s: %s [%s]%s\n", anode_def_name (node), anode_def_value (node),
+	            string, an->parsed || an->value ? " *" : "");
 	g_free (string);
 
 	/* Print out all the options */
 	for (l = an->opts; l; l = g_list_next (l)) {
 		for (i = 0; i < depth; ++i)
-			g_print ("    ");
+			g_printerr ("    ");
 
 		def = l->data;
 		output = g_string_new ("");
@@ -4581,7 +4537,7 @@ traverse_and_dump (GNode *node, gpointer unused)
 		dump_append_flags (output, def->type);
 		string = g_utf8_casefold (output->str, output->len - 1);
 		g_string_free (output, TRUE);
-		g_print ("- %s: %s [%s]\n", def->name, (const gchar*)def->value, string);
+		g_printerr ("- %s: %s [%s]\n", def->name, (const gchar*)def->value, string);
 		g_free (string);
 	}
 
@@ -4685,7 +4641,7 @@ egg_asn1x_parse_time_general (const gchar *time, gssize n_time)
 		return -1;
 
 	/* In order to work with 32 bit time_t. */
-	if (sizeof (time_t) <= 4 && when.tm_year >= 138) {
+	if (sizeof (time_t) <= 4 && when.tm_year >= 2038) {
 		value = (time_t)2145914603;  /* 2037-12-31 23:23:23 */
 
 	/* Convert to seconds since epoch */
@@ -4716,7 +4672,7 @@ egg_asn1x_parse_time_utc (const gchar *time, gssize n_time)
 		return -1;
 
 	/* In order to work with 32 bit time_t. */
-	if (sizeof (time_t) <= 4 && when.tm_year >= 138) {
+	if (sizeof (time_t) <= 4 && when.tm_year >= 2038) {
 		value = (time_t)2145914603;  /* 2037-12-31 23:23:23 */
 
 	/* Convert to seconds since epoch */

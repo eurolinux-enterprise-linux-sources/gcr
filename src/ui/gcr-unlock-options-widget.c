@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -78,14 +80,14 @@ enum {
 };
 
 struct _GcrUnlockOptionsWidget {
-	GtkBin parent;
+	GtkAlignment parent;
 
 	/*< private >*/
 	GcrUnlockOptionsWidgetPrivate *pv;
 };
 
 struct _GcrUnlockOptionsWidgetClass {
-	GtkBinClass parent_class;
+	GtkAlignmentClass parent_class;
 };
 
 struct _GcrUnlockOptionsWidgetPrivate {
@@ -93,7 +95,7 @@ struct _GcrUnlockOptionsWidgetPrivate {
 	gchar *choice;
 };
 
-G_DEFINE_TYPE (GcrUnlockOptionsWidget, gcr_unlock_options_widget, GTK_TYPE_BIN);
+G_DEFINE_TYPE (GcrUnlockOptionsWidget, gcr_unlock_options_widget, GTK_TYPE_ALIGNMENT);
 
 /* -----------------------------------------------------------------------------
  * INTERNAL
@@ -183,7 +185,7 @@ gcr_unlock_options_widget_constructor (GType type, guint n_props, GObjectConstru
 	if (obj) {
 		self = GCR_UNLOCK_OPTIONS_WIDGET (obj);
 
-		if (!gtk_builder_add_from_resource (self->pv->builder, "/org/gnome/gcr/ui/gcr-unlock-options-widget.ui", NULL))
+		if (!gtk_builder_add_from_file (self->pv->builder, UIDIR "gcr-unlock-options-widget.ui", NULL))
 			g_return_val_if_reached (obj);
 
 		widget = GTK_WIDGET (gtk_builder_get_object (self->pv->builder, "unlock-options-widget"));
@@ -480,8 +482,8 @@ gcr_unlock_options_widget_get_sensitive (GcrUnlockOptionsWidget *self, const gch
 	g_return_val_if_fail (option, FALSE);
 
 	button = widget_button_for_option (self, option);
-	state = gtk_widget_get_state_flags (GTK_WIDGET (button));
-	return (state & GTK_STATE_FLAG_INSENSITIVE) != GTK_STATE_FLAG_INSENSITIVE;
+	state = gtk_widget_get_state (GTK_WIDGET (button));
+	return (state & GTK_STATE_INSENSITIVE) != GTK_STATE_INSENSITIVE;
 }
 
 /**

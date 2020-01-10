@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -21,7 +23,6 @@
 
 #include "gcr-certificate-renderer.h"
 #include "gcr-certificate-widget.h"
-#include "gcr-deprecated.h"
 #include "gcr-renderer.h"
 #include "gcr-viewer.h"
 
@@ -64,12 +65,23 @@ enum {
 	PROP_ATTRIBUTES
 };
 
+struct _GcrCertificateWidget {
+	/*< private >*/
+	GtkAlignment parent;
+	GcrCertificateWidgetPrivate *pv;
+};
+
+struct _GcrCertificateWidgetClass {
+	/*< private >*/
+	GtkAlignmentClass parent_class;
+};
+
 struct _GcrCertificateWidgetPrivate {
 	GcrViewer *viewer;
 	GcrCertificateRenderer *renderer;
 };
 
-G_DEFINE_TYPE (GcrCertificateWidget, gcr_certificate_widget, GTK_TYPE_BIN);
+G_DEFINE_TYPE (GcrCertificateWidget, gcr_certificate_widget, GTK_TYPE_ALIGNMENT);
 
 /* -----------------------------------------------------------------------------
  * OBJECT
@@ -231,14 +243,12 @@ gcr_certificate_widget_set_certificate (GcrCertificateWidget *self, GcrCertifica
  * a certificate.
  *
  * Returns: (allow-none) (transfer none): the attributes, owned by the widget
- *
- * Deprecated: 3.6: Use gcr_renderer_get_attributes() instead
  */
 GckAttributes *
 gcr_certificate_widget_get_attributes (GcrCertificateWidget *self)
 {
 	g_return_val_if_fail (GCR_IS_CERTIFICATE_WIDGET (self), NULL);
-	return gcr_renderer_get_attributes (GCR_RENDERER (self->pv->renderer));
+	return gcr_certificate_renderer_get_attributes (self->pv->renderer);
 }
 
 /**
@@ -248,13 +258,10 @@ gcr_certificate_widget_get_attributes (GcrCertificateWidget *self)
  *
  * Set the attributes displayed in the widget. The attributes should contain
  * a certificate.
- *
- * Deprecated: 3.6: Use gcr_renderer_set_attributes() instead
  */
 void
-gcr_certificate_widget_set_attributes (GcrCertificateWidget *self,
-                                       GckAttributes *attrs)
+gcr_certificate_widget_set_attributes (GcrCertificateWidget *self, GckAttributes* attrs)
 {
 	g_return_if_fail (GCR_IS_CERTIFICATE_WIDGET (self));
-	gcr_renderer_set_attributes (GCR_RENDERER (self->pv->renderer), attrs);
+	gcr_certificate_renderer_set_attributes (self->pv->renderer, attrs);
 }

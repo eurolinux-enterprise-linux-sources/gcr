@@ -1,23 +1,7 @@
-
-m4_define([gcr_major], [3])
-m4_define([gcr_minor], [28])
-m4_define([gcr_micro], [0])
-
 AC_PREREQ([2.63])
-AC_INIT([gcr], [gcr_major.gcr_minor.gcr_micro],
+AC_INIT([gcr], [3.8.2],
         [http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-keyring&component=gcr],
         [gcr])
-
-dnl ****************************************************************************
-dnl Dependency versions
-
-GLIB_REQ=2.38.0
-GLIB_MIN=GLIB_VERSION_2_38
-GLIB_MAX=GLIB_VERSION_2_38
-
-GCRYPT_VERSION=1.4.5
-
-GTK_REQ=3.12
 
 dnl ****************************************************************************
 dnl Library package and libtool versioning
@@ -39,9 +23,9 @@ GCK_REVISION=0
 GCK_AGE=0
 
 # GCR package versioning
-GCR_MAJOR=gcr_major
-GCR_MINOR=gcr_minor
-GCR_MICRO=gcr_micro
+GCR_MAJOR=3
+GCR_MINOR=0
+GCR_MICRO=0
 
 # GCR libtool versioning
 GCR_CURRENT=1
@@ -51,8 +35,7 @@ GCR_AGE=0
 dnl ****************************************************************************
 
 AC_CONFIG_MACRO_DIR([build/m4])
-AC_CONFIG_AUX_DIR([build])
-AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz tar-ustar foreign -Wno-portability subdir-objects])
+AM_INIT_AUTOMAKE([1.11 tar-ustar foreign -Wno-portability])
 AM_SANITY_CHECK
 AC_CONFIG_HEADERS(config.h)
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -83,29 +66,20 @@ AM_GLIB_GNU_GETTEXT
 # GLib and GTK+ stuff
 
 PKG_CHECK_MODULES(GLIB,
-	glib-2.0 >= $GLIB_REQ
+	glib-2.0 >= 2.32.0
 	gmodule-no-export-2.0
 	gthread-2.0
 	gobject-2.0
 	gio-2.0 gio-unix-2.0)
-GLIB_CFLAGS="$GLIB_CFLAGS -DGLIB_VERSION_MIN_REQUIRED=$GLIB_MIN"
-GLIB_CFLAGS="$GLIB_CFLAGS -DGLIB_VERSION_MAX_ALLOWED=$GLIB_MAX"
 AC_SUBST(GLIB_CFLAGS)
 AC_SUBST(GLIB_LIBS)
 
 GLIB_GSETTINGS
+GOBJECT_INTROSPECTION_CHECK([1.34])
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
-AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
 GTK_DOC_CHECK(1.9)
-
-GOBJECT_INTROSPECTION_CHECK([1.34])
-if test "$enable_introspection" = "yes"; then
-	AC_PATH_PROG(XSLTPROC, xsltproc,
-	             AC_MSG_ERROR([Need xsltproc in order to build with gobject introspection])
-	)
-fi
 
 # --------------------------------------------------------------------
 # Optional GTK+ widgets build, avoid building gtk-doc wihtout GTK+
@@ -117,7 +91,7 @@ AC_ARG_WITH(gtk, [
 AM_CONDITIONAL(WITH_GTK, test "$with_gtk" != "no")
 
 if test "x$with_gtk" != "xno"; then
-	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQ gtk+-x11-3.0 >= $GTK_REQ)
+	PKG_CHECK_MODULES(GTK, gtk+-3.0 >= 3.0)
 	AC_SUBST(GTK_CFLAGS)
 	AC_SUBST(GTK_LIBS)
 fi
@@ -129,18 +103,6 @@ if test "x$enable_gtk_doc" = "xyes"; then
 fi
 
 # --------------------------------------------------------------------
-# Vala
-
-VALA_REQUIRED=0.18.0.22
-
-VAPIGEN_CHECK($VALA_REQUIRED)
-
-if test "$enable_vala" != "no"; then
-	AC_PATH_PROG([VALAC], [valac], [])
-fi
-AM_CONDITIONAL(HAVE_VALAC, test "x$VALAC" != "x")
-
-# --------------------------------------------------------------------
 # Checks for functions
 #
 
@@ -150,7 +112,7 @@ AC_CHECK_FUNCS(mlock)
 # --------------------------------------------------------------------
 # p11-kit
 
-PKG_CHECK_MODULES([P11_KIT], p11-kit-1 >= 0.19.0)
+PKG_CHECK_MODULES([P11_KIT], p11-kit-1 >= 0.6)
 AC_SUBST(P11_KIT_CFLAGS)
 AC_SUBST(P11_KIT_LIBS)
 
@@ -192,6 +154,7 @@ AC_DEFINE_UNQUOTED([GPG_EXECUTABLE], ["$GNUPG"], [Path to gpg executable.])
 # libgcrypt
 #
 
+GCRYPT_VERSION=1.2.2
 GCRYPT_LIBVER=1
 
 AM_PATH_LIBGCRYPT($GCRYPT_LIBVER:$GCRYPT_VERSION,,
@@ -308,16 +271,7 @@ if test "$enable_strict" = "yes"; then
 		-DG_DISABLE_DEPRECATED \
 		-DGDK_PIXBUF_DISABLE_DEPRECATED"
 	TEST_MODE="thorough"
-	# HACK: Only set strict introspection if gir is greater than 1.39
-	# https://bugzilla.gnome.org/show_bug.cgi?id=698367
-	case $(pkg-config --modversion gobject-introspection-1.0) in
-	1.3[[45678]]*)
-		INTROSPECTION_FLAGS=""
-		;;
-	*)
-		INTROSPECTION_FLAGS="--warn-error"
-		;;
-	esac
+	INTROSPECTION_FLAGS="--warn-error"
 	AC_DEFINE_UNQUOTED(WITH_STRICT, 1, [More strict checks])
 	strict_status="yes (-Werror, thorough tests, fatals, no deprecations)"
 else
@@ -359,18 +313,38 @@ AM_CONDITIONAL([WITH_COVERAGE], [test "$enable_coverage" = "yes"])
 AC_MSG_RESULT($enable_coverage)
 
 AC_ARG_ENABLE(valgrind,
-	AC_HELP_STRING([--enable-valgrind[=@<:@yes/no@:>@]],
-	[Run gcr using valgrind]), ,enable_valgrind=yes)
+	AC_HELP_STRING([--enable-valgrind],
+	[Run gnome-keyring-daemon using valgrind]))
 
 AC_MSG_CHECKING([valgrind])
 valgrind_status="yes"
 
+AM_CONDITIONAL(WITH_VALGRIND, test "$enable_valgrind" = "run")
+
+# Run gnome-keyring-daemon under valgrind as default
+if test "$enable_valgrind" = "run"; then
+	AC_PATH_PROG(VALGRIND, valgrind, no)
+	if test "$VALGRIND" = "no" ; then
+		AC_MSG_ERROR(valgrind tool is not installed)
+	fi
+
+	VALGRIND_ARG="--log-file=/tmp/gkr-valgrind.log.%p"
+	VALGRIND_RUN="$VALGRIND $VALGRIND_ARG "
+
+	AC_DEFINE_UNQUOTED(VALGRIND, "$VALGRIND", [Path to valgrind executable])
+	AC_DEFINE_UNQUOTED(VALGRIND_ARG, "$VALGRIND_ARG", [Valgrind arguments])
+
+	enable_valgrind="yes"
+	valgrind_status="run"
+fi
+
+AC_SUBST(VALGRIND)
+AC_SUBST(VALGRIND_ARG)
+AC_SUBST(VALGRIND_RUN)
+
 # Build valgrind support into code
 if test "$enable_valgrind" = "yes"; then
-	CPPFLAGS_saved="$CPPFLAGS"
-	CPPFLAGS="$CPPFLAGS -I${srcdir}/build"
 	AC_CHECK_HEADER([valgrind/valgrind.h], have_valgrind=yes, have_valgrind=no)
-	CPPFLAGS="$CPPFLAGS_saved"
 	if test "$have_valgrind" = "no"; then
 		AC_MSG_ERROR(The valgrind headers are missing)
 	fi
@@ -396,27 +370,38 @@ AC_SUBST(GCR_CURRENT)
 AC_SUBST(GCR_LT_RELEASE)
 AC_SUBST(GCR_MAJOR)
 AC_SUBST(GCR_MINOR)
-AC_SUBST(GCR_MICRO)
 
 AC_OUTPUT([
 Makefile
+build/Makefile
+docs/Makefile
+docs/reference/Makefile
 docs/reference/gck/Makefile
 docs/reference/gck/version.xml
 docs/reference/gcr/Makefile
 docs/reference/gcr/version.xml
+egg/Makefile
+egg/tests/Makefile
 gck/gck.pc
-gck/gck-version.h
+gck/Makefile
+gck/tests/Makefile
 gcr/gcr-base.pc
-gcr/gcr-version.h
+gcr/Makefile
+gcr/tests/Makefile
 po/Makefile.in
+schema/Makefile
+testing/Makefile
 ui/gcr.pc
 ui/gcr-ui.pc
+ui/icons/Makefile
 ui/icons/16x16/Makefile
 ui/icons/22x22/Makefile
 ui/icons/24x24/Makefile
 ui/icons/32x32/Makefile
 ui/icons/48x48/Makefile
 ui/icons/256x256/Makefile
+ui/Makefile
+ui/tests/Makefile
 ])
 
 # ------------------------------------------------------------------------------
@@ -429,7 +414,6 @@ echo "  Debug Build:          $debug_status"
 echo "  Strict Compilation:   $strict_status"
 echo "  GTK+ Widgets:         $with_gtk"
 echo "  Introspection:        $found_introspection"
-echo "  Vala:                 $enable_vala"
 echo "  Valgrind:             $valgrind_status"
 echo "  Test Coverage:        ${enable_coverage:-no}"
 echo

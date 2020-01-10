@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <nielsen@memberwebs.com>
 */
@@ -23,9 +24,10 @@
 #include "config.h"
 
 #include "gck.h"
+#define DEBUG_FLAG GCK_DEBUG_SESSION
+#include "gck-debug.h"
+#include "gck-marshal.h"
 #include "gck-private.h"
-
-#include "gck/gck-marshal.h"
 
 #include <string.h>
 
@@ -1386,13 +1388,15 @@ perform_create_object (CreateObject *args)
 	                                          attrs, n_attrs,
 	                                          &args->object);
 
-	gchar *string = gck_attributes_to_string (args->attrs);
-	if (rv == CKR_OK)
-		g_debug ("created object: %s", string);
-	else
-		g_debug ("failed %s to create object: %s",
-		         _gck_stringize_rv (rv), string);
-	g_free (string);
+	if (_gck_debugging) {
+		gchar *string = gck_attributes_to_string (args->attrs);
+		if (rv == CKR_OK)
+			_gck_debug ("created object: %s", string);
+		else
+			_gck_debug ("failed %s to create object: %s",
+			            _gck_stringize_rv (rv), string);
+		g_free (string);
+	}
 
 	return rv;
 }
@@ -1510,9 +1514,11 @@ perform_find_objects (FindObjects *args)
 	GArray *array;
 	CK_RV rv;
 
-	gchar *string = gck_attributes_to_string (args->attrs);
-	g_debug ("matching: %s", string);
-	g_free (string);
+	if (_gck_debugging) {
+		gchar *string = gck_attributes_to_string (args->attrs);
+		_gck_debug ("matching: %s", string);
+		g_free (string);
+	}
 
 	attrs = _gck_attributes_commit_out (args->attrs, &n_attrs);
 
@@ -3344,7 +3350,7 @@ _gck_session_authenticate_token (CK_FUNCTION_LIST_PTR funcs,
 
 		/* No login necessary? */
 		if ((token_info.flags & CKF_LOGIN_REQUIRED) == 0) {
-			g_debug ("no login required for token, skipping login");
+			_gck_debug ("no login required for token, skipping login");
 			rv = CKR_OK;
 			break;
 		}
@@ -3361,13 +3367,13 @@ _gck_session_authenticate_token (CK_FUNCTION_LIST_PTR funcs,
 		if (session_info.state == CKS_RW_USER_FUNCTIONS ||
 		    session_info.state == CKS_RO_USER_FUNCTIONS ||
 		    session_info.state == CKS_RW_SO_FUNCTIONS) {
-			g_debug ("already logged in, skipping login");
+			_gck_debug ("already logged in, skipping login");
 			rv = CKR_OK;
 			break;
 		}
 
 		if (token_info.flags & CKF_PROTECTED_AUTHENTICATION_PATH) {
-			g_debug ("trying to log into session: protected authentication path, no password");
+			_gck_debug ("trying to log into session: protected authentication path, no password");
 
 			/* No password passed for PAP */
 			pin = NULL;
@@ -3376,7 +3382,7 @@ _gck_session_authenticate_token (CK_FUNCTION_LIST_PTR funcs,
 
 		/* Not protected auth path */
 		} else {
-			g_debug ("trying to log into session: want password %s",
+			_gck_debug ("trying to log into session: want password %s",
 			            request_retry ? "login was incorrect" : "");
 
 			if (password == NULL)
@@ -3483,7 +3489,7 @@ _gck_session_authenticate_key (CK_FUNCTION_LIST_PTR funcs,
 
 	/* No authentication needed, on this object */
 	if (bvalue != CK_TRUE) {
-		g_debug ("key does not require authentication");
+		_gck_debug ("key does not require authentication");
 		return CKR_OK;
 	}
 
@@ -3519,8 +3525,8 @@ _gck_session_authenticate_key (CK_FUNCTION_LIST_PTR funcs,
 
 		/* Need to prompt for a password */
 		} else {
-			g_debug ("trying to log into session: want password %s",
-			         request_retry ? "login was incorrect" : "");
+			_gck_debug ("trying to log into session: want password %s",
+			            request_retry ? "login was incorrect" : "");
 
 			if (password == NULL)
 				password = g_object_new (GCK_TYPE_PASSWORD, "key", key, NULL);

@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -37,7 +39,8 @@ struct _GcrUnlockRendererPrivate {
 	GtkEntry *entry;
 	GtkLabel *warning;
 
-	GBytes *locked_data;
+	gpointer locked_data;
+	gsize n_locked_data;
 	gchar *label;
 	gboolean unlocked;
 	GList *renderers;
@@ -56,7 +59,7 @@ static guint signals[LAST_SIGNAL] = { 0 };
 
 static void gcr_renderer_iface_init (GcrRendererIface *iface);
 
-G_DEFINE_TYPE_WITH_CODE (GcrUnlockRenderer, _gcr_unlock_renderer, GTK_TYPE_BIN,
+G_DEFINE_TYPE_WITH_CODE (GcrUnlockRenderer, _gcr_unlock_renderer, GTK_TYPE_ALIGNMENT,
 	G_IMPLEMENT_INTERFACE (GCR_TYPE_RENDERER, gcr_renderer_iface_init);
 );
 
@@ -144,7 +147,7 @@ _gcr_unlock_renderer_finalize (GObject *obj)
 {
 	GcrUnlockRenderer *self = GCR_UNLOCK_RENDERER (obj);
 
-	g_bytes_unref (self->pv->locked_data);
+	g_free (self->pv->locked_data);
 	g_free (self->pv->label);
 	g_list_free_full (self->pv->renderers, g_object_unref);
 
@@ -271,7 +274,7 @@ gcr_unlock_renderer_render (GcrRenderer *renderer,
 		g_free (display);
 
 		if (self->pv->label)
-			display = g_strdup_printf (_("The contents of “%s” are locked. In order to view the contents, enter the correct password."),
+			display = g_strdup_printf (_("The contents of '%s' are locked. In order to view the contents, enter the correct password."),
 			                           self->pv->label);
 		else
 			display = g_strdup (_("The contents are locked. In order to view the contents, enter the correct password."));
@@ -293,7 +296,8 @@ gcr_renderer_iface_init (GcrRendererIface *iface)
 
 GcrUnlockRenderer*
 _gcr_unlock_renderer_new (const gchar *label,
-                          GBytes *locked_data)
+                          gconstpointer locked_data,
+                          gsize n_locked_data)
 {
 	GcrUnlockRenderer *renderer;
 
@@ -302,16 +306,23 @@ _gcr_unlock_renderer_new (const gchar *label,
 	                         NULL);
 	g_object_ref_sink (renderer);
 
-	renderer->pv->locked_data = g_bytes_ref (locked_data);
+	renderer->pv->locked_data = g_memdup (locked_data, n_locked_data);
+	renderer->pv->n_locked_data = n_locked_data;
+
 	return renderer;
 }
 
 GcrUnlockRenderer *
 _gcr_unlock_renderer_new_for_parsed (GcrParser *parser)
 {
+	gconstpointer block;
+	gsize n_block;
+
 	g_return_val_if_fail (GCR_IS_PARSER (parser), NULL);
+
+	block = gcr_parser_get_parsed_block (parser, &n_block);
 	return _gcr_unlock_renderer_new (gcr_parser_get_parsed_label (parser),
-	                                 gcr_parser_get_parsed_bytes (parser));
+	                                 block, n_block);
 }
 
 const gchar *
@@ -337,9 +348,12 @@ _gcr_unlock_renderer_focus_password (GcrUnlockRenderer *self)
 	gtk_widget_grab_focus (GTK_WIDGET (self->pv->entry));
 }
 
-GBytes *
-_gcr_unlock_renderer_get_locked_data (GcrUnlockRenderer *self)
+gconstpointer
+_gcr_unlock_renderer_get_locked_data (GcrUnlockRenderer *self,
+                                      gsize *n_data)
 {
 	g_return_val_if_fail (GCR_IS_UNLOCK_RENDERER (self), NULL);
+	g_return_val_if_fail (n_data != NULL, NULL);
+	*n_data = self->pv->n_locked_data;
 	return self->pv->locked_data;
 }

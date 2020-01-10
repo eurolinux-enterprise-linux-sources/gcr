@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stefw@collabora.co.uk>
 */
@@ -95,6 +96,7 @@ gcr_viewer_window_constructed (GObject *obj)
 	GtkWidget *bbox;
 	GtkWidget *box;
 	GtkWidget *button;
+	GtkWidget *align;
 
 	G_OBJECT_CLASS (gcr_viewer_window_parent_class)->constructed (obj);
 
@@ -112,7 +114,7 @@ gcr_viewer_window_constructed (GObject *obj)
 	                         self, 0);
 	gtk_widget_show (GTK_WIDGET (self->pv->import));
 
-	button = gtk_button_new_with_mnemonic (_("_Close"));
+	button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
 	g_signal_connect_object  (button, "clicked",
 	                          G_CALLBACK (on_close_clicked),
 	                          self, 0);
@@ -121,13 +123,10 @@ gcr_viewer_window_constructed (GObject *obj)
 	gtk_box_pack_start (GTK_BOX (bbox), button, FALSE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (bbox), GTK_WIDGET (self->pv->import), FALSE, TRUE, 0);
 
-	gtk_widget_set_halign (bbox, 0.5);
-	gtk_widget_set_valign (bbox, 0.5);
-#if GTK_CHECK_VERSION (3, 12, 0)
-	gtk_widget_set_margin_end (bbox, 12);
-#else
-	gtk_widget_set_margin_right (bbox, 12);
-#endif
+	align = gtk_alignment_new (0.5, 0.5, 1.0, 1.0);
+	gtk_alignment_set_padding (GTK_ALIGNMENT (align), 0, 0, 0, 12);
+	gtk_widget_show (align);
+	gtk_container_add (GTK_CONTAINER (align), bbox);
 
 	self->pv->viewer = gcr_viewer_widget_new ();
 	g_object_bind_property (self->pv->viewer, "display-name",
@@ -141,7 +140,7 @@ gcr_viewer_window_constructed (GObject *obj)
 	gtk_widget_show (box);
 
 	gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (self->pv->viewer), TRUE, TRUE, 0);
-	gtk_box_pack_start (GTK_BOX (box), bbox, FALSE, FALSE, 6);
+	gtk_box_pack_start (GTK_BOX (box), align, FALSE, FALSE, 6);
 
 	gtk_container_add (GTK_CONTAINER (self), box);
 
@@ -186,19 +185,4 @@ gcr_viewer_window_load (GcrViewerWindow *self,
 	g_return_if_fail (G_IS_FILE (file));
 
 	return gcr_viewer_widget_load_file (self->pv->viewer, file);
-}
-
-/**
- * gcr_viewer_window_get_viewer:
- * @self: a viewer window
- *
- * Get the actual viewer showing information in the window.
- *
- * Returns: the viewer
- */
-GcrViewer *
-gcr_viewer_window_get_viewer (GcrViewerWindow *self)
-{
-	g_return_val_if_fail (GCR_IS_VIEWER_WINDOW (self), NULL);
-	return gcr_viewer_widget_get_viewer (self->pv->viewer);
 }

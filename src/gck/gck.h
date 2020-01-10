@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <nielsen@memberwebs.com>
 */
@@ -32,7 +33,6 @@
 #define __GCK_INSIDE_HEADER__
 
 #include <gck/gck-enum-types.h>
-#include <gck/gck-version.h>
 
 G_BEGIN_DECLS
 
@@ -100,7 +100,7 @@ struct _GckAttribute {
 	gulong length;
 };
 
-#define GCK_INVALID ((gulong)-1)
+#define GCK_INVALID G_MAXULONG
 
 gboolean            gck_value_to_ulong                      (const guchar *value,
                                                              gsize length,
@@ -174,9 +174,6 @@ gchar*              gck_attribute_get_string                (const GckAttribute 
 
 void                gck_attribute_get_date                  (const GckAttribute *attr,
                                                              GDate* value);
-
-const guchar *      gck_attribute_get_data                  (const GckAttribute *attr,
-                                                             gsize *length);
 
 gboolean            gck_attribute_equal                     (gconstpointer attr1,
                                                              gconstpointer attr2);
@@ -563,11 +560,6 @@ GType                 gck_enumerator_get_object_type          (GckEnumerator *se
 
 void                  gck_enumerator_set_object_type          (GckEnumerator *self,
                                                                GType object_type);
-
-void                  gck_enumerator_set_object_type_full     (GckEnumerator *self,
-                                                               GType object_type,
-                                                               const gulong *attr_types,
-                                                               gint attr_count);
 
 GckEnumerator *       gck_enumerator_get_chained              (GckEnumerator *self);
 

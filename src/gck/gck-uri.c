@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stef@memberwebs.com>
 */
@@ -24,8 +25,7 @@
 
 #include "gck.h"
 #include "gck-private.h"
-
-#include "gck/gck-marshal.h"
+#include "gck-marshal.h"
 
 #include <glib/gi18n-lib.h>
 
@@ -225,7 +225,7 @@ gck_uri_parse (const gchar *string, GckUriFlags flags, GError **error)
 			break;
 		case P11_KIT_URI_BAD_SCHEME:
 			g_set_error_literal (error, GCK_URI_ERROR, GCK_URI_BAD_SCHEME,
-			                     _("The URI does not have the “pkcs11” scheme."));
+			                     _("The URI does not have the 'pkcs11' scheme."));
 			break;
 		case P11_KIT_URI_BAD_SYNTAX:
 			g_set_error_literal (error, GCK_URI_ERROR, GCK_URI_BAD_SYNTAX,

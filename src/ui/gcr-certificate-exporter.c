@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -212,6 +214,7 @@ on_create_file_ready (GObject *source, GAsyncResult *res, gpointer user_data)
 	GcrCertificateExporter *self = GCR_CERTIFICATE_EXPORTER (user_data);
 	GFileOutputStream *os;
 	GtkWidget *dialog;
+	gchar *msg;
 
 	os = g_file_create_finish (self->pv->output_file, res, &self->pv->error);
 
@@ -219,13 +222,14 @@ on_create_file_ready (GObject *source, GAsyncResult *res, gpointer user_data)
 	if (g_error_matches (self->pv->error, G_IO_ERROR, G_IO_ERROR_EXISTS)) {
 		g_clear_error (&self->pv->error);
 
+		msg = g_strdup_printf ("<b>%s</b>\n\n%s",
+		                       _("A file already exists with this name."),
+		                       _("Do you want to replace it with a new file?"));
 		dialog = gtk_message_dialog_new_with_markup (GTK_WINDOW (self->pv->chooser_dialog),
 		     GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_QUESTION,
-		     GTK_BUTTONS_NONE, "<b>%s</b>\n\n%s",
-		     _("A file already exists with this name."),
-		     _("Do you want to replace it with a new file?"));
+		     GTK_BUTTONS_NONE, msg);
 		gtk_dialog_add_buttons (GTK_DIALOG (dialog),
-		                        _("_Cancel"), GTK_RESPONSE_CANCEL,
+		                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 		                        _("_Replace"), GTK_RESPONSE_ACCEPT, NULL);
 
 		g_signal_connect (dialog, "response",
@@ -235,6 +239,7 @@ on_create_file_ready (GObject *source, GAsyncResult *res, gpointer user_data)
 			                       G_CALLBACK (on_cancel_replace_dialog),
 			                       g_object_ref (dialog), g_object_unref);
 		gtk_widget_show (dialog);
+		g_free(msg);
 
 		return;
 	}
@@ -302,8 +307,8 @@ exporter_display_chooser (GcrCertificateExporter *self)
 
 	dialog = gtk_file_chooser_dialog_new (_("Export certificate"),
 	                     NULL, GTK_FILE_CHOOSER_ACTION_SAVE,
-	                     _("_Cancel"), GTK_RESPONSE_CANCEL,
-	                     _("_Save"), GTK_RESPONSE_ACCEPT,
+	                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+	                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
 	                     NULL);
 
 	self->pv->chooser_dialog = g_object_ref_sink(dialog);
@@ -340,7 +345,7 @@ exporter_display_chooser (GcrCertificateExporter *self)
 		g_cancellable_connect (self->pv->cancellable,
 		                       G_CALLBACK (on_cancel_chooser_dialog), self, NULL);
 
-	gtk_dialog_run (GTK_DIALOG (self->pv->chooser_dialog));
+	gtk_widget_show (GTK_WIDGET (self->pv->chooser_dialog));
 }
 
 /* -----------------------------------------------------------------------------
@@ -522,10 +527,10 @@ _gcr_certificate_exporter_export_async (GcrCertificateExporter *self,
 	if (cancellable)
 		self->pv->cancellable = g_object_ref (cancellable);
 
+	exporter_display_chooser (self);
+
 	/* Matching in export_finish */
 	g_object_ref (self);
-
-	exporter_display_chooser (self);
 }
 
 gboolean

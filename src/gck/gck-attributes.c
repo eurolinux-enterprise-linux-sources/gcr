@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <nielsen@memberwebs.com>
 */
@@ -907,7 +908,7 @@ gck_builder_add_only (GckBuilder *builder,
 }
 
 /**
- * gck_builder_add_onlyv: (rename-to gck_builder_add_only)
+ * gck_builder_add_onlyv:
  * @builder: the builder
  * @attrs: the attributes to add
  * @only_types: (array length=n_only_types): the types of attributes to add
@@ -925,6 +926,8 @@ gck_builder_add_only (GckBuilder *builder,
  *
  * As an optimization, the attribute memory values are automatically shared
  * between the attributes and the builder.
+ *
+ * Rename to: gck_builder_add_only
  */
 void
 gck_builder_add_onlyv (GckBuilder *builder,
@@ -1379,7 +1382,7 @@ gck_builder_clear (GckBuilder *builder)
  * GckAttribute:
  * @type: The attribute type, such as CKA_LABEL.
  * @value: (array length=length): The value of the attribute. May be NULL.
- * @length: The length of the attribute. May be GCK_INVALID if the attribute is invalid.
+ * @length: The length of the attribute. May be G_MAXULONG if the attribute is invalid.
  *
  * This structure represents a PKCS11 CK_ATTRIBUTE.
  */
@@ -1520,36 +1523,6 @@ gck_attribute_get_date (const GckAttribute *attr,
 	g_return_if_fail (end != buffer && !*end);
 
 	g_date_set_dmy (value, day, month, year);
-}
-
-/**
- * gck_attribute_get_data:
- * @attr: an attribute
- * @length: the length of the returned data
- *
- * Get the raw value in the attribute.
- *
- * This is useful from scripting languages. C callers will generally
- * access the #GckAttribute struct directly.
- *
- * This function will %NULL if the attribute contains empty or invalid
- * data. The returned data must not be modified and is only valid
- * as long as this @attribute.
- *
- * Returns: (transfer none) (array length=length): the value data or %NULL
- */
-const guchar *
-gck_attribute_get_data (const GckAttribute *attr,
-                        gsize *length)
-{
-	g_return_val_if_fail (attr != NULL, NULL);
-
-	if (attr->length == G_MAXULONG) {
-		*length = 0;
-		return NULL;
-	}
-	*length = attr->length;
-	return attr->value;
 }
 
 /**
@@ -2175,7 +2148,7 @@ gck_attributes_find (GckAttributes *attrs,
  * gck_attributes_find_boolean:
  * @attrs: The attributes array to search.
  * @attr_type: The type of attribute to find.
- * @value: (out): The resulting gboolean value.
+ * @value: The resulting gboolean value.
  *
  * Find an attribute with the specified type in the array.
  *
@@ -2188,7 +2161,6 @@ gck_attributes_find (GckAttributes *attrs,
 gboolean
 gck_attributes_find_boolean (GckAttributes *attrs, gulong attr_type, gboolean *value)
 {
-	g_return_val_if_fail (attrs != NULL, FALSE);
 	g_return_val_if_fail (value, FALSE);
 
 	return find_attribute_boolean (attrs->data, attrs->count, attr_type, value);
@@ -2198,7 +2170,7 @@ gck_attributes_find_boolean (GckAttributes *attrs, gulong attr_type, gboolean *v
  * gck_attributes_find_ulong:
  * @attrs: The attributes array to search.
  * @attr_type: The type of attribute to find.
- * @value: (out): The resulting gulong value.
+ * @value: The resulting gulong value.
  *
  * Find an attribute with the specified type in the array.
  *
@@ -2211,7 +2183,6 @@ gck_attributes_find_boolean (GckAttributes *attrs, gulong attr_type, gboolean *v
 gboolean
 gck_attributes_find_ulong (GckAttributes *attrs, gulong attr_type, gulong *value)
 {
-	g_return_val_if_fail (attrs != NULL, FALSE);
 	g_return_val_if_fail (value, FALSE);
 
 	return find_attribute_ulong (attrs->data, attrs->count, attr_type, value);
@@ -2221,7 +2192,7 @@ gck_attributes_find_ulong (GckAttributes *attrs, gulong attr_type, gulong *value
  * gck_attributes_find_string:
  * @attrs: The attributes array to search.
  * @attr_type: The type of attribute to find.
- * @value: (out): The resulting string value.
+ * @value: The resulting string value.
  *
  * Find an attribute with the specified type in the array.
  *
@@ -2234,7 +2205,6 @@ gck_attributes_find_ulong (GckAttributes *attrs, gulong attr_type, gulong *value
 gboolean
 gck_attributes_find_string (GckAttributes *attrs, gulong attr_type, gchar **value)
 {
-	g_return_val_if_fail (attrs != NULL, FALSE);
 	g_return_val_if_fail (value, FALSE);
 
 	return find_attribute_string (attrs->data, attrs->count, attr_type, value);
@@ -2244,7 +2214,7 @@ gck_attributes_find_string (GckAttributes *attrs, gulong attr_type, gchar **valu
  * gck_attributes_find_date:
  * @attrs: The attributes array to search.
  * @attr_type: The type of attribute to find.
- * @value: (out): The resulting GDate value.
+ * @value: The resulting GDate value.
  *
  * Find an attribute with the specified type in the array.
  *
@@ -2257,7 +2227,6 @@ gck_attributes_find_string (GckAttributes *attrs, gulong attr_type, gchar **valu
 gboolean
 gck_attributes_find_date (GckAttributes *attrs, gulong attr_type, GDate *value)
 {
-	g_return_val_if_fail (attrs != NULL, FALSE);
 	g_return_val_if_fail (value, FALSE);
 
 	return find_attribute_date (attrs->data, attrs->count, attr_type, value);

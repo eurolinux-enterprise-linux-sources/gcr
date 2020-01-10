@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -219,7 +221,7 @@ capability_for_code (gchar code)
 	case 'a': case 'A':
 		return _("Authenticate");
 	case 'D':
-		return C_("capability", "Disabled");
+		return _("Disabled");
 	default:
 		return NULL;
 	}
@@ -254,7 +256,7 @@ status_for_code (gchar code)
 	case 'i':
 		return _("Invalid");
 	case 'd':
-		return C_("ownertrust", "Disabled");
+		return _("Disabled");
 	case 'r':
 		return _("Revoked");
 	case 'e':

@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <nielsen@memberwebs.com>
 */
@@ -32,54 +33,6 @@
 #include <glib/gi18n-lib.h>
 
 EGG_SECURE_DEFINE_GLIB_GLOBALS ();
-
-/**
- * SECTION:gck-library
- * @title: Library Utilities
- * @short_description: Library utilities such as version checks
- *
- * Basic library utilities such as version checks.
- */
-
-/**
- * GCK_CHECK_VERSION:
- * @major: the major version to check for
- * @minor: the minor version to check for
- * @micro: the micro version to check for
- *
- * Checks the version of the Gck libarry that is being compiled
- * against.
- *
- * <example>
- * <title>Checking the version of the Gck library</title>
- * <programlisting>
- * #if !GCK_CHECK_VERSION (3, 0, 0)
- * #warning Old Gck version, disabling functionality
- * #endif
- * </programlisting>
- * </example>
- *
- * Returns: %TRUE if the version of the GLib header files
- * is the same as or newer than the passed-in version.
- */
-
-/**
- * GCK_MAJOR_VERSION:
- *
- * The major version number of the Gck library.
- */
-
-/**
- * GCK_MINOR_VERSION:
- *
- * The minor version number of the Gck library.
- */
-
-/**
- * GCK_MICRO_VERSION:
- *
- * The micro version number of the Gck library.
- */
 
 /**
  * SECTION:gck-error

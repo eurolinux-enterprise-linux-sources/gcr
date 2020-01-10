@@ -14,21 +14,24 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
 
 #include "config.h"
 
+#define DEBUG_FLAG GCR_DEBUG_IMPORT
+#include "gcr-debug.h"
 #include "gcr-deprecated-base.h"
 #include "gcr-importer.h"
 #include "gcr-internal.h"
+#include "gcr-marshal.h"
 #include "gcr-gnupg-importer.h"
 #include "gcr-parser.h"
 #include "gcr-pkcs11-importer.h"
-
-#include "gcr/gcr-marshal.h"
 
 #include <glib/gi18n-lib.h>
 
@@ -137,8 +140,6 @@ gcr_importer_default_init (GcrImporterIface *iface)
  * @attrs: the attributes that this importer is compatible with
  *
  * Register an importer to handle parsed items that match the given attributes.
- *
- * If @attrs are a floating reference, then it is consumed.
  */
 void
 gcr_importer_register (GType importer_type,
@@ -150,7 +151,7 @@ gcr_importer_register (GType importer_type,
 		registered_importers = g_array_new (FALSE, FALSE, sizeof (GcrRegistered));
 
 	registered.importer_type = importer_type;
-	registered.attrs = gck_attributes_ref_sink (attrs);
+	registered.attrs = gck_attributes_ref (attrs);
 	g_array_append_val (registered_importers, registered);
 	registered_sorted = FALSE;
 }
@@ -230,9 +231,11 @@ gcr_importer_create_for_parsed (GcrParsed *parsed)
 
 	seen = g_hash_table_new (g_direct_hash, g_direct_equal);
 
-	gchar *a = gck_attributes_to_string (attrs);
-	g_debug ("looking for importer for: %s", a);
-	g_free (a);
+	if (_gcr_debugging) {
+		gchar *a = gck_attributes_to_string (attrs);
+		_gcr_debug ("looking for importer for: %s", a);
+		g_free (a);
+	}
 
 	for (i = 0; i < registered_importers->len; ++i) {
 		registered = &(g_array_index (registered_importers, GcrRegistered, i));
@@ -247,10 +250,11 @@ gcr_importer_create_for_parsed (GcrParsed *parsed)
 			}
 		}
 
-		gchar *a = gck_attributes_to_string (registered->attrs);
-		g_debug ("importer %s %s: %s", g_type_name (registered->importer_type),
-		         matched ? "matched" : "didn't match", a);
-		g_free (a);
+		if (_gcr_debugging) {
+			gchar *a = gck_attributes_to_string (registered->attrs);
+			_gcr_debug ("importer %s: %s", matched ? "matched" : "didn't match", a);
+			g_free (a);
+		}
 
 		if (matched) {
 			if (check_if_seen_or_add (seen, GUINT_TO_POINTER (registered->importer_type)))

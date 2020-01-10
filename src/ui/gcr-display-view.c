@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -254,10 +256,7 @@ style_display_item (GtkWidget *widget, GcrDisplayItem *item)
 	gtk_style_context_save (style);
 
 	gtk_style_context_add_class (style, GTK_STYLE_CLASS_VIEW);
-	gtk_style_context_set_state (style, GTK_STATE_FLAG_NORMAL);
-	gtk_style_context_get_background_color (style,
-						gtk_style_context_get_state (style),
-						&color);
+	gtk_style_context_get_background_color (style, GTK_STATE_FLAG_NORMAL, &color);
 
 	gtk_style_context_restore (style);
 
@@ -275,6 +274,7 @@ create_display_item (GcrDisplayView *self, GcrRenderer *renderer)
 	GtkTextIter iter;
 	GtkWidget *widget;
 	GtkWidget *label;
+	GtkWidget *alignment;
 	gchar *text;
 
 	item = g_new0 (GcrDisplayItem, 1);
@@ -323,15 +323,14 @@ create_display_item (GcrDisplayView *self, GcrRenderer *renderer)
 	item->expanded = gtk_expander_get_expanded (GTK_EXPANDER (widget));
 	g_free (text);
 
-	gtk_widget_set_halign (widget, 0.5);
-	gtk_widget_set_valign (widget, 0.5);
-	gtk_widget_set_margin_top (widget, 6);
-	gtk_widget_set_margin_bottom (widget, 9);
-	gtk_widget_show_all (widget);
+	alignment = gtk_alignment_new (0.5, 0.5, 0.5, 0.5);
+	gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 6, 9, 0, 0);
+	gtk_container_add (GTK_CONTAINER (alignment), widget);
+	gtk_widget_show_all (alignment);
 
 	item->details_widget = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (item->details_widget), FALSE);
-	gtk_container_add (GTK_CONTAINER (item->details_widget), widget);
+	gtk_container_add (GTK_CONTAINER (item->details_widget), alignment);
 	g_signal_connect (item->details_widget, "realize", G_CALLBACK (on_expander_realize), NULL);
 	g_object_ref (item->details_widget);
 
@@ -497,12 +496,9 @@ paint_item_border (GcrDisplayView *self,
 
 	ensure_text_height (self);
 
-	gtk_style_context_save (context);
-	gtk_style_context_set_state (context, GTK_STATE_FLAG_SELECTED | GTK_STATE_FLAG_FOCUSED);
 	gtk_style_context_get_background_color (context,
-	                                        gtk_style_context_get_state (context),
+	                                        GTK_STATE_FLAG_SELECTED | GTK_STATE_FLAG_FOCUSED,
 	                                        &color);
-	gtk_style_context_restore (context);
 
 	gtk_text_view_get_iter_location (view, &iter, &location);
 
@@ -1133,7 +1129,7 @@ _gcr_display_view_append_message (GcrDisplayView *self,
                                   GtkMessageType message_type,
                                   const gchar *message)
 {
-	const gchar *name = NULL;
+	const gchar *stock_id = NULL;
 	GtkWidget *image = NULL;
 	GcrDisplayItem *item;
 	GtkTextChildAnchor *anchor;
@@ -1147,19 +1143,19 @@ _gcr_display_view_append_message (GcrDisplayView *self,
 
 	switch (message_type) {
 	case GTK_MESSAGE_INFO:
-		name = "dialog-information";
+		stock_id = GTK_STOCK_DIALOG_INFO;
 		break;
 
 	case GTK_MESSAGE_QUESTION:
-		name = "dialog-question";
+		stock_id = GTK_STOCK_DIALOG_QUESTION;
 		break;
 
 	case GTK_MESSAGE_WARNING:
-		name = "dialog-warning";
+		stock_id = GTK_STOCK_DIALOG_WARNING;
 		break;
 
 	case GTK_MESSAGE_ERROR:
-		name = "dialog-error";
+		stock_id = GTK_STOCK_DIALOG_ERROR;
 		break;
 
 	case GTK_MESSAGE_OTHER:
@@ -1172,15 +1168,9 @@ _gcr_display_view_append_message (GcrDisplayView *self,
 
 	gtk_text_buffer_get_iter_at_mark (self->pv->buffer, &iter, item->ending);
 
-	if (name != NULL) {
-		image = gtk_image_new_from_icon_name (name, GTK_ICON_SIZE_MENU);
-#if GTK_CHECK_VERSION (3, 12, 0)
-		gtk_widget_set_margin_start (image, MESSAGE_PADDING);
-		gtk_widget_set_margin_end (image, MESSAGE_PADDING);
-#else
-		gtk_widget_set_margin_left (image, MESSAGE_PADDING);
-		gtk_widget_set_margin_right (image, MESSAGE_PADDING);
-#endif
+	if (stock_id != NULL) {
+		image = gtk_image_new_from_stock (stock_id, GTK_ICON_SIZE_MENU);
+		gtk_misc_set_padding (GTK_MISC (image), MESSAGE_PADDING, 0);
 		gtk_widget_show (image);
 
 		anchor = gtk_text_buffer_create_child_anchor (self->pv->buffer, &iter);
@@ -1199,6 +1189,7 @@ _gcr_display_view_set_icon (GcrDisplayView *self, GcrRenderer *renderer, GIcon *
 	GcrDisplayItem *item;
 	GdkScreen *screen;
 	GtkIconTheme *icon_theme;
+	GtkSettings *settings;
 	gint width, height;
 	GtkIconInfo *info;
 
@@ -1215,8 +1206,9 @@ _gcr_display_view_set_icon (GcrDisplayView *self, GcrRenderer *renderer, GIcon *
 
 	screen = gtk_widget_get_screen (GTK_WIDGET (self));
 	icon_theme = gtk_icon_theme_get_for_screen (screen);
+	settings = gtk_settings_get_for_screen (screen);
 
-	if (!gtk_icon_size_lookup (GTK_ICON_SIZE_DIALOG, &width, &height))
+	if (!gtk_icon_size_lookup_for_settings (settings, GTK_ICON_SIZE_DIALOG, &width, &height))
 		g_return_if_reached ();
 
 	info = gtk_icon_theme_lookup_by_gicon (icon_theme, icon, MIN (width, height),

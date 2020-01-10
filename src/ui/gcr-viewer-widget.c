@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stefw@collabora.co.uk>
 */
@@ -183,15 +184,16 @@ on_unlock_renderer_clicked (GcrUnlockRenderer *unlock,
 {
 	GcrViewerWidget *self = GCR_VIEWER_WIDGET (user_data);
 	GError *error = NULL;
-	GBytes *data;
+	gconstpointer data;
+	gsize n_data;
 	gulong sig;
 
 	/* Override our main authenticate signal handler */
 	sig = g_signal_connect (self->pv->parser, "authenticate",
 	                        G_CALLBACK (on_parser_authenticate_for_unlock), unlock);
 
-	data = _gcr_unlock_renderer_get_locked_data (unlock);
-	if (gcr_parser_parse_bytes (self->pv->parser, data, &error)) {
+	data = _gcr_unlock_renderer_get_locked_data (unlock, &n_data);
+	if (gcr_parser_parse_data (self->pv->parser, data, n_data, &error)) {
 
 		/* Done with this unlock renderer */
 		gcr_viewer_remove_renderer (self->pv->viewer, GCR_RENDERER (unlock));
@@ -420,11 +422,16 @@ on_parser_parse_stream_returned (GObject *source,
 
 static void
 update_display_name (GcrViewerWidget *self,
-                     gchar *display_name)
+                     GFile *file)
 {
+	gchar *basename;
+
 	if (!self->pv->display_name_explicit) {
+		basename = g_file_get_basename (file);
 		g_free (self->pv->display_name);
-		self->pv->display_name = g_strdup (display_name);
+		self->pv->display_name = g_filename_display_name (basename);
+		g_free (basename);
+
 		g_object_notify (G_OBJECT (self), "display-name");
 	}
 }
@@ -439,15 +446,9 @@ on_file_read_returned (GObject *source,
 	GError *error = NULL;
 	GFileInputStream *fis;
 	GcrRenderer *renderer;
-	gchar *basename, *display_name;
 
 	fis = g_file_read_finish (file, result, &error);
-
-	basename = g_file_get_basename (file);
-	display_name = g_filename_display_name (basename);
-	g_free (basename);
-
-	update_display_name (self, display_name);
+	update_display_name (self, file);
 
 	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED)) {
 		viewer_stop_loading_files (self);
@@ -461,15 +462,11 @@ on_file_read_returned (GObject *source,
 		viewer_load_next_file (self);
 
 	} else {
-		gcr_parser_set_filename (self->pv->parser, display_name);
-		gcr_parser_parse_stream_async (self->pv->parser,
-		                               G_INPUT_STREAM (fis),
-		                               self->pv->cancellable,
-		                               on_parser_parse_stream_returned,
+		gcr_parser_parse_stream_async (self->pv->parser, G_INPUT_STREAM (fis),
+		                               self->pv->cancellable, on_parser_parse_stream_returned,
 		                               self);
 		g_object_unref (fis);
 	}
-	g_free (display_name);
 }
 
 static void
@@ -530,38 +527,6 @@ gcr_viewer_widget_load_file (GcrViewerWidget *self,
 }
 
 /**
- * gcr_viewer_widget_load_bytes:
- * @self: a viewer widget
- * @display_name: (allow-none): label for the loaded data
- * @data: data to load
- *
- * Parse and load some data to be displayed into the viewer widgets. The data
- * may contain multiple parseable items if the format can contain multiple
- * items.
- */
-void
-gcr_viewer_widget_load_bytes (GcrViewerWidget *self,
-                              const gchar *display_name,
-                              GBytes *data)
-{
-	GError *error = NULL;
-	GcrRenderer *renderer;
-
-	g_return_if_fail (GCR_IS_VIEWER_WIDGET (self));
-	g_return_if_fail (data != NULL);
-
-	g_free (self->pv->display_name);
-	self->pv->display_name = g_strdup (display_name);
-
-	if (!gcr_parser_parse_bytes (self->pv->parser, data, &error)) {
-		renderer = gcr_failure_renderer_new (display_name, error);
-		gcr_viewer_add_renderer (self->pv->viewer, renderer);
-		g_object_unref (renderer);
-		g_error_free (error);
-	}
-}
-
-/**
  * gcr_viewer_widget_load_data:
  * @self: a viewer widget
  * @display_name: (allow-none): label for the loaded data
@@ -571,9 +536,6 @@ gcr_viewer_widget_load_bytes (GcrViewerWidget *self,
  * Parse and load some data to be displayed into the viewer widgets. The data
  * may contain multiple parseable items if the format can contain multiple
  * items.
- *
- * This function will copy the data. Use gcr_viewer_widget_load_bytes() to avoid
- * copying the data.
  */
 void
 gcr_viewer_widget_load_data (GcrViewerWidget *self,
@@ -581,28 +543,20 @@ gcr_viewer_widget_load_data (GcrViewerWidget *self,
                              const guchar *data,
                              gsize n_data)
 {
-	GBytes *bytes;
+	GError *error = NULL;
+	GcrRenderer *renderer;
 
 	g_return_if_fail (GCR_IS_VIEWER_WIDGET (self));
 
-	bytes = g_bytes_new (data, n_data);
-	gcr_viewer_widget_load_bytes (self, display_name, bytes);
-	g_bytes_unref (bytes);
-}
+	g_free (self->pv->display_name);
+	self->pv->display_name = g_strdup (display_name);
 
-/**
- * gcr_viewer_widget_get_viewer:
- * @self: a viewer widget
- *
- * Get the viewer used to display the viewable items.
- *
- * Returns: (transfer none): the viewer
- */
-GcrViewer *
-gcr_viewer_widget_get_viewer (GcrViewerWidget *self)
-{
-	g_return_val_if_fail (GCR_IS_VIEWER_WIDGET (self), NULL);
-	return self->pv->viewer;
+	if (!gcr_parser_parse_data (self->pv->parser, data, n_data, &error)) {
+		renderer = gcr_failure_renderer_new (display_name, error);
+		gcr_viewer_add_renderer (self->pv->viewer, renderer);
+		g_object_unref (renderer);
+		g_error_free (error);
+	}
 }
 
 /**

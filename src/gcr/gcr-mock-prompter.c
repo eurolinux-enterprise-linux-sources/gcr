@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stfew@collabora.co.uk>
  */
@@ -1040,11 +1042,6 @@ gcr_mock_prompter_start (void)
 	return g_dbus_connection_get_unique_name (running->connection);
 }
 
-/**
- * gcr_mock_prompter_disconnect:
- *
- * Disconnect the mock prompter
- */
 void
 gcr_mock_prompter_disconnect (void)
 {

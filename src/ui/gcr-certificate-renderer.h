@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #if !defined (__GCR_INSIDE_HEADER__) && !defined (GCR_COMPILATION)
@@ -65,6 +67,11 @@ GcrCertificate*           gcr_certificate_renderer_get_certificate    (GcrCertif
 
 void                      gcr_certificate_renderer_set_certificate    (GcrCertificateRenderer *self,
                                                                        GcrCertificate *certificate);
+
+GckAttributes*            gcr_certificate_renderer_get_attributes     (GcrCertificateRenderer *self);
+
+void                      gcr_certificate_renderer_set_attributes     (GcrCertificateRenderer *self,
+                                                                       GckAttributes *attrs);
 
 G_END_DECLS
 

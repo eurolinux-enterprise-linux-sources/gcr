@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -24,9 +26,8 @@
 #include "gcr-comparable.h"
 #include "gcr-icons.h"
 #include "gcr-internal.h"
+#include "gcr-oids.h"
 #include "gcr-subject-public-key.h"
-
-#include "gcr/gcr-oids.h"
 
 #include "egg/egg-asn1x.h"
 #include "egg/egg-asn1-defs.h"
@@ -199,16 +200,8 @@ digest_certificate (GcrCertificate *self, GChecksumType type)
 	return digest;
 }
 
-/**
- * gcr_certificate_get_markup_text:
- * @self: a certificate
- *
- * Calculate a GMarkup string for displaying this certificate.
- *
- * Returns: (transfer full): the markup string
- */
-gchar *
-gcr_certificate_get_markup_text (GcrCertificate *self)
+static gchar*
+calculate_markup (GcrCertificate *self)
 {
 	gchar *label = NULL;
 	gchar *issuer;
@@ -260,65 +253,30 @@ gcr_certificate_default_init (GcrCertificateIface *iface)
 	if (g_once_init_enter (&initialized)) {
 		CERTIFICATE_INFO = g_quark_from_static_string ("_gcr_certificate_certificate_info");
 
-		/**
-		 * GcrCertificate:label:
-		 *
-		 * A readable label for this certificate.
-		 */
 		g_object_interface_install_property (iface,
 		         g_param_spec_string ("label", "Label", "Certificate label",
 		                              "", G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:description:
-		 *
-		 * A readable description for this certificate
-		 */
 		g_object_interface_install_property (iface,
 		         g_param_spec_string ("description", "Description", "Description of object being rendered",
 		                              "", G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:markup:
-		 *
-		 * GLib markup to describe the certificate
-		 */
 		g_object_interface_install_property (iface,
 		         g_param_spec_string ("markup", "Markup", "Markup which describes object being rendered",
 		                              "", G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:icon:
-		 *
-		 * An icon representing the certificate
-		 */
 		g_object_interface_install_property (iface,
 		         g_param_spec_object ("icon", "Icon", "Icon for the object being rendered",
 		                              G_TYPE_ICON, G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:subject:
-		 *
-		 * Common name part of the certificate subject
-		 */
 		g_object_interface_install_property (iface,
 		           g_param_spec_string ("subject", "Subject", "Common name of subject",
 		                                "", G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:issuer:
-		 *
-		 * Common name part of the certificate issuer
-		 */
 		g_object_interface_install_property (iface,
 		           g_param_spec_string ("issuer", "Issuer", "Common name of issuer",
 		                                "", G_PARAM_READABLE));
 
-		/**
-		 * GcrCertificate:expiry:
-		 *
-		 * The expiry date of the certificate
-		 */
 		g_object_interface_install_property (iface,
 		           g_param_spec_boxed ("expiry", "Expiry", "Certificate expiry",
 		                               G_TYPE_DATE, G_PARAM_READABLE));
@@ -407,9 +365,9 @@ gcr_certificate_compare (GcrComparable *first, GcrComparable *other)
  *
  * Gets the raw DER data for an X.509 certificate.
  *
- * Returns: (transfer none) (array length=n_data): raw DER data of the X.509 certificate
+ * Returns: (array length=n_data): raw DER data of the X.509 certificate
  **/
-const guint8 *
+const guchar *
 gcr_certificate_get_der_data (GcrCertificate *self,
                               gsize *n_data)
 {
@@ -993,7 +951,7 @@ gcr_certificate_get_serial_number_hex (GcrCertificate *self)
 }
 
 /**
- * gcr_certificate_get_icon: (skip)
+ * gcr_certificate_get_icon:
  * @self: The certificate
  *
  * Get the icon for a certificate.
@@ -1011,8 +969,8 @@ gcr_certificate_get_icon (GcrCertificate *self)
 /**
  * gcr_certificate_get_basic_constraints:
  * @self: the certificate
- * @is_ca: (out) (allow-none): location to place a %TRUE if is an authority
- * @path_len: (out) (allow-none): location to place the max path length
+ * @is_ca: (allow-none): location to place a %TRUE if is an authority
+ * @path_len: (allow-none): location to place the max path length
  *
  * Get the basic constraints for the certificate if present. If %FALSE is
  * returned then no basic constraints are present and the @is_ca and
@@ -1192,7 +1150,7 @@ gcr_certificate_mixin_get_property (GObject *obj, guint prop_id,
 		g_value_set_string (value, _("Certificate"));
 		break;
 	case PROP_MARKUP:
-		g_value_take_string (value, gcr_certificate_get_markup_text (cert));
+		g_value_take_string (value, calculate_markup (cert));
 		break;
 	case PROP_ISSUER:
 		g_value_take_string (value, gcr_certificate_get_issuer_name (cert));

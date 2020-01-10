@@ -1,13 +1,4 @@
 <SECTION>
-<TITLE>Library Utilities</TITLE>
-<FILE>gcr-library</FILE>
-GCR_CHECK_VERSION
-GCR_MAJOR_VERSION
-GCR_MICRO_VERSION
-GCR_MINOR_VERSION
-</SECTION>
-
-<SECTION>
 <FILE>gcr-parser</FILE>
 <TITLE>GcrParser</TITLE>
 GCR_DATA_ERROR
@@ -16,7 +7,6 @@ GcrDataFormat
 GcrParser
 GcrParserClass
 gcr_parser_new
-gcr_parser_parse_bytes
 gcr_parser_parse_data
 gcr_parser_parse_stream
 gcr_parser_parse_stream_async
@@ -29,21 +19,16 @@ gcr_parser_get_parsed_label
 gcr_parser_get_parsed_description
 gcr_parser_get_parsed_attributes
 gcr_parser_get_parsed_block
-gcr_parser_get_parsed_bytes
 gcr_parser_get_parsed_format
-gcr_parser_get_filename
-gcr_parser_set_filename
 GcrParsed
 gcr_parsed_ref
 gcr_parsed_unref
 gcr_parsed_get_attributes
 gcr_parsed_get_data
-gcr_parsed_get_bytes
 gcr_parsed_get_description
 gcr_parsed_get_format
 gcr_parsed_get_label
 gcr_parser_get_parsed
-gcr_parsed_get_filename
 <SUBSECTION Standard>
 GCR_TYPE_PARSED
 GcrParserPrivate
@@ -94,7 +79,6 @@ GCR_CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE
 gcr_certificate_mixin_comparable_init
 gcr_certificate_compare
 gcr_certificate_get_icon
-gcr_certificate_get_markup_text
 <SUBSECTION Standard>
 gcr_certificate_get_columns
 GCR_CERTIFICATE
@@ -248,7 +232,7 @@ gcr_trust_remove_pinned_certificate_finish
 </SECTION>
 
 <SECTION>
-<FILE>gcr-pkcs11</FILE>
+<FILE>gcr-library</FILE>
 gcr_pkcs11_initialize
 gcr_pkcs11_initialize_async
 gcr_pkcs11_initialize_finish
@@ -262,6 +246,8 @@ gcr_pkcs11_get_trust_lookup_uris
 gcr_pkcs11_set_trust_lookup_uris
 gcr_pkcs11_get_trust_store_uri
 gcr_pkcs11_set_trust_store_uri
+<SUBSECTION Private>
+GcrDebugFlags
 </SECTION>
 
 <SECTION>
@@ -492,8 +478,6 @@ GcrRenderer
 GcrRendererIface
 gcr_renderer_create
 gcr_renderer_register
-gcr_renderer_get_attributes
-gcr_renderer_set_attributes
 gcr_renderer_popuplate_popup
 gcr_renderer_render_view
 gcr_renderer_emit_data_changed
@@ -533,10 +517,14 @@ GcrCertificateWidgetClass
 GcrCertificateRenderer
 GcrCertificateRendererClass
 gcr_certificate_widget_new
+gcr_certificate_widget_get_attributes
+gcr_certificate_widget_set_attributes
 gcr_certificate_widget_get_certificate
 gcr_certificate_widget_set_certificate
 gcr_certificate_renderer_new
 gcr_certificate_renderer_new_for_attributes
+gcr_certificate_renderer_get_attributes
+gcr_certificate_renderer_set_attributes
 gcr_certificate_renderer_get_certificate
 gcr_certificate_renderer_set_certificate
 <SUBSECTION Standard>
@@ -621,11 +609,9 @@ GcrUnlockOptionsWidgetPrivate
 <FILE>gcr-viewer-widget</FILE>
 GcrViewerWidget
 gcr_viewer_widget_new
-gcr_viewer_widget_load_bytes
 gcr_viewer_widget_load_data
 gcr_viewer_widget_load_file
 gcr_viewer_widget_get_parser
-gcr_viewer_widget_get_viewer
 gcr_viewer_widget_show_error
 gcr_viewer_widget_clear_error
 gcr_viewer_widget_get_display_name
@@ -693,23 +679,6 @@ gcr_secure_memory_strdup
 gcr_secure_memory_strfree
 gcr_secure_memory_free
 gcr_secure_memory_is_secure
-</SECTION>
-
-<SECTION>
-<FILE>gcr-ssh-askpass</FILE>
-GcrSshAskpass
-gcr_ssh_askpass_new
-gcr_ssh_askpass_get_interaction
-gcr_ssh_askpass_child_setup
-<SUBSECTION Standard>
-GCR_IS_SSH_ASKPASS
-GCR_IS_SSH_ASKPASS_CLASS
-GCR_SSH_ASKPASS
-GCR_SSH_ASKPASS_CLASS
-GCR_SSH_ASKPASS_GET_CLASS
-GCR_TYPE_SSH_ASKPASS
-GcrSshAskpassClass
-gcr_ssh_askpass_get_type
 </SECTION>
 
 <SECTION>
@@ -878,7 +847,6 @@ GCR_TYPE_SYSTEM_PROMPTER_MODE
 <FILE>gcr-mock-prompter</FILE>
 gcr_mock_prompter_start
 gcr_mock_prompter_stop
-gcr_mock_prompter_disconnect
 gcr_mock_prompter_expect_confirm_cancel
 gcr_mock_prompter_expect_confirm_ok
 gcr_mock_prompter_expect_password_cancel

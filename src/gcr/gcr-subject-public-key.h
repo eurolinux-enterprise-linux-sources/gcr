@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -47,8 +49,6 @@ GNode *        _gcr_subject_public_key_load_finish      (GAsyncResult *result,
                                                          GError **error);
 
 guint          _gcr_subject_public_key_calculate_size   (GNode *subject_public_key);
-
-guint          _gcr_subject_public_key_attributes_size  (GckAttributes *attributes);
 
 G_END_DECLS
 

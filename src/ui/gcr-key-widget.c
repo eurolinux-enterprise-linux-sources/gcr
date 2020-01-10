@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -32,7 +34,7 @@
  * @title: GcrKeyWidget
  * @short_description: Key widget and renderer
  *
- * A #GcrKeyWidget can be used to display a RSA, DSA or EC key. The widget
+ * A #GcrKeyWidget can be used to display a RSA or DSA key. The widget
  * is normally in a collapsed state showing only details, but can be expanded
  * by the user.
  *
@@ -60,7 +62,7 @@ enum {
 };
 
 struct _GcrKeyWidget {
-	GtkBin parent;
+	GtkAlignment parent;
 
 	/*< private >*/
 	GcrKeyWidgetPrivate *pv;
@@ -68,7 +70,7 @@ struct _GcrKeyWidget {
 
 struct _GcrKeyWidgetClass {
 	/*< private >*/
-	GtkBinClass parent_class;
+	GtkAlignmentClass parent_class;
 };
 
 struct _GcrKeyWidgetPrivate {
@@ -76,7 +78,7 @@ struct _GcrKeyWidgetPrivate {
 	GcrKeyRenderer *renderer;
 };
 
-G_DEFINE_TYPE (GcrKeyWidget, gcr_key_widget, GTK_TYPE_BIN);
+G_DEFINE_TYPE (GcrKeyWidget, gcr_key_widget, GTK_TYPE_ALIGNMENT);
 
 /* -----------------------------------------------------------------------------
  * OBJECT
@@ -197,7 +199,7 @@ gcr_key_widget_new (GckAttributes *attrs)
  * @attrs: (allow-none): the attributes to display
  *
  * Get the attributes displayed in the widget. The attributes should represent
- * either an RSA, DSA or EC key in PKCS\#11 style.
+ * either an RSA or DSA key in PKCS\#11 style.
  */
 void
 gcr_key_widget_set_attributes (GcrKeyWidget *self, GckAttributes *attrs)

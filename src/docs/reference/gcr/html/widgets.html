@@ -2,22 +2,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Part III. Widgets: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<title>Part III. Widgets</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="up" href="index.html" title="Gcr Library Reference Manual">
-<link rel="prev" href="GcrCollectionModel.html" title="GcrCollectionModel">
-<link rel="next" href="GcrCertificateWidget.html" title="GcrCertificateWidget">
-<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
+<link rel="prev" href="gcr-gcr-collection-model.html" title="gcr-collection-model">
+<link rel="next" href="gcr-gcr-certificate-widget.html" title="gcr-certificate-widget">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
-<td width="100%" align="left" class="shortcuts"></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
-<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
-<td><a accesskey="p" href="GcrCollectionModel.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
-<td><a accesskey="n" href="GcrCertificateWidget.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2"><tr valign="middle">
+<td><a accesskey="p" href="gcr-gcr-collection-model.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td> </td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Gcr Library Reference Manual</th>
+<td><a accesskey="n" href="gcr-gcr-certificate-widget.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="part">
 <div class="titlepage"><div><div><h1 class="title">
@@ -26,40 +26,41 @@
 <p><b>Table of Contents</b></p>
 <dl class="toc">
 <dt>
-<span class="refentrytitle"><a href="GcrCertificateWidget.html">GcrCertificateWidget</a></span><span class="refpurpose"> — Certificate widget and renderer</span>
+<span class="refentrytitle"><a href="gcr-gcr-certificate-widget.html">gcr-certificate-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrKeyWidget.html">GcrKeyWidget</a></span><span class="refpurpose"> — Key widget and renderer</span>
+<span class="refentrytitle"><a href="gcr-gcr-key-widget.html">gcr-key-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="gcr-GcrColumn.html">GcrColumn</a></span><span class="refpurpose"> — Column information for selector or model.</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrComboSelector.html">GcrComboSelector</a></span><span class="refpurpose"> — A selector widget to select a single certificate or key.</span>
+<span class="refentrytitle"><a href="gcr-gcr-combo-selector.html">gcr-combo-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrImportButton.html">GcrImportButton</a></span><span class="refpurpose"> — Button which imports parsed certificates and keys</span>
+<span class="refentrytitle"><a href="gcr-gcr-import-button.html">gcr-import-button</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrListSelector.html">GcrListSelector</a></span><span class="refpurpose"> — A selector widget to one or more certificates from a list.</span>
+<span class="refentrytitle"><a href="gcr-gcr-list-selector.html">gcr-list-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrTreeSelector.html">GcrTreeSelector</a></span><span class="refpurpose"> — A selector widget to select certificates or keys.</span>
+<span class="refentrytitle"><a href="gcr-gcr-tree-selector.html">gcr-tree-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrRenderer.html">GcrRenderer</a></span><span class="refpurpose"> — An interface implemented by renderers.</span>
+<span class="refentrytitle"><a href="gcr-gcr-renderer.html">gcr-renderer</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrViewer.html">GcrViewer</a></span><span class="refpurpose"> — A viewer which can hold renderers</span>
+<span class="refentrytitle"><a href="gcr-gcr-viewer.html">gcr-viewer</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrViewerWidget.html">GcrViewerWidget</a></span><span class="refpurpose"> — A widget which shows certificates or keys</span>
+<span class="refentrytitle"><a href="gcr-gcr-viewer-widget.html">gcr-viewer-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt><span class="chapter"><a href="ch01.html">Widget Gallery</a></span></dt>
 </dl>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27.1</div>
+<hr>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

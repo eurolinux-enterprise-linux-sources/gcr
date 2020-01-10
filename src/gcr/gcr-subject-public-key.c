@@ -14,16 +14,19 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
 #include "config.h"
 
+#define DEBUG_FLAG GCR_DEBUG_KEY
+#include "gcr-debug.h"
+#include "gcr-oids.h"
 #include "gcr-subject-public-key.h"
 #include "gcr-types.h"
-
-#include "gcr/gcr-oids.h"
 
 #include "egg/egg-asn1x.h"
 #include "egg/egg-asn1-defs.h"
@@ -70,14 +73,14 @@ load_object_basics (GckObject *object,
 	g_assert (type != NULL);
 
 	if (check_object_basics (builder, klass, type)) {
-		g_debug ("already loaded: class = %lu, type = %lu", *klass, *type);
+		_gcr_debug ("already loaded: class = %lu, type = %lu", *klass, *type);
 		return TRUE;
 	}
 
 	attrs = gck_object_cache_lookup (object, attr_types, G_N_ELEMENTS (attr_types),
 	                                 cancellable, &error);
 	if (error != NULL) {
-		g_debug ("couldn't load: %s", error->message);
+		_gcr_debug ("couldn't load: %s", error->message);
 		g_propagate_error (lerror, error);
 		return FALSE;
 	}
@@ -88,7 +91,7 @@ load_object_basics (GckObject *object,
 	if (!check_object_basics (builder, klass, type))
 		return FALSE;
 
-	g_debug ("loaded: class = %lu, type = %lu", *klass, *type);
+	_gcr_debug ("loaded: class = %lu, type = %lu", *klass, *type);
 	return TRUE;
 }
 
@@ -110,14 +113,14 @@ load_x509_attributes (GckObject *object,
 	GError *error = NULL;
 
 	if (check_x509_attributes (builder)) {
-		g_debug ("already loaded");
+		_gcr_debug ("already loaded");
 		return TRUE;
 	}
 
 	attrs = gck_object_cache_lookup (object, attr_types, G_N_ELEMENTS (attr_types),
 	                                 cancellable, &error);
 	if (error != NULL) {
-		g_debug ("couldn't load: %s", error->message);
+		_gcr_debug ("couldn't load: %s", error->message);
 		g_propagate_error (lerror, error);
 		return FALSE;
 	}
@@ -152,14 +155,14 @@ load_rsa_attributes (GckObject *object,
 	GError *error = NULL;
 
 	if (check_rsa_attributes (builder)) {
-		g_debug ("rsa attributes already loaded");
+		_gcr_debug ("rsa attributes already loaded");
 		return TRUE;
 	}
 
 	attrs = gck_object_cache_lookup (object, attr_types, G_N_ELEMENTS (attr_types),
 	                                 cancellable, &error);
 	if (error != NULL) {
-		g_debug ("couldn't load rsa attributes: %s", error->message);
+		_gcr_debug ("couldn't load rsa attributes: %s", error->message);
 		g_propagate_error (lerror, error);
 		return FALSE;
 	}
@@ -187,7 +190,7 @@ lookup_public_key (GckObject *object,
 	attrs = gck_object_cache_lookup (object, attr_types, G_N_ELEMENTS (attr_types),
 	                                 cancellable, &error);
 	if (error != NULL) {
-		g_debug ("couldn't load private key id: %s", error->message);
+		_gcr_debug ("couldn't load private key id: %s", error->message);
 		g_propagate_error (lerror, error);
 		return NULL;
 	}
@@ -195,7 +198,7 @@ lookup_public_key (GckObject *object,
 	id = gck_attributes_find (attrs, CKA_ID);
 	if (id == NULL || gck_attribute_is_invalid (id)) {
 		gck_attributes_unref (attrs);
-		g_debug ("couldn't load private key id");
+		_gcr_debug ("couldn't load private key id");
 		g_set_error_literal (lerror, GCK_ERROR, CKR_ATTRIBUTE_TYPE_INVALID,
 		                     gck_message_from_rv (CKR_ATTRIBUTE_TYPE_INVALID));
 		return NULL;
@@ -210,7 +213,7 @@ lookup_public_key (GckObject *object,
 	g_object_unref (session);
 
 	if (error != NULL) {
-		g_debug ("couldn't lookup public key: %s", error->message);
+		_gcr_debug ("couldn't lookup public key: %s", error->message);
 		g_propagate_error (lerror, error);
 		return NULL;
 	}
@@ -276,7 +279,7 @@ load_dsa_attributes (GckObject *object,
 	g_object_unref (publi);
 
 	if (error != NULL) {
-		g_debug ("couldn't load rsa attributes: %s", error->message);
+		_gcr_debug ("couldn't load rsa attributes: %s", error->message);
 		g_propagate_error (lerror, error);
 		return FALSE;
 	}
@@ -288,66 +291,6 @@ load_dsa_attributes (GckObject *object,
 	gck_attributes_unref (loaded);
 
 	return check_dsa_attributes (builder);
-}
-
-static gboolean
-check_ec_attributes (GckBuilder *builder)
-{
-	const GckAttribute *ec_params;
-	const GckAttribute *ec_point;
-
-	ec_params = gck_builder_find (builder, CKA_EC_PARAMS);
-	ec_point = gck_builder_find (builder, CKA_EC_POINT);
-
-	return (ec_params && !gck_attribute_is_invalid (ec_params) &&
-	        ec_point && !gck_attribute_is_invalid (ec_point));
-}
-
-
-static gboolean
-load_ec_attributes (GckObject *object,
-                    GckBuilder *builder,
-                    GCancellable *cancellable,
-                    GError **lerror)
-{
-	gulong attr_types[] = { CKA_EC_PARAMS, CKA_EC_POINT };
-	GckAttributes *attrs;
-	GError *error = NULL;
-	GckObject *publi;
-	gulong klass;
-
-	if (check_ec_attributes (builder)) {
-		g_debug ("ec attributes already loaded");
-		return TRUE;
-	}
-
-	if (!gck_builder_find_ulong (builder, CKA_CLASS, &klass))
-		g_return_val_if_reached (FALSE);
-
-	/* If it's a private key, find the public one */
-	if (klass == CKO_PRIVATE_KEY)
-		publi = lookup_public_key (object, cancellable, lerror);
-
-	else
-		publi = g_object_ref (object);
-
-	if (!publi)
-		return FALSE;
-
-	attrs = gck_object_cache_lookup (publi, attr_types, G_N_ELEMENTS (attr_types),
-	                                 cancellable, &error);
-	g_object_unref (publi);
-
-	if (error != NULL) {
-		g_debug ("couldn't load ec attributes: %s", error->message);
-		g_propagate_error (lerror, error);
-		return FALSE;
-	}
-
-	gck_builder_set_all (builder, attrs);
-	gck_attributes_unref (attrs);
-
-	return check_ec_attributes (builder);
 }
 
 static gboolean
@@ -372,7 +315,7 @@ load_attributes (GckObject *object,
 			ret = load_x509_attributes (object, builder, cancellable, lerror);
 			break;
 		default:
-			g_debug ("unsupported certificate type: %lu", type);
+			_gcr_debug ("unsupported certificate type: %lu", type);
 			break;
 		}
 		break;
@@ -386,17 +329,14 @@ load_attributes (GckObject *object,
 		case CKK_DSA:
 			ret = load_dsa_attributes (object, builder, cancellable, lerror);
 			break;
-		case CKK_EC:
-			ret = load_ec_attributes (object, builder, cancellable, lerror);
-			break;
 		default:
-			g_debug ("unsupported key type: %lu", type);
+			_gcr_debug ("unsupported key type: %lu", type);
 			break;
 		}
 		break;
 
 	default:
-		g_debug ("unsupported class: %lu", type);
+		_gcr_debug ("unsupported class: %lu", type);
 		break;
 	}
 
@@ -434,8 +374,6 @@ check_attributes (GckBuilder *builder)
 			return check_rsa_attributes (builder);
 		case CKK_DSA:
 			return check_dsa_attributes (builder);
-		case CKK_EC:
-			return check_ec_attributes (builder);
 		default:
 			return FALSE;
 		}
@@ -488,7 +426,7 @@ _gcr_subject_public_key_load (GckObject *key,
 	asn = _gcr_subject_public_key_for_attributes (attributes);
 	if (asn == NULL) {
 		g_set_error_literal (error, GCK_ERROR, CKR_TEMPLATE_INCONSISTENT,
-		                     _("Couldn’t build public key"));
+		                     _("Couldn't build public key"));
 	}
 
 	gck_attributes_unref (attributes);
@@ -574,7 +512,7 @@ _gcr_subject_public_key_load_finish (GAsyncResult *result,
 	asn = _gcr_subject_public_key_for_attributes (attributes);
 	if (asn == NULL) {
 		g_set_error_literal (error, GCK_ERROR, CKR_TEMPLATE_INCONSISTENT,
-		                     _("Couldn’t build public key"));
+		                     _("Couldn't build public key"));
 	}
 
 	gck_attributes_unref (attributes);
@@ -744,57 +682,6 @@ dsa_subject_public_key_from_attributes (GckAttributes *attrs,
 	return TRUE;
 }
 
-static gboolean
-ec_subject_public_key_from_attributes (GckAttributes *attrs,
-                                       gulong klass,
-                                       GNode *info_asn)
-{
-	const GckAttribute *ec_params, *ec_point;
-	GNode *params_asn, *point_asn;
-	GBytes *bytes, *key_bytes;
-
-	ec_params = gck_attributes_find (attrs, CKA_EC_PARAMS);
-	ec_point = gck_attributes_find (attrs, CKA_EC_POINT);
-
-	if (ec_params == NULL || gck_attribute_is_invalid (ec_params) ||
-	    ec_point == NULL || gck_attribute_is_invalid (ec_point))
-		return FALSE;
-
-	bytes = g_bytes_new_with_free_func (ec_params->value, ec_params->length,
-	                                    gck_attributes_unref, gck_attributes_ref (attrs));
-	params_asn = egg_asn1x_create_and_decode (pk_asn1_tab, "ECParameters", bytes);
-	g_bytes_unref (bytes);
-
-	if (params_asn == NULL)
-		return FALSE;
-
-	bytes = g_bytes_new_with_free_func (ec_point->value, ec_point->length,
-	                                    gck_attributes_unref, gck_attributes_ref (attrs));
-	point_asn = egg_asn1x_create_and_decode (pk_asn1_tab, "ECPoint", bytes);
-	g_bytes_unref (bytes);
-
-	if (point_asn == NULL) {
-		egg_asn1x_destroy (params_asn);
-		return FALSE;
-	}
-	key_bytes = egg_asn1x_get_string_as_bytes (point_asn);
-	egg_asn1x_destroy (point_asn);
-	if (key_bytes == NULL) {
-		egg_asn1x_destroy (params_asn);
-		return FALSE;
-	}
-
-	egg_asn1x_set_bits_as_raw (egg_asn1x_node (info_asn, "subjectPublicKey", NULL),
-	                           key_bytes, g_bytes_get_size (key_bytes) * 8);
-	egg_asn1x_set_any_from (egg_asn1x_node (info_asn, "algorithm", "parameters", NULL), params_asn);
-
-	egg_asn1x_set_oid_as_quark (egg_asn1x_node (info_asn, "algorithm", "algorithm", NULL), GCR_OID_PKIX1_EC);
-
-	g_bytes_unref (key_bytes);
-	egg_asn1x_destroy (params_asn);
-	return TRUE;
-}
-
 static GNode *
 cert_subject_public_key_from_attributes (GckAttributes *attributes)
 {
@@ -805,7 +692,7 @@ cert_subject_public_key_from_attributes (GckAttributes *attributes)
 
 	attr = gck_attributes_find (attributes, CKA_VALUE);
 	if (attr == NULL || gck_attribute_is_invalid (attr)) {
-		g_debug ("no value attribute for certificate");
+		_gcr_debug ("no value attribute for certificate");
 		return NULL;
 	}
 
@@ -816,7 +703,7 @@ cert_subject_public_key_from_attributes (GckAttributes *attributes)
 	g_bytes_unref (bytes);
 
 	if (cert == NULL) {
-		g_debug ("couldn't parse certificate value");
+		_gcr_debug ("couldn't parse certificate value");
 		return NULL;
 	}
 
@@ -839,7 +726,7 @@ _gcr_subject_public_key_for_attributes (GckAttributes *attributes)
 	GNode *asn = NULL;
 
 	if (!gck_attributes_find_ulong (attributes, CKA_CLASS, &klass)) {
-		g_debug ("no class in attributes");
+		_gcr_debug ("no class in attributes");
 		return NULL;
 	}
 
@@ -848,7 +735,7 @@ _gcr_subject_public_key_for_attributes (GckAttributes *attributes)
 
 	} else if (klass == CKO_PUBLIC_KEY || klass == CKO_PRIVATE_KEY) {
 		if (!gck_attributes_find_ulong (attributes, CKA_KEY_TYPE, &key_type)) {
-			g_debug ("no key type in attributes");
+			_gcr_debug ("no key type in attributes");
 			return NULL;
 		}
 
@@ -861,11 +748,8 @@ _gcr_subject_public_key_for_attributes (GckAttributes *attributes)
 		} else if (key_type == CKK_DSA) {
 			ret = dsa_subject_public_key_from_attributes (attributes, klass, asn);
 
-		} else if (key_type == CKK_ECDSA) {
-			ret = ec_subject_public_key_from_attributes (attributes, klass, asn);
-
 		} else {
-			g_debug ("unsupported key type: %lu", key_type);
+			_gcr_debug ("unsupported key type: %lu", key_type);
 			ret = FALSE;
 		}
 
@@ -903,24 +787,6 @@ calculate_rsa_key_size (GBytes *data)
 }
 
 static guint
-attributes_rsa_key_size (GckAttributes *attrs)
-{
-	const GckAttribute *attr;
-	gulong bits;
-
-	attr = gck_attributes_find (attrs, CKA_MODULUS);
-
-	/* Calculate the bit length, and remove the complement */
-	if (attr != NULL)
-		return (attr->length / 2) * 2 * 8;
-
-	if (gck_attributes_find_ulong (attrs, CKA_MODULUS_BITS, &bits))
-		return (gint)bits;
-
-	return 0;
-}
-
-static guint
 calculate_dsa_params_size (GNode *params)
 {
 	GNode *asn;
@@ -941,108 +807,6 @@ calculate_dsa_params_size (GNode *params)
 
 	g_bytes_unref (content);
 	return key_size;
-}
-
-static guint
-attributes_dsa_key_size (GckAttributes *attrs)
-{
-	const GckAttribute *attr;
-	gulong bits;
-
-	attr = gck_attributes_find (attrs, CKA_PRIME);
-
-	/* Calculate the bit length, and remove the complement */
-	if (attr != NULL)
-		return (attr->length / 2) * 2 * 8;
-
-	if (gck_attributes_find_ulong (attrs, CKA_PRIME_BITS, &bits))
-		return (gint)bits;
-
-	return 0;
-}
-
-static guint
-named_curve_size (GNode *params)
-{
-	GQuark oid;
-	guint size;
-
-	oid = egg_asn1x_get_oid_as_quark (egg_asn1x_node (params, "namedCurve", NULL));
-	if (oid == GCR_OID_EC_SECP192R1)
-		size = 192;
-	else if (oid == GCR_OID_EC_SECT163K1)
-		size = 163;
-	else if (oid == GCR_OID_EC_SECT163R2)
-		size = 163;
-	else if (oid == GCR_OID_EC_SECP224R1)
-		size = 224;
-	else if (oid == GCR_OID_EC_SECT233K1)
-		size = 233;
-	else if (oid == GCR_OID_EC_SECT233R1)
-		size = 233;
-	else if (oid == GCR_OID_EC_SECP256R1)
-		size = 256;
-	else if (oid == GCR_OID_EC_SECT283K1)
-		size = 283;
-	else if (oid == GCR_OID_EC_SECT283R1)
-		size = 283;
-	else if (oid == GCR_OID_EC_SECP384R1)
-		size = 384;
-	else if (oid == GCR_OID_EC_SECT409K1)
-		size = 409;
-	else if (oid == GCR_OID_EC_SECT409R1)
-		size = 409;
-	else if (oid == GCR_OID_EC_SECP521R1)
-		size = 521;
-	else if (oid == GCR_OID_EC_SECP571K1)
-		size = 571;
-	else if (oid == GCR_OID_EC_SECT571R1)
-		size = 571;
-	else
-		size = 0;
-	return size;
-
-}
-
-static guint
-calculate_ec_params_size (GNode *params)
-{
-	GNode *asn;
-	guint size;
-
-	asn = egg_asn1x_get_any_as (params, pk_asn1_tab, "ECParameters");
-	g_return_val_if_fail (asn, 0);
-
-	size = named_curve_size (asn);
-	egg_asn1x_destroy (asn);
-
-	return size;
-}
-
-static guint
-attributes_ec_params_size (GckAttributes *attrs)
-{
-	GNode *asn;
-	const GckAttribute *attr;
-	GBytes *bytes;
-	guint size = 0;
-
-	attr = gck_attributes_find (attrs, CKA_EC_PARAMS);
-
-	/* Calculate the bit length, and remove the complement */
-	if (attr && !gck_attribute_is_invalid (attr)) {
-		bytes = g_bytes_new_with_free_func (attr->value, attr->length,
-		                                    gck_attributes_unref,
-		                                    gck_attributes_ref (attrs));
-		asn = egg_asn1x_create_and_decode (pk_asn1_tab, "ECParameters", bytes);
-		g_bytes_unref (bytes);
-
-		if (asn)
-			size = named_curve_size (asn);
-		egg_asn1x_destroy (asn);
-	}
-
-	return size;
 }
 
 guint
@@ -1071,34 +835,9 @@ _gcr_subject_public_key_calculate_size (GNode *subject_public_key)
 		params = egg_asn1x_node (subject_public_key, "algorithm", "parameters", NULL);
 		key_size = calculate_dsa_params_size (params);
 
-	} else if (oid == GCR_OID_PKIX1_EC) {
-		params = egg_asn1x_node (subject_public_key, "algorithm", "parameters", NULL);
-		key_size = calculate_ec_params_size (params);
-
 	} else {
 		g_message ("unsupported key algorithm: %s", g_quark_to_string (oid));
 	}
 
 	return key_size;
-}
-
-guint
-_gcr_subject_public_key_attributes_size (GckAttributes *attrs)
-{
-	gulong key_type;
-
-	if (!gck_attributes_find_ulong (attrs, CKA_KEY_TYPE, &key_type))
-		return 0;
-
-	switch (key_type) {
-	case CKK_RSA:
-		return attributes_rsa_key_size (attrs);
-	case CKK_DSA:
-		return attributes_dsa_key_size (attrs);
-	case CKK_EC:
-		return attributes_ec_params_size (attrs);
-	default:
-		g_message ("unsupported key algorithm: %lu", key_type);
-		return 0;
-	}
 }

@@ -21,7 +21,7 @@ DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 # gtk-doc will search all .c & .h files beneath here for inline comments
 # documenting the functions and macros.
 # e.g. DOC_SOURCE_DIR=../../../gtk
-DOC_SOURCE_DIR=$(top_srcdir)/$(DOC_MODULE) $(top_srcdir)/ui $(top_builddir)/$(DOC_MODULE) $(top_builddir)/ui
+DOC_SOURCE_DIR=$(top_srcdir)/$(DOC_MODULE)
 
 # Extra options to pass to gtkdoc-scangobj. Not normally needed.
 SCANGOBJ_OPTIONS=
@@ -59,7 +59,6 @@ EXTRA_HFILES=$(top_srcdir)/ui/*.h
 # e.g. IGNORE_HFILES=gtkdebug.h gtkintl.h
 IGNORE_HFILES= \
 	console-interaction.h \
-	eggimagemenuitem.h \
 	gcr-callback-output-stream.h \
 	gcr-certificate-exporter.h \
 	gcr-certificate-basics-widget.h \
@@ -80,7 +79,6 @@ IGNORE_HFILES= \
 	gcr-live-search.h \
 	gcr-marshal.h \
 	gcr-menu-button.h \
-	gcr-oids.h \
 	gcr-openpgp.h \
 	gcr-pkcs11-importer.h \
 	gcr-pkcs11-import-interaction.h \
@@ -121,9 +119,9 @@ expand_content_files=
 GTKDOC_CFLAGS= -I$(top_srcdir) -I$(top_builddir) $(GLIB_CFLAGS) -Wno-error \
 	-Wno-deprecated-declarations
 GTKDOC_LIBS= $(GLIB_LIBS) \
-	$(top_builddir)/libgcr-ui-@GCR_MAJOR@.la \
-	$(top_builddir)/libgcr-base-@GCR_MAJOR@.la \
-	$(top_builddir)/libgck-@GCK_MAJOR@.la
+	$(top_builddir)/ui/libgcr-ui-@GCR_MAJOR@.la \
+	$(top_builddir)/gcr/libgcr-base-@GCR_MAJOR@.la \
+	$(top_builddir)/gck/libgck-@GCK_MAJOR@.la
 
 # This includes the standard gtk-doc make rules, copied by gtkdocize.
 include $(top_srcdir)/gtk-doc.make

@@ -16,7 +16,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stefw@gnome.org>
 */
@@ -178,7 +179,8 @@ gcr_secure_memory_try_realloc (gpointer memory,
 	new_memory = egg_secure_realloc_full ("gcr-secure-memory", memory,
 	                                      size, 0);
 
-	/* Might be NULL if reallocation failed. */
+	g_assert (new_memory != NULL);
+
 	return new_memory;
 }
 

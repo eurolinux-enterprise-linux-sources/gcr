@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -22,6 +24,8 @@
 #include "config.h"
 
 #include "gcr-callback-output-stream.h"
+#define DEBUG_FLAG GCR_DEBUG_GNUPG
+#include "gcr-debug.h"
 
 #include <glib/gi18n-lib.h>
 

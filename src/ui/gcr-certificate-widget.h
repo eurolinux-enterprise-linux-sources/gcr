@@ -12,7 +12,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #if !defined (__GCR_INSIDE_HEADER__) && !defined (GCR_COMPILATION)
@@ -41,16 +43,10 @@ typedef struct _GcrCertificateWidget GcrCertificateWidget;
 typedef struct _GcrCertificateWidgetClass GcrCertificateWidgetClass;
 typedef struct _GcrCertificateWidgetPrivate GcrCertificateWidgetPrivate;
 
-struct _GcrCertificateWidget {
-	/*< private >*/
-	GtkBin parent;
-	GcrCertificateWidgetPrivate *pv;
-};
-
-struct _GcrCertificateWidgetClass {
-	/*< private >*/
-	GtkBinClass parent_class;
-};
+/*
+ * TODO: GcrCertificateWidget and GcrCertificateWidgetClass are hidden until
+ * we can figure out what they should be derived from.
+ */
 
 GType                   gcr_certificate_widget_get_type               (void);
 
@@ -60,6 +56,11 @@ GcrCertificate*         gcr_certificate_widget_get_certificate        (GcrCertif
 
 void                    gcr_certificate_widget_set_certificate        (GcrCertificateWidget *self,
                                                                        GcrCertificate *certificate);
+
+GckAttributes*          gcr_certificate_widget_get_attributes         (GcrCertificateWidget *self);
+
+void                    gcr_certificate_widget_set_attributes         (GcrCertificateWidget *self,
+                                                                       GckAttributes* attrs);
 
 G_END_DECLS
 

@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stefw@collabora.co.uk>
 */
@@ -85,6 +86,10 @@ main (int argc, char *argv[])
 	GOptionContext *context;
 	GError *error = NULL;
 	GtkWindow *window;
+
+#if !GLIB_CHECK_VERSION(2,35,0)
+	g_type_init ();
+#endif
 
 #ifdef HAVE_LOCALE_H
 	/* internationalisation */

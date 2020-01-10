@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -23,6 +25,8 @@
 
 #include "gcr-callback-output-stream.h"
 #include "gcr-collection.h"
+#define DEBUG_FLAG GCR_DEBUG_GNUPG
+#include "gcr-debug.h"
 #include "gcr-gnupg-collection.h"
 #include "gcr-gnupg-key.h"
 #include "gcr-gnupg-process.h"
@@ -306,8 +310,8 @@ process_records_as_public_key (GcrGnupgCollectionLoad *load, GPtrArray *records,
 	if (fingerprint && load->attributes)
 		attr_records = g_hash_table_lookup (load->attributes, fingerprint);
 	if (attr_records) {
-		g_debug ("adding %d user id attribute(s) to key/fingerprint: %s/%s",
-		         (gint)attr_records->len, keyid, fingerprint);
+		_gcr_debug ("adding %d user id attribute(s) to key/fingerprint: %s/%s",
+		            (gint)attr_records->len, keyid, fingerprint);
 
 		if (!g_hash_table_lookup_extended (load->attributes, fingerprint,
 		                                   (gpointer*)&orig_fingerprint, NULL))
@@ -331,13 +335,13 @@ process_records_as_public_key (GcrGnupgCollectionLoad *load, GPtrArray *records,
 
 	/* Already have this key, just update */
 	if (key) {
-		g_debug ("updating public key: %s", keyid);
+		_gcr_debug ("updating public key: %s", keyid);
 		_gcr_gnupg_key_set_public_records (key, records);
 
 	/* Add a new key */
 	} else {
 		key = _gcr_gnupg_key_new (records, NULL);
-		g_debug ("creating public key: %s", keyid);
+		_gcr_debug ("creating public key: %s", keyid);
 		g_hash_table_insert (load->collection->pv->items, g_strdup (keyid), key);
 		gcr_collection_emit_added (GCR_COLLECTION (load->collection), G_OBJECT (key));
 	}
@@ -357,7 +361,7 @@ process_records_as_secret_key (GcrGnupgCollectionLoad *load, GPtrArray *records,
 
 	/* Tell the private key that it's a secret one */
 	} else {
-		g_debug ("adding secret records to key: %s", keyid);
+		_gcr_debug ("adding secret records to key: %s", keyid);
 		_gcr_gnupg_key_set_secret_records (key, records);
 	}
 }
@@ -411,7 +415,7 @@ process_outstanding_attribute (GcrGnupgCollectionLoad *load, GcrRecord *record)
 
 	/* Do we have enough data for this attribute? */
 	if (!load->attribute_buf || load->attribute_buf->len < length) {
-		g_debug ("not enough attribute data in buffer: %u", length);
+		_gcr_debug ("not enough attribute data in buffer: %u", length);
 		return FALSE;
 	}
 
@@ -425,8 +429,8 @@ process_outstanding_attribute (GcrGnupgCollectionLoad *load, GcrRecord *record)
 		g_hash_table_insert (load->attributes, g_strdup (fingerprint), records);
 	}
 
-	g_debug ("new attribute of length %d for key with fingerprint %s",
-	         length, fingerprint);
+	_gcr_debug ("new attribute of length %d for key with fingerprint %s",
+		    length, fingerprint);
 
 	xa1 = _gcr_gnupg_build_xa1_record (record, load->attribute_buf->data, length);
 	g_ptr_array_add (records, xa1);
@@ -452,8 +456,8 @@ process_outstanding_attributes (GcrGnupgCollectionLoad *load)
 	if (load->attribute_queue == NULL)
 		return;
 
-	g_debug ("%d outstanding attribute records",
-	         (gint)g_queue_get_length (load->attribute_queue));
+	_gcr_debug ("%d outstanding attribute records",
+	            (gint)g_queue_get_length (load->attribute_queue));
 
 	for (;;) {
 		record = g_queue_peek_head (load->attribute_queue);
@@ -473,7 +477,7 @@ on_line_parse_output (const gchar *line, gpointer user_data)
 	GcrRecord *record;
 	GQuark schema;
 
-	g_debug ("output: %s", line);
+	_gcr_debug ("output: %s", line);
 
 	record = _gcr_record_parse_colons (line, -1);
 	if (!record) {
@@ -488,7 +492,7 @@ on_line_parse_output (const gchar *line, gpointer user_data)
 	 * it's a new key being listed.
 	 */
 	if (schema == GCR_RECORD_SCHEMA_PUB || schema == GCR_RECORD_SCHEMA_SEC) {
-		g_debug ("start of new key");
+		_gcr_debug ("start of new key");
 		if (load->records->len)
 			process_records_as_key (load);
 		g_assert (!load->records->len);
@@ -598,13 +602,13 @@ on_gnupg_process_completed (GObject *source, GAsyncResult *result, gpointer user
 	/* If we completed loading public keys, then go and load secret */
 	switch (load->loading_phase) {
 	case GCR_LOADING_PHASE_PUBLIC:
-		g_debug ("public load phase completed");
+		_gcr_debug ("public load phase completed");
 		load->loading_phase = GCR_LOADING_PHASE_SECRET;
 		spawn_gnupg_list_process (load, res);
 		g_object_unref (res);
 		return;
 	case GCR_LOADING_PHASE_SECRET:
-		g_debug ("secret load phase completed");
+		_gcr_debug ("secret load phase completed");
 		/* continue below */
 		break;
 	default:
@@ -617,7 +621,7 @@ on_gnupg_process_completed (GObject *source, GAsyncResult *result, gpointer user
 		object = g_hash_table_lookup (load->collection->pv->items, keyid);
 		if (object != NULL) {
 			g_object_ref (object);
-			g_debug ("removing key no longer present in keyring: %s", (gchar*)keyid);
+			_gcr_debug ("removing key no longer present in keyring: %s", (gchar*)keyid);
 			g_hash_table_remove (load->collection->pv->items, keyid);
 			gcr_collection_emit_removed (GCR_COLLECTION (load->collection), object);
 			g_object_unref (object);
@@ -638,14 +642,14 @@ spawn_gnupg_list_process (GcrGnupgCollectionLoad *load, GSimpleAsyncResult *res)
 
 	switch (load->loading_phase) {
 	case GCR_LOADING_PHASE_PUBLIC:
-		g_debug ("starting public load phase");
+		_gcr_debug ("starting public load phase");
 		g_ptr_array_add (argv, (gpointer)"--list-keys");
 		/* Load photos in public phase */
 		flags = GCR_GNUPG_PROCESS_WITH_ATTRIBUTES |
 		        GCR_GNUPG_PROCESS_WITH_STATUS;
 		break;
 	case GCR_LOADING_PHASE_SECRET:
-		g_debug ("starting secret load phase");
+		_gcr_debug ("starting secret load phase");
 		g_ptr_array_add (argv, (gpointer)"--list-secret-keys");
 		break;
 	default:

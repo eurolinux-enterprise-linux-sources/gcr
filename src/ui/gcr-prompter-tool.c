@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stefw@collabora.co.uk>
 */
@@ -24,6 +25,8 @@
 
 #include "gcr/gcr.h"
 #include "gcr/gcr-dbus-constants.h"
+#define DEBUG_FLAG GCR_DEBUG_PROMPT
+#include "gcr/gcr-debug.h"
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
@@ -46,7 +49,7 @@ static guint timeout_source = 0;
 static gboolean
 on_timeout_quit (gpointer unused)
 {
-	g_debug ("%d second inactivity timeout, quitting", QUIT_TIMEOUT);
+	_gcr_debug ("%d second inactivity timeout, quitting", QUIT_TIMEOUT);
 	gtk_main_quit ();
 
 	return FALSE; /* Don't run again */
@@ -86,7 +89,7 @@ on_bus_acquired (GDBusConnection *connection,
                  const gchar *name,
                  gpointer user_data)
 {
-	g_debug ("bus acquired: %s", name);
+	_gcr_debug ("bus acquired: %s", name);
 
 	if (!registered_prompter)
 		gcr_system_prompter_register (the_prompter, connection);
@@ -99,7 +102,7 @@ on_name_acquired (GDBusConnection *connection,
                   const gchar *name,
                   gpointer user_data)
 {
-	g_debug ("acquired name: %s", name);
+	_gcr_debug ("acquired name: %s", name);
 
 	if (g_strcmp0 (name, GCR_DBUS_PROMPTER_SYSTEM_BUS_NAME) == 0)
 		acquired_system_prompter = TRUE;
@@ -113,7 +116,7 @@ on_name_lost (GDBusConnection *connection,
               const gchar *name,
               gpointer user_data)
 {
-	g_debug ("lost name: %s", name);
+	_gcr_debug ("lost name: %s", name);
 
 	/* Called like so when no connection can be made */
 	if (connection == NULL) {
@@ -121,10 +124,10 @@ on_name_lost (GDBusConnection *connection,
 		gtk_main_quit ();
 
 	} else if (g_strcmp0 (name, GCR_DBUS_PROMPTER_SYSTEM_BUS_NAME) == 0) {
-		acquired_system_prompter = FALSE;
+		acquired_system_prompter = TRUE;
 
 	} else if (g_strcmp0 (name, GCR_DBUS_PROMPTER_PRIVATE_BUS_NAME) == 0) {
-		acquired_private_prompter = FALSE;
+		acquired_private_prompter = TRUE;
 
 	}
 }
@@ -206,6 +209,9 @@ main (int argc, char *argv[])
 	guint system_owner_id;
 	guint private_owner_id;
 
+#if !GLIB_CHECK_VERSION(2,35,0)
+	g_type_init ();
+#endif
 	gtk_init (&argc, &argv);
 
 #ifdef HAVE_LOCALE_H

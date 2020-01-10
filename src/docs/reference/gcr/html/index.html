@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gcr Library Reference Manual: Gcr Library Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<title>Gcr Library Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="Gcr Library Reference Manual">
 <link rel="next" href="certificates.html" title="Part I. Certificates">
-<meta name="generator" content="GTK-Doc V1.27.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.18 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -15,7 +15,7 @@
 <div>
 <div><table class="navigation" id="top" width="100%" cellpadding="2" cellspacing="0"><tr><th valign="middle"><p class="title">Gcr Library Reference Manual</p></th></tr></table></div>
 <div><p class="releaseinfo">
-			for Gcr 3.28.0
+			for Gcr 3.8.1
 .
 			An online version of this documentation can be found at
 			<a class="ulink" href="http://developer.gnome.org/gcr/stable/" target="_top">http://developer.gnome.org/gcr/stable/</a>.
@@ -48,46 +48,46 @@
 <span class="refentrytitle"><a href="GcrCollection.html">GcrCollection</a></span><span class="refpurpose"> — A collection of objects.</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrComparable.html">GcrComparable</a></span><span class="refpurpose"> — Interface for comparing objects</span>
+<span class="refentrytitle"><a href="gcr-GcrComparable.html">GcrComparable</a></span><span class="refpurpose"> — Interface for comparing objects</span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="GcrSimpleCollection.html">GcrSimpleCollection</a></span><span class="refpurpose"> — A simple implementation of GcrCollection</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrCollectionModel.html">GcrCollectionModel</a></span><span class="refpurpose"> — A GtkTreeModel that represents a collection</span>
+<span class="refentrytitle"><a href="gcr-gcr-collection-model.html">gcr-collection-model</a></span><span class="refpurpose"></span>
 </dt>
 </dl></dd>
 <dt><span class="part"><a href="widgets.html">III. Widgets</a></span></dt>
 <dd><dl>
 <dt>
-<span class="refentrytitle"><a href="GcrCertificateWidget.html">GcrCertificateWidget</a></span><span class="refpurpose"> — Certificate widget and renderer</span>
+<span class="refentrytitle"><a href="gcr-gcr-certificate-widget.html">gcr-certificate-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrKeyWidget.html">GcrKeyWidget</a></span><span class="refpurpose"> — Key widget and renderer</span>
+<span class="refentrytitle"><a href="gcr-gcr-key-widget.html">gcr-key-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="gcr-GcrColumn.html">GcrColumn</a></span><span class="refpurpose"> — Column information for selector or model.</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrComboSelector.html">GcrComboSelector</a></span><span class="refpurpose"> — A selector widget to select a single certificate or key.</span>
+<span class="refentrytitle"><a href="gcr-gcr-combo-selector.html">gcr-combo-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrImportButton.html">GcrImportButton</a></span><span class="refpurpose"> — Button which imports parsed certificates and keys</span>
+<span class="refentrytitle"><a href="gcr-gcr-import-button.html">gcr-import-button</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrListSelector.html">GcrListSelector</a></span><span class="refpurpose"> — A selector widget to one or more certificates from a list.</span>
+<span class="refentrytitle"><a href="gcr-gcr-list-selector.html">gcr-list-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrTreeSelector.html">GcrTreeSelector</a></span><span class="refpurpose"> — A selector widget to select certificates or keys.</span>
+<span class="refentrytitle"><a href="gcr-gcr-tree-selector.html">gcr-tree-selector</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrRenderer.html">GcrRenderer</a></span><span class="refpurpose"> — An interface implemented by renderers.</span>
+<span class="refentrytitle"><a href="gcr-gcr-renderer.html">gcr-renderer</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrViewer.html">GcrViewer</a></span><span class="refpurpose"> — A viewer which can hold renderers</span>
+<span class="refentrytitle"><a href="gcr-gcr-viewer.html">gcr-viewer</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrViewerWidget.html">GcrViewerWidget</a></span><span class="refpurpose"> — A widget which shows certificates or keys</span>
+<span class="refentrytitle"><a href="gcr-gcr-viewer-widget.html">gcr-viewer-widget</a></span><span class="refpurpose"></span>
 </dt>
 <dt><span class="chapter"><a href="ch01.html">Widget Gallery</a></span></dt>
 </dl></dd>
@@ -97,16 +97,13 @@
 <span class="refentrytitle"><a href="GcrPrompt.html">GcrPrompt</a></span><span class="refpurpose"> — a user prompt</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrPromptDialog.html">GcrPromptDialog</a></span><span class="refpurpose"> — a GTK+ dialog prompt</span>
+<span class="refentrytitle"><a href="gcr-gcr-prompt-dialog.html">gcr-prompt-dialog</a></span><span class="refpurpose"></span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="GcrSystemPrompt.html">GcrSystemPrompt</a></span><span class="refpurpose"> — a system modal prompt</span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="GcrSystemPrompter.html">GcrSystemPrompter</a></span><span class="refpurpose"> — a prompter which displays system prompts</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="gcr-GcrSshAskpass.html">GcrSshAskpass</a></span><span class="refpurpose"> — Allows an ssh command to callback for a password</span>
 </dt>
 </dl></dd>
 <dt><span class="part"><a href="storage.html">V. Storage</a></span></dt>
@@ -128,10 +125,7 @@ verifying certificates.</span>
 <dt><span class="part"><a href="misc.html">VI. Miscellaneous</a></span></dt>
 <dd><dl>
 <dt>
-<span class="refentrytitle"><a href="gcr-Library-Utilities.html">Library Utilities</a></span><span class="refpurpose"> — Library utilities such as version checks</span>
-</dt>
-<dt>
-<span class="refentrytitle"><a href="gcr-Library-PKCS#11.html">Library PKCS#11</a></span><span class="refpurpose"> — functions for manipulating GCR library global settings.</span>
+<span class="refentrytitle"><a href="gcr-Library-Settings.html">Library Settings</a></span><span class="refpurpose"> — functions for manipulating GCR library global settings.</span>
 </dt>
 <dt>
 <span class="refentrytitle"><a href="gcr-Key-Fingerprints.html">Key Fingerprints</a></span><span class="refpurpose"> — Fingerprints for public and private keys</span>
@@ -143,13 +137,14 @@ verifying certificates.</span>
 <span class="refentrytitle"><a href="gcr-Non-pageable-Memory.html">Non-pageable Memory</a></span><span class="refpurpose"> — Secure non-pageable memory</span>
 </dt>
 <dt>
-<span class="refentrytitle"><a href="GcrSecureEntryBuffer.html">GcrSecureEntryBuffer</a></span><span class="refpurpose"> — a GtkEntryBuffer that uses non-pageable memory</span>
+<span class="refentrytitle"><a href="gcr-gcr-secure-entry-buffer.html">gcr-secure-entry-buffer</a></span><span class="refpurpose"></span>
 </dt>
 </dl></dd>
 <dt><span class="glossary"><a href="annotation-glossary.html">Annotation Glossary</a></span></dt>
 </dl></div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.27.1</div>
+<hr>
+          Generated by GTK-Doc V1.18</div>
 </body>
 </html>

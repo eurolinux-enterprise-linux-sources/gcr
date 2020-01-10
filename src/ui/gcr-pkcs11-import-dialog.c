@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -77,11 +79,10 @@ _gcr_pkcs11_import_dialog_constructed (GObject *obj)
 	GtkEntryBuffer *buffer;
 	GtkWidget *widget;
 	GtkBox *contents;
-	GtkWidget *button;
 
 	G_OBJECT_CLASS (_gcr_pkcs11_import_dialog_parent_class)->constructed (obj);
 
-	if (!gtk_builder_add_from_resource (self->builder, "/org/gnome/gcr/ui/gcr-pkcs11-import-dialog.ui", &error)) {
+	if (!gtk_builder_add_from_file (self->builder, UIDIR "gcr-pkcs11-import-dialog.ui", &error)) {
 		g_warning ("couldn't load ui builder file: %s", error->message);
 		return;
 	}
@@ -111,10 +112,8 @@ _gcr_pkcs11_import_dialog_constructed (GObject *obj)
 	gtk_entry_set_activates_default (self->label_entry, TRUE);
 
 	/* Add our various buttons */
-	button = gtk_dialog_add_button (GTK_DIALOG (self), _("_Cancel"), GTK_RESPONSE_CANCEL);
-	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
-	button = gtk_dialog_add_button (GTK_DIALOG (self), _("_OK"), GTK_RESPONSE_OK);
-	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
+	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+	gtk_dialog_add_button (GTK_DIALOG (self), GTK_STOCK_OK, GTK_RESPONSE_OK);
 	gtk_dialog_set_default_response (GTK_DIALOG (self), GTK_RESPONSE_OK);
 
 	gtk_window_set_modal (GTK_WINDOW (self), TRUE);

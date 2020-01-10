@@ -1,204 +1,189 @@
 # Thai translation for gnome-keyring.
-# Copyright (C) 2004-2014 Free Software Foundation, Inc.
+# Copyright (C) 2004-2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-keyring package.
 # Paisa Seeluangsawat <paisa@users.sf.net>, 2004.
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2005-2012.
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2013-2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-keyring\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "keyring&keywords=I18N+L10N&component=gcr\n"
-"POT-Creation-Date: 2014-05-11 16:53+0000\n"
-"PO-Revision-Date: 2014-06-19 15:48+0700\n"
-"Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
+"POT-Creation-Date: 2012-05-15 19:05+0000\n"
+"PO-Revision-Date: 2012-09-22 21:54+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
-"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../egg/egg-oid.c:40
+#: ../egg/egg-oid.c:41
 msgid "Domain Component"
 msgstr "องค์ประกอบโดเมน"
 
-#: ../egg/egg-oid.c:42 ../ui/gcr-gnupg-renderer.c:408
-#: ../ui/gcr-gnupg-renderer.c:577
+#: ../egg/egg-oid.c:43 ../gcr/gcr-gnupg-renderer.c:409
+#: ../gcr/gcr-gnupg-renderer.c:578
 msgid "User ID"
 msgstr "ID ผู้ใช้"
 
-#: ../egg/egg-oid.c:45
+#: ../egg/egg-oid.c:46
 msgid "Email Address"
 msgstr "ที่อยู่อีเมล"
 
-#: ../egg/egg-oid.c:53
+#: ../egg/egg-oid.c:54
 msgid "Date of Birth"
 msgstr "วันเกิด"
 
-#: ../egg/egg-oid.c:55
+#: ../egg/egg-oid.c:56
 msgid "Place of Birth"
 msgstr "สถานที่เกิด"
 
-#: ../egg/egg-oid.c:57
+#: ../egg/egg-oid.c:58
 msgid "Gender"
 msgstr "เพศ"
 
-#: ../egg/egg-oid.c:59
+#: ../egg/egg-oid.c:60
 msgid "Country of Citizenship"
 msgstr "สัญชาติ"
 
-#: ../egg/egg-oid.c:61
+#: ../egg/egg-oid.c:62
 msgid "Country of Residence"
 msgstr "ประเทศที่พำนัก"
 
-#: ../egg/egg-oid.c:64
+#: ../egg/egg-oid.c:65
 msgid "Common Name"
 msgstr "ชื่อสามัญ"
 
-#: ../egg/egg-oid.c:66
+#: ../egg/egg-oid.c:67
 msgid "Surname"
 msgstr "นามสกุล"
 
-#: ../egg/egg-oid.c:68 ../ui/gcr-certificate-renderer.c:559
+#: ../egg/egg-oid.c:69 ../gcr/gcr-certificate-renderer.c:557
 msgid "Serial Number"
 msgstr "หมายเลขลำดับ"
 
-#: ../egg/egg-oid.c:70
+#: ../egg/egg-oid.c:71
 msgid "Country"
 msgstr "ประเทศ"
 
-#: ../egg/egg-oid.c:72
+#: ../egg/egg-oid.c:73
 msgid "Locality"
 msgstr "ย่านที่อยู่"
 
-#: ../egg/egg-oid.c:74
+#: ../egg/egg-oid.c:75
 msgid "State"
 msgstr "รัฐ"
 
-#: ../egg/egg-oid.c:76
+#: ../egg/egg-oid.c:77
 msgid "Street"
 msgstr "ถนน"
 
-#: ../egg/egg-oid.c:78
+#: ../egg/egg-oid.c:79
 msgid "Organization"
 msgstr "องค์กร"
 
-#: ../egg/egg-oid.c:80
+#: ../egg/egg-oid.c:81
 msgid "Organizational Unit"
 msgstr "หน่วยงานในองค์กร"
 
-#: ../egg/egg-oid.c:82
+#: ../egg/egg-oid.c:83
 msgid "Title"
 msgstr "ตำแหน่ง"
 
-#: ../egg/egg-oid.c:84
+#: ../egg/egg-oid.c:85
 msgid "Telephone Number"
 msgstr "หมายเลขโทรศัพท์"
 
-#: ../egg/egg-oid.c:86
+#: ../egg/egg-oid.c:87
 msgid "Given Name"
 msgstr "ชื่อ"
 
-#: ../egg/egg-oid.c:88
+#: ../egg/egg-oid.c:89
 msgid "Initials"
 msgstr "ชื่อย่อ"
 
-#: ../egg/egg-oid.c:90
+#: ../egg/egg-oid.c:91
 msgid "Generation Qualifier"
 msgstr "คำระบุรุ่น"
 
-#: ../egg/egg-oid.c:92
+#: ../egg/egg-oid.c:93
 msgid "DN Qualifier"
 msgstr "DN Qualifier"
 
-#: ../egg/egg-oid.c:94
+#: ../egg/egg-oid.c:95
 msgid "Pseudonym"
 msgstr "นามปากกา"
 
-#: ../egg/egg-oid.c:97 ../ui/gcr-gnupg-renderer.c:199
-#: ../ui/gcr-key-renderer.c:385
+#: ../egg/egg-oid.c:98 ../gcr/gcr-gnupg-renderer.c:200
+#: ../gcr/gcr-key-renderer.c:430
 msgid "RSA"
 msgstr "RSA"
 
-#: ../egg/egg-oid.c:98
+#: ../egg/egg-oid.c:99
 msgid "MD2 with RSA"
 msgstr "MD2 โดยใช้ RSA"
 
-#: ../egg/egg-oid.c:99
+#: ../egg/egg-oid.c:100
 msgid "MD5 with RSA"
 msgstr "MD5 โดยใช้ RSA"
 
-#: ../egg/egg-oid.c:100
+#: ../egg/egg-oid.c:101
 msgid "SHA1 with RSA"
 msgstr "SHA1 โดยใช้ RSA"
 
-#: ../egg/egg-oid.c:102 ../ui/gcr-gnupg-renderer.c:203
-#: ../ui/gcr-key-renderer.c:387
+#: ../egg/egg-oid.c:103 ../gcr/gcr-gnupg-renderer.c:204
+#: ../gcr/gcr-key-renderer.c:432
 msgid "DSA"
 msgstr "DSA"
 
-#: ../egg/egg-oid.c:103
+#: ../egg/egg-oid.c:104
 msgid "SHA1 with DSA"
 msgstr "SHA1 โดยใช้ DSA"
 
-#: ../egg/egg-oid.c:105 ../ui/gcr-key-renderer.c:389
-msgid "Elliptic Curve"
-msgstr "เส้นโค้งเชิงวงรี"
-
-#: ../egg/egg-oid.c:106
-msgid "SHA1 with ECDSA"
-msgstr "SHA1 โดยใช้ ECDSA"
-
-#: ../egg/egg-oid.c:107
-msgid "SHA224 with ECDSA"
-msgstr "SHA224 โดยใช้ ECDSA"
-
-#: ../egg/egg-oid.c:108
-msgid "SHA256 with ECDSA"
-msgstr "SHA256 โดยใช้ ECDSA"
-
-#: ../egg/egg-oid.c:109
-msgid "SHA384 with ECDSA"
-msgstr "SHA384 โดยใช้ ECDSA"
-
-#: ../egg/egg-oid.c:110
-msgid "SHA512 with ECDSA"
-msgstr "SHA512 โดยใช้ ECDSA"
-
 #. Extended Key Usages
-#: ../egg/egg-oid.c:113
+#: ../egg/egg-oid.c:107
 msgid "Server Authentication"
 msgstr "การยืนยันตัวบุคคลของแม่ข่าย"
 
-#: ../egg/egg-oid.c:114
+#: ../egg/egg-oid.c:108
 msgid "Client Authentication"
 msgstr "การยืนยันตัวบุคคลของลูกข่าย"
 
-#: ../egg/egg-oid.c:115
+#: ../egg/egg-oid.c:109
 msgid "Code Signing"
 msgstr "การเซ็นกำกับโค้ด"
 
-#: ../egg/egg-oid.c:116
+#: ../egg/egg-oid.c:110
 msgid "Email Protection"
 msgstr "การปกป้องอีเมล"
 
-#: ../egg/egg-oid.c:117
+#: ../egg/egg-oid.c:111
 msgid "Time Stamping"
 msgstr "การลงเวลา"
 
-#: ../gck/gck-module.c:344
+#: ../gck/gck-module.c:352
 #, c-format
 msgid "Error loading PKCS#11 module: %s"
 msgstr "เกิดข้อผิดพลาดขณะโหลดมอดูล PKCS#11: %s"
 
-#: ../gck/gck-module.c:358
+#: ../gck/gck-module.c:359
+#, c-format
+msgid "Invalid PKCS#11 module: %s"
+msgstr "มอดูล PKCS#11 ไม่ถูกต้อง: %s"
+
+#: ../gck/gck-module.c:368
+#, c-format
+msgid "Couldn't setup PKCS#11 module: %s"
+msgstr "ไม่สามารถตั้งค่ามอดูล PKCS#11: %s"
+
+#: ../gck/gck-module.c:384
 #, c-format
 msgid "Couldn't initialize PKCS#11 module: %s"
 msgstr "ไม่สามารถตั้งค่าเริ่มต้นมอดูล PKCS#11: %s"
 
-#: ../gck/gck-modules.c:62
+#: ../gck/gck-modules.c:67
 #, c-format
 msgid "Couldn't initialize registered PKCS#11 modules: %s"
 msgstr "ไม่สามารถตั้งค่าเริ่มต้นมอดูล PKCS#11 ที่ลงทะเบียนไว้: %s"
@@ -220,36 +205,67 @@ msgstr "URI มีรูปแบบที่ผิดไวยากรณ์"
 msgid "The URI has a bad version number."
 msgstr "URI มีเลขรุ่นที่ใช้การไม่ได้"
 
-#: ../gcr/gcr-callback-output-stream.c:62
-#: ../gcr/gcr-callback-output-stream.c:79
+#: ../gcr/gcr-callback-output-stream.c:64
+#: ../gcr/gcr-callback-output-stream.c:81
 #, c-format
 msgid "The stream was closed"
 msgstr "สตรีมถูกปิดไปแล้ว"
 
 #. later
 #. later
-#: ../gcr/gcr-certificate.c:350 ../gcr/gcr-gnupg-key.c:430
+#: ../gcr/gcr-certificate.c:308 ../gcr/gcr-gnupg-key.c:432
 msgctxt "column"
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../gcr/gcr-certificate.c:352
+#: ../gcr/gcr-certificate.c:310
 msgctxt "column"
 msgid "Issued By"
 msgstr "ออกให้โดย"
 
 #. later
-#: ../gcr/gcr-certificate.c:354
+#: ../gcr/gcr-certificate.c:312
 msgctxt "column"
 msgid "Expires"
 msgstr "หมดอายุ"
 
-#: ../gcr/gcr-certificate.c:1192 ../gcr/gcr-parser.c:325
-#: ../ui/gcr-certificate-renderer.c:102 ../ui/gcr-certificate-exporter.c:464
+#: ../gcr/gcr-certificate.c:1133 ../gcr/gcr-certificate-exporter.c:463
+#: ../gcr/gcr-certificate-renderer.c:102 ../gcr/gcr-parser.c:322
 msgid "Certificate"
 msgstr "ใบรับรอง"
 
-#: ../gcr/gcr-certificate-extensions.c:177
+#: ../gcr/gcr-certificate-exporter.c:225
+msgid ""
+"<b>A file already exists with this name.</b>\n"
+"\n"
+"Do you want to replace it with a new file?"
+msgstr ""
+"<b>มีแฟ้มชื่อนี้อยู่ก่อนแล้ว</b>\n"
+"\n"
+"คุณต้องการเขียนทับหรือไม่?"
+
+#: ../gcr/gcr-certificate-exporter.c:228
+msgid "_Replace"
+msgstr "เขียน_ทับ"
+
+#: ../gcr/gcr-certificate-exporter.c:258
+#, c-format
+msgid "The operation was cancelled."
+msgstr "การกระทำถูกยกเลิก"
+
+#: ../gcr/gcr-certificate-exporter.c:302
+msgid "Export certificate"
+msgstr "ส่งออกใบรับรอง"
+
+#: ../gcr/gcr-certificate-exporter.c:314
+msgid "Certificate files"
+msgstr "แฟ้มใบรับรอง"
+
+#: ../gcr/gcr-certificate-exporter.c:325
+msgid "PEM files"
+msgstr "แฟ้ม PEM"
+
+#: ../gcr/gcr-certificate-extensions.c:178
 msgid "Other Name"
 msgstr "ชื่ออื่น"
 
@@ -261,64 +277,299 @@ msgstr "ที่อยู่ XMPP"
 msgid "DNS SRV"
 msgstr "DNS SRV"
 
-#: ../gcr/gcr-certificate-extensions.c:203 ../ui/gcr-gnupg-renderer.c:421
-#: ../ui/gcr-gnupg-renderer.c:703
+#: ../gcr/gcr-certificate-extensions.c:204 ../gcr/gcr-gnupg-renderer.c:422
+#: ../gcr/gcr-gnupg-renderer.c:704
 msgid "Email"
 msgstr "อีเมล"
 
-#: ../gcr/gcr-certificate-extensions.c:211
+#: ../gcr/gcr-certificate-extensions.c:212
 msgid "DNS"
 msgstr "DNS"
 
-#: ../gcr/gcr-certificate-extensions.c:219
+#: ../gcr/gcr-certificate-extensions.c:220
 msgid "X400 Address"
 msgstr "ที่อยู่ X400"
 
-#: ../gcr/gcr-certificate-extensions.c:226
+#: ../gcr/gcr-certificate-extensions.c:227
 msgid "Directory Name"
 msgstr "ชื่อสารบบ"
 
-#: ../gcr/gcr-certificate-extensions.c:234
+#: ../gcr/gcr-certificate-extensions.c:235
 msgid "EDI Party Name"
 msgstr "ชื่อภาคี EDI"
 
-#: ../gcr/gcr-certificate-extensions.c:241
+#: ../gcr/gcr-certificate-extensions.c:242
 msgid "URI"
 msgstr "URI"
 
-#: ../gcr/gcr-certificate-extensions.c:249
+#: ../gcr/gcr-certificate-extensions.c:250
 msgid "IP Address"
 msgstr "ที่อยู่ไอพี"
 
-#: ../gcr/gcr-certificate-extensions.c:257
+#: ../gcr/gcr-certificate-extensions.c:258
 msgid "Registered ID"
 msgstr "ID ที่ลงทะเบียนไว้"
 
-#: ../gcr/gcr-certificate-request.c:415
+#: ../gcr/gcr-certificate-renderer.c:117
+msgid "Basic Constraints"
+msgstr "ข้อบังคับพื้นฐาน"
+
+#: ../gcr/gcr-certificate-renderer.c:119
+msgid "Certificate Authority"
+msgstr "องค์กรออกใบรับรอง"
+
+#: ../gcr/gcr-certificate-renderer.c:120 ../gcr/gcr-certificate-renderer.c:961
+msgid "Yes"
+msgstr "ใช่"
+
+#: ../gcr/gcr-certificate-renderer.c:120 ../gcr/gcr-certificate-renderer.c:961
+msgid "No"
+msgstr "ไม่"
+
+#: ../gcr/gcr-certificate-renderer.c:123
+msgid "Max Path Length"
+msgstr "ความยาวพาธสูงสุด"
+
+#: ../gcr/gcr-certificate-renderer.c:124
+msgid "Unlimited"
+msgstr "ไม่จำกัด"
+
+#: ../gcr/gcr-certificate-renderer.c:143
+msgid "Extended Key Usage"
+msgstr "การใช้งานกุญแจเพิ่มเติม"
+
+#: ../gcr/gcr-certificate-renderer.c:154
+msgid "Allowed Purposes"
+msgstr "การใช้งานที่อนุญาต"
+
+#: ../gcr/gcr-certificate-renderer.c:174
+msgid "Subject Key Identifier"
+msgstr "ตัวระบุกุญแจของผู้รับการรับรอง"
+
+#: ../gcr/gcr-certificate-renderer.c:175
+msgid "Key Identifier"
+msgstr "ตัวระบุกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:186
+msgid "Digital signature"
+msgstr "ลายเซ็นดิจิทัล"
+
+#: ../gcr/gcr-certificate-renderer.c:187
+msgid "Key encipherment"
+msgstr "การเข้ารหัสลับกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:188
+msgid "Data encipherment"
+msgstr "การเข้ารหัสลับข้อมูล"
+
+#: ../gcr/gcr-certificate-renderer.c:189
+msgid "Key agreement"
+msgstr "การตกลงเห็นพ้องของกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:190
+msgid "Certificate signature"
+msgstr "ลายเซ็นกำกับใบรับรอง"
+
+#: ../gcr/gcr-certificate-renderer.c:191
+msgid "Revocation list signature"
+msgstr "ลายเซ็นกำกับรายการเพิกถอน"
+
+#: ../gcr/gcr-certificate-renderer.c:216
+msgid "Key Usage"
+msgstr "การใช้งานกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:217
+msgid "Usages"
+msgstr "การใช้งาน"
+
+#: ../gcr/gcr-certificate-renderer.c:237
+msgid "Subject Alternative Names"
+msgstr "ชื่ออื่นของผู้รับการรับรอง"
+
+#: ../gcr/gcr-certificate-renderer.c:264
+msgid "Extension"
+msgstr "ส่วนขยาย"
+
+#: ../gcr/gcr-certificate-renderer.c:268
+msgid "Identifier"
+msgstr "ตัวระบุ"
+
+#: ../gcr/gcr-certificate-renderer.c:269
+#: ../gcr/gcr-certificate-request-renderer.c:272
+#: ../gcr/gcr-gnupg-renderer.c:413 ../gcr/gcr-gnupg-renderer.c:430
+msgid "Value"
+msgstr "ค่า"
+
+#: ../gcr/gcr-certificate-renderer.c:294
+msgid "Couldn't export the certificate."
+msgstr "ไม่สามารถส่งออกใบรับรอง"
+
+#: ../gcr/gcr-certificate-renderer.c:519
+#: ../gcr/gcr-certificate-request-renderer.c:313
+msgid "Identity"
+msgstr "ชื่อ"
+
+#: ../gcr/gcr-certificate-renderer.c:523
+msgid "Verified by"
+msgstr "ตรวจสอบโดย"
+
+#: ../gcr/gcr-certificate-renderer.c:530 ../gcr/gcr-gnupg-renderer.c:718
+msgid "Expires"
+msgstr "หมดอายุ"
+
+#. The subject
+#: ../gcr/gcr-certificate-renderer.c:537
+#: ../gcr/gcr-certificate-request-renderer.c:319
+msgid "Subject Name"
+msgstr "ชื่อผู้รับการรับรอง"
+
+#. The Issuer
+#: ../gcr/gcr-certificate-renderer.c:542
+msgid "Issuer Name"
+msgstr "ชื่อผู้ออกให้"
+
+#. The Issued Parameters
+#: ../gcr/gcr-certificate-renderer.c:547
+msgid "Issued Certificate"
+msgstr "ใบรับรองที่ออก"
+
+#: ../gcr/gcr-certificate-renderer.c:552
+#: ../gcr/gcr-certificate-request-renderer.c:330
+msgid "Version"
+msgstr "รุ่น"
+
+#: ../gcr/gcr-certificate-renderer.c:566
+msgid "Not Valid Before"
+msgstr "ห้ามใช้ก่อน"
+
+#: ../gcr/gcr-certificate-renderer.c:571
+msgid "Not Valid After"
+msgstr "ห้ามใช้หลัง"
+
+#. Fingerprints
+#: ../gcr/gcr-certificate-renderer.c:576
+msgid "Certificate Fingerprints"
+msgstr "ลายนิ้วมือของใบรับรอง"
+
+#. Public Key Info
+#: ../gcr/gcr-certificate-renderer.c:582
+#: ../gcr/gcr-certificate-request-renderer.c:333
+#: ../gcr/gcr-certificate-request-renderer.c:379
+msgid "Public Key Info"
+msgstr "ข้อมูลกุญแจสาธารณะ"
+
+#. Signature
+#: ../gcr/gcr-certificate-renderer.c:597 ../gcr/gcr-certificate-renderer.c:918
+#: ../gcr/gcr-certificate-request-renderer.c:349
+#: ../gcr/gcr-certificate-request-renderer.c:386
+#: ../gcr/gcr-gnupg-renderer.c:559
+msgid "Signature"
+msgstr "ลายเซ็น"
+
+#: ../gcr/gcr-certificate-renderer.c:864
+msgid "Key Algorithm"
+msgstr "อัลกอริทึมของกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:869
+msgid "Key Parameters"
+msgstr "พารามิเตอร์สำหรับกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:877 ../gcr/gcr-gnupg-renderer.c:352
+msgid "Key Size"
+msgstr "ขนาดกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:885
+msgid "Key SHA1 Fingerprint"
+msgstr "ลายนิ้วมือ SHA1 ของกุญแจ"
+
+#: ../gcr/gcr-certificate-renderer.c:890 ../gcr/gcr-gnupg-renderer.c:737
+#: ../gcr/gcr-key-renderer.c:415 ../gcr/gcr-parser.c:325
+msgid "Public Key"
+msgstr "กุญแจสาธารณะ"
+
+#: ../gcr/gcr-certificate-renderer.c:907
+msgid "Signature Algorithm"
+msgstr "อัลกอริทึมของลายเซ็น"
+
+#: ../gcr/gcr-certificate-renderer.c:911
+msgid "Signature Parameters"
+msgstr "พารามิเตอร์สำหรับลายเซ็น"
+
+#: ../gcr/gcr-certificate-renderer.c:960
+msgid "Critical"
+msgstr "วิกฤติ"
+
+#: ../gcr/gcr-certificate-request.c:418
 #, c-format
 msgid "Unsupported key type for certificate request"
 msgstr "ไม่รองรับกุญแจชนิดนี้สำหรับคำร้องขอใบรับรอง"
 
-#: ../gcr/gcr-certificate-request.c:502 ../gcr/gcr-certificate-request.c:587
+#: ../gcr/gcr-certificate-request.c:508 ../gcr/gcr-certificate-request.c:593
 #, c-format
 msgid "The key cannot be used to sign the request"
 msgstr "กุญแจนี้ไม่สามารถใช้เซ็นกำกับใบคำร้องได้"
 
-#: ../gcr/gcr-gnupg-importer.c:94
+#. The certificate request type
+#: ../gcr/gcr-certificate-request-renderer.c:95
+#: ../gcr/gcr-certificate-request-renderer.c:308
+#: ../gcr/gcr-certificate-request-renderer.c:323
+#: ../gcr/gcr-certificate-request-renderer.c:366
+#: ../gcr/gcr-certificate-request-renderer.c:371
+msgid "Certificate request"
+msgstr "คำร้องขอใบรับรอง"
+
+#: ../gcr/gcr-certificate-request-renderer.c:261
+msgid "Attribute"
+msgstr "แอตทริบิวต์"
+
+#: ../gcr/gcr-certificate-request-renderer.c:265
+#: ../gcr/gcr-certificate-request-renderer.c:324
+#: ../gcr/gcr-certificate-request-renderer.c:372
+#: ../gcr/gcr-gnupg-renderer.c:590 ../gcr/gcr-gnupg-renderer.c:592
+msgid "Type"
+msgstr "ชนิด"
+
+#: ../gcr/gcr-certificate-request-renderer.c:376
+msgid "Challenge"
+msgstr "คำท้า"
+
+#: ../gcr/gcr-display-view.c:319
+msgid "_Details"
+msgstr "_รายละเอียด"
+
+#: ../gcr/gcr-failure-renderer.c:160
+#, c-format
+msgid "Could not display '%s'"
+msgstr "ไม่สามารถแสดง '%s'"
+
+#: ../gcr/gcr-failure-renderer.c:162
+msgid "Could not display file"
+msgstr "ไม่สามารถแสดงแฟ้ม"
+
+#: ../gcr/gcr-failure-renderer.c:167
+msgid "Reason"
+msgstr "เหตุผล"
+
+#: ../gcr/gcr-failure-renderer.c:217
+#, c-format
+msgid "Cannot display a file of this type."
+msgstr "ไม่สามารถแสดงแฟ้มชนิดนี้"
+
+#: ../gcr/gcr-gnupg-importer.c:96
 msgid "GnuPG Keyring"
 msgstr "พวงกุญแจ GnuPG"
 
-#: ../gcr/gcr-gnupg-importer.c:96
+#: ../gcr/gcr-gnupg-importer.c:98
 #, c-format
 msgid "GnuPG Keyring: %s"
 msgstr "พวงกุญแจ GnuPG: %s"
 
-#: ../gcr/gcr-gnupg-key.c:143 ../gcr/gcr-parser.c:331
-#: ../ui/gcr-gnupg-renderer.c:87
+#: ../gcr/gcr-gnupg-key.c:145 ../gcr/gcr-gnupg-renderer.c:88
+#: ../gcr/gcr-parser.c:328
 msgid "PGP Key"
 msgstr "กุญแจ PGP"
 
-#: ../gcr/gcr-gnupg-key.c:432
+#: ../gcr/gcr-gnupg-key.c:434
 msgctxt "column"
 msgid "Key ID"
 msgstr "ID กุญแจ"
@@ -333,800 +584,496 @@ msgstr "โพรเซส gnupg จบการทำงานด้วยร�
 msgid "Gnupg process was terminated with signal: %d"
 msgstr "โพรเซส gnupg จบการทำงานโดยสัญญาณ: %d"
 
-#: ../gcr/gcr-gnupg-process.c:927 ../gcr/gcr-parser.c:2551
-#: ../gcr/gcr-parser.c:3157 ../gcr/gcr-system-prompt.c:924
+#: ../gcr/gcr-gnupg-process.c:927 ../gcr/gcr-parser.c:2481
+#: ../gcr/gcr-parser.c:2980
 msgid "The operation was cancelled"
 msgstr "การกระทำถูกยกเลิก"
 
-#: ../gcr/gcr-parser.c:322 ../ui/gcr-key-renderer.c:361
+#: ../gcr/gcr-gnupg-renderer.c:202
+msgid "Elgamal"
+msgstr "Elgamal"
+
+#: ../gcr/gcr-gnupg-renderer.c:215
+msgid "Encrypt"
+msgstr "เข้ารหัสลับ"
+
+#: ../gcr/gcr-gnupg-renderer.c:217
+msgid "Sign"
+msgstr "เซ็นกำกับ"
+
+#: ../gcr/gcr-gnupg-renderer.c:219
+msgid "Certify"
+msgstr "รับรอง"
+
+#: ../gcr/gcr-gnupg-renderer.c:221
+msgid "Authenticate"
+msgstr "ยืนยันตัวบุคคล"
+
+#: ../gcr/gcr-gnupg-renderer.c:223 ../gcr/gcr-gnupg-renderer.c:258
+msgid "Disabled"
+msgstr "ปิดใช้งาน"
+
+#: ../gcr/gcr-gnupg-renderer.c:254 ../gcr/gcr-gnupg-renderer.c:413
+#: ../gcr/gcr-key-renderer.c:434 ../gcr/gcr-key-renderer.c:439
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: ../gcr/gcr-gnupg-renderer.c:256
+msgid "Invalid"
+msgstr "ใช้ไม่ได้"
+
+#: ../gcr/gcr-gnupg-renderer.c:260
+msgid "Revoked"
+msgstr "เพิกถอนแล้ว"
+
+#: ../gcr/gcr-gnupg-renderer.c:262
+msgid "Expired"
+msgstr "หมดอายุ"
+
+#: ../gcr/gcr-gnupg-renderer.c:264
+msgid "Undefined trust"
+msgstr "ไม่กำหนดความเชื่อถือ"
+
+#: ../gcr/gcr-gnupg-renderer.c:266
+msgid "Distrusted"
+msgstr "ไม่เชื่อถือ"
+
+#: ../gcr/gcr-gnupg-renderer.c:268
+msgid "Marginally trusted"
+msgstr "เชื่อถือก้ำกึ่ง"
+
+#: ../gcr/gcr-gnupg-renderer.c:270
+msgid "Fully trusted"
+msgstr "เชื่อถือเต็มที่"
+
+#: ../gcr/gcr-gnupg-renderer.c:272
+msgid "Ultimately trusted"
+msgstr "เชื่อถือเต็มพิกัด"
+
+#: ../gcr/gcr-gnupg-renderer.c:286
+msgid "The information in this key has not yet been verified"
+msgstr "ข้อมูลในกุญแจนี้ยังไม่ผ่านการตรวจสอบ"
+
+#: ../gcr/gcr-gnupg-renderer.c:289
+msgid "This key is invalid"
+msgstr "กุญแจนี้ข้อมูลไม่ถูกต้อง"
+
+#: ../gcr/gcr-gnupg-renderer.c:292
+msgid "This key has been disabled"
+msgstr "กุญแจนี้ถูกปิดใช้งาน"
+
+#: ../gcr/gcr-gnupg-renderer.c:295
+msgid "This key has been revoked"
+msgstr "กุญแจนี้ถูกเพิกถอนแล้ว"
+
+#: ../gcr/gcr-gnupg-renderer.c:298
+msgid "This key has expired"
+msgstr "กุญแจนี้หมดอายุแล้ว"
+
+#: ../gcr/gcr-gnupg-renderer.c:303
+msgid "This key is distrusted"
+msgstr "กุญแจนี้ไม่ได้รับความเชื่อถือ"
+
+#: ../gcr/gcr-gnupg-renderer.c:306
+msgid "This key is marginally trusted"
+msgstr "กุญแจนี้ได้รับความเชื่อถือแบบก้ำกึ่ง"
+
+#: ../gcr/gcr-gnupg-renderer.c:309
+msgid "This key is fully trusted"
+msgstr "กุญแจนี้ได้รับความเชื่อถือเต็มที่"
+
+#: ../gcr/gcr-gnupg-renderer.c:312
+msgid "This key is ultimately trusted"
+msgstr "กุญแจนี้ได้รับความเชื่อถือเต็มพิกัด"
+
+#: ../gcr/gcr-gnupg-renderer.c:337 ../gcr/gcr-gnupg-renderer.c:563
+msgid "Key ID"
+msgstr "ID กุญแจ"
+
+#: ../gcr/gcr-gnupg-renderer.c:345 ../gcr/gcr-gnupg-renderer.c:571
+#: ../gcr/gcr-gnupg-renderer.c:618 ../gcr/gcr-key-renderer.c:435
+msgid "Algorithm"
+msgstr "อัลกอริทึม"
+
+#: ../gcr/gcr-gnupg-renderer.c:360 ../gcr/gcr-gnupg-renderer.c:437
+#: ../gcr/gcr-gnupg-renderer.c:480
+msgid "Created"
+msgstr "วันสร้าง"
+
+#: ../gcr/gcr-gnupg-renderer.c:369 ../gcr/gcr-gnupg-renderer.c:446
+#: ../gcr/gcr-gnupg-renderer.c:489
+msgid "Expiry"
+msgstr "วันหมดอายุ"
+
+#: ../gcr/gcr-gnupg-renderer.c:378
+msgid "Capabilities"
+msgstr "การใช้งาน"
+
+#: ../gcr/gcr-gnupg-renderer.c:391
+msgid "Owner trust"
+msgstr "ความน่าเชื่อถือของเจ้าของ"
+
+#: ../gcr/gcr-gnupg-renderer.c:419
+msgid "Name"
+msgstr "ชื่อ"
+
+#: ../gcr/gcr-gnupg-renderer.c:425 ../gcr/gcr-gnupg-renderer.c:707
+msgid "Comment"
+msgstr "หมายเหตุ"
+
+#: ../gcr/gcr-gnupg-renderer.c:465
+msgid "User Attribute"
+msgstr "แอตทริบิวต์ของผู้ใช้"
+
+#: ../gcr/gcr-gnupg-renderer.c:472 ../gcr/gcr-key-renderer.c:442
+msgid "Size"
+msgstr "ขนาด"
+
+# Reference for signature classes: RFC4880
+# https://www.ietf.org/rfc/rfc4880.txt
+#: ../gcr/gcr-gnupg-renderer.c:507
+msgid "Signature of a binary document"
+msgstr "ลายเซ็นของเอกสารไบนารี"
+
+#: ../gcr/gcr-gnupg-renderer.c:509
+msgid "Signature of a canonical text document"
+msgstr "ลายเซ็นของเอกสารข้อความตามแบบบัญญัติ"
+
+#: ../gcr/gcr-gnupg-renderer.c:511
+msgid "Standalone signature"
+msgstr "ลายเซ็น standalone"
+
+#: ../gcr/gcr-gnupg-renderer.c:513
+msgid "Generic certification of key"
+msgstr "ใบรับรองทั่วไปของกุญแจ"
+
+#: ../gcr/gcr-gnupg-renderer.c:515
+msgid "Persona certification of key"
+msgstr "ใบรับรองกุญแจตามที่เจ้าตัวแสดง"
+
+#: ../gcr/gcr-gnupg-renderer.c:517
+msgid "Casual certification of key"
+msgstr "ใบรับรองกุญแจตามการตรวจสอบเล็กน้อย"
+
+#: ../gcr/gcr-gnupg-renderer.c:519
+msgid "Positive certification of key"
+msgstr "ใบรับรองกุญแจแบบเชื่อถือ"
+
+#: ../gcr/gcr-gnupg-renderer.c:521
+msgid "Subkey binding signature"
+msgstr "ลายเซ็นพ่วงกุญแจย่อย"
+
+#: ../gcr/gcr-gnupg-renderer.c:523
+msgid "Primary key binding signature"
+msgstr "ลายเซ็นพ่วงกุญแจหลัก"
+
+#: ../gcr/gcr-gnupg-renderer.c:525
+msgid "Signature directly on key"
+msgstr "ลายเซ็นบนกุญแจโดยตรง"
+
+#: ../gcr/gcr-gnupg-renderer.c:527
+msgid "Key revocation signature"
+msgstr "ลายเซ็นเพิกถอนกุญแจ"
+
+#: ../gcr/gcr-gnupg-renderer.c:529
+msgid "Subkey revocation signature"
+msgstr "ลายเซ็นเพิกถอนกุญแจย่อย"
+
+#: ../gcr/gcr-gnupg-renderer.c:531
+msgid "Certification revocation signature"
+msgstr "ลายเซ็นเพิกถอนใบรับรอง"
+
+#: ../gcr/gcr-gnupg-renderer.c:533
+msgid "Timestamp signature"
+msgstr "ลายเซ็นกำกับการลงเวลา"
+
+#: ../gcr/gcr-gnupg-renderer.c:535
+msgid "Third-party confirmation signature"
+msgstr "ลายเซ็นยืนยันโดยบุคคลที่สาม"
+
+#: ../gcr/gcr-gnupg-renderer.c:588 ../gcr/gcr-gnupg-renderer.c:596
+msgid "Class"
+msgstr "คลาส"
+
+#: ../gcr/gcr-gnupg-renderer.c:590
+msgid "Local only"
+msgstr "ใช้ในเครื่องเท่านั้น"
+
+#: ../gcr/gcr-gnupg-renderer.c:592
+msgid "Exportable"
+msgstr "ส่งออกได้"
+
+#: ../gcr/gcr-gnupg-renderer.c:610
+msgid "Revocation Key"
+msgstr "กุญแจสำหรับเพิกถอน"
+
+#: ../gcr/gcr-gnupg-renderer.c:624 ../gcr/gcr-gnupg-renderer.c:648
+#: ../gcr/gcr-gnupg-renderer.c:650
+msgid "Fingerprint"
+msgstr "ลายนิ้วมือ"
+
+#: ../gcr/gcr-gnupg-renderer.c:739
+msgid "Public Subkey"
+msgstr "กุญแจย่อยสาธารณะ"
+
+#: ../gcr/gcr-gnupg-renderer.c:741
+msgid "Secret Key"
+msgstr "กุญแจลับ"
+
+#: ../gcr/gcr-gnupg-renderer.c:743
+msgid "Secret Subkey"
+msgstr "กุญแจย่อยลับ"
+
+#: ../gcr/gcr-import-button.c:111
+msgid "Initializing..."
+msgstr "กำลังตั้งค่าเริ่มต้น..."
+
+#: ../gcr/gcr-import-button.c:119
+msgid "Import is in progress..."
+msgstr "กำลังนำเข้า..."
+
+#: ../gcr/gcr-import-button.c:126
+#, c-format
+msgid "Imported to: %s"
+msgstr "นำเข้าแล้วที่: %s"
+
+#: ../gcr/gcr-import-button.c:146
+#, c-format
+msgid "Import to: %s"
+msgstr "นำเข้าสู่: %s"
+
+#: ../gcr/gcr-import-button.c:159
+msgid "Cannot import because there are no compatible importers"
+msgstr "ไม่สามารถนำเข้าเพราะไม่มีเครื่องมือนำเข้าที่เข้ากันได้"
+
+#: ../gcr/gcr-import-button.c:168
+msgid "No data to import"
+msgstr "ไม่มีข้อมูลให้นำเข้า"
+
+#: ../gcr/gcr-key-renderer.c:90
+msgid "Key"
+msgstr "กุญแจ"
+
+#: ../gcr/gcr-key-renderer.c:404
+msgid "Private RSA Key"
+msgstr "กุญแจ RSA ส่วนตัว"
+
+#: ../gcr/gcr-key-renderer.c:406
+msgid "Private DSA Key"
+msgstr "กุญแจ DSA ส่วนตัว"
+
+#: ../gcr/gcr-key-renderer.c:408 ../gcr/gcr-parser.c:319
 msgid "Private Key"
 msgstr "กุญแจส่วนตัว"
 
-#: ../gcr/gcr-parser.c:328 ../ui/gcr-certificate-renderer.c:881
-#: ../ui/gcr-gnupg-renderer.c:736 ../ui/gcr-key-renderer.c:370
-msgid "Public Key"
-msgstr "กุญแจสาธารณะ"
+#: ../gcr/gcr-key-renderer.c:411 ../gcr/gcr-key-renderer.c:413
+msgid "Public DSA Key"
+msgstr "กุญแจ DSA สาธารณะ"
 
-#: ../gcr/gcr-parser.c:334
+#: ../gcr/gcr-key-renderer.c:422
+#, c-format
+msgid "%d bit"
+msgid_plural "%d bits"
+msgstr[0] "%d บิต"
+
+#: ../gcr/gcr-key-renderer.c:423
+msgid "Strength"
+msgstr "ความแน่นหนา"
+
+#. Fingerprints
+#: ../gcr/gcr-key-renderer.c:446
+msgid "Fingerprints"
+msgstr "ลายนิ้วมือ"
+
+#: ../gcr/gcr-key-renderer.c:450
+msgid "SHA1"
+msgstr "SHA1"
+
+#: ../gcr/gcr-key-renderer.c:455
+msgid "SHA256"
+msgstr "SHA256"
+
+#: ../gcr/gcr-parser.c:331
 msgid "Certificate Request"
 msgstr "คำร้องขอใบรับรอง"
 
-#: ../gcr/gcr-parser.c:2554
+#: ../gcr/gcr-parser.c:2484
 msgid "Unrecognized or unsupported data."
 msgstr "ข้อมูลที่ไม่รู้จักหรือไม่รองรับ"
 
-#: ../gcr/gcr-parser.c:2557
+#: ../gcr/gcr-parser.c:2487
 msgid "Could not parse invalid or corrupted data."
 msgstr "ไม่สามารถแจงข้อมูลที่ผิดรูปแบบหรือเสียหาย"
 
-#: ../gcr/gcr-parser.c:2560
+#: ../gcr/gcr-parser.c:2490
 msgid "The data is locked"
 msgstr "ข้อมูลถูกล็อคอยู่"
 
-#: ../gcr/gcr-prompt.c:225
+#: ../gcr/gcr-pkcs11-import-dialog.c:187
+msgid "Automatically chosen"
+msgstr "เลือกโดยอัตโนมัติ"
+
+#: ../gcr/gcr-pkcs11-import-dialog.c:271
+#: ../gcr/gcr-pkcs11-import-interaction.c:153
+#: ../gcr/gcr-pkcs11-import-interaction.c:171
+#, c-format
+msgid "The user cancelled the operation"
+msgstr "ผู้ใช้ยกเลิกปฏิบัติการ"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:1
+msgid "In order to import, please enter the password."
+msgstr "เพื่อจะนำเข้า กรุณาป้อนรหัสผ่าน"
+
+#. The password label
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:2 ../gcr/gcr-prompt-dialog.c:559
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:3
+msgid "Token:"
+msgstr "โทเคน:"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:4
+msgid "Label"
+msgstr "ฉลาก"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:5 ../gcr/gcr-unlock-renderer.c:71
+#: ../gcr/gcr-unlock-renderer.c:128
+msgid "Unlock"
+msgstr "ปลดล็อค"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:6
+msgid "Label:"
+msgstr "ฉลาก:"
+
+#: ../gcr/gcr-pkcs11-import-dialog.ui.h:7
+msgid "Import settings"
+msgstr "ตั้งค่าการนำเข้า"
+
+#: ../gcr/gcr-prompt.c:218
 msgid "Continue"
 msgstr "ทำต่อไป"
 
-#: ../gcr/gcr-prompt.c:234
+#: ../gcr/gcr-prompt.c:227
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../gcr/gcr-subject-public-key.c:407
+#. The confirm label
+#: ../gcr/gcr-prompt-dialog.c:576
+msgid "Confirm:"
+msgstr "ยืนยัน:"
+
+#: ../gcr/gcr-prompt-dialog.c:643
+msgid "Passwords do not match."
+msgstr "รหัสผ่านไม่ตรงกัน"
+
+#: ../gcr/gcr-prompt-dialog.c:650
+msgid "Password cannot be blank"
+msgstr "รหัสผ่านว่างเปล่าไม่ได้"
+
+#: ../gcr/gcr-prompter.desktop.in.in.h:1
+msgid "Access Prompt"
+msgstr "คำถามก่อนเข้าถึง"
+
+#: ../gcr/gcr-prompter.desktop.in.in.h:2
+msgid "Unlock access to passwords and other secrets"
+msgstr "ปลดล็อคการเข้าถึงรหัสผ่านและรหัสลับอื่นๆ"
+
+#: ../gcr/gcr-subject-public-key.c:345
 msgid "Unrecognized or unavailable attributes for key"
 msgstr "ไม่รู้จักหรือไม่มีแอตทริบิวต์สำหรับกุญแจ"
 
-#: ../gcr/gcr-subject-public-key.c:493 ../gcr/gcr-subject-public-key.c:579
+#: ../gcr/gcr-subject-public-key.c:429 ../gcr/gcr-subject-public-key.c:515
 msgid "Couldn't build public key"
 msgstr "ไม่สามารถสร้างกุญแจสาธารณะ"
 
-#: ../gcr/gcr-system-prompt.c:905
+#: ../gcr/gcr-system-prompt.c:753
 msgid "Another prompt is already in progress"
 msgstr "มีกล่องคำถามอื่นอยู่ระหว่างดำเนินการ"
 
 #. Translators: A pinned certificate is an exception which
 #. trusts a given certificate explicitly for a purpose and
 #. communication with a certain peer.
-#: ../gcr/gcr-trust.c:366
+#: ../gcr/gcr-trust.c:370
 #, c-format
 msgid "Couldn't find a place to store the pinned certificate"
 msgstr "ไม่สามารถหาแหล่งที่จะเก็บใบรับรองที่ปักหมุดไว้"
 
-#: ../ui/gcr-certificate-renderer.c:117
-msgid "Basic Constraints"
-msgstr "ข้อบังคับพื้นฐาน"
-
-#: ../ui/gcr-certificate-renderer.c:119
-msgid "Certificate Authority"
-msgstr "องค์กรออกใบรับรอง"
-
-#: ../ui/gcr-certificate-renderer.c:120 ../ui/gcr-certificate-renderer.c:952
-msgid "Yes"
-msgstr "ใช่"
-
-#: ../ui/gcr-certificate-renderer.c:120 ../ui/gcr-certificate-renderer.c:952
-msgid "No"
-msgstr "ไม่"
-
-#: ../ui/gcr-certificate-renderer.c:123
-msgid "Max Path Length"
-msgstr "ความยาวพาธสูงสุด"
-
-#: ../ui/gcr-certificate-renderer.c:124
-msgid "Unlimited"
-msgstr "ไม่จำกัด"
-
-#: ../ui/gcr-certificate-renderer.c:143
-msgid "Extended Key Usage"
-msgstr "การใช้งานกุญแจเพิ่มเติม"
-
-#: ../ui/gcr-certificate-renderer.c:154
-msgid "Allowed Purposes"
-msgstr "การใช้งานที่อนุญาต"
-
-#: ../ui/gcr-certificate-renderer.c:174
-msgid "Subject Key Identifier"
-msgstr "ตัวระบุกุญแจของผู้รับการรับรอง"
-
-#: ../ui/gcr-certificate-renderer.c:175
-msgid "Key Identifier"
-msgstr "ตัวระบุกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:186
-msgid "Digital signature"
-msgstr "ลายเซ็นดิจิทัล"
-
-#: ../ui/gcr-certificate-renderer.c:187
-msgid "Key encipherment"
-msgstr "การเข้ารหัสลับกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:188
-msgid "Data encipherment"
-msgstr "การเข้ารหัสลับข้อมูล"
-
-#: ../ui/gcr-certificate-renderer.c:189
-msgid "Key agreement"
-msgstr "การตกลงเห็นพ้องของกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:190
-msgid "Certificate signature"
-msgstr "ลายเซ็นกำกับใบรับรอง"
-
-#: ../ui/gcr-certificate-renderer.c:191
-msgid "Revocation list signature"
-msgstr "ลายเซ็นกำกับรายการเพิกถอน"
-
-#: ../ui/gcr-certificate-renderer.c:216
-msgid "Key Usage"
-msgstr "การใช้งานกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:217
-msgid "Usages"
-msgstr "การใช้งาน"
-
-#: ../ui/gcr-certificate-renderer.c:237
-msgid "Subject Alternative Names"
-msgstr "ชื่ออื่นของผู้รับการรับรอง"
-
-#: ../ui/gcr-certificate-renderer.c:264
-msgid "Extension"
-msgstr "ส่วนขยาย"
-
-#: ../ui/gcr-certificate-renderer.c:268
-msgid "Identifier"
-msgstr "ตัวระบุ"
-
-#: ../ui/gcr-certificate-renderer.c:269
-#: ../ui/gcr-certificate-request-renderer.c:269 ../ui/gcr-gnupg-renderer.c:412
-#: ../ui/gcr-gnupg-renderer.c:429
-msgid "Value"
-msgstr "ค่า"
-
-#: ../ui/gcr-certificate-renderer.c:287
-msgid "Couldn't export the certificate."
-msgstr "ไม่สามารถส่งออกใบรับรอง"
-
-#: ../ui/gcr-certificate-renderer.c:521
-#: ../ui/gcr-certificate-request-renderer.c:310
-msgid "Identity"
-msgstr "ชื่อ"
-
-#: ../ui/gcr-certificate-renderer.c:525
-msgid "Verified by"
-msgstr "ตรวจสอบโดย"
-
-#: ../ui/gcr-certificate-renderer.c:532 ../ui/gcr-gnupg-renderer.c:717
-msgid "Expires"
-msgstr "หมดอายุ"
-
-#. The subject
-#: ../ui/gcr-certificate-renderer.c:539
-#: ../ui/gcr-certificate-request-renderer.c:316
-msgid "Subject Name"
-msgstr "ชื่อผู้รับการรับรอง"
-
-#. The Issuer
-#: ../ui/gcr-certificate-renderer.c:544
-msgid "Issuer Name"
-msgstr "ชื่อผู้ออกให้"
-
-#. The Issued Parameters
-#: ../ui/gcr-certificate-renderer.c:549
-msgid "Issued Certificate"
-msgstr "ใบรับรองที่ออก"
-
-#: ../ui/gcr-certificate-renderer.c:554
-#: ../ui/gcr-certificate-request-renderer.c:327
-msgid "Version"
-msgstr "รุ่น"
-
-#: ../ui/gcr-certificate-renderer.c:568
-msgid "Not Valid Before"
-msgstr "ห้ามใช้ก่อน"
-
-#: ../ui/gcr-certificate-renderer.c:573
-msgid "Not Valid After"
-msgstr "ห้ามใช้หลัง"
-
-#. Fingerprints
-#: ../ui/gcr-certificate-renderer.c:578
-msgid "Certificate Fingerprints"
-msgstr "ลายนิ้วมือของใบรับรอง"
-
-#. Public Key Info
-#: ../ui/gcr-certificate-renderer.c:584
-#: ../ui/gcr-certificate-request-renderer.c:330
-#: ../ui/gcr-certificate-request-renderer.c:376
-msgid "Public Key Info"
-msgstr "ข้อมูลกุญแจสาธารณะ"
-
-#. Signature
-#: ../ui/gcr-certificate-renderer.c:599 ../ui/gcr-certificate-renderer.c:909
-#: ../ui/gcr-certificate-request-renderer.c:346
-#: ../ui/gcr-certificate-request-renderer.c:383 ../ui/gcr-gnupg-renderer.c:558
-msgid "Signature"
-msgstr "ลายเซ็น"
-
-#: ../ui/gcr-certificate-renderer.c:616
-msgid "Export Certificate…"
-msgstr "ส่งออกใบรับรอง…"
-
-#: ../ui/gcr-certificate-renderer.c:855
-msgid "Key Algorithm"
-msgstr "อัลกอริทึมของกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:860
-msgid "Key Parameters"
-msgstr "พารามิเตอร์สำหรับกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:868 ../ui/gcr-gnupg-renderer.c:351
-msgid "Key Size"
-msgstr "ขนาดกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:876
-msgid "Key SHA1 Fingerprint"
-msgstr "ลายนิ้วมือ SHA1 ของกุญแจ"
-
-#: ../ui/gcr-certificate-renderer.c:898
-msgid "Signature Algorithm"
-msgstr "อัลกอริทึมของลายเซ็น"
-
-#: ../ui/gcr-certificate-renderer.c:902
-msgid "Signature Parameters"
-msgstr "พารามิเตอร์สำหรับลายเซ็น"
-
-#: ../ui/gcr-certificate-renderer.c:951
-msgid "Critical"
-msgstr "วิกฤติ"
-
-#. The certificate request type
-#: ../ui/gcr-certificate-request-renderer.c:94
-#: ../ui/gcr-certificate-request-renderer.c:305
-#: ../ui/gcr-certificate-request-renderer.c:320
-#: ../ui/gcr-certificate-request-renderer.c:363
-#: ../ui/gcr-certificate-request-renderer.c:368
-msgid "Certificate request"
-msgstr "คำร้องขอใบรับรอง"
-
-#: ../ui/gcr-certificate-request-renderer.c:258
-msgid "Attribute"
-msgstr "แอตทริบิวต์"
-
-#: ../ui/gcr-certificate-request-renderer.c:262
-#: ../ui/gcr-certificate-request-renderer.c:321
-#: ../ui/gcr-certificate-request-renderer.c:369 ../ui/gcr-gnupg-renderer.c:589
-#: ../ui/gcr-gnupg-renderer.c:591
-msgid "Type"
-msgstr "ชนิด"
-
-#: ../ui/gcr-certificate-request-renderer.c:373
-msgid "Challenge"
-msgstr "คำท้า"
-
-#: ../ui/gcr-display-view.c:317
-msgid "_Details"
-msgstr "_รายละเอียด"
-
-#: ../ui/gcr-failure-renderer.c:159
-#, c-format
-msgid "Could not display '%s'"
-msgstr "ไม่สามารถแสดง '%s'"
-
-#: ../ui/gcr-failure-renderer.c:161
-msgid "Could not display file"
-msgstr "ไม่สามารถแสดงแฟ้ม"
-
-#: ../ui/gcr-failure-renderer.c:166
-msgid "Reason"
-msgstr "เหตุผล"
-
-#: ../ui/gcr-failure-renderer.c:216
-#, c-format
-msgid "Cannot display a file of this type."
-msgstr "ไม่สามารถแสดงแฟ้มชนิดนี้"
-
-#: ../ui/gcr-gnupg-renderer.c:201
-msgid "Elgamal"
-msgstr "Elgamal"
-
-#: ../ui/gcr-gnupg-renderer.c:214
-msgid "Encrypt"
-msgstr "เข้ารหัสลับ"
-
-#: ../ui/gcr-gnupg-renderer.c:216
-msgid "Sign"
-msgstr "เซ็นกำกับ"
-
-#: ../ui/gcr-gnupg-renderer.c:218
-msgid "Certify"
-msgstr "รับรอง"
-
-#: ../ui/gcr-gnupg-renderer.c:220
-msgid "Authenticate"
-msgstr "ยืนยันตัวบุคคล"
-
-#: ../ui/gcr-gnupg-renderer.c:222
-msgctxt "capability"
-msgid "Disabled"
-msgstr "ปิดใช้งาน"
-
-#: ../ui/gcr-gnupg-renderer.c:253 ../ui/gcr-gnupg-renderer.c:412
-#: ../ui/gcr-key-renderer.c:391 ../ui/gcr-key-renderer.c:395
-msgid "Unknown"
-msgstr "ไม่ทราบ"
-
-#: ../ui/gcr-gnupg-renderer.c:255
-msgid "Invalid"
-msgstr "ใช้ไม่ได้"
-
-#: ../ui/gcr-gnupg-renderer.c:257
-msgctxt "ownertrust"
-msgid "Disabled"
-msgstr "ปิดใช้งาน"
-
-#: ../ui/gcr-gnupg-renderer.c:259
-msgid "Revoked"
-msgstr "เพิกถอนแล้ว"
-
-#: ../ui/gcr-gnupg-renderer.c:261
-msgid "Expired"
-msgstr "หมดอายุ"
-
-#: ../ui/gcr-gnupg-renderer.c:263
-msgid "Undefined trust"
-msgstr "ไม่กำหนดความเชื่อถือ"
-
-#: ../ui/gcr-gnupg-renderer.c:265
-msgid "Distrusted"
-msgstr "ไม่เชื่อถือ"
-
-#: ../ui/gcr-gnupg-renderer.c:267
-msgid "Marginally trusted"
-msgstr "เชื่อถือก้ำกึ่ง"
-
-#: ../ui/gcr-gnupg-renderer.c:269
-msgid "Fully trusted"
-msgstr "เชื่อถือเต็มที่"
-
-#: ../ui/gcr-gnupg-renderer.c:271
-msgid "Ultimately trusted"
-msgstr "เชื่อถือเต็มพิกัด"
-
-#: ../ui/gcr-gnupg-renderer.c:285
-msgid "The information in this key has not yet been verified"
-msgstr "ข้อมูลในกุญแจนี้ยังไม่ผ่านการตรวจสอบ"
-
-#: ../ui/gcr-gnupg-renderer.c:288
-msgid "This key is invalid"
-msgstr "กุญแจนี้ข้อมูลไม่ถูกต้อง"
-
-#: ../ui/gcr-gnupg-renderer.c:291
-msgid "This key has been disabled"
-msgstr "กุญแจนี้ถูกปิดใช้งาน"
-
-#: ../ui/gcr-gnupg-renderer.c:294
-msgid "This key has been revoked"
-msgstr "กุญแจนี้ถูกเพิกถอนแล้ว"
-
-#: ../ui/gcr-gnupg-renderer.c:297
-msgid "This key has expired"
-msgstr "กุญแจนี้หมดอายุแล้ว"
-
-#: ../ui/gcr-gnupg-renderer.c:302
-msgid "This key is distrusted"
-msgstr "กุญแจนี้ไม่ได้รับความเชื่อถือ"
-
-#: ../ui/gcr-gnupg-renderer.c:305
-msgid "This key is marginally trusted"
-msgstr "กุญแจนี้ได้รับความเชื่อถือแบบก้ำกึ่ง"
-
-#: ../ui/gcr-gnupg-renderer.c:308
-msgid "This key is fully trusted"
-msgstr "กุญแจนี้ได้รับความเชื่อถือเต็มที่"
-
-#: ../ui/gcr-gnupg-renderer.c:311
-msgid "This key is ultimately trusted"
-msgstr "กุญแจนี้ได้รับความเชื่อถือเต็มพิกัด"
-
-#: ../ui/gcr-gnupg-renderer.c:336 ../ui/gcr-gnupg-renderer.c:562
-msgid "Key ID"
-msgstr "ID กุญแจ"
-
-#: ../ui/gcr-gnupg-renderer.c:344 ../ui/gcr-gnupg-renderer.c:570
-#: ../ui/gcr-gnupg-renderer.c:617 ../ui/gcr-key-renderer.c:392
-msgid "Algorithm"
-msgstr "อัลกอริทึม"
-
-#: ../ui/gcr-gnupg-renderer.c:359 ../ui/gcr-gnupg-renderer.c:436
-#: ../ui/gcr-gnupg-renderer.c:479
-msgid "Created"
-msgstr "วันสร้าง"
-
-#: ../ui/gcr-gnupg-renderer.c:368 ../ui/gcr-gnupg-renderer.c:445
-#: ../ui/gcr-gnupg-renderer.c:488
-msgid "Expiry"
-msgstr "วันหมดอายุ"
-
-#: ../ui/gcr-gnupg-renderer.c:377
-msgid "Capabilities"
-msgstr "การใช้งาน"
-
-#: ../ui/gcr-gnupg-renderer.c:390
-msgid "Owner trust"
-msgstr "ความน่าเชื่อถือของเจ้าของ"
-
-#: ../ui/gcr-gnupg-renderer.c:418
-msgid "Name"
-msgstr "ชื่อ"
-
-#: ../ui/gcr-gnupg-renderer.c:424 ../ui/gcr-gnupg-renderer.c:706
-msgid "Comment"
-msgstr "หมายเหตุ"
-
-#: ../ui/gcr-gnupg-renderer.c:464
-msgid "User Attribute"
-msgstr "แอตทริบิวต์ของผู้ใช้"
-
-#: ../ui/gcr-gnupg-renderer.c:471 ../ui/gcr-key-renderer.c:398
-msgid "Size"
-msgstr "ขนาด"
-
-# Reference for signature classes: RFC4880
-# https://www.ietf.org/rfc/rfc4880.txt
-#: ../ui/gcr-gnupg-renderer.c:506
-msgid "Signature of a binary document"
-msgstr "ลายเซ็นของเอกสารไบนารี"
-
-#: ../ui/gcr-gnupg-renderer.c:508
-msgid "Signature of a canonical text document"
-msgstr "ลายเซ็นของเอกสารข้อความตามแบบบัญญัติ"
-
-#: ../ui/gcr-gnupg-renderer.c:510
-msgid "Standalone signature"
-msgstr "ลายเซ็น standalone"
-
-#: ../ui/gcr-gnupg-renderer.c:512
-msgid "Generic certification of key"
-msgstr "ใบรับรองทั่วไปของกุญแจ"
-
-#: ../ui/gcr-gnupg-renderer.c:514
-msgid "Persona certification of key"
-msgstr "ใบรับรองกุญแจตามที่เจ้าตัวแสดง"
-
-#: ../ui/gcr-gnupg-renderer.c:516
-msgid "Casual certification of key"
-msgstr "ใบรับรองกุญแจตามการตรวจสอบเล็กน้อย"
-
-#: ../ui/gcr-gnupg-renderer.c:518
-msgid "Positive certification of key"
-msgstr "ใบรับรองกุญแจแบบเชื่อถือ"
-
-#: ../ui/gcr-gnupg-renderer.c:520
-msgid "Subkey binding signature"
-msgstr "ลายเซ็นพ่วงกุญแจย่อย"
-
-#: ../ui/gcr-gnupg-renderer.c:522
-msgid "Primary key binding signature"
-msgstr "ลายเซ็นพ่วงกุญแจหลัก"
-
-#: ../ui/gcr-gnupg-renderer.c:524
-msgid "Signature directly on key"
-msgstr "ลายเซ็นบนกุญแจโดยตรง"
-
-#: ../ui/gcr-gnupg-renderer.c:526
-msgid "Key revocation signature"
-msgstr "ลายเซ็นเพิกถอนกุญแจ"
-
-#: ../ui/gcr-gnupg-renderer.c:528
-msgid "Subkey revocation signature"
-msgstr "ลายเซ็นเพิกถอนกุญแจย่อย"
-
-#: ../ui/gcr-gnupg-renderer.c:530
-msgid "Certification revocation signature"
-msgstr "ลายเซ็นเพิกถอนใบรับรอง"
-
-#: ../ui/gcr-gnupg-renderer.c:532
-msgid "Timestamp signature"
-msgstr "ลายเซ็นกำกับการลงเวลา"
-
-#: ../ui/gcr-gnupg-renderer.c:534
-msgid "Third-party confirmation signature"
-msgstr "ลายเซ็นยืนยันโดยบุคคลที่สาม"
-
-#: ../ui/gcr-gnupg-renderer.c:587 ../ui/gcr-gnupg-renderer.c:595
-msgid "Class"
-msgstr "คลาส"
-
-#: ../ui/gcr-gnupg-renderer.c:589
-msgid "Local only"
-msgstr "ใช้ในเครื่องเท่านั้น"
-
-#: ../ui/gcr-gnupg-renderer.c:591
-msgid "Exportable"
-msgstr "ส่งออกได้"
-
-#: ../ui/gcr-gnupg-renderer.c:609
-msgid "Revocation Key"
-msgstr "กุญแจสำหรับเพิกถอน"
-
-#: ../ui/gcr-gnupg-renderer.c:623 ../ui/gcr-gnupg-renderer.c:647
-#: ../ui/gcr-gnupg-renderer.c:649
-msgid "Fingerprint"
-msgstr "ลายนิ้วมือ"
-
-#: ../ui/gcr-gnupg-renderer.c:738
-msgid "Public Subkey"
-msgstr "กุญแจย่อยสาธารณะ"
-
-#: ../ui/gcr-gnupg-renderer.c:740
-msgid "Secret Key"
-msgstr "กุญแจลับ"
-
-#: ../ui/gcr-gnupg-renderer.c:742
-msgid "Secret Subkey"
-msgstr "กุญแจย่อยลับ"
-
-#: ../ui/gcr-import-button.c:116
-msgid "Initializing…"
-msgstr "กำลังตั้งค่าเริ่มต้น…"
-
-#: ../ui/gcr-import-button.c:124
-msgid "Import is in progress…"
-msgstr "กำลังนำเข้า…"
-
-#: ../ui/gcr-import-button.c:131
-#, c-format
-msgid "Imported to: %s"
-msgstr "นำเข้าแล้วที่: %s"
-
-#: ../ui/gcr-import-button.c:151
-#, c-format
-msgid "Import to: %s"
-msgstr "นำเข้าสู่: %s"
-
-#: ../ui/gcr-import-button.c:164
-msgid "Cannot import because there are no compatible importers"
-msgstr "ไม่สามารถนำเข้าเพราะไม่มีเครื่องมือนำเข้าที่เข้ากันได้"
-
-#: ../ui/gcr-import-button.c:173
-msgid "No data to import"
-msgstr "ไม่มีข้อมูลให้นำเข้า"
-
-#: ../ui/gcr-key-renderer.c:88
-msgid "Key"
-msgstr "กุญแจ"
-
-#: ../ui/gcr-key-renderer.c:355
-msgid "Private RSA Key"
-msgstr "กุญแจ RSA ส่วนตัว"
-
-#: ../ui/gcr-key-renderer.c:357
-msgid "Private DSA Key"
-msgstr "กุญแจ DSA ส่วนตัว"
-
-#: ../ui/gcr-key-renderer.c:359
-msgid "Private Elliptic Curve Key"
-msgstr "กุญแจเส้นโค้งเชิงวงรีส่วนตัว"
-
-#: ../ui/gcr-key-renderer.c:364 ../ui/gcr-key-renderer.c:366
-msgid "Public DSA Key"
-msgstr "กุญแจ DSA สาธารณะ"
-
-#: ../ui/gcr-key-renderer.c:368
-msgid "Public Elliptic Curve Key"
-msgstr "กุญแจเส้นโค้งเชิงวงรีสาธารณะ"
-
-#: ../ui/gcr-key-renderer.c:377
-#, c-format
-msgid "%u bit"
-msgid_plural "%u bits"
-msgstr[0] "%u บิต"
-
-#: ../ui/gcr-key-renderer.c:378
-msgid "Strength"
-msgstr "ความแน่นหนา"
-
-#. Fingerprints
-#: ../ui/gcr-key-renderer.c:402
-msgid "Fingerprints"
-msgstr "ลายนิ้วมือ"
-
-#: ../ui/gcr-key-renderer.c:406
-msgid "SHA1"
-msgstr "SHA1"
-
-#: ../ui/gcr-key-renderer.c:411
-msgid "SHA256"
-msgstr "SHA256"
-
-#. Add our various buttons
-#: ../ui/gcr-pkcs11-import-dialog.c:114 ../ui/gcr-prompt-dialog.c:502
-#: ../ui/gcr-certificate-exporter.c:228 ../ui/gcr-certificate-exporter.c:305
-msgid "_Cancel"
-msgstr "_ยกเลิก"
-
-#: ../ui/gcr-pkcs11-import-dialog.c:116 ../ui/gcr-prompt-dialog.c:505
-msgid "_OK"
-msgstr "_ตกลง"
-
-#: ../ui/gcr-pkcs11-import-dialog.c:189
-msgid "Automatically chosen"
-msgstr "เลือกโดยอัตโนมัติ"
-
-#: ../ui/gcr-pkcs11-import-dialog.c:273
-#: ../ui/gcr-pkcs11-import-interaction.c:152
-#: ../ui/gcr-pkcs11-import-interaction.c:170
-#, c-format
-msgid "The user cancelled the operation"
-msgstr "ผู้ใช้ยกเลิกปฏิบัติการ"
-
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:1
-msgid "In order to import, please enter the password."
-msgstr "เพื่อจะนำเข้า กรุณาป้อนรหัสผ่าน"
-
-#. The password label
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:2 ../ui/gcr-prompt-dialog.c:563
-msgid "Password:"
-msgstr "รหัสผ่าน:"
-
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:3
-msgid "Token:"
-msgstr "โทเคน:"
-
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:4 ../ui/gcr-unlock-renderer.c:69
-#: ../ui/gcr-unlock-renderer.c:124
-msgid "Unlock"
-msgstr "ปลดล็อค"
-
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:5
-msgid "Label:"
-msgstr "ฉลาก:"
-
-#: ../ui/gcr-pkcs11-import-dialog.ui.h:6
-msgid "Import settings"
-msgstr "ตั้งค่าการนำเข้า"
-
-#. The confirm label
-#: ../ui/gcr-prompt-dialog.c:580
-msgid "Confirm:"
-msgstr "ยืนยัน:"
-
-#: ../ui/gcr-prompt-dialog.c:648
-msgid "Passwords do not match."
-msgstr "รหัสผ่านไม่ตรงกัน"
-
-#: ../ui/gcr-prompt-dialog.c:655
-msgid "Password cannot be blank"
-msgstr "รหัสผ่านว่างเปล่าไม่ได้"
-
-#: ../ui/gcr-prompter.desktop.in.in.h:1
-msgid "Access Prompt"
-msgstr "คำถามก่อนเข้าถึง"
-
-#: ../ui/gcr-prompter.desktop.in.in.h:2
-msgid "Unlock access to passwords and other secrets"
-msgstr "ปลดล็อคการเข้าถึงรหัสผ่านและรหัสลับอื่นๆ"
-
-#: ../ui/gcr-certificate-exporter.c:225
-msgid "A file already exists with this name."
-msgstr "มีแฟ้มชื่อนี้อยู่ก่อนแล้ว"
-
-#: ../ui/gcr-certificate-exporter.c:226
-msgid "Do you want to replace it with a new file?"
-msgstr "คุณต้องการเขียนทับหรือไม่?"
-
-#: ../ui/gcr-certificate-exporter.c:229
-msgid "_Replace"
-msgstr "เขียน_ทับ"
-
-#: ../ui/gcr-certificate-exporter.c:259
-#, c-format
-msgid "The operation was cancelled."
-msgstr "การกระทำถูกยกเลิก"
-
-#: ../ui/gcr-certificate-exporter.c:303
-msgid "Export certificate"
-msgstr "ส่งออกใบรับรอง"
-
-#: ../ui/gcr-certificate-exporter.c:306
-msgid "_Save"
-msgstr "_บันทึก"
-
-#: ../ui/gcr-certificate-exporter.c:315
-msgid "Certificate files"
-msgstr "แฟ้มใบรับรอง"
-
-#: ../ui/gcr-certificate-exporter.c:326
-msgid "PEM files"
-msgstr "แฟ้ม PEM"
-
-#: ../ui/gcr-unlock-options-widget.ui.h:1
+#: ../gcr/gcr-unlock-options-widget.ui.h:1
 msgid "Automatically unlock this keyring whenever I'm logged in"
 msgstr "ปลดล็อคพวงกุญแจนี้โดยอัตโนมัติทุกครั้งที่ฉันเข้าระบบ"
 
-#: ../ui/gcr-unlock-options-widget.ui.h:2
+#: ../gcr/gcr-unlock-options-widget.ui.h:2
 msgid "Lock this keyring when I log out"
 msgstr "ล็อคพวงกุญแจนี้เมื่อออกจากระบบ"
 
-#: ../ui/gcr-unlock-options-widget.ui.h:3
+#: ../gcr/gcr-unlock-options-widget.ui.h:3
 msgid "Lock this keyring after"
 msgstr "ล็อคพวงกุญแจนี้เมื่อเวลาผ่านไป"
 
-#: ../ui/gcr-unlock-options-widget.ui.h:4
+#: ../gcr/gcr-unlock-options-widget.ui.h:4
 msgid "Lock this keyring if idle for"
 msgstr "ล็อคพวงกุญแจนี้ถ้าเครื่องไม่มีการใช้งานเป็นเวลา"
 
 #. Translators: The 'minutes' from 'Lock this keyring if idle for x minutes'.
-#: ../ui/gcr-unlock-options-widget.ui.h:6
+#: ../gcr/gcr-unlock-options-widget.ui.h:6
 msgid "minutes"
 msgstr "นาที"
 
-#: ../ui/gcr-unlock-renderer.c:67
+#: ../gcr/gcr-unlock-renderer.c:69
 #, c-format
 msgid "Unlock: %s"
 msgstr "ปลดล็อค: %s"
 
-#: ../ui/gcr-unlock-renderer.c:122
+#: ../gcr/gcr-unlock-renderer.c:125
 msgid "Password"
 msgstr "รหัสผ่าน"
 
-#: ../ui/gcr-unlock-renderer.c:274
+#: ../gcr/gcr-unlock-renderer.c:278
 #, c-format
 msgid ""
 "The contents of '%s' are locked. In order to view the contents, enter the "
 "correct password."
 msgstr "เนื้อหาของ '%s' ถูกล็อคอยู่ หากต้องการดูเนื้อหา กรุณาป้อนรหัสผ่านที่ถูกต้อง"
 
-#: ../ui/gcr-unlock-renderer.c:277
+#: ../gcr/gcr-unlock-renderer.c:281
 msgid ""
 "The contents are locked. In order to view the contents, enter the correct "
 "password."
 msgstr "เนื้อหาถูกล็อคอยู่ หากต้องการดูเนื้อหา กรุณาป้อนรหัสผ่านที่ถูกต้อง"
 
-#: ../ui/gcr-viewer-tool.c:40
+#: ../gcr/gcr-viewer-tool.c:41
 msgid "GCR Certificate and Key Viewer"
 msgstr "เครื่องมือแสดงใบรับรองและกุญแจของ GCR"
 
-#: ../ui/gcr-viewer-tool.c:47
+#: ../gcr/gcr-viewer-tool.c:48
 msgid "Show the application's version"
 msgstr "แสดงรุ่นของโปรแกรม"
 
-#: ../ui/gcr-viewer-tool.c:49
+#: ../gcr/gcr-viewer-tool.c:50
 msgid "[file...]"
 msgstr "[แฟ้ม...]"
 
-#: ../ui/gcr-viewer-tool.c:104
+#: ../gcr/gcr-viewer-tool.c:103
 msgid "- View certificate and key files"
 msgstr "- ดูแฟ้มใบรับรองและกุญแจ"
 
-#: ../ui/gcr-viewer-tool.c:118 ../ui/gcr-viewer-widget.c:684
+#: ../gcr/gcr-viewer-tool.c:117 ../gcr/gcr-viewer-widget.c:635
 msgid "Certificate Viewer"
 msgstr "เครื่องมือแสดงใบรับรอง"
 
-#: ../ui/gcr-viewer-widget.c:202
+#: ../gcr/gcr-viewer-widget.c:203
 msgid "The password was incorrect"
 msgstr "รหัสผ่านไม่ถูกต้อง"
 
-#: ../ui/gcr-viewer-window.c:75
+#: ../gcr/gcr-viewer-window.c:76
 msgid "Imported"
 msgstr "นำเข้าแล้ว"
 
-#: ../ui/gcr-viewer-window.c:79
+#: ../gcr/gcr-viewer-window.c:80
 msgid "Import failed"
 msgstr "นำเข้าไม่สำเร็จ"
 
-#: ../ui/gcr-viewer-window.c:107
+#: ../gcr/gcr-viewer-window.c:108
 msgid "Import"
 msgstr "นำเข้า"
-
-#: ../ui/gcr-viewer-window.c:116
-msgid "_Close"
-msgstr "ปิ_ด"
-
-#~ msgid "Invalid PKCS#11 module: %s"
-#~ msgstr "มอดูล PKCS#11 ไม่ถูกต้อง: %s"
-
-#~ msgid "Couldn't setup PKCS#11 module: %s"
-#~ msgstr "ไม่สามารถตั้งค่ามอดูล PKCS#11: %s"
-
-#~ msgid "Label"
-#~ msgstr "ฉลาก"

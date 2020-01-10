@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stef@memberwebs.com>
 */
@@ -24,8 +25,7 @@
 
 #include "gck.h"
 #include "gck-private.h"
-
-#include "gck/gck-marshal.h"
+#include "gck-marshal.h"
 
 #include <glib/gi18n-lib.h>
 
@@ -55,14 +55,20 @@ perform_initialize_registered (InitializeRegistered *args)
 {
 	GckModule *module;
 	CK_FUNCTION_LIST_PTR *modules, *funcs;
+	const gchar *message;
+	CK_RV rv;
 
-	modules = p11_kit_modules_load_and_initialize (0);
-	if (modules == NULL) {
+	rv = p11_kit_initialize_registered ();
+	if (rv != CKR_OK) {
+		message = p11_kit_message ();
+		if (message == NULL)
+			message = gck_message_from_rv (rv);
 		g_set_error (&args->error, GCK_ERROR, (int)CKR_GCK_MODULE_PROBLEM,
-		             _("Couldn’t initialize registered PKCS#11 modules: %s"), p11_kit_message ());
-		return CKR_GCK_MODULE_PROBLEM;
+		             _("Couldn't initialize registered PKCS#11 modules: %s"), message);
+		return rv;
 	}
 
+	modules = p11_kit_registered_modules ();
 	for (funcs = modules; *funcs; ++funcs) {
 		module = _gck_module_new_initialized (*funcs);
 		args->results = g_list_prepend (args->results, module);

@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #if !defined (__GCR_INSIDE_HEADER__) && !defined (GCR_COMPILATION)
@@ -74,10 +76,6 @@ void                     gcr_parser_format_disable         (GcrParser *self,
 gboolean                 gcr_parser_format_supported       (GcrParser *self,
                                                             GcrDataFormat format);
 
-gboolean                 gcr_parser_parse_bytes            (GcrParser *self,
-                                                            GBytes *data,
-                                                            GError **error);
-
 gboolean                 gcr_parser_parse_data             (GcrParser *self,
                                                             const guchar *data,
                                                             gsize n_data,
@@ -112,14 +110,7 @@ GckAttributes*           gcr_parser_get_parsed_attributes  (GcrParser *self);
 const guchar *           gcr_parser_get_parsed_block       (GcrParser *self,
                                                             gsize *n_block);
 
-GBytes *                 gcr_parser_get_parsed_bytes       (GcrParser *self);
-
 GcrDataFormat            gcr_parser_get_parsed_format      (GcrParser *self);
-
-const gchar*             gcr_parser_get_filename           (GcrParser *self);
-
-void                     gcr_parser_set_filename           (GcrParser *self,
-		                                            const gchar *filename);
 
 #define                  GCR_TYPE_PARSED                   (gcr_parsed_get_type ())
 
@@ -138,11 +129,7 @@ GckAttributes*           gcr_parsed_get_attributes         (GcrParsed *parsed);
 const guchar *           gcr_parsed_get_data               (GcrParsed *parsed,
                                                             gsize *n_data);
 
-GBytes *                 gcr_parsed_get_bytes              (GcrParsed *parsed);
-
 GcrDataFormat            gcr_parsed_get_format             (GcrParsed *parsed);
-
-const gchar*             gcr_parsed_get_filename           (GcrParsed *parsed);
 
 G_END_DECLS
 

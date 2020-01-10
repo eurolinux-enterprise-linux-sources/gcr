@@ -17,7 +17,7 @@ DOC_MAIN_SGML_FILE=$(DOC_MODULE)-docs.sgml
 # gtk-doc will search all .c & .h files beneath here for inline comments
 # documenting the functions and macros.
 # e.g. DOC_SOURCE_DIR=../../../gtk
-DOC_SOURCE_DIR=$(top_srcdir)/gck $(top_builddir)/gck
+DOC_SOURCE_DIR=$(top_srcdir)/gck
 
 # Extra options to pass to gtkdoc-scangobj. Not normally needed.
 SCANGOBJ_OPTIONS=
@@ -54,6 +54,7 @@ EXTRA_HFILES=
 # Header files to ignore when scanning. Use base file name, no paths
 # e.g. IGNORE_HFILES=gtkdebug.h gtkintl.h
 IGNORE_HFILES= \
+	gck-debug.h \
 	gck-private.h \
 	test-suite.h \
 	gck-mock.h \
@@ -62,7 +63,8 @@ IGNORE_HFILES= \
 	pkcs11.h \
 	pkcs11n.h \
 	pkcs11x.h \
-	pkcs11i.h
+	pkcs11i.h \
+	mock-interaction.h
 
 # Images to copy into HTML directory.
 # e.g. HTML_IMAGES=$(top_srcdir)/gtk/stock-icons/stock_about_24.png
@@ -86,7 +88,7 @@ expand_content_files=
 GTKDOC_CFLAGS= -I$(top_srcdir) -I$(top_builddir) $(GLIB_CFLAGS) -Wno-error \
 	-Wno-deprecated-declarations
 GTKDOC_LIBS= $(GLIB_LIBS) \
-	$(top_builddir)/lib$(DOC_MODULE)-@GCK_MAJOR@.la
+	$(top_builddir)/$(DOC_MODULE)/lib$(DOC_MODULE)-@GCK_MAJOR@.la
 
 # This includes the standard gtk-doc make rules, copied by gtkdocize.
 include $(top_srcdir)/gtk-doc.make

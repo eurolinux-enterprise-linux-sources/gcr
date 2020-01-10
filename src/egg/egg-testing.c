@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Stef Walter <stefw@collabora.co.uk>
  */
@@ -46,7 +48,7 @@ egg_testing_on_valgrind (void)
 #ifdef WITH_VALGRIND
 	return RUNNING_ON_VALGRIND;
 #else
-	return FALSE;
+	return FALSE
 #endif
 }
 
@@ -105,6 +107,28 @@ egg_assertion_message_cmpmem (const char     *domain,
 
 static void (*wait_stop_impl) (void);
 static gboolean (*wait_until_impl) (int timeout);
+
+void
+egg_assertion_not_object (const char *domain,
+                          const char *file,
+                          int         line,
+                          const char *func,
+                          const char *expr,
+                          gpointer was_object)
+{
+	gchar *s;
+
+#ifdef WITH_VALGRIND
+	if (RUNNING_ON_VALGRIND)
+		return;
+#endif
+
+	if (G_IS_OBJECT (was_object)) {
+		s = g_strdup_printf ("assertion failed: %s is still referenced", expr);
+		g_assertion_message (domain, file, line, func, s);
+		g_free (s);
+	}
+}
 
 #if 0
 void
@@ -236,6 +260,10 @@ egg_tests_run_with_loop (void)
 	GThread *thread;
 	GMainLoop *loop;
 	gpointer ret;
+
+#if !GLIB_CHECK_VERSION(2,35,0)
+	g_type_init ();
+#endif
 
 	loop = g_main_loop_new (NULL, FALSE);
 	wait_condition = g_cond_new ();

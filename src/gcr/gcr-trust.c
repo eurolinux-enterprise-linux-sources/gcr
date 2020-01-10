@@ -14,13 +14,17 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
 
 #include "config.h"
 
+#define DEBUG_FLAG GCR_DEBUG_TRUST
+#include "gcr-debug.h"
 #include "gcr-types.h"
 #include "gcr-internal.h"
 #include "gcr-library.h"
@@ -156,8 +160,8 @@ perform_is_certificate_pinned (GckAttributes *search,
 		return FALSE;
 
 	slots = gcr_pkcs11_get_trust_lookup_slots ();
-	g_debug ("searching for pinned certificate in %d slots",
-	         g_list_length (slots));
+	_gcr_debug ("searching for pinned certificate in %d slots",
+	            g_list_length (slots));
 	en = gck_slots_enumerate_objects (slots, search, 0);
 	gck_list_unref_free (slots);
 
@@ -167,7 +171,7 @@ perform_is_certificate_pinned (GckAttributes *search,
 	if (object)
 		g_object_unref (object);
 
-	g_debug ("%s certificate anchor", object ? "found" : "did not find");
+	_gcr_debug ("%s certificate anchor", object ? "found" : "did not find");
 	return (object != NULL);
 }
 
@@ -336,13 +340,15 @@ perform_add_pinned_certificate (GckAttributes *search,
 	en = gck_slots_enumerate_objects (slots, search, CKF_RW_SESSION);
 	gck_list_unref_free (slots);
 
-	object = gck_enumerator_next (en, cancellable, &lerr);
+	/* We need an error below */
+	if (error && !*error)
+		*error = lerr;
+
+	object = gck_enumerator_next (en, cancellable, error);
 	g_object_unref (en);
 
-	if (lerr != NULL) {
-		g_propagate_error (error, lerr);
+	if (*error)
 		return FALSE;
-	}
 
 	/* It already exists */
 	if (object) {
@@ -357,17 +363,17 @@ perform_add_pinned_certificate (GckAttributes *search,
 	/* Find an appropriate token */
 	slot = gcr_pkcs11_get_trust_store_slot ();
 	if (slot == NULL) {
-		g_set_error (&lerr, GCK_ERROR, CKR_FUNCTION_FAILED,
+		g_set_error (error, GCK_ERROR, CKR_FUNCTION_FAILED,
 		             /* Translators: A pinned certificate is an exception which
 		                trusts a given certificate explicitly for a purpose and
 		                communication with a certain peer. */
-		             _("Couldn’t find a place to store the pinned certificate"));
+		             _("Couldn't find a place to store the pinned certificate"));
 		ret = FALSE;
 	} else {
-		session = gck_slot_open_session (slot, CKF_RW_SESSION, NULL, &lerr);
+		session = gck_slot_open_session (slot, CKF_RW_SESSION, NULL, error);
 		if (session != NULL) {
 			object = gck_session_create_object (session, gck_builder_end (&builder),
-			                                    cancellable, &lerr);
+			                                    cancellable, error);
 			if (object != NULL) {
 				g_object_unref (object);
 				ret = TRUE;
@@ -381,8 +387,8 @@ perform_add_pinned_certificate (GckAttributes *search,
 
 	gck_builder_clear (&builder);
 
-	if (!ret)
-		g_propagate_error (error, lerr);
+	/* Our own local error pointer */
+	g_clear_error (&lerr);
 
 	return ret;
 }
@@ -723,8 +729,8 @@ perform_is_certificate_anchored (GckAttributes *attrs,
 		return FALSE;
 
 	slots = gcr_pkcs11_get_trust_lookup_slots ();
-	g_debug ("searching for certificate anchor in %d slots",
-	         g_list_length (slots));
+	_gcr_debug ("searching for certificate anchor in %d slots",
+	            g_list_length (slots));
 	en = gck_slots_enumerate_objects (slots, attrs, 0);
 	gck_list_unref_free (slots);
 
@@ -734,7 +740,7 @@ perform_is_certificate_anchored (GckAttributes *attrs,
 	if (object != NULL)
 		g_object_unref (object);
 
-	g_debug ("%s certificate anchor", object ? "found" : "did not find");
+	_gcr_debug ("%s certificate anchor", object ? "found" : "did not find");
 	return (object != NULL);
 }
 

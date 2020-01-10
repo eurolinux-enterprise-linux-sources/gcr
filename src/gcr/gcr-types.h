@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  *
  * Author: Stef Walter <stefw@collabora.co.uk>
  */
@@ -63,7 +65,6 @@ typedef enum {
 	GCR_FORMAT_DER_PRIVATE_KEY = 100,
 	GCR_FORMAT_DER_PRIVATE_KEY_RSA,
 	GCR_FORMAT_DER_PRIVATE_KEY_DSA,
-	GCR_FORMAT_DER_PRIVATE_KEY_EC,
 
 	GCR_FORMAT_DER_SUBJECT_PUBLIC_KEY = 150,
 
@@ -96,8 +97,6 @@ typedef enum {
 	GCR_FORMAT_PEM_PKCS12,
 	GCR_FORMAT_PEM_PRIVATE_KEY,
 	GCR_FORMAT_PEM_PKCS10,
-	GCR_FORMAT_PEM_PRIVATE_KEY_EC,
-	GCR_FORMAT_PEM_PUBLIC_KEY,
 } GcrDataFormat;
 
 /*

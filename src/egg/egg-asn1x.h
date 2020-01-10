@@ -15,7 +15,8 @@
 
    You should have received a copy of the GNU Library General Public
    License along with the Gnome Library; see the file COPYING.LIB.  If not,
-   see <http://www.gnu.org/licenses/>.
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
 
    Author: Stef Walter <stef@memberwebs.com>
 */
@@ -67,7 +68,7 @@ typedef enum {
 	EGG_ASN1X_GENERALIZED_TIME = 37,
 } EggAsn1xType;
 
-typedef enum {
+enum {
 	EGG_ASN1X_NO_STRICT = 0x01,
 } EggAsn1xFlags;
 
@@ -200,9 +201,6 @@ GBytes *            egg_asn1x_get_string_as_bytes    (GNode *node);
 
 void                egg_asn1x_set_string_as_bytes    (GNode *node,
                                                       GBytes *bytes);
-
-GBytes *            egg_asn1x_get_string_as_usg      (GNode *node,
-	                                              EggAllocator allocator);
 
 GBytes *            egg_asn1x_get_bits_as_raw        (GNode *node,
                                                       guint *n_bits);

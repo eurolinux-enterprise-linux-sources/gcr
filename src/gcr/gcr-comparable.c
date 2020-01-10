@@ -14,7 +14,9 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
  */
 
 #include "config.h"
@@ -40,26 +42,57 @@
 
 /**
  * GcrComparableIface:
- * @parent: type interface
- * @compare: Compare whether tow objects represent the same thing.
  *
  * The interface to implement for #GcrComparable
  */
 
-typedef GcrComparableIface GcrComparableInterface;
-G_DEFINE_INTERFACE (GcrComparable, gcr_comparable, G_TYPE_OBJECT);
+/* ---------------------------------------------------------------------------------
+ * INTERFACE
+ */
 
 static void
-gcr_comparable_default_init (GcrComparableIface *iface)
+gcr_comparable_base_init (gpointer g_class)
 {
+	static volatile gsize initialized = 0;
 
+	if (g_once_init_enter (&initialized)) {
+		/* Add properties and signals to the interface */
+		g_once_init_leave (&initialized, 1);
+	}
 }
 
+GType
+gcr_comparable_get_type (void)
+{
+	static GType type = 0;
+	if (!type) {
+		static const GTypeInfo info = {
+			sizeof (GcrComparableIface),
+			gcr_comparable_base_init,               /* base init */
+			NULL,             /* base finalize */
+			NULL,             /* class_init */
+			NULL,             /* class finalize */
+			NULL,             /* class data */
+			0,
+			0,                /* n_preallocs */
+			NULL,             /* instance init */
+		};
+		type = g_type_register_static (G_TYPE_INTERFACE, "GcrComparableIface", &info, 0);
+		g_type_interface_add_prerequisite (type, G_TYPE_OBJECT);
+	}
+
+	return type;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * PUBLIC
+ */
 
 /**
  * gcr_comparable_compare:
  * @self: The comparable object
- * @other: (allow-none): Another comparable object
+ * @other: Another comparable object
  *
  * Compare whether two objects represent the same thing. The return value can
  * also be used to sort the objects.
@@ -77,22 +110,19 @@ gcr_comparable_compare (GcrComparable *self, GcrComparable *other)
 
 /**
  * gcr_comparable_memcmp: (skip)
- * @mem1: (array length=size1) (element-type guint8): First block of memory
+ * @mem1: First block of memory
  * @size1: Length of first block
- * @mem2: (array length=size2) (element-type guint8): Second block of memory
+ * @mem2: Second lock of memory
  * @size2: Length of second block
  *
  * Compare two blocks of memory. The return value can be used to sort
  * the blocks of memory.
  *
- * Returns: Zero if the blocks are identical, negative if first
- *          less than secend, possitive otherwise.
+ * Returns: Zero if the blocks are identical, non-zero if not.
  */
 gint
-gcr_comparable_memcmp (gconstpointer mem1,
-                       gsize size1,
-                       gconstpointer mem2,
-                       gsize size2)
+gcr_comparable_memcmp (gconstpointer mem1, gsize size1,
+                       gconstpointer mem2, gsize size2)
 {
 	gint result;
 
