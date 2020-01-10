@@ -1,6 +1,6 @@
 Name:           gcr
 Version:        3.8.2
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        A library for bits of crypto UI and parsing
 
 Group:          Development/Libraries
@@ -121,6 +121,12 @@ fi
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.2-4
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.8.2-3
+- Mass rebuild 2013-12-27
+
 * Fri May 10 2013 Adam Williamson <awilliam@redhat.com> - 3.8.2-2
 - update scriptlets to match current guidelines
 
